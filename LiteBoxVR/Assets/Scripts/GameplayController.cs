@@ -39,6 +39,8 @@ public class GameplayController : MonoBehaviour
 
         public GameObject NoteVisual;
 
+        public float LerpProgress;
+
     }
 
     public UnityEngine.UI.Text DataText;
@@ -87,13 +89,17 @@ public class GameplayController : MonoBehaviour
     private void Start()
     {
         GenerateNoteObjectsFromJson(testjson);
+
+        GetComponent<PunchPadVisuals>().SetNotes(ref noteObjects);
     }
 
     private void Update()
     {
         UpdateNotes();
 
-        UpdateVisuals(ActiveNoteObjects.ToArray());
+        //UpdateVisuals(ActiveNoteObjects.ToArray());
+
+        UpdateVisualsOld();
     }
 
     void UpdateNotes()
@@ -140,7 +146,9 @@ public class GameplayController : MonoBehaviour
 
             float NoteLerpProgress = Mathf.InverseLerp(thisNoteStartTime, thisNoteTargetTime, TimePassedMS);
 
-            n.NoteVisual.transform.position = Vector3.Lerp(new Vector3(n.pad*2, 0, 0), new Vector3(n.pad*2, 5, 0), NoteLerpProgress);
+            n.LerpProgress = NoteLerpProgress;
+
+            //n.NoteVisual.transform.position = Vector3.Lerp(new Vector3(n.pad*2, 0, 0), new Vector3(n.pad*2, 5, 0), NoteLerpProgress);
 
 
         }
