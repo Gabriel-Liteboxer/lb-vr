@@ -1,0 +1,14 @@
+# This .gitignore file should be placed at the root of your Unity project directory
+#
+# Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
+#
+LiteBoxVR/[Ll]ibrary/
+LiteBoxVR/[Tt]emp/
+LiteBoxVR/[Oo]bj/
+LiteBoxVR/[Bb]uild/
+LiteBoxVR/[Bb]uilds/
+LiteBoxVR/[Ll]ogs/
+LiteBoxVR/[Mm]emoryCaptures/
+
+# Never ignore Asset meta data
+!LiteBoxVR/[Aa]ssets/**/*.meta
