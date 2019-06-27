@@ -73,7 +73,7 @@ public class BoardTracking : MonoBehaviour
         }
         else
         {
-            BoardRender.enabled = false;
+            //BoardRender.enabled = false;
             transform.position = Vector3.zero;
         }
 

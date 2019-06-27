@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9052200186177750414}
   - component: {fileID: 1261187321427005460}
   - component: {fileID: 1385116186}
-  - component: {fileID: 8938544728889360148}
+  - component: {fileID: 8906812565328028002}
   m_Layer: 0
   m_Name: BoardPfb
   m_TagString: Untagged
@@ -161,7 +161,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8938544728889360148
+--- !u!114 &8906812565328028002
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -170,9 +170,1078 @@ MonoBehaviour:
   m_GameObject: {fileID: 1696843256396007504}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba3690d08fce2fc4fa3c684841446234, type: 3}
+  m_Script: {fileID: 11500000, guid: 3bd0833f5a65e8d41bd59b3146e9d04c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NotePrefab: {fileID: 4063096686442059290, guid: 27df71d936cc5ff428dbb5ee541d3893,
+    type: 3}
+  Notes:
+  - time: 6104
+    pad: 3
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 7469
+    pad: 2
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 8752
+    pad: 1
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 10756
+    pad: 4
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 11449
+    pad: 3
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 12751
+    pad: 2
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 14052
+    pad: 1
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 14665
+    pad: 1
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 15315
+    pad: 1
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 15995
+    pad: 1
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 16653
+    pad: 4
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 18002
+    pad: 1
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 19287
+    pad: 2
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 21281
+    pad: 3
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 21953
+    pad: 4
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 23303
+    pad: 1
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 24652
+    pad: 2
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 25237
+    pad: 2
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 25906
+    pad: 2
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 26536
+    pad: 2
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 27265
+    pad: 3
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 27911
+    pad: 2
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 28562
+    pad: 1
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 29212
+    pad: 2
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 29885
+    pad: 1
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 30556
+    pad: 2
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 31207
+    pad: 1
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 31858
+    pad: 0
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 32529
+    pad: 3
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 33229
+    pad: 2
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 33879
+    pad: 1
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 34530
+    pad: 2
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 35208
+    pad: 1
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 35852
+    pad: 2
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 36525
+    pad: 1
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 37161
+    pad: 2
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 37779
+    pad: 3
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 38463
+    pad: 2
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 39080
+    pad: 1
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 39752
+    pad: 2
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 40403
+    pad: 1
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 41054
+    pad: 2
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 41727
+    pad: 1
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 42410
+    pad: 0
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 43105
+    pad: 3
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 43706
+    pad: 2
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 44400
+    pad: 1
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 45072
+    pad: 2
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 45724
+    pad: 1
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 46373
+    pad: 2
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 47024
+    pad: 1
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 47653
+    pad: 2
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 48264
+    pad: 3
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 48916
+    pad: 5
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 49566
+    pad: 3
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 50827
+    pad: 3
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 51454
+    pad: 5
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 52073
+    pad: 3
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 53310
+    pad: 3
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 53982
+    pad: 2
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 54633
+    pad: 3
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 55862
+    pad: 3
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 56532
+    pad: 2
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 57145
+    pad: 3
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 58366
+    pad: 4
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 59042
+    pad: 5
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 59692
+    pad: 4
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 60915
+    pad: 4
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 61586
+    pad: 5
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 62214
+    pad: 4
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 63429
+    pad: 3
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 64058
+    pad: 3
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 64656
+    pad: 4
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 65285
+    pad: 4
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 65993
+    pad: 1
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 66391
+    pad: 2
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 66850
+    pad: 1
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 68408
+    pad: 4
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 69074
+    pad: 1
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 69780
+    pad: 2
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 70379
+    pad: 1
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 71027
+    pad: 2
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 71656
+    pad: 1
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 72307
+    pad: 2
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 72957
+    pad: 0
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 73630
+    pad: 4
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 74267
+    pad: 1
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 74960
+    pad: 2
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 75590
+    pad: 1
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 76262
+    pad: 2
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 76915
+    pad: 1
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 77591
+    pad: 2
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 78214
+    pad: 1
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 78866
+    pad: 4
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 79511
+    pad: 1
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 80161
+    pad: 2
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 80812
+    pad: 1
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 81441
+    pad: 2
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 82092
+    pad: 1
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 82743
+    pad: 2
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 83419
+    pad: 0
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 84066
+    pad: 4
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 84701
+    pad: 1
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 85441
+    pad: 2
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 86045
+    pad: 1
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 86717
+    pad: 2
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 87346
+    pad: 1
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 88046
+    pad: 2
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 89288
+    pad: 3
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 89917
+    pad: 5
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 90568
+    pad: 3
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 91795
+    pad: 3
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 92445
+    pad: 5
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 93119
+    pad: 3
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 94376
+    pad: 3
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 95027
+    pad: 2
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 95678
+    pad: 3
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 96883
+    pad: 3
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 97555
+    pad: 2
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 98227
+    pad: 3
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 99418
+    pad: 4
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 100058
+    pad: 5
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 100762
+    pad: 4
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 101962
+    pad: 4
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 102612
+    pad: 5
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 103222
+    pad: 4
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 104455
+    pad: 3
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 105085
+    pad: 3
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 105719
+    pad: 4
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 106310
+    pad: 4
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 106960
+    pad: 1
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 107413
+    pad: 1
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  - time: 107874
+    pad: 2
+    expired: 1
+    born: 1
+    canHit: 0
+    beenHit: 0
+    NoteVisual: {fileID: 0}
+    LerpProgress: 1
+  StartRadius: 0.03
+  EndRadius: 0.158
 --- !u!1001 &5786596991755628752
 PrefabInstance:
   m_ObjectHideFlags: 0

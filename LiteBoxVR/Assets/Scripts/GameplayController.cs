@@ -53,6 +53,8 @@ public class GameplayController : MonoBehaviour
 
     public UpdateVisualsDelegate UpdateVisuals = delegate { };
 
+    public GameObject GameVisualsObject;
+
     //public JsonDecoder.NoteData[] noteDatas;
 
     public void GenerateNoteObjectsFromJson (TextAsset songJson)
@@ -81,7 +83,7 @@ public class GameplayController : MonoBehaviour
 
             noteObjects[i].pad = noteDatas[i].pad;
 
-            noteObjects[i].NoteVisual = GameObject.Instantiate(NotePrefab, new Vector3(noteObjects[i].pad*2, 0, 0), Quaternion.identity);
+            //noteObjects[i].NoteVisual = GameObject.Instantiate(NotePrefab, new Vector3(noteObjects[i].pad*2, 0, 0), Quaternion.identity);
         }
 
     }
@@ -90,7 +92,9 @@ public class GameplayController : MonoBehaviour
     {
         GenerateNoteObjectsFromJson(testjson);
 
-        GetComponent<PunchPadVisuals>().SetNotes(ref noteObjects);
+        GameVisualsObject.GetComponent<PunchPadVisuals>().SetNotes(ref noteObjects);
+
+        GameVisualsObject.GetComponent<PunchPadVisuals>().SetGameplayController(this);
     }
 
     private void Update()
@@ -155,8 +159,16 @@ public class GameplayController : MonoBehaviour
 
     }
 
+    public void PadContact(bool isContact, int padIndex)
+    {
+
+
+    }
+
     public void PadHit(int padIndex)
     {
+        Debug.Log("Hit pad: " + padIndex);
+
         Dictionary<int, NoteObject> notesOnPad = new Dictionary<int, NoteObject>();
 
         for (int i = 0; i < noteObjects.Length; i++)
@@ -188,6 +200,7 @@ public class GameplayController : MonoBehaviour
 
         NoteHit(oldestNote.Key);
 
+        
     }
 
     void NoteHit(int noteIndex)
