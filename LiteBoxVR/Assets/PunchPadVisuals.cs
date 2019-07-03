@@ -85,7 +85,7 @@ public class PunchPadVisuals : MonoBehaviour
 
             float angleRad = (i * (3.1416f / 3)) + (3.1416f / 6);
 
-            Vector3 Origin = new Vector3(0, 0, -0.005f);
+            Vector3 Origin = new Vector3(0, 0, -0.01f);
 
             NoteStartpoint[i].transform.localPosition = new Vector3(Origin.x + StartRadius * Mathf.Cos(angleRad), Origin.y + StartRadius * Mathf.Sin(angleRad), Origin.z);
 
@@ -118,11 +118,11 @@ public class PunchPadVisuals : MonoBehaviour
             {
                 RingLEDs[i].LEDs[c] = GameObject.Instantiate(NotePrefab, gameObject.transform);
 
-                float angleRad = c * (2 * 3.1416f)/RingLEDCount;
+                float angleRad = c * (2 * 3.1416f)/RingLEDCount + (i * (3.1416f / 3)) + (3.1416f*1.1f);
 
-                float ringRadius = PadSurfaceRadius*0.6f;
+                float ringRadius = PadSurfaceRadius;
 
-                Vector3 Origin = NoteEndpoint[i].transform.localPosition + new Vector3(0, 0, -0.002f);
+                Vector3 Origin = NoteEndpoint[i].transform.localPosition + new Vector3(0, 0, 0.002f);
 
                 RingLEDs[i].LEDs[c].transform.localPosition = new Vector3(Origin.x + ringRadius * Mathf.Cos(angleRad), Origin.y + ringRadius * Mathf.Sin(angleRad), Origin.z);
 

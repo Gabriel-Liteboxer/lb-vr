@@ -8,7 +8,7 @@ public class ArmCalibration : MonoBehaviour
 
     public TextMesh ArmOffsetText;
 
-    static float armOffset = -0.1714f;
+    static float armOffset = -0.04f; // old value -0.1714f
 
     static float armDistance = 1;
 
@@ -28,13 +28,13 @@ public class ArmCalibration : MonoBehaviour
             if (armCalibrationActive)
             {
                 armCalibrationActive = false;
-
+                //Arm.transform.parent = null;
             }
             else
             {
                 armCalibrationActive = true;
                 armDistance = 10f;
-
+                //Arm.transform.parent = gameObject;
             }
 
         }
@@ -46,7 +46,16 @@ public class ArmCalibration : MonoBehaviour
             armScale += OVRInput.Get(OVRInput.RawAxis2D.RThumbstick).y * Time.deltaTime / 10;
 
 
-            float dist = Vector3.Distance(transform.position, new Vector3(transform.position.x, 0, transform.position.z));
+            //float dist = Vector3.Distance(transform.position, new Vector3(transform.position.x, 0, transform.position.z));
+
+            //float dist = transform.position.y; worked pretty ok, just with some offset
+
+            Vector3 OldLocalPos = Arm.transform.localPosition;
+
+            Arm.transform.position = new Vector3(Arm.transform.position.x, 0, Arm.transform.position.z);
+
+            float dist = Arm.transform.localPosition.z;
+
             if (dist < armDistance)
             {
                 armDistance = dist;
@@ -57,9 +66,13 @@ public class ArmCalibration : MonoBehaviour
 
             ArmOffsetText.text = "dist: " + dist + "\n arm offset: " + armOffset;
 
-            Arm.transform.localPosition = new Vector3(Arm.transform.localPosition.x, armDistance*armScale+armOffset*armScale, Arm.transform.localPosition.z);
+            //Arm.transform.localPosition = new Vector3(Arm.transform.localPosition.x, armDistance*armScale+armOffset*armScale, Arm.transform.localPosition.z);
 
-            Arm.transform.localScale = new Vector3(armScale, armScale, armScale);
+            //Arm.transform.localPosition = new Vector3(Arm.transform.localPosition.x, Arm.transform.localPosition.y, -armDistance + armOffset);
+
+            //Arm.transform.localPosition = new Vector3(OldLocalPos.x, OldLocalPos.y, armDistance);
+
+            //Arm.transform.localScale = new Vector3(armScale, armScale, armScale);
         }
         
     }
