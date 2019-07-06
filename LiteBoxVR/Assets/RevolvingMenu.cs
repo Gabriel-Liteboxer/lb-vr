@@ -126,7 +126,7 @@ public class RevolvingMenu : MonoBehaviour
     {
         if (WithinDonut(LeftHand.transform.position, transform.position, MenuRadius, MenuRadius + 5, 5))
         {
-            Debug.Log("within donut");
+            //Debug.Log("within donut");
 
             Vector3 dir = LeftHand.transform.position - transform.position;
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
