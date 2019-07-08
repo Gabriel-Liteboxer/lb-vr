@@ -1276,10 +1276,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c70294d13ac49de428eed95ea6810b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnvironmentScene: EnvStudio
-  SongSelectScene: RevolvingMenuTest
   StateOfGame: 0
-  LoadingSongSelect: 0
+  gameStateScene:
+  - AssociatedState: 2
+    SceneName: EnvStudio
+    Loading: 0
+    Loaded: 0
+    CallOnLoaded: 
+    SetActiveOnLoaded: 1
+  - AssociatedState: 3
+    SceneName: RevolvingMenuTest
+    Loading: 0
+    Loaded: 0
+    CallOnLoaded: 
+    SetActiveOnLoaded: 0
 --- !u!1 &654211503
 GameObject:
   m_ObjectHideFlags: 0

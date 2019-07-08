@@ -493,11 +493,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: gloveArm
       objectReference: {fileID: 0}
-    - target: {fileID: -6349668016120953034, guid: 1acb32a88215ecb42b7802daaec6ea7c,
+    - target: {fileID: -5562664488474213082, guid: 1acb32a88215ecb42b7802daaec6ea7c,
         type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 1abcf3838c61ca240aaea2bbabdb062a, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 1acb32a88215ecb42b7802daaec6ea7c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -558,6 +558,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: -6349668016120953034, guid: 1acb32a88215ecb42b7802daaec6ea7c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1abcf3838c61ca240aaea2bbabdb062a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1acb32a88215ecb42b7802daaec6ea7c, type: 3}
 --- !u!1 &5443001457892709341 stripped
