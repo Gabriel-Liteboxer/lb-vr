@@ -32,7 +32,6 @@ public class GameManager : TagModularity
         public bool Loaded;
 
         public string CallOnLoaded;
-
         public bool SetActiveOnLoaded;
 
     }
@@ -41,21 +40,6 @@ public class GameManager : TagModularity
     public GameStateScene[] gameStateScene;
 
     Dictionary<GameState, GameStateScene> GameStateDict = new Dictionary<GameState, GameStateScene>();
-
-    /*
-    [Header("Scene Names")]
-    public string EnvironmentScene;
-    public string SongSelectScene;
-    public string ControllerModeSelectScene;
-    public string GamePlayScene;
-
-
-    [Header("Scene Loading Status")]
-    public bool LoadingControllerSelect;
-    public bool LoadingControllerCalibration;
-    public bool LoadingEnvironment;
-    public bool LoadingSongSelect;
-    public bool LoadingGamePlay;*/
 
     // Start is called before the first frame update
     void Start()
@@ -66,50 +50,24 @@ public class GameManager : TagModularity
 
         }
 
-        //StartCoroutine(LoadEnvironment());
     }
 
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.F))
+        if(OVRInput.GetDown(OVRInput.RawButton.A))
         {
             StateOfGame++;
 
         }
-        else if (Input.GetKeyDown(KeyCode.Z))
+        else if (OVRInput.GetDown(OVRInput.RawButton.B))
         {
             StateOfGame--;
 
         }
 
-        /*
-        if(GameStateDict.ContainsKey(StateOfGame))
-        {
-            if(!GameStateDict[StateOfGame].Loading)
-            {
-                StartCoroutine(LoadGameStateScene(GameStateDict[StateOfGame]));
-
-            }
-            else if (GameStateDict[StateOfGame].Loaded)
-            {
-                SendMessage(GameStateDict[StateOfGame].CallOnLoaded);
-
-            }
-
-        }
-        */
-        /*
-        if (StateOfGame == GameState.songSelect)
-        {
-            if(!LoadingSongSelect)
-            StartCoroutine(LoadSongSelect());
-
-        }*/
-
         LoadSceneFromGameState(StateOfGame);
 
-        
     }
 
     public bool LoadSceneFromGameState(GameState aState)
@@ -135,60 +93,7 @@ public class GameManager : TagModularity
         return false;
     }
 
-    /*
-    IEnumerator LoadControllerModeSelect()
-    {
-        LoadingControllerSelect = true;
-
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(SongSelectScene, LoadSceneMode.Additive);
-
-        // Wait until the asynchronous scene fully loads
-        while (!asyncLoad.isDone)
-        {
-            yield return null;
-        }
-
-        // put assign tag thing here 
-
-        FindTaggedObject("SongMenu");
-        Debug.Log("loaded song select");
-    }
-
-
-    IEnumerator LoadSongSelect()
-    {
-        LoadingSongSelect = true;
-
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(SongSelectScene, LoadSceneMode.Additive);
-
-        // Wait until the asynchronous scene fully loads
-        while (!asyncLoad.isDone)
-        {
-            yield return null;
-        }
-
-        // put assign tag thing here 
-
-        FindTaggedObject("SongMenu");
-        Debug.Log("loaded song select");
-    }
-
-
-    IEnumerator LoadEnvironment ()
-    {
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(EnvironmentScene, LoadSceneMode.Additive);
-
-        // Wait until the asynchronous scene fully loads
-        while (!asyncLoad.isDone)
-        {
-            yield return null;
-        }
-
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName(EnvironmentScene));
-
-        Debug.Log("loaded environment");
-    }
-    */
+    
     IEnumerator LoadGameStateScene(GameStateScene aScene)
     {
         aScene.Loading = true;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PunchPadVisuals : MonoBehaviour
+public class PunchPadVisuals : TagModularity
 {
     public GameObject NotePrefab;
 
@@ -14,13 +14,17 @@ public class PunchPadVisuals : MonoBehaviour
 
     private GameObject[] NoteEndpoint;
 
+    private GameObject[] NoteExpirepoint;
+
     private int NumberOfPads = 6;
     
     public bool[,] PadContact;
 
     public float StartRadius;
 
-    public float EndRadius;
+    public float EndRadius; // old value 0.158
+
+    public float ExpireRadius;
 
     public float PadSurfaceRadius;
 
@@ -52,6 +56,13 @@ public class PunchPadVisuals : MonoBehaviour
 
     public bool EnableDebugLines = true;
 
+    public void Start()
+    {
+        LeftController = FindTaggedObject("HandL").transform;
+
+        RightController = FindTaggedObject("HandR").transform;
+    }
+
     public void SetGameplayController(GameplayController newGameCont)
     {
         GameCont = newGameCont;
@@ -68,6 +79,8 @@ public class PunchPadVisuals : MonoBehaviour
 
         NoteEndpoint = new GameObject[NumberOfPads];
 
+        NoteExpirepoint = new GameObject[NumberOfPads];
+
         PadContact = new bool[NumberOfPads, 2];
 
         RingLEDs = new PadLEDRing[NumberOfPads];
@@ -83,6 +96,11 @@ public class PunchPadVisuals : MonoBehaviour
 
             NoteEndpoint[i] = GameObject.Instantiate(NotePrefab, gameObject.transform);
 
+            NoteExpirepoint[i] = new GameObject();
+
+            NoteExpirepoint[i].transform.parent = gameObject.transform;
+
+
             float angleRad = (i * (3.1416f / 3)) + (3.1416f / 6);
 
             Vector3 Origin = new Vector3(0, 0, -0.01f);
@@ -90,6 +108,8 @@ public class PunchPadVisuals : MonoBehaviour
             NoteStartpoint[i].transform.localPosition = new Vector3(Origin.x + StartRadius * Mathf.Cos(angleRad), Origin.y + StartRadius * Mathf.Sin(angleRad), Origin.z);
 
             NoteEndpoint[i].transform.localPosition = new Vector3(Origin.x + EndRadius * Mathf.Cos(angleRad), Origin.y + EndRadius * Mathf.Sin(angleRad), Origin.z);
+
+            NoteExpirepoint[i].transform.localPosition = new Vector3(Origin.x + ExpireRadius * Mathf.Cos(angleRad), Origin.y + ExpireRadius * Mathf.Sin(angleRad), Origin.z);
         }
 
 
@@ -160,7 +180,9 @@ public class PunchPadVisuals : MonoBehaviour
                 }
                  
 
-                NoteVisuals[i].transform.position = Vector3.Lerp(NoteStartpoint[Notes[i].pad].transform.position, NoteEndpoint[Notes[i].pad].transform.position, Notes[i].LerpProgress);
+                //NoteVisuals[i].transform.position = Vector3.Lerp(NoteStartpoint[Notes[i].pad].transform.position, NoteEndpoint[Notes[i].pad].transform.position, Notes[i].LerpProgress);
+
+                NoteVisuals[i].transform.position = Vector3.Lerp(NoteStartpoint[Notes[i].pad].transform.position, NoteExpirepoint[Notes[i].pad].transform.position, Notes[i].LerpProgress);
 
 
             }

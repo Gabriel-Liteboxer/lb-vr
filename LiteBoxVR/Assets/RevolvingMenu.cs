@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RevolvingMenu : MonoBehaviour
+public class RevolvingMenu : TagModularity
 {
     public SongConfig[] SongLibrary;
 
@@ -39,6 +39,10 @@ public class RevolvingMenu : MonoBehaviour
 
     private void Start()
     {
+        RightHand = FindTaggedObject("HandR");
+
+        LeftHand = FindTaggedObject("HandL");
+
         AlbumTiles = new Album[SongLibrary.Length];
 
         for (int i = 0; i < AlbumTiles.Length; i++)
@@ -61,6 +65,12 @@ public class RevolvingMenu : MonoBehaviour
 
     private void Update()
     {
+        //RightHand = FindTaggedObject("HandR");
+
+        //LeftHand = FindTaggedObject("HandL");
+
+
+
         CheckHandSlider();
 
         SliderVelocity = Input.GetAxis("Horizontal")/5;

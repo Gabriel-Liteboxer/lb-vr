@@ -9,6 +9,8 @@ TagManager:
   - GloveR
   - Menu
   - SongMenu
+  - HandL
+  - HandR
   layers:
   - Default
   - TransparentFX

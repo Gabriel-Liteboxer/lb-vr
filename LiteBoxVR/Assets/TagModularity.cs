@@ -19,6 +19,8 @@ public class TagModularity : MonoBehaviour
         {
             GameObject tagObj = GameObject.FindGameObjectWithTag(aTag);
 
+            
+
             if(tagObj != null)
             {
                 TaggedObjects.Add(aTag, tagObj);

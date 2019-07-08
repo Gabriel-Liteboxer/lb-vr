@@ -493,6 +493,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: gloveArm
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 1acb32a88215ecb42b7802daaec6ea7c,
+        type: 3}
+      propertyPath: m_TagString
+      value: HandR
+      objectReference: {fileID: 0}
     - target: {fileID: -5562664488474213082, guid: 1acb32a88215ecb42b7802daaec6ea7c,
         type: 3}
       propertyPath: m_IsActive

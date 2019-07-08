@@ -207,6 +207,11 @@ PrefabInstance:
       propertyPath: ArmOffsetText
       value: 
       objectReference: {fileID: 1812121383}
+    - target: {fileID: 5443001457892709341, guid: 1706114a4ad8b954c98efb13d4b395ad,
+        type: 3}
+      propertyPath: m_TagString
+      value: HandL
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1706114a4ad8b954c98efb13d4b395ad, type: 3}
 --- !u!4 &24758692 stripped
@@ -2126,7 +2131,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1363323042}
-  m_Text: build num
+  m_Text: build heck
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1

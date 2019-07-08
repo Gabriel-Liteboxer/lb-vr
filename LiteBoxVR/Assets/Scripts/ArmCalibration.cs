@@ -6,6 +6,10 @@ public class ArmCalibration : MonoBehaviour
 {
     public GameObject Arm;
 
+    private GameObject ArmParent;
+
+    private Vector3 armAngleOffset;
+
     public TextMesh ArmOffsetText;
 
     static float armOffset = -0.04f; // old value -0.1714f
@@ -18,10 +22,18 @@ public class ArmCalibration : MonoBehaviour
 
     //OVRInput.GetLocalControllerAcceleration <-- this could be interesting
 
+    private void Start()
+    {
+        ArmParent = Arm.transform.parent.gameObject;
+
+        Arm.transform.parent = null;
+
+        armAngleOffset = Arm.transform.eulerAngles - ArmParent.transform.eulerAngles;
+    }
+
     private void Update()
     {
-
-        
+        //UpdateArmTransform();
 
         if (OVRInput.GetDown(OVRInput.RawButton.Y))
         {
@@ -75,6 +87,21 @@ public class ArmCalibration : MonoBehaviour
             //Arm.transform.localScale = new Vector3(armScale, armScale, armScale);
         }
         
+    }
+
+    private void LateUpdate()
+    {
+        UpdateArmTransform();
+    }
+
+    private void UpdateArmTransform()
+    {
+        Arm.transform.position = ArmParent.transform.position;
+
+        Arm.transform.rotation = ArmParent.transform.rotation;
+
+        Arm.transform.eulerAngles += armAngleOffset;
+
     }
 
     void GetOffsetValues()

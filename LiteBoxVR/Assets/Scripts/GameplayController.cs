@@ -129,18 +129,18 @@ public class GameplayController : MonoBehaviour
 
         TimePassedMS += Time.deltaTime * 1000 * TimeScale;
 
-        DataText.text = TimePassedMS.ToString();
+        //DataText.text = TimePassedMS.ToString();
 
     }
 
-    void CreateVisuals() // make this a delegate?
+    void CreateVisuals()
     {
 
 
 
     }
 
-    void UpdateVisualsOld() // make this a delegate?
+    void UpdateVisualsOld()
     {
         foreach(NoteObject n in ActiveNoteObjects)
         {
@@ -148,7 +148,11 @@ public class GameplayController : MonoBehaviour
 
             float thisNoteTargetTime = n.time + HitTargetTimeOffsetMS;
 
-            float NoteLerpProgress = Mathf.InverseLerp(thisNoteStartTime, thisNoteTargetTime, TimePassedMS);
+            float thisNoteEndTime = n.time + HitTargetTimeOffsetMS + HitThresholdMS;
+
+            //float NoteLerpProgress = Mathf.InverseLerp(thisNoteStartTime, thisNoteTargetTime, TimePassedMS);
+
+            float NoteLerpProgress = Mathf.InverseLerp(thisNoteStartTime, thisNoteEndTime, TimePassedMS);
 
             n.LerpProgress = NoteLerpProgress;
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SongSelection : MonoBehaviour
+public class SongSelection : TagModularity
 {
     public SongConfig[] SongLibrary;
 
@@ -49,6 +49,10 @@ public class SongSelection : MonoBehaviour
     void Start()
     {
         //ButtonActionManager = new Dictionary<GameObject, System.Action>();
+
+        RightCont = FindTaggedObject("HandR").transform;
+
+        LeftCont = FindTaggedObject("HandL").transform;
 
         AlbumTiles = new GameObject[SongLibrary.Length];
 
