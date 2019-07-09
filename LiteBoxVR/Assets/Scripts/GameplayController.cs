@@ -37,9 +37,22 @@ public class GameplayController : MonoBehaviour
 
         public bool beenHit;
 
+        public float hitAccuracy;
+
         public GameObject NoteVisual;
 
         public float LerpProgress;
+
+
+        public float StartTime;
+
+        public float CanHitTime;
+
+        public float TargetTime;
+
+        public float ExpireTime;
+
+
 
     }
 
@@ -83,6 +96,14 @@ public class GameplayController : MonoBehaviour
 
             noteObjects[i].pad = noteDatas[i].pad;
 
+            noteObjects[i].StartTime = noteObjects[i].time + HitTargetTimeOffsetMS - NoteAppearTimeMS;
+
+            noteObjects[i].TargetTime = noteObjects[i].time + HitTargetTimeOffsetMS;
+
+            noteObjects[i].ExpireTime = noteObjects[i].time + HitTargetTimeOffsetMS + HitThresholdMS;
+
+            noteObjects[i].CanHitTime = noteObjects[i].time + HitTargetTimeOffsetMS - HitThresholdMS;
+
             //noteObjects[i].NoteVisual = GameObject.Instantiate(NotePrefab, new Vector3(noteObjects[i].pad*2, 0, 0), Quaternion.identity);
         }
 
@@ -110,16 +131,16 @@ public class GameplayController : MonoBehaviour
     {
         for (int i = 0; i < noteObjects.Length; i++)
         {
-            float thisNoteStartTime = noteObjects[i].time + HitTargetTimeOffsetMS - NoteAppearTimeMS;
+            //float thisNoteStartTime = noteObjects[i].time + HitTargetTimeOffsetMS - NoteAppearTimeMS;
 
-            float thisNoteExpireTime = noteObjects[i].time + HitTargetTimeOffsetMS + HitThresholdMS;
+            //float thisNoteExpireTime = noteObjects[i].time + HitTargetTimeOffsetMS + HitThresholdMS;
 
-            if (TimePassedMS > thisNoteStartTime && TimePassedMS < thisNoteExpireTime && noteObjects[i].born == false)
+            if (TimePassedMS > noteObjects[i].StartTime && TimePassedMS < noteObjects[i].ExpireTime && noteObjects[i].born == false)
             {
                 noteObjects[i].born = true;
                 ActiveNoteObjects.Add(noteObjects[i]);
             }
-            else if (TimePassedMS > thisNoteExpireTime)
+            else if (TimePassedMS > noteObjects[i].ExpireTime)
             {
                 noteObjects[i].expired = true;
                 ActiveNoteObjects.Remove(noteObjects[i]);
@@ -133,18 +154,11 @@ public class GameplayController : MonoBehaviour
 
     }
 
-    void CreateVisuals()
-    {
-
-
-
-    }
-
     void UpdateVisualsOld()
     {
         foreach(NoteObject n in ActiveNoteObjects)
         {
-            float thisNoteStartTime = n.time + HitTargetTimeOffsetMS - NoteAppearTimeMS;
+            /*float thisNoteStartTime = n.time + HitTargetTimeOffsetMS - NoteAppearTimeMS;
 
             float thisNoteTargetTime = n.time + HitTargetTimeOffsetMS;
 
@@ -157,18 +171,82 @@ public class GameplayController : MonoBehaviour
             n.LerpProgress = NoteLerpProgress;
 
             //n.NoteVisual.transform.position = Vector3.Lerp(new Vector3(n.pad*2, 0, 0), new Vector3(n.pad*2, 5, 0), NoteLerpProgress);
+            */
+            
 
+            n.LerpProgress = Mathf.InverseLerp(n.StartTime, n.ExpireTime, TimePassedMS);
 
         }
 
     }
 
-    public void PadContact(bool isContact, int padIndex)
+    public float PadHit(int padIndex)
     {
+        Debug.Log("Hit pad: " + padIndex);
+
+        List<NoteObject> notesOnPad = new List<NoteObject>();
+
+        foreach (NoteObject n in ActiveNoteObjects)
+        {
+            if(n.pad == padIndex && !n.beenHit)
+                notesOnPad.Add(n);
+        }
+
+        if (notesOnPad.Count == 0)
+            return -1;
+
+        NoteObject oldestNote = notesOnPad[0];
+
+        foreach (NoteObject n in notesOnPad)
+        {
+            if(n.time < oldestNote.time)
+            {
+                oldestNote = n;
+
+            }
+            
+        }
+
+        if (TimePassedMS < oldestNote.time + HitTargetTimeOffsetMS - HitThresholdMS)
+            return -1;
+
+        oldestNote.beenHit = true;
+
+        //ActiveNoteObjects.Remove(oldestNote);
+
+        float missTime;
+
+        if (TimePassedMS > oldestNote.TargetTime)
+        {
+            missTime = oldestNote.ExpireTime;
+
+        }
+        else
+        {
+            missTime = oldestNote.CanHitTime;
+
+        }
+
+
+        oldestNote.hitAccuracy = Mathf.InverseLerp(missTime, oldestNote.TargetTime, TimePassedMS);
+
+        Debug.Log("can hit time: " + oldestNote.CanHitTime);
+
+        Debug.Log("expire time: " + oldestNote.ExpireTime);
+
+        Debug.Log("miss time: " + missTime);
+
+        Debug.Log("target time: " + oldestNote.TargetTime);
+
+        Debug.Log("time passed: " + TimePassedMS);
+
+        Debug.Log("Hit Accuracy: " + oldestNote.hitAccuracy);
+
+        return oldestNote.hitAccuracy;
 
 
     }
-
+    /*
     public void PadHit(int padIndex)
     {
         Debug.Log("Hit pad: " + padIndex);
@@ -177,12 +255,18 @@ public class GameplayController : MonoBehaviour
 
         for (int i = 0; i < noteObjects.Length; i++)
         {
-            if(noteObjects[i].pad == padIndex && noteObjects[i].expired == false && noteObjects[i].beenHit == false && noteObjects[i].canHit == true)
+            if (noteObjects[i].pad == padIndex && noteObjects[i].expired == false && noteObjects[i].beenHit == false && noteObjects[i].canHit == true)
             {
                 notesOnPad.Add(i, noteObjects[i]);
 
             }
 
+        }
+
+        foreach (NoteObject n in ActiveNoteObjects)
+        {
+
+            notesOnPad.Add(i, noteObjects[i]);
         }
 
         if (notesOnPad.Count == 0)
@@ -194,7 +278,7 @@ public class GameplayController : MonoBehaviour
 
         foreach (KeyValuePair<int, NoteObject> n in notesOnPad)
         {
-            if(n.Value.time < oldestNote.Value.time || firstNote)
+            if (n.Value.time < oldestNote.Value.time || firstNote)
             {
                 oldestNote = n;
 
@@ -204,12 +288,32 @@ public class GameplayController : MonoBehaviour
 
         NoteHit(oldestNote.Key);
 
-        
-    }
+
+    }*/
 
     void NoteHit(int noteIndex)
     {
         noteObjects[noteIndex].beenHit = true;
+
+        float missTime = noteObjects[noteIndex].time + HitTargetTimeOffsetMS;
+
+        float thisNoteTargetTime = noteObjects[noteIndex].time + HitTargetTimeOffsetMS;
+
+        if (TimePassedMS < noteObjects[noteIndex].time + HitTargetTimeOffsetMS)
+        {
+            missTime += HitThresholdMS;
+
+        }
+        else
+        {
+            missTime -= HitThresholdMS;
+
+        }
+
+
+        noteObjects[noteIndex].hitAccuracy = Mathf.InverseLerp(missTime, thisNoteTargetTime, TimePassedMS);
+
+        Debug.Log("Hit Accuracy: " + noteObjects[noteIndex].hitAccuracy);
 
     }
 

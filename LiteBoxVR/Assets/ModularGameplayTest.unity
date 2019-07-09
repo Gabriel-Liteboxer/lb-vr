@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 675225825}
   m_Layer: 0
   m_Name: leftcont
-  m_TagString: Untagged
+  m_TagString: HandL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -217,86 +217,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8906812565328028002, guid: 9d5b81360ea6e95429bca4ec04f37a62,
-        type: 3}
-      propertyPath: LeftController
-      value: 
-      objectReference: {fileID: 675225825}
-    - target: {fileID: 8906812565328028002, guid: 9d5b81360ea6e95429bca4ec04f37a62,
-        type: 3}
-      propertyPath: RightController
-      value: 
-      objectReference: {fileID: 1400206573}
-    - target: {fileID: 8906812565328028002, guid: 9d5b81360ea6e95429bca4ec04f37a62,
-        type: 3}
-      propertyPath: PadSurfaceRadius
-      value: 0.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 8906812565328028002, guid: 9d5b81360ea6e95429bca4ec04f37a62,
-        type: 3}
-      propertyPath: PadSurfaceHeight
-      value: 0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 8906812565328028002, guid: 9d5b81360ea6e95429bca4ec04f37a62,
-        type: 3}
-      propertyPath: RingLEDCount
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 8906812565328028002, guid: 9d5b81360ea6e95429bca4ec04f37a62,
-        type: 3}
-      propertyPath: PerfectColor.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8906812565328028002, guid: 9d5b81360ea6e95429bca4ec04f37a62,
-        type: 3}
-      propertyPath: PerfectColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8906812565328028002, guid: 9d5b81360ea6e95429bca4ec04f37a62,
-        type: 3}
-      propertyPath: PerfectColor.b
-      value: 0.0791831
-      objectReference: {fileID: 0}
-    - target: {fileID: 8906812565328028002, guid: 9d5b81360ea6e95429bca4ec04f37a62,
-        type: 3}
-      propertyPath: MissColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8906812565328028002, guid: 9d5b81360ea6e95429bca4ec04f37a62,
-        type: 3}
-      propertyPath: MissColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8906812565328028002, guid: 9d5b81360ea6e95429bca4ec04f37a62,
-        type: 3}
-      propertyPath: MissColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8906812565328028002, guid: 9d5b81360ea6e95429bca4ec04f37a62,
-        type: 3}
-      propertyPath: MissColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8906812565328028002, guid: 9d5b81360ea6e95429bca4ec04f37a62,
-        type: 3}
-      propertyPath: PerfectColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8906812565328028002, guid: 9d5b81360ea6e95429bca4ec04f37a62,
-        type: 3}
-      propertyPath: BaseMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: 1a576896b42fe694b9279a5dd7223952, type: 2}
-    - target: {fileID: 8906812565328028002, guid: 9d5b81360ea6e95429bca4ec04f37a62,
-        type: 3}
-      propertyPath: ExpireRadius
-      value: 0.195
-      objectReference: {fileID: 0}
-    - target: {fileID: 8906812565328028002, guid: 9d5b81360ea6e95429bca4ec04f37a62,
-        type: 3}
-      propertyPath: EndRadius
-      value: 0.16
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d5b81360ea6e95429bca4ec04f37a62, type: 3}
 --- !u!1 &985071690
@@ -329,8 +249,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3690d08fce2fc4fa3c684841446234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeScale: 1
-  testjson: {fileID: 4900000, guid: 6c1cce94843346644a0233b89d8256fa, type: 3}
+  TimeScale: 0.1
+  testjson: {fileID: 4900000, guid: 89141fd887bf83e47aa0fcb96eb79da2, type: 3}
   NotePrefab: {fileID: 1796224752035847942, guid: 2e0f33c363ac5854682d439d973ded5d,
     type: 3}
   DataText: {fileID: 0}
@@ -374,7 +294,7 @@ GameObject:
   - component: {fileID: 1400206573}
   m_Layer: 0
   m_Name: rightcont
-  m_TagString: Untagged
+  m_TagString: HandR
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

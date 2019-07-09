@@ -30,9 +30,9 @@ public class PunchPadVisuals : TagModularity
 
     public float PadSurfaceHeight;
 
-    public Transform LeftController;
+    private Transform LeftController;
 
-    public Transform RightController;
+    private Transform RightController;
 
     public GameplayController GameCont;
 
@@ -66,6 +66,12 @@ public class PunchPadVisuals : TagModularity
     public void SetGameplayController(GameplayController newGameCont)
     {
         GameCont = newGameCont;
+
+    }
+
+    public void SetTargetRadius()
+    {
+        //GameCont.
 
     }
 
@@ -119,7 +125,7 @@ public class PunchPadVisuals : TagModularity
 
             float colorLerp = Mathf.InverseLerp(RingLEDCount, 0, i);
 
-            Vector3 newColorVector3 = Vector3.Lerp(new Vector3(MissColor.r, MissColor.g, MissColor.b), new Vector3(PerfectColor.r, PerfectColor.g, PerfectColor.b), colorLerp);
+            Vector3 newColorVector3 = Vector3.Lerp( new Vector3(PerfectColor.r, PerfectColor.g, PerfectColor.b), new Vector3(MissColor.r, MissColor.g, MissColor.b), colorLerp);
 
             Color newColor = new Color(newColorVector3.x, newColorVector3.y, newColorVector3.z);
 
@@ -149,7 +155,7 @@ public class PunchPadVisuals : TagModularity
                 RingLEDs[i].LEDs[c].GetComponentInChildren<Renderer>().material = RingLEDColors[c];
             }
 
-
+            StartCoroutine(TurnOffRing(i));
         }
 
 
@@ -168,7 +174,7 @@ public class PunchPadVisuals : TagModularity
             for (int i = 0; i < Notes.Length; i++)
             {
 
-                if (Notes[i].expired)
+                if (Notes[i].expired || Notes[i].beenHit)
                 {
                     NoteVisuals[i].SetActive(false);
 
@@ -242,8 +248,14 @@ public class PunchPadVisuals : TagModularity
         {
             if (!PadContact[padIndex, controllerIndex])
             {
-                NotifyOfHit(padIndex, 0);
+                //NotifyOfHit(padIndex, 0);
+                float HitAccuracy = GameCont.PadHit(padIndex);
 
+                if(HitAccuracy != -1)
+                {
+                    //StartCoroutine(LightUpRing(HitAccuracy, padIndex));
+                    TurnOnRing(HitAccuracy, padIndex);
+                }
             }
 
             PadContact[padIndex, controllerIndex] = true;
@@ -325,5 +337,47 @@ public class PunchPadVisuals : TagModularity
         //Debug.Log("In contact with " + "controller" + " on pad " + padIndex);
 
     }
+
+
+
+    IEnumerator LightUpRing(float lightValue, int padIndex)
+    {
+        for (int i = 0; i < RingLEDCount*lightValue; i++)
+        {
+            RingLEDs[padIndex].LEDs[i].SetActive(true);
+
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(.3f);
+
+        StartCoroutine(TurnOffRing(padIndex));
+
+    }
+
+    void TurnOnRing(float lightValue, int padIndex)
+    {
+        StopCoroutine(TurnOffRing(padIndex));
+
+        for (int i = 0; i < RingLEDCount * lightValue; i++)
+        {
+            RingLEDs[padIndex].LEDs[i].SetActive(true);
+        }
+        StartCoroutine(TurnOffRing(padIndex));
+    }
+
+    IEnumerator TurnOffRing(int padIndex)
+    {
+        yield return new WaitForSeconds(.1f);
+
+        for (int i = RingLEDCount-1; i >= 0; i--)
+        {
+            RingLEDs[padIndex].LEDs[i].SetActive(false);
+
+            yield return new WaitForSeconds(.03f);
+        }
+
+    }
+
 
 }
