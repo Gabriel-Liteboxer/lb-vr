@@ -10,6 +10,8 @@ public class ArmCalibration : MonoBehaviour
 
     private Vector3 armAngleOffset;
 
+    private Vector3 armScaleDefault;
+
     public TextMesh ArmOffsetText;
 
     static float armOffset = -0.04f; // old value -0.1714f
@@ -29,6 +31,8 @@ public class ArmCalibration : MonoBehaviour
         Arm.transform.parent = null;
 
         armAngleOffset = Arm.transform.eulerAngles - ArmParent.transform.eulerAngles;
+
+        armScaleDefault = Arm.transform.localScale;
     }
 
     private void Update()
@@ -62,11 +66,13 @@ public class ArmCalibration : MonoBehaviour
 
             //float dist = transform.position.y; worked pretty ok, just with some offset
 
-            Vector3 OldLocalPos = Arm.transform.localPosition;
+            //Vector3 OldLocalPos = Arm.transform.localPosition;
 
-            Arm.transform.position = new Vector3(Arm.transform.position.x, 0, Arm.transform.position.z);
+            //Arm.transform.position = new Vector3(Arm.transform.position.x, 0, Arm.transform.position.z);
 
-            float dist = Arm.transform.localPosition.z;
+            //float dist = Arm.transform.localPosition.z;
+
+            float dist = ArmParent.transform.position.y;
 
             if (dist < armDistance)
             {
@@ -77,6 +83,8 @@ public class ArmCalibration : MonoBehaviour
             //armDistance = dist;
 
             ArmOffsetText.text = "dist: " + dist + "\n arm offset: " + armOffset;
+
+
 
             //Arm.transform.localPosition = new Vector3(Arm.transform.localPosition.x, armDistance*armScale+armOffset*armScale, Arm.transform.localPosition.z);
 
@@ -101,6 +109,10 @@ public class ArmCalibration : MonoBehaviour
         Arm.transform.rotation = ArmParent.transform.rotation;
 
         Arm.transform.eulerAngles += armAngleOffset;
+
+        Arm.transform.position += Arm.transform.forward * -armDistance;
+
+        Arm.transform.localScale = armScaleDefault * armScale*0.8f;
 
     }
 
