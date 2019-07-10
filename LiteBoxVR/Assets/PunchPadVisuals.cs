@@ -73,10 +73,19 @@ public class PunchPadVisuals : TagModularity
     {
         //GameCont.
 
+        float travelDistance = ExpireRadius - StartRadius;
+
+        float timingDifference = GameCont.noteObjects[0].TargetTime / GameCont.noteObjects[0].ExpireTime;
+
+
+
+        EndRadius = (travelDistance * timingDifference);
     }
 
     public void SetNotes(ref GameplayController.NoteObject[] newNotes)
     {
+        SetTargetRadius();
+
         Notes = newNotes;
 
         NoteVisuals = new GameObject[Notes.Length];
