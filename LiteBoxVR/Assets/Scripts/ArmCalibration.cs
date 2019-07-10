@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArmCalibration : MonoBehaviour
+public class ArmCalibration : TagModularity
 {
     public GameObject Arm;
 
@@ -18,7 +18,11 @@ public class ArmCalibration : MonoBehaviour
 
     static float armDistance = 1;
 
+    static float startingDistance;
+
     static float armScale = 1;
+
+    static GameManager gameCont;
 
     bool armCalibrationActive;
 
@@ -33,15 +37,18 @@ public class ArmCalibration : MonoBehaviour
         armAngleOffset = Arm.transform.eulerAngles - ArmParent.transform.eulerAngles;
 
         armScaleDefault = Arm.transform.localScale;
+
+        gameCont = FindTaggedObject("GameController").GetComponent<GameManager>();
     }
 
     private void Update()
     {
-        //UpdateArmTransform();
+        if (gameCont.StateOfGame != GameManager.GameState.armCalibration)
+            return;
 
         if (OVRInput.GetDown(OVRInput.RawButton.Y))
         {
-            if (armCalibrationActive)
+            /*if (armCalibrationActive)
             {
                 armCalibrationActive = false;
                 //Arm.transform.parent = null;
@@ -49,9 +56,14 @@ public class ArmCalibration : MonoBehaviour
             else
             {
                 armCalibrationActive = true;
-                armDistance = 10f;
-                //Arm.transform.parent = gameObject;
-            }
+                armDistance = 1f;
+                startingDistance = ArmParent.transform.position.y;
+            }*/
+
+            gameCont.isArmCalibrated = false;
+            armCalibrationActive = true;
+            armDistance = 1f;
+            startingDistance = ArmParent.transform.position.y;
 
         }
 
@@ -61,17 +73,6 @@ public class ArmCalibration : MonoBehaviour
 
             armScale += OVRInput.Get(OVRInput.RawAxis2D.RThumbstick).y * Time.deltaTime / 10;
 
-
-            //float dist = Vector3.Distance(transform.position, new Vector3(transform.position.x, 0, transform.position.z));
-
-            //float dist = transform.position.y; worked pretty ok, just with some offset
-
-            //Vector3 OldLocalPos = Arm.transform.localPosition;
-
-            //Arm.transform.position = new Vector3(Arm.transform.position.x, 0, Arm.transform.position.z);
-
-            //float dist = Arm.transform.localPosition.z;
-
             float dist = ArmParent.transform.position.y;
 
             if (dist < armDistance)
@@ -79,20 +80,21 @@ public class ArmCalibration : MonoBehaviour
                 armDistance = dist;
 
             }
+            /*
+            if(dist > startingDistance / 2 && armDistance < startingDistance / 3)
+            {
+                armCalibrationActive = false;
+                
+            }*/
 
-            //armDistance = dist;
+            if (dist > armDistance + startingDistance/3)
+            {
+                //Application.Quit();
+                armCalibrationActive = false;
+                gameCont.isArmCalibrated = true;
+            }
 
-            ArmOffsetText.text = "dist: " + dist + "\n arm offset: " + armOffset;
-
-
-
-            //Arm.transform.localPosition = new Vector3(Arm.transform.localPosition.x, armDistance*armScale+armOffset*armScale, Arm.transform.localPosition.z);
-
-            //Arm.transform.localPosition = new Vector3(Arm.transform.localPosition.x, Arm.transform.localPosition.y, -armDistance + armOffset);
-
-            //Arm.transform.localPosition = new Vector3(OldLocalPos.x, OldLocalPos.y, armDistance);
-
-            //Arm.transform.localScale = new Vector3(armScale, armScale, armScale);
+            ArmOffsetText.text = "dist: " + dist;
         }
         
     }

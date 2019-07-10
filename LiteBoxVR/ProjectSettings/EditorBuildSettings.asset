@@ -6,12 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/VRBaseScene.unity
+    path: Assets/Scenes/VRBaseScene.unity
     guid: cc94c849d4648174a984d3c4057a6693
   - enabled: 1
-    path: Assets/EnvStudio.unity
+    path: Assets/Scenes/EnvStudio.unity
     guid: 5156c0d98a4d8754d88f7f0906bb62cf
   - enabled: 1
-    path: Assets/RevolvingMenuTest.unity
+    path: Assets/Scenes/RevolvingMenuTest.unity
     guid: cf49474b491f239418deca3b06d45ed6
+  - enabled: 1
+    path: Assets/Scenes/ModularGameplayTest.unity
+    guid: 51a27df093ef1c8429105479842a0d4a
+  - enabled: 1
+    path: Assets/Scenes/ArmCalibration.unity
+    guid: f4bf15bbc9f865047aabc86e3ffd500d
+  - enabled: 1
+    path: Assets/Scenes/BoardCalibration.unity
+    guid: 49c2c5224111c7043afdecb1b7d49a6e
   m_configObjects: {}

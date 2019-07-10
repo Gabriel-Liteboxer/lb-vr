@@ -9,8 +9,10 @@ public class GameManager : TagModularity
     public enum GameState
     {
         controllerModeSelect,
-        calibration,
+        armCalibration,
+        boardCalibration,
         gamemodeSelect,
+        environmentLoad,
         songSelect,
         gamePlay,
         gamePaused,
@@ -33,6 +35,7 @@ public class GameManager : TagModularity
 
         public string CallOnLoaded;
         public bool SetActiveOnLoaded;
+        public bool UnloadOnStateChange;
 
     }
 
@@ -40,6 +43,16 @@ public class GameManager : TagModularity
     public GameStateScene[] gameStateScene;
 
     Dictionary<GameState, GameStateScene> GameStateDict = new Dictionary<GameState, GameStateScene>();
+
+    public TextMesh GameStateText;
+
+    public bool isBoardTracked;
+
+    public bool isArmCalibrated;
+
+    Vector3 BoardPosition;
+
+    Vector3 BoardForward;
 
     // Start is called before the first frame update
     void Start()
@@ -52,22 +65,81 @@ public class GameManager : TagModularity
 
     }
 
-
-    private void Update()
+    public void SetBoardPosition(Vector3 bPos, Vector3 bFwd)
     {
-        if(OVRInput.GetDown(OVRInput.RawButton.A))
+        isBoardTracked = true;
+
+        BoardPosition = bPos;
+
+        BoardForward = bFwd;
+
+    }
+
+    public void ApplyBoardPosition()
+    {
+        FindTaggedObject("BoardObj").transform.position = BoardPosition + BoardForward*0.016f;
+
+        FindTaggedObject("BoardObj").transform.forward = BoardForward;
+
+        Debug.Log("Applied Board Position");
+    }
+
+    public void NextState()
+    {
+        do
         {
+            if (StateOfGame == GameState.armCalibration && !isArmCalibrated) { Debug.Log("Must Calibrate Arm"); break; }
+
+            if (StateOfGame == GameState.boardCalibration && !isBoardTracked) { Debug.Log("Must Calibrate Board"); break; }
+
             StateOfGame++;
 
-        }
-        else if (OVRInput.GetDown(OVRInput.RawButton.B))
-        {
-            StateOfGame--;
-
-        }
+        } while (false);
 
         LoadSceneFromGameState(StateOfGame);
 
+        foreach (GameStateScene gss in gameStateScene)
+        {
+            if (StateOfGame == gss.AssociatedState)
+                continue;
+
+            if (gss.UnloadOnStateChange && gss.SceneName != "" && gss.Loaded)
+            {
+                Debug.Log("Unloading scene " + gss.SceneName);
+
+                SceneManager.UnloadSceneAsync(gss.SceneName);
+                gss.Loaded = false;
+            }
+
+        }
+    }
+
+    public void LastState()
+    {
+        StateOfGame--;
+
+    }
+
+    private void Update()
+    {
+        if(OVRInput.GetDown(OVRInput.RawButton.A) || Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            NextState();
+           
+
+        }
+        else if (OVRInput.GetDown(OVRInput.RawButton.B) || Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            //LastState();
+
+        }
+
+
+
+        //LoadSceneFromGameState(StateOfGame);
+
+
+        GameStateText.text = StateOfGame.ToString();
     }
 
     public bool LoadSceneFromGameState(GameState aState)
@@ -81,8 +153,8 @@ public class GameManager : TagModularity
             }
             else if (GameStateDict[aState].Loaded)
             {
-                if(GameStateDict[aState].CallOnLoaded != "")
-                SendMessage(GameStateDict[aState].CallOnLoaded);
+                /*if(GameStateDict[aState].CallOnLoaded != "")
+                    SendMessage(GameStateDict[aState].CallOnLoaded);*/
 
             }
 
@@ -111,6 +183,9 @@ public class GameManager : TagModularity
 
         aScene.Loading = false;
         aScene.Loaded = true;
+
+        if (aScene.CallOnLoaded != "")
+            SendMessage(aScene.CallOnLoaded);
 
         Debug.Log("loaded " + aScene.SceneName);
     }

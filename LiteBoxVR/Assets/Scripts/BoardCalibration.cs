@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoardTracking : TagModularity
+public class BoardCalibration : TagModularity
 {
     public List<GameObject> AnchorPoints;
 
@@ -11,8 +11,6 @@ public class BoardTracking : TagModularity
     public Renderer BoardRender;
 
     public Transform FistEndpoint;
-
-    public Transform PlayerHead;
 
     GameManager gameCont;
 
@@ -35,13 +33,25 @@ public class BoardTracking : TagModularity
     {
         if (OVRInput.GetDown(OVRInput.RawButton.LIndexTrigger))
         {
+            if (AnchorPoints.Count == 3)
+            {
+                foreach (GameObject an in AnchorPoints)
+                {
+                    Destroy(an);
 
-            GameObject NewAnchorpoint = GameObject.Instantiate(AnchorPointPrefab, FistEndpoint.position, FistEndpoint.rotation);
+                }
+                AnchorPoints.Clear();
+            }
+            else
+            {
+                GameObject NewAnchorpoint = GameObject.Instantiate(AnchorPointPrefab, FistEndpoint.position, FistEndpoint.rotation);
 
 
-            AnchorPoints.Add(NewAnchorpoint);
+                AnchorPoints.Add(NewAnchorpoint);
 
+            }
 
+            
         }
 
         if (OVRInput.GetDown(OVRInput.RawButton.X))
@@ -54,26 +64,25 @@ public class BoardTracking : TagModularity
             AnchorPoints.Clear();
         }
 
-        if (AnchorPoints.Count > 2)
+        if (AnchorPoints.Count == 3)
         {
-            BoardRender.enabled = true;
-
-            Vector3 AveragePosition = Vector3.zero;
-
-            foreach (GameObject an in AnchorPoints)
-            {
-                AveragePosition += an.transform.position;
-
-            }
+            
             transform.position = (AnchorPoints[0].transform.position + AnchorPoints[1].transform.position) / 2;
 
             transform.forward = -GetNormal(AnchorPoints[0].transform.position, AnchorPoints[1].transform.position, AnchorPoints[2].transform.position);
 
-            if(GetFacing(PlayerHead.position) > 0)
+
+            gameCont.SetBoardPosition(transform.position, transform.forward);
+
+            
+            if(OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger))
             {
                 transform.forward = -transform.forward;
 
             }
+
+
+
 
         }
         else

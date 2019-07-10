@@ -186,6 +186,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 7469
     pad: 2
     expired: 1
@@ -195,6 +199,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 8752
     pad: 1
     expired: 1
@@ -204,6 +212,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 10756
     pad: 4
     expired: 1
@@ -213,6 +225,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 11449
     pad: 3
     expired: 1
@@ -222,6 +238,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 12751
     pad: 2
     expired: 1
@@ -231,6 +251,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 14052
     pad: 1
     expired: 1
@@ -240,6 +264,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 14665
     pad: 1
     expired: 1
@@ -249,6 +277,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 15315
     pad: 1
     expired: 1
@@ -258,6 +290,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 15995
     pad: 1
     expired: 1
@@ -267,6 +303,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 16653
     pad: 4
     expired: 1
@@ -276,6 +316,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 18002
     pad: 1
     expired: 1
@@ -285,6 +329,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 19287
     pad: 2
     expired: 1
@@ -294,6 +342,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 21281
     pad: 3
     expired: 1
@@ -303,6 +355,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 21953
     pad: 4
     expired: 1
@@ -312,6 +368,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 23303
     pad: 1
     expired: 1
@@ -321,6 +381,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 24652
     pad: 2
     expired: 1
@@ -330,6 +394,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 25237
     pad: 2
     expired: 1
@@ -339,6 +407,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 25906
     pad: 2
     expired: 1
@@ -348,6 +420,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 26536
     pad: 2
     expired: 1
@@ -357,6 +433,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 27265
     pad: 3
     expired: 1
@@ -366,6 +446,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 27911
     pad: 2
     expired: 1
@@ -375,6 +459,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 28562
     pad: 1
     expired: 1
@@ -384,6 +472,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 29212
     pad: 2
     expired: 1
@@ -393,6 +485,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 29885
     pad: 1
     expired: 1
@@ -402,6 +498,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 30556
     pad: 2
     expired: 1
@@ -411,6 +511,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 31207
     pad: 1
     expired: 1
@@ -420,6 +524,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 31858
     pad: 0
     expired: 1
@@ -429,6 +537,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 32529
     pad: 3
     expired: 1
@@ -438,6 +550,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 33229
     pad: 2
     expired: 1
@@ -447,6 +563,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 33879
     pad: 1
     expired: 1
@@ -456,6 +576,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 34530
     pad: 2
     expired: 1
@@ -465,6 +589,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 35208
     pad: 1
     expired: 1
@@ -474,6 +602,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 35852
     pad: 2
     expired: 1
@@ -483,6 +615,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 36525
     pad: 1
     expired: 1
@@ -492,6 +628,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 37161
     pad: 2
     expired: 1
@@ -501,6 +641,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 37779
     pad: 3
     expired: 1
@@ -510,6 +654,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 38463
     pad: 2
     expired: 1
@@ -519,6 +667,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 39080
     pad: 1
     expired: 1
@@ -528,6 +680,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 39752
     pad: 2
     expired: 1
@@ -537,6 +693,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 40403
     pad: 1
     expired: 1
@@ -546,6 +706,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 41054
     pad: 2
     expired: 1
@@ -555,6 +719,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 41727
     pad: 1
     expired: 1
@@ -564,6 +732,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 42410
     pad: 0
     expired: 1
@@ -573,6 +745,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 43105
     pad: 3
     expired: 1
@@ -582,6 +758,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 43706
     pad: 2
     expired: 1
@@ -591,6 +771,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 44400
     pad: 1
     expired: 1
@@ -600,6 +784,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 45072
     pad: 2
     expired: 1
@@ -609,6 +797,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 45724
     pad: 1
     expired: 1
@@ -618,6 +810,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 46373
     pad: 2
     expired: 1
@@ -627,6 +823,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 47024
     pad: 1
     expired: 1
@@ -636,6 +836,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 47653
     pad: 2
     expired: 1
@@ -645,6 +849,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 48264
     pad: 3
     expired: 1
@@ -654,6 +862,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 48916
     pad: 5
     expired: 1
@@ -663,6 +875,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 49566
     pad: 3
     expired: 1
@@ -672,6 +888,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 50827
     pad: 3
     expired: 1
@@ -681,6 +901,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 51454
     pad: 5
     expired: 1
@@ -690,6 +914,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 52073
     pad: 3
     expired: 1
@@ -699,6 +927,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 53310
     pad: 3
     expired: 1
@@ -708,6 +940,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 53982
     pad: 2
     expired: 1
@@ -717,6 +953,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 54633
     pad: 3
     expired: 1
@@ -726,6 +966,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 55862
     pad: 3
     expired: 1
@@ -735,6 +979,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 56532
     pad: 2
     expired: 1
@@ -744,6 +992,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 57145
     pad: 3
     expired: 1
@@ -753,6 +1005,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 58366
     pad: 4
     expired: 1
@@ -762,6 +1018,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 59042
     pad: 5
     expired: 1
@@ -771,6 +1031,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 59692
     pad: 4
     expired: 1
@@ -780,6 +1044,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 60915
     pad: 4
     expired: 1
@@ -789,6 +1057,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 61586
     pad: 5
     expired: 1
@@ -798,6 +1070,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 62214
     pad: 4
     expired: 1
@@ -807,6 +1083,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 63429
     pad: 3
     expired: 1
@@ -816,6 +1096,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 64058
     pad: 3
     expired: 1
@@ -825,6 +1109,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 64656
     pad: 4
     expired: 1
@@ -834,6 +1122,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 65285
     pad: 4
     expired: 1
@@ -843,6 +1135,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 65993
     pad: 1
     expired: 1
@@ -852,6 +1148,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 66391
     pad: 2
     expired: 1
@@ -861,6 +1161,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 66850
     pad: 1
     expired: 1
@@ -870,6 +1174,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 68408
     pad: 4
     expired: 1
@@ -879,6 +1187,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 69074
     pad: 1
     expired: 1
@@ -888,6 +1200,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 69780
     pad: 2
     expired: 1
@@ -897,6 +1213,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 70379
     pad: 1
     expired: 1
@@ -906,6 +1226,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 71027
     pad: 2
     expired: 1
@@ -915,6 +1239,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 71656
     pad: 1
     expired: 1
@@ -924,6 +1252,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 72307
     pad: 2
     expired: 1
@@ -933,6 +1265,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 72957
     pad: 0
     expired: 1
@@ -942,6 +1278,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 73630
     pad: 4
     expired: 1
@@ -951,6 +1291,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 74267
     pad: 1
     expired: 1
@@ -960,6 +1304,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 74960
     pad: 2
     expired: 1
@@ -969,6 +1317,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 75590
     pad: 1
     expired: 1
@@ -978,6 +1330,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 76262
     pad: 2
     expired: 1
@@ -987,6 +1343,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 76915
     pad: 1
     expired: 1
@@ -996,6 +1356,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 77591
     pad: 2
     expired: 1
@@ -1005,6 +1369,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 78214
     pad: 1
     expired: 1
@@ -1014,6 +1382,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 78866
     pad: 4
     expired: 1
@@ -1023,6 +1395,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 79511
     pad: 1
     expired: 1
@@ -1032,6 +1408,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 80161
     pad: 2
     expired: 1
@@ -1041,6 +1421,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 80812
     pad: 1
     expired: 1
@@ -1050,6 +1434,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 81441
     pad: 2
     expired: 1
@@ -1059,6 +1447,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 82092
     pad: 1
     expired: 1
@@ -1068,6 +1460,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 82743
     pad: 2
     expired: 1
@@ -1077,6 +1473,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 83419
     pad: 0
     expired: 1
@@ -1086,6 +1486,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 84066
     pad: 4
     expired: 1
@@ -1095,6 +1499,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 84701
     pad: 1
     expired: 1
@@ -1104,6 +1512,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 85441
     pad: 2
     expired: 1
@@ -1113,6 +1525,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 86045
     pad: 1
     expired: 1
@@ -1122,6 +1538,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 86717
     pad: 2
     expired: 1
@@ -1131,6 +1551,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 87346
     pad: 1
     expired: 1
@@ -1140,6 +1564,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 88046
     pad: 2
     expired: 1
@@ -1149,6 +1577,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 89288
     pad: 3
     expired: 1
@@ -1158,6 +1590,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 89917
     pad: 5
     expired: 1
@@ -1167,6 +1603,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 90568
     pad: 3
     expired: 1
@@ -1176,6 +1616,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 91795
     pad: 3
     expired: 1
@@ -1185,6 +1629,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 92445
     pad: 5
     expired: 1
@@ -1194,6 +1642,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 93119
     pad: 3
     expired: 1
@@ -1203,6 +1655,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 94376
     pad: 3
     expired: 1
@@ -1212,6 +1668,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 95027
     pad: 2
     expired: 1
@@ -1221,6 +1681,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 95678
     pad: 3
     expired: 1
@@ -1230,6 +1694,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 96883
     pad: 3
     expired: 1
@@ -1239,6 +1707,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 97555
     pad: 2
     expired: 1
@@ -1248,6 +1720,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 98227
     pad: 3
     expired: 1
@@ -1257,6 +1733,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 99418
     pad: 4
     expired: 1
@@ -1266,6 +1746,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 100058
     pad: 5
     expired: 1
@@ -1275,6 +1759,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 100762
     pad: 4
     expired: 1
@@ -1284,6 +1772,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 101962
     pad: 4
     expired: 1
@@ -1293,6 +1785,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 102612
     pad: 5
     expired: 1
@@ -1302,6 +1798,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 103222
     pad: 4
     expired: 1
@@ -1311,6 +1811,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 104455
     pad: 3
     expired: 1
@@ -1320,6 +1824,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 105085
     pad: 3
     expired: 1
@@ -1329,6 +1837,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 105719
     pad: 4
     expired: 1
@@ -1338,6 +1850,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 106310
     pad: 4
     expired: 1
@@ -1347,6 +1863,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 106960
     pad: 1
     expired: 1
@@ -1356,6 +1876,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 107413
     pad: 1
     expired: 1
@@ -1365,6 +1889,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   - time: 107874
     pad: 2
     expired: 1
@@ -1374,6 +1902,10 @@ MonoBehaviour:
     hitAccuracy: 0
     NoteVisual: {fileID: 0}
     LerpProgress: 1
+    StartTime: 0
+    CanHitTime: 0
+    TargetTime: 0
+    ExpireTime: 0
   StartRadius: 0.03
   EndRadius: 0.16
   ExpireRadius: 0.195
@@ -1392,11 +1924,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1696843256396007516}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 2e33c7567ad95744093fdb2612b08424,
-        type: 3}
-      propertyPath: m_Name
-      value: LiteboxerDeviceMesh
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 2e33c7567ad95744093fdb2612b08424,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1452,6 +1979,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 2e33c7567ad95744093fdb2612b08424,
+        type: 3}
+      propertyPath: m_Name
+      value: LiteboxerDeviceMesh
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e33c7567ad95744093fdb2612b08424, type: 3}
 --- !u!4 &444287333161550065 stripped
@@ -1467,16 +1999,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1696843256396007516}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 788c4b577b4bb0e41ab48a6216774cbe,
-        type: 3}
-      propertyPath: m_Name
-      value: PunchpadLow
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 788c4b577b4bb0e41ab48a6216774cbe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 788c4b577b4bb0e41ab48a6216774cbe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1552,6 +2074,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b724847e187455446b48181c4b768043, type: 2}
+    - target: {fileID: -927199367670048503, guid: 788c4b577b4bb0e41ab48a6216774cbe,
+        type: 3}
+      propertyPath: m_Name
+      value: PunchpadLow
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 788c4b577b4bb0e41ab48a6216774cbe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 788c4b577b4bb0e41ab48a6216774cbe, type: 3}
 --- !u!4 &1528034742621543370 stripped

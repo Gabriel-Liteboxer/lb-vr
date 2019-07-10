@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.54280555, g: 0.50586325, b: 0.523744, a: 1}
+  m_IndirectSpecularColor: {r: 0.54282165, g: 0.505874, b: 0.52375275, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1142,7 +1142,7 @@ Transform:
   m_GameObject: {fileID: 455514865}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.0419657, y: 1, z: 0.82285}
+  m_LocalScale: {x: 5, y: 1, z: 0.82285}
   m_Children: []
   m_Father: {fileID: 889914376}
   m_RootOrder: 0
@@ -1250,7 +1250,7 @@ GameObject:
   - component: {fileID: 564472580}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1283,18 +1283,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StateOfGame: 0
   gameStateScene:
+  - AssociatedState: 1
+    SceneName: ArmCalibration
+    Loading: 0
+    Loaded: 0
+    CallOnLoaded: 
+    SetActiveOnLoaded: 0
+    UnloadOnStateChange: 1
   - AssociatedState: 2
+    SceneName: BoardCalibration
+    Loading: 0
+    Loaded: 0
+    CallOnLoaded: 
+    SetActiveOnLoaded: 0
+    UnloadOnStateChange: 1
+  - AssociatedState: 4
     SceneName: EnvStudio
     Loading: 0
     Loaded: 0
     CallOnLoaded: 
     SetActiveOnLoaded: 1
-  - AssociatedState: 3
+    UnloadOnStateChange: 0
+  - AssociatedState: 5
     SceneName: RevolvingMenuTest
     Loading: 0
     Loaded: 0
     CallOnLoaded: 
     SetActiveOnLoaded: 0
+    UnloadOnStateChange: 1
+  - AssociatedState: 6
+    SceneName: ModularGameplayTest
+    Loading: 0
+    Loaded: 0
+    CallOnLoaded: ApplyBoardPosition
+    SetActiveOnLoaded: 0
+    UnloadOnStateChange: 0
+  GameStateText: {fileID: 889914377}
+  isBoardTracked: 0
+  isArmCalibrated: 0
 --- !u!1 &654211503
 GameObject:
   m_ObjectHideFlags: 0
@@ -1502,7 +1528,7 @@ GameObject:
   - component: {fileID: 889914378}
   - component: {fileID: 889914377}
   m_Layer: 0
-  m_Name: Score
+  m_Name: GameState
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1531,7 +1557,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 889914375}
-  m_Text: 'Score: 00'
+  m_Text: Game State
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -2131,7 +2157,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1363323042}
-  m_Text: build heck
+  m_Text: build now
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
