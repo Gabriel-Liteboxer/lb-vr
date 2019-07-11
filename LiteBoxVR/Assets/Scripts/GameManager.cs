@@ -77,7 +77,7 @@ public class GameManager : TagModularity
 
     public void ApplyBoardPosition()
     {
-        FindTaggedObject("BoardObj").transform.position = BoardPosition + BoardForward*0.016f;
+        FindTaggedObject("BoardObj").transform.position = BoardPosition /*+ BoardForward*0.016f*/;
 
         FindTaggedObject("BoardObj").transform.forward = BoardForward;
 

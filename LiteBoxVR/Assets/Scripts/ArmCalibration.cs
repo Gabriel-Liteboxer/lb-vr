@@ -16,7 +16,7 @@ public class ArmCalibration : TagModularity
 
     static float armOffset = -0.04f; // old value -0.1714f
 
-    static float armDistance = 1;
+    static float armDistance = 0.2f;
 
     static float startingDistance;
 
@@ -27,6 +27,8 @@ public class ArmCalibration : TagModularity
     bool armCalibrationActive;
 
     //OVRInput.GetLocalControllerAcceleration <-- this could be interesting
+
+    // new idea, press fists together to calibrate arm distance. use dot product to determine if the controllers are pointing at each other
 
     private void Start()
     {
@@ -62,7 +64,7 @@ public class ArmCalibration : TagModularity
 
             gameCont.isArmCalibrated = false;
             armCalibrationActive = true;
-            armDistance = 1f;
+            armDistance = 0.2f;
             startingDistance = ArmParent.transform.position.y;
 
         }

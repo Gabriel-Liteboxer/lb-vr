@@ -33,7 +33,7 @@ public class BoardCalibration : TagModularity
     {
         if (OVRInput.GetDown(OVRInput.RawButton.LIndexTrigger))
         {
-            if (AnchorPoints.Count == 3)
+            if (AnchorPoints.Count >= 3)
             {
                 foreach (GameObject an in AnchorPoints)
                 {
@@ -41,11 +41,12 @@ public class BoardCalibration : TagModularity
 
                 }
                 AnchorPoints.Clear();
+
+                transform.position = Vector3.zero;
             }
             else
             {
                 GameObject NewAnchorpoint = GameObject.Instantiate(AnchorPointPrefab, FistEndpoint.position, FistEndpoint.rotation);
-
 
                 AnchorPoints.Add(NewAnchorpoint);
 
@@ -64,31 +65,40 @@ public class BoardCalibration : TagModularity
             AnchorPoints.Clear();
         }
 
-        if (AnchorPoints.Count == 3)
+        if (AnchorPoints.Count >= 3)
         {
             
             transform.position = (AnchorPoints[0].transform.position + AnchorPoints[1].transform.position) / 2;
 
             transform.forward = -GetNormal(AnchorPoints[0].transform.position, AnchorPoints[1].transform.position, AnchorPoints[2].transform.position);
+            /*
+            if (GetFacing(FindTaggedObject("HandR").transform.position) > 0)
+            {
+                transform.forward = -transform.forward;
 
+            }*/
 
-            gameCont.SetBoardPosition(transform.position, transform.forward);
-
-            
-            if(OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger))
+            if (GetFacing(Camera.main.gameObject.transform.position) > 0)
             {
                 transform.forward = -transform.forward;
 
             }
 
+            gameCont.SetBoardPosition(transform.position, transform.forward);
 
+            foreach (GameObject an in AnchorPoints)
+            {
+                Destroy(an);
 
+            }
+            AnchorPoints.Clear();
 
         }
-        else
+
+        if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger))
         {
-            //BoardRender.enabled = false;
-            transform.position = Vector3.zero;
+            transform.forward = -transform.forward;
+
         }
 
 

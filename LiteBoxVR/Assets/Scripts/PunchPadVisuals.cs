@@ -16,6 +16,10 @@ public class PunchPadVisuals : TagModularity
 
     private GameObject[] NoteExpirepoint;
 
+    private GameObject[] PadContactIndicatorR;
+
+    private GameObject[] PadContactIndicatorL;
+
     private int NumberOfPads = 6;
     
     public bool[,] PadContact;
@@ -94,6 +98,10 @@ public class PunchPadVisuals : TagModularity
 
         NoteEndpoint = new GameObject[NumberOfPads];
 
+        PadContactIndicatorR = new GameObject[NumberOfPads];
+
+        PadContactIndicatorL = new GameObject[NumberOfPads];
+
         NoteExpirepoint = new GameObject[NumberOfPads];
 
         PadContact = new bool[NumberOfPads, 2];
@@ -106,6 +114,20 @@ public class PunchPadVisuals : TagModularity
         for (int i = 0; i < NoteStartpoint.Length; i++)
         {
             //PadContact[i] = false;
+
+            PadContactIndicatorR[i] = GameObject.Instantiate(NotePrefab, gameObject.transform);
+
+            PadContactIndicatorR[i].transform.localScale = PadContactIndicatorR[i].transform.localScale * 3;
+
+            PadContactIndicatorL[i] = GameObject.Instantiate(NotePrefab, gameObject.transform);
+
+            PadContactIndicatorL[i].transform.localScale = PadContactIndicatorL[i].transform.localScale * 3;
+
+            Material LindicatorMat = PadContactIndicatorL[i].GetComponentInChildren<Renderer>().material = new Material(BaseMaterial);
+
+            LindicatorMat.color = MissColor;
+
+
 
             NoteStartpoint[i] = GameObject.Instantiate(NotePrefab, gameObject.transform);
 
@@ -125,6 +147,10 @@ public class PunchPadVisuals : TagModularity
             NoteEndpoint[i].transform.localPosition = new Vector3(Origin.x + EndRadius * Mathf.Cos(angleRad), Origin.y + EndRadius * Mathf.Sin(angleRad), Origin.z);
 
             NoteExpirepoint[i].transform.localPosition = new Vector3(Origin.x + ExpireRadius * Mathf.Cos(angleRad), Origin.y + ExpireRadius * Mathf.Sin(angleRad), Origin.z);
+
+            PadContactIndicatorR[i].transform.localPosition = new Vector3(Origin.x + EndRadius * Mathf.Cos(angleRad) * 1.5f, Origin.y + EndRadius * Mathf.Sin(angleRad) * 1.5f, Origin.z);
+
+            PadContactIndicatorL[i].transform.localPosition = new Vector3(Origin.x + EndRadius * Mathf.Cos(angleRad) * 1.7f, Origin.y + EndRadius * Mathf.Sin(angleRad) * 1.7f, Origin.z);
         }
 
 
@@ -274,6 +300,17 @@ public class PunchPadVisuals : TagModularity
             PadContact[padIndex, controllerIndex] = false;
 
         }
+
+        PadContactIndicatorR[padIndex].SetActive(PadContact[padIndex, 1]);
+
+        PadContactIndicatorL[padIndex].SetActive(PadContact[padIndex, 0]);
+
+
+        /*
+        if (controllerIndex == 0)
+            PadContactIndicatorR[padIndex].SetActive();
+        else
+            PadContactIndicatorR[padIndex].SetActive();*/
 
     }
 
