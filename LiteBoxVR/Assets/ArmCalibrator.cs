@@ -26,6 +26,12 @@ public class ArmCalibrator : TagModularity
     {
         //SprRend = GetComponentInChildren<SpriteRenderer>();
 
+        FacingCircle.material.renderQueue = 4000;
+
+        //FacingCircle.material.shader.
+
+        //CalibratingCircle.material.renderQueue = 50000;
+
         circleSprites = Resources.LoadAll<Sprite>("CircleLoading");
 
         if(Camera.main != null)
@@ -101,7 +107,7 @@ public class ArmCalibrator : TagModularity
 
                 SetCalibration();
 
-
+                FacingCircle.sprite = null;
 
             }
 
@@ -119,6 +125,16 @@ public class ArmCalibrator : TagModularity
 
     void SetCalibration()
     {
+        ArmPositioning LarmPos = LeftHand.GetComponent<ArmPositioning>();
+
+        ArmPositioning RarmPos = RightHand.GetComponent<ArmPositioning>();
+
+        float dist = Vector3.Distance(RarmPos.ArmParent.position, LarmPos.ArmParent.position);
+
+        RarmPos.armDistance = dist / 2;
+
+        LarmPos.armDistance = dist / 2;
+
 
     }
 }
