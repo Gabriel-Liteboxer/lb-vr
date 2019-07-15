@@ -22,8 +22,12 @@ public class ArmCalibrator : TagModularity
 
     public float CalibrationSpeed;
 
+    private GameManager GameMgr;
+
     private void Start()
     {
+        GameMgr = FindTaggedObject("GameController").GetComponent<GameManager>();
+
         //SprRend = GetComponentInChildren<SpriteRenderer>();
 
         FacingCircle.material.renderQueue = 4000;
@@ -47,7 +51,10 @@ public class ArmCalibrator : TagModularity
         //RenderLoadingCircle(CircleLerp, FacingCircle);
 
         if (OVRInput.GetDown(OVRInput.RawButton.Y))
+        {
             CalibrationActive = true;
+            GameMgr.isArmCalibrated = false;
+        }
 
         if (RightHand == null || LeftHand == null)
             CalibrationActive = false;
@@ -135,6 +142,6 @@ public class ArmCalibrator : TagModularity
 
         LarmPos.armDistance = dist / 2;
 
-
+        GameMgr.isArmCalibrated = true;
     }
 }

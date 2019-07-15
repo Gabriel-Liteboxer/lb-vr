@@ -14,6 +14,8 @@ public class BoardCalibration : TagModularity
 
     GameManager gameCont;
 
+    public GuideWindow guide;
+
     // note: reasearch cross product to determine direction based on normal direction
 
     private void Start()
@@ -26,15 +28,20 @@ public class BoardCalibration : TagModularity
         transform.position = Vector3.zero;
 
         //PlayerHead = GameObject.Find("CenterEyeAnchor").transform;
+
+        guide.SetInfoScreen(0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (OVRInput.GetDown(OVRInput.RawButton.LIndexTrigger))
+        if (OVRInput.GetDown(OVRInput.RawButton.X))
         {
             if (AnchorPoints.Count >= 3)
             {
+                // disabling this for now
+
+                /*
                 foreach (GameObject an in AnchorPoints)
                 {
                     Destroy(an);
@@ -42,7 +49,7 @@ public class BoardCalibration : TagModularity
                 }
                 AnchorPoints.Clear();
 
-                transform.position = Vector3.zero;
+                transform.position = Vector3.zero;*/
             }
             else
             {
@@ -52,10 +59,11 @@ public class BoardCalibration : TagModularity
 
             }
 
+            guide.SetInfoScreen(AnchorPoints.Count);
             
         }
 
-        if (OVRInput.GetDown(OVRInput.RawButton.X))
+        if (OVRInput.GetDown(OVRInput.RawButton.Y))
         {
             foreach (GameObject an in AnchorPoints)
             {
@@ -63,6 +71,8 @@ public class BoardCalibration : TagModularity
 
             }
             AnchorPoints.Clear();
+
+            guide.SetInfoScreen(0);
         }
 
         if (AnchorPoints.Count >= 3)
