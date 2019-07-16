@@ -35,7 +35,13 @@ public class GuideWindow : MonoBehaviour
 
     public float LerpSpeed;
 
+    public float RotationDeadzone;
+
+    public float PositionDeadzone;
+
     private Transform targetTransform;
+
+
 
     private void Start()
     {
@@ -44,6 +50,8 @@ public class GuideWindow : MonoBehaviour
         testScreen = new bool[InfoScreens.Length];
 
         targetTransform = new GameObject().transform;
+
+        SetInfoScreen(0);
     }
 
     private void Update()
@@ -64,9 +72,12 @@ public class GuideWindow : MonoBehaviour
 
     private void LateUpdate()
     {
-        targetTransform.position = playerHead.position - new Vector3(0, playerHead.position.y / 2, 0);
+        if (Vector3.SqrMagnitude(targetTransform.position - playerHead.position) > PositionDeadzone * PositionDeadzone)
+            targetTransform.position = playerHead.position - new Vector3(0, playerHead.position.y * 0.2f, 0);
 
-        targetTransform.eulerAngles = new Vector3(0, playerHead.eulerAngles.y, 0);
+
+        if (Mathf.Abs(targetTransform.eulerAngles.y - playerHead.eulerAngles.y) > RotationDeadzone)
+            targetTransform.eulerAngles = new Vector3(0, playerHead.eulerAngles.y, 0);
         
 
         transform.position = Vector3.Lerp(transform.position, targetTransform.position+transform.forward*RadiusFromPlayer, Time.deltaTime*LerpSpeed);

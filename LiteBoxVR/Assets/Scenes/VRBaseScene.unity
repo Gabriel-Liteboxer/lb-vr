@@ -1283,40 +1283,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StateOfGame: 0
   gameStateScene:
-  - AssociatedState: 1
+  - AssociatedState: 3
     SceneName: ArmCalibration
     Loading: 0
     Loaded: 0
     CallOnLoaded: 
     SetActiveOnLoaded: 0
     UnloadOnStateChange: 1
-  - AssociatedState: 2
+  - AssociatedState: 4
     SceneName: BoardCalibration
     Loading: 0
     Loaded: 0
     CallOnLoaded: 
     SetActiveOnLoaded: 0
     UnloadOnStateChange: 1
-  - AssociatedState: 4
+  - AssociatedState: 6
     SceneName: EnvStudio
     Loading: 0
     Loaded: 0
     CallOnLoaded: 
     SetActiveOnLoaded: 1
     UnloadOnStateChange: 0
-  - AssociatedState: 5
+  - AssociatedState: 7
     SceneName: RevolvingMenuTest
     Loading: 0
     Loaded: 0
     CallOnLoaded: 
     SetActiveOnLoaded: 0
     UnloadOnStateChange: 1
-  - AssociatedState: 6
+  - AssociatedState: 8
     SceneName: ModularGameplayTest
     Loading: 0
     Loaded: 0
     CallOnLoaded: ApplyBoardPosition
     SetActiveOnLoaded: 0
+    UnloadOnStateChange: 0
+  - AssociatedState: 1
+    SceneName: Env_Setup
+    Loading: 0
+    Loaded: 0
+    CallOnLoaded: 
+    SetActiveOnLoaded: 1
     UnloadOnStateChange: 0
   GameStateText: {fileID: 889914377}
   isBoardTracked: 0
@@ -2765,7 +2772,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1812121382}
-  m_Text: Distance
+  m_Text: 
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1

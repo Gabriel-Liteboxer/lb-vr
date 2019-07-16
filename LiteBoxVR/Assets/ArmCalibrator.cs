@@ -24,6 +24,8 @@ public class ArmCalibrator : TagModularity
 
     private GameManager GameMgr;
 
+    public GuideWindow guideWindow;
+
     private void Start()
     {
         GameMgr = FindTaggedObject("GameController").GetComponent<GameManager>();
@@ -106,6 +108,8 @@ public class ArmCalibrator : TagModularity
         {
             CalibrationTimer += CalibrationSpeed * Time.deltaTime;
 
+            guideWindow.SetInfoScreen(2);
+
             if (CalibrationTimer >= 1)
             {
                 CalibrationActive = false;
@@ -116,6 +120,7 @@ public class ArmCalibrator : TagModularity
 
                 FacingCircle.sprite = null;
 
+                guideWindow.SetInfoScreen(3);
             }
 
             RenderLoadingCircle(CalibrationTimer, CalibratingCircle);
@@ -124,6 +129,8 @@ public class ArmCalibrator : TagModularity
         {
             CalibrationTimer = 0;
             CalibratingCircle.sprite = null;
+
+            guideWindow.SetInfoScreen(1);
         }
 
         RenderLoadingCircle(FacingValue, FacingCircle);

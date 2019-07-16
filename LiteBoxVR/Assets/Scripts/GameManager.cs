@@ -8,6 +8,8 @@ public class GameManager : TagModularity
     
     public enum GameState
     {
+        defaultState,
+        setupEnvironmentLoad,
         controllerModeSelect,
         armCalibration,
         boardCalibration,
