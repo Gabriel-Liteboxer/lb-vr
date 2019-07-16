@@ -1325,6 +1325,13 @@ MonoBehaviour:
     CallOnLoaded: 
     SetActiveOnLoaded: 1
     UnloadOnStateChange: 0
+  - AssociatedState: 2
+    SceneName: ControllerSelection
+    Loading: 0
+    Loaded: 0
+    CallOnLoaded: 
+    SetActiveOnLoaded: 0
+    UnloadOnStateChange: 1
   GameStateText: {fileID: 889914377}
   isBoardTracked: 0
   isArmCalibrated: 0

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TouchButton : TagModularity
 {
@@ -33,17 +34,27 @@ public class TouchButton : TagModularity
 
     public float CallFunctionTimerSpeed = 1;
 
-    public string FunctionToCall;
+    private Transform RightHand;
+
+    private Transform LeftHand;
+
+    [Header("Function invoked by the button")]
+
+    public UnityEvent FunctionToCall;
 
     private void Start()
     {
         circleSprites = Resources.LoadAll<Sprite>("CircleLoading");
+
+        RightHand = FindTaggedObject("HandR").transform;
+
+        LeftHand = FindTaggedObject("HandL").transform;
     }
 
     void Update()
     {
-        if ((FindTaggedObject("HandR").transform.position - transform.position).sqrMagnitude < HoverDistance * HoverDistance
-            || (FindTaggedObject("HandL").transform.position - transform.position).sqrMagnitude < HoverDistance * HoverDistance)
+        if ((RightHand.position - transform.position).sqrMagnitude < HoverDistance * HoverDistance
+            || (LeftHand.position - transform.position).sqrMagnitude < HoverDistance * HoverDistance)
             isHovering = true;
         else
             isHovering = false;
@@ -73,8 +84,8 @@ public class TouchButton : TagModularity
             if(CallFunctionTimer >= 1)
             {
                 Debug.Log("called function " + FunctionToCall);
-                //call function
 
+                FunctionToCall.Invoke();
             }
         }
         else
