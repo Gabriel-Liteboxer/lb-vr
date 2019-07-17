@@ -1301,7 +1301,7 @@ MonoBehaviour:
     SceneName: EnvStudio
     Loading: 0
     Loaded: 0
-    CallOnLoaded: 
+    CallOnLoaded: NextState
     SetActiveOnLoaded: 1
     UnloadOnStateChange: 0
   - AssociatedState: 7
@@ -1322,7 +1322,7 @@ MonoBehaviour:
     SceneName: Env_Setup
     Loading: 0
     Loaded: 0
-    CallOnLoaded: 
+    CallOnLoaded: NextState
     SetActiveOnLoaded: 1
     UnloadOnStateChange: 0
   - AssociatedState: 2
@@ -1335,6 +1335,7 @@ MonoBehaviour:
   GameStateText: {fileID: 889914377}
   isBoardTracked: 0
   isArmCalibrated: 0
+  UsingWristStraps: 0
 --- !u!1 &654211503
 GameObject:
   m_ObjectHideFlags: 0

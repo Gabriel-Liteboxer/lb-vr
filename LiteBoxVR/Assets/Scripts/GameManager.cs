@@ -52,6 +52,10 @@ public class GameManager : TagModularity
 
     public bool isArmCalibrated;
 
+    private bool controllerModeSelected;
+
+    public bool UsingWristStraps;
+
     Vector3 BoardPosition;
 
     Vector3 BoardForward;
@@ -64,7 +68,7 @@ public class GameManager : TagModularity
             GameStateDict.Add(gss.AssociatedState, gss);
 
         }
-
+        NextState();
     }
 
     public void SetBoardPosition(Vector3 bPos, Vector3 bFwd)
@@ -93,6 +97,8 @@ public class GameManager : TagModularity
             if (StateOfGame == GameState.armCalibration && !isArmCalibrated) { Debug.Log("Must Calibrate Arm"); break; }
 
             if (StateOfGame == GameState.boardCalibration && !isBoardTracked) { Debug.Log("Must Calibrate Board"); break; }
+
+            if (StateOfGame == GameState.controllerModeSelect && !controllerModeSelected) { Debug.Log("Must SelectControllerMode"); break; }
 
             StateOfGame++;
 
@@ -190,5 +196,11 @@ public class GameManager : TagModularity
             SendMessage(aScene.CallOnLoaded);
 
         Debug.Log("loaded " + aScene.SceneName);
+    }
+
+    public void SetControllerMode(bool wristStraps)
+    {
+        UsingWristStraps = wristStraps;
+        controllerModeSelected = true;
     }
 }
