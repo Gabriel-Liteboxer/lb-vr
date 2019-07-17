@@ -37,8 +37,22 @@ public class RevolvingMenu : TagModularity
         public Renderer AlbumMat;
     }
 
+    private Transform PlayerHead;
+
+    private GameManager gameMgr;
+
+    public float UpdatePositionDistance = 1;
+
+    Transform PlayerPositionTracker;
+
     private void Start()
     {
+        PlayerHead = Camera.main.gameObject.transform;
+
+        PlayerPositionTracker = new GameObject().transform;
+
+        //gameMgr = FindTaggedObject("GameController").GetComponent<GameManager>();
+
         RightHand = FindTaggedObject("HandR");
 
         LeftHand = FindTaggedObject("HandL");
@@ -49,7 +63,7 @@ public class RevolvingMenu : TagModularity
         {
             AlbumTiles[i] = new Album();
 
-            AlbumTiles[i].AlbumObject = GameObject.Instantiate(AlbumPrefab);
+            AlbumTiles[i].AlbumObject = GameObject.Instantiate(AlbumPrefab, transform);
 
             Material NewAlbumCover = new Material(AlbumCoverMat);
 
@@ -92,8 +106,8 @@ public class RevolvingMenu : TagModularity
 
         int currentlySelected = (int)(MenuSlider + 0.5f);
 
-        if(!leftHandSliderContact)
-            MenuSlider = Mathf.Lerp(MenuSlider, currentlySelected, Time.deltaTime*5);
+        //if(!leftHandSliderContact)
+            //MenuSlider = Mathf.Lerp(MenuSlider, currentlySelected, Time.deltaTime*5);
 
         float selectedAngle = startangle * (Mathf.PI / 180f);
 
@@ -126,6 +140,17 @@ public class RevolvingMenu : TagModularity
             AlbumTiles[i].AlbumObject.transform.LookAt(transform);
 
             AlbumTiles[i].AlbumObject.transform.localScale = Vector3.Lerp(AlbumTiles[i].AlbumObject.transform.localScale, Vector3.one * ScaleValue, Time.deltaTime * 5);
+
+            if (transparency == 0)
+            {
+                AlbumTiles[i].AlbumMat.enabled = false;
+
+            }
+            else if (!AlbumTiles[i].AlbumMat.enabled)
+            {
+                AlbumTiles[i].AlbumMat.enabled = true;
+
+            }
         }
 
         AlbumTiles[currentlySelected].AlbumObject.transform.localPosition += AlbumTiles[currentlySelected].AlbumObject.transform.forward * 0.08f;
@@ -169,6 +194,21 @@ public class RevolvingMenu : TagModularity
             return true;
 
         return false;
+    }
+
+    private void LateUpdate()
+    {
+        if (Vector3.Distance(transform.position, PlayerHead.position) > UpdatePositionDistance * UpdatePositionDistance)
+            PlayerPositionTracker.position = PlayerHead.position;
+
+        transform.position = Vector3.Lerp(transform.position, PlayerPositionTracker.position, Time.deltaTime*2);
+
+    }
+
+    public void PlaySong ()
+    {
+        //gameMgr.
+
     }
 
 }

@@ -71,7 +71,7 @@ public class TouchButton : TagModularity
                 targetScale = b.hoverScale;
             }
 
-            b.buttonTransfrom.localPosition = new Vector3(0, 0, Mathf.Lerp(b.buttonTransfrom.position.z, targetPos, Time.deltaTime * LerpSpeed));
+            b.buttonTransfrom.localPosition = new Vector3(0, 0, Mathf.Lerp(b.buttonTransfrom.localPosition.z, targetPos, Time.deltaTime * LerpSpeed));
 
             b.buttonTransfrom.localScale = Vector3.one * Mathf.Lerp(b.buttonTransfrom.localScale.z, targetScale, Time.deltaTime * LerpSpeed);
 

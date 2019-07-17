@@ -7,7 +7,7 @@
 
 		Category{
 			Tags {"Queue" = "Transparent" "IgnoreProjector" = "True"}
-			ZWrite Off
+			ZWrite On
 			Blend SrcAlpha OneMinusSrcAlpha
 
 			SubShader {Pass {
