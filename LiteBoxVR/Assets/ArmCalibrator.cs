@@ -46,6 +46,12 @@ public class ArmCalibrator : TagModularity
         LeftHand = FindTaggedObject("HandL").transform;
 
         RightHand = FindTaggedObject("HandR").transform;
+
+        if (!GameMgr.UsingWristStraps)
+        {
+            GameMgr.isArmCalibrated = true;
+            GameMgr.NextState();
+        }
     }
 
     void Update()

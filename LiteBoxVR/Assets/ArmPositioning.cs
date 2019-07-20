@@ -22,6 +22,8 @@ public class ArmPositioning : TagModularity
 
     static GameManager gameCont;
 
+    public Transform ParentController;
+
     // new idea, press fists together to calibrate arm distance. use dot product to determine if the controllers are pointing at each other
 
     private void Start()
@@ -39,7 +41,10 @@ public class ArmPositioning : TagModularity
 
     private void LateUpdate()
     {
-        UpdateArmTransform();
+        if (gameCont.UsingWristStraps)
+            UpdateArmTransform();
+        else
+            UpdateHandHeldTransform();
     }
 
     private void UpdateArmTransform()
@@ -54,6 +59,13 @@ public class ArmPositioning : TagModularity
 
         transform.localScale = armScaleDefault * armScale * 0.8f;
 
+    }
+
+    private void UpdateHandHeldTransform()
+    {
+        transform.position = ParentController.position;
+
+        transform.rotation = ParentController.rotation;
     }
 
 }

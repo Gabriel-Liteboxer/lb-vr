@@ -41,6 +41,12 @@ public class ArmCalibration : TagModularity
         armScaleDefault = Arm.transform.localScale;
 
         gameCont = FindTaggedObject("GameController").GetComponent<GameManager>();
+
+        if (!gameCont.UsingWristStraps)
+        {
+            gameCont.isArmCalibrated = true;
+            gameCont.NextState();
+        }
     }
 
     private void Update()

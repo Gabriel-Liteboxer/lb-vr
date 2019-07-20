@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.54280555, g: 0.50586325, b: 0.523744, a: 1}
+  m_IndirectSpecularColor: {r: 0.54439366, g: 0.5069915, b: 0.5242561, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -212,6 +212,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: HandL
       objectReference: {fileID: 0}
+    - target: {fileID: 1388734035458006747, guid: 1706114a4ad8b954c98efb13d4b395ad,
+        type: 3}
+      propertyPath: ParentController
+      value: 
+      objectReference: {fileID: 678225790}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1706114a4ad8b954c98efb13d4b395ad, type: 3}
 --- !u!4 &24758692 stripped
@@ -3270,6 +3275,11 @@ PrefabInstance:
       propertyPath: ArmOffsetText
       value: 
       objectReference: {fileID: 1812121383}
+    - target: {fileID: 1388734035458006747, guid: 1706114a4ad8b954c98efb13d4b395ad,
+        type: 3}
+      propertyPath: ParentController
+      value: 
+      objectReference: {fileID: 1212613231}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1706114a4ad8b954c98efb13d4b395ad, type: 3}
 --- !u!4 &5006512735673746162 stripped
