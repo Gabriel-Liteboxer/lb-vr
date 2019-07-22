@@ -13,10 +13,10 @@ public class testinher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Movement();
     }
 
-     struct OnDoThis
+    public virtual void Movement()
     {
 
 

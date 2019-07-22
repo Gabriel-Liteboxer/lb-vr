@@ -130,13 +130,13 @@ public class GameManager : TagModularity
 
     private void Update()
     {
-        if(OVRInput.GetDown(OVRInput.RawButton.A) || Input.GetKeyDown(KeyCode.RightArrow))
+        if(OVRInput.GetDown(OVRInput.RawButton.A) || Input.GetKeyDown(KeyCode.A))
         {
             NextState();
            
 
         }
-        else if (OVRInput.GetDown(OVRInput.RawButton.B) || Input.GetKeyDown(KeyCode.LeftArrow))
+        else if (OVRInput.GetDown(OVRInput.RawButton.B) || Input.GetKeyDown(KeyCode.B))
         {
             //LastState();
 
@@ -202,5 +202,15 @@ public class GameManager : TagModularity
     {
         UsingWristStraps = wristStraps;
         controllerModeSelected = true;
+    }
+
+    void CheckWristStraps()
+    {
+        if (!UsingWristStraps)
+        {
+            isArmCalibrated = true;
+            NextState();
+        }
+
     }
 }

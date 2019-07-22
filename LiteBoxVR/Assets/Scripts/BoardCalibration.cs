@@ -16,6 +16,8 @@ public class BoardCalibration : TagModularity
 
     public GuideWindow guide;
 
+    public bool calibrationActive = true;
+
     // note: reasearch cross product to determine direction based on normal direction
 
     private void Start()
@@ -35,7 +37,7 @@ public class BoardCalibration : TagModularity
     // Update is called once per frame
     void Update()
     {
-        if (OVRInput.GetDown(OVRInput.RawButton.X))
+        if (OVRInput.GetDown(OVRInput.RawButton.X) && calibrationActive)
         {
             if (AnchorPoints.Count >= 3)
             {
@@ -65,6 +67,7 @@ public class BoardCalibration : TagModularity
 
         if (OVRInput.GetDown(OVRInput.RawButton.Y))
         {
+            calibrationActive = true;
             foreach (GameObject an in AnchorPoints)
             {
                 Destroy(an);
@@ -77,7 +80,8 @@ public class BoardCalibration : TagModularity
 
         if (AnchorPoints.Count >= 3)
         {
-            
+            calibrationActive = false;
+
             transform.position = (AnchorPoints[0].transform.position + AnchorPoints[1].transform.position) / 2;
 
             transform.forward = -GetNormal(AnchorPoints[0].transform.position, AnchorPoints[1].transform.position, AnchorPoints[2].transform.position);

@@ -17,15 +17,22 @@ public class controllerModeSelect : TagModularity
 
     void Update()
     {
-        if (OVRInput.GetDown(OVRInput.RawButton.Y))
+        if (OVRInput.GetDown(OVRInput.RawButton.Y) || Input.GetKeyDown(KeyCode.Y))
         {
             gameMgr.SetControllerMode(true);
             guide.SetInfoScreen(2);
+
+            FindTaggedObject("HandR").GetComponent<ArmPositioning>().ChangeControllerMode();
+            FindTaggedObject("HandL").GetComponent<ArmPositioning>().ChangeControllerMode();
         }
-        else if(OVRInput.GetDown(OVRInput.RawButton.X))
+        else if(OVRInput.GetDown(OVRInput.RawButton.X) || Input.GetKeyDown(KeyCode.X))
         {
             gameMgr.SetControllerMode(false);
             guide.SetInfoScreen(1);
+
+            FindTaggedObject("HandR").GetComponent<ArmPositioning>().ChangeControllerMode();
+            FindTaggedObject("HandL").GetComponent<ArmPositioning>().ChangeControllerMode();
+
         }
     }
 }

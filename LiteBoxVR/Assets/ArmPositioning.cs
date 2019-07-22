@@ -24,6 +24,10 @@ public class ArmPositioning : TagModularity
 
     public Transform ParentController;
 
+    public GameObject ControllerModel;
+
+    public GameObject MountModel;
+
     // new idea, press fists together to calibrate arm distance. use dot product to determine if the controllers are pointing at each other
 
     private void Start()
@@ -37,6 +41,8 @@ public class ArmPositioning : TagModularity
         armScaleDefault = transform.localScale;
 
         gameCont = FindTaggedObject("GameController").GetComponent<GameManager>();
+
+        ChangeControllerMode();
     }
 
     private void LateUpdate()
@@ -65,7 +71,23 @@ public class ArmPositioning : TagModularity
     {
         transform.position = ParentController.position;
 
-        transform.rotation = ParentController.rotation;
+        transform.rotation = ParentController.rotation * Quaternion.Euler(new Vector3(180, 0, 0));
+
+        //transform.localEulerAngles += new Vector3(180, 0, 0); 
+    }
+
+    public void ChangeControllerMode()
+    {
+        if (gameCont.UsingWristStraps)
+        {
+            ControllerModel.SetActive(true);
+            MountModel.SetActive(true);
+        }
+        else
+        {
+            ControllerModel.SetActive(false);
+            MountModel.SetActive(false);
+        }
     }
 
 }
