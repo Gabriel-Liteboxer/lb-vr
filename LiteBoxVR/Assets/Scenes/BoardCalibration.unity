@@ -172,6 +172,7 @@ MonoBehaviour:
   BoardRender: {fileID: 0}
   FistEndpoint: {fileID: 0}
   guide: {fileID: 607904081}
+  calibrationActive: 1
 --- !u!33 &41456939
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -429,7 +430,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1881764778
 Light:
   m_ObjectHideFlags: 0

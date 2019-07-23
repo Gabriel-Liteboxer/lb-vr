@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/VRBaseScene_Old.unity
+    path: Assets/Scenes/VRBaseScene.unity
     guid: 0d21d870954d8d246a606543b36cf910
   - enabled: 1
     path: Assets/Scenes/EnvStudio.unity
@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ControllerSelection.unity
     guid: 1f32a8e17bf5caa4d97460635192d710
+  - enabled: 1
+    path: Assets/Scenes/BoardPlacement.unity
+    guid: 0f823670b9e1a18459c42acdf9705252
   m_configObjects: {}
