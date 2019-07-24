@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class GameManager : TagModularity
 {
@@ -67,6 +68,10 @@ public class GameManager : TagModularity
     Vector3 BoardPosition;
 
     Vector3 BoardForward;
+
+    [System.Serializable]
+    public class MyEvent : UnityEvent<bool> { }
+    public MyEvent myEvent;
 
     // Start is called before the first frame update
     void Start()

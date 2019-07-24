@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Assets\ArmCalibrator.cs" />
     <Compile Include="Assets\ArmPositioning.cs" />
+    <Compile Include="Assets\BoardPlacement.cs" />
     <Compile Include="Assets\controllerModeSelect.cs" />
     <Compile Include="Assets\GuideWindow.cs" />
     <Compile Include="Assets\Oculus\AudioManager\Scenes\Scripts\TestScript.cs" />

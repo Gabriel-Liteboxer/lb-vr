@@ -1378,8 +1378,25 @@ MonoBehaviour:
     LastGameState: 2
   GameStateText: {fileID: 889914377}
   isBoardTracked: 0
+  isBoardPlaced: 0
   isArmCalibrated: 0
   UsingWristStraps: 0
+  myEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 564472578}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: GameManager+MyEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &654211503
 GameObject:
   m_ObjectHideFlags: 0
