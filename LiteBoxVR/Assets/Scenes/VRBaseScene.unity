@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5428217, g: 0.50587404, b: 0.5237529, a: 1}
+  m_IndirectSpecularColor: {r: 0.54282165, g: 0.505874, b: 0.52375275, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1376,9 +1376,18 @@ MonoBehaviour:
     UnloadOnStateChange: 1
     NextGameState: 6
     LastGameState: 2
+  - AssociatedState: 10
+    SceneName: OldDemo
+    Loading: 0
+    Loaded: 0
+    CallOnLoaded: 
+    SetActiveOnLoaded: 0
+    UnloadOnStateChange: 0
+    NextGameState: 6
+    LastGameState: 2
   GameStateText: {fileID: 889914377}
   isBoardTracked: 0
-  isBoardPlaced: 0
+  isBoardPlaced: 1
   isArmCalibrated: 0
   UsingWristStraps: 0
   myEvent:

@@ -51,6 +51,10 @@ public class ArmPositioning : TagModularity
             UpdateArmTransform();
         else
             UpdateHandHeldTransform();
+
+        armScale += OVRInput.Get(OVRInput.RawAxis2D.LThumbstick).y/10;
+
+        transform.localScale = armScaleDefault * armScale;
     }
 
     private void UpdateArmTransform()
@@ -63,7 +67,7 @@ public class ArmPositioning : TagModularity
 
         transform.position += transform.forward * -armDistance;
 
-        transform.localScale = armScaleDefault * armScale * 0.8f;
+        //transform.localScale = armScaleDefault * armScale;
 
     }
 
@@ -72,6 +76,8 @@ public class ArmPositioning : TagModularity
         transform.position = ParentController.position;
 
         transform.rotation = ParentController.rotation * Quaternion.Euler(new Vector3(180, 0, 0));
+
+        //transform.localScale = armScaleDefault * armScale;
 
         //transform.localEulerAngles += new Vector3(180, 0, 0); 
     }

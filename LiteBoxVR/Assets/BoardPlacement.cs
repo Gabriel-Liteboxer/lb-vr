@@ -22,6 +22,13 @@ public class BoardPlacement : TagModularity
 
     bool GrabbingCube_Left;
 
+    GameManager GameMgr;
+
+    private void Start()
+    {
+        //GameMgr.
+    }
+
     void Update()
     {
         Vector3 LeftControllerLocalPos = transform.InverseTransformPoint(FindTaggedObject("HandL").transform.position);
@@ -45,18 +52,7 @@ public class BoardPlacement : TagModularity
 
                 GrabbingRing_Left = true;
             }
-            /*
-            if (OVRInput.Get(OVRInput.RawButton.LIndexTrigger))
-            {
-                Vector3 CurrentAngle = (transform.position - FindTaggedObject("HandL").transform.position);
-
-                CurrentAngle = new Vector3(CurrentAngle.x, 0, CurrentAngle.z);
-
-                CurrentAngle.Normalize();
-
-                transform.eulerAngles = new Vector3(0, Vector3.SignedAngle(StartingAngleOffset, CurrentAngle, Vector3.up), 0);
-
-            }*/
+            
         }
         else if (WithinCube(LeftControllerLocalPos, Vector3.zero, Vector3.one/4))
         {
@@ -68,12 +64,7 @@ public class BoardPlacement : TagModularity
                 StartingPositionOffset = FindTaggedObject("HandL").transform.position - transform.position;
                 GrabbingCube_Left = true;
             }
-            /*
-            if (OVRInput.Get(OVRInput.RawButton.LIndexTrigger))
-            {
-                transform.position = FindTaggedObject("HandL").transform.position - StartingPositionOffset;
-
-            }*/
+            
 
         }
         else
@@ -110,6 +101,8 @@ public class BoardPlacement : TagModularity
             InnerCube.SetActive(true);
             InnerRing.SetActive(false);
         }
+
+        GameMgr.SetBoardPosition(transform.position, transform.forward);
 
     }
 

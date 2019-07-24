@@ -19,6 +19,7 @@ public class GameManager : TagModularity
         environmentLoad,
         songSelect,
         gamePlay,
+        oldDemo,
         gamePaused,
         gameOver
 
@@ -199,6 +200,12 @@ public class GameManager : TagModularity
 
     private void Update()
     {
+        if (OVRInput.GetDown(OVRInput.RawButton.Start) || Input.GetKeyDown(KeyCode.M))
+        {
+            StartCoroutine(LoadGameStateScene(GameStateDict[GameState.oldDemo]));
+
+        }
+
         if (OVRInput.GetDown(OVRInput.RawButton.A) || Input.GetKeyDown(KeyCode.A))
         {
             if (StateOfGame < GameState.songSelect)

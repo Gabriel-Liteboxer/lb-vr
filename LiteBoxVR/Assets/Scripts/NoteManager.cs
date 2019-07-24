@@ -70,7 +70,12 @@ public class NoteManager : MonoBehaviour
     }
 
     public Note[] Notes;
-    
+
+    private void Start()
+    {
+        StartGame();
+    }
+
     public void StartGame()
     {
         if (GameStarted)
