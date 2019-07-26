@@ -16,19 +16,13 @@ public class RevolvingMenu : TagModularity
 
     public float MenuSlider;
 
+    private float PreContactMenuSlider;
+
     public float SliderVelocity;
 
     public float MenuRadius;
 
     public float startangle;
-
-    public GameObject LeftHand;
-
-    public GameObject RightHand;
-
-    private bool leftHandSliderContact;
-
-    float LeftHandStartContactAngle;
 
     class Album
     {
@@ -45,17 +39,51 @@ public class RevolvingMenu : TagModularity
 
     Transform PlayerPositionTracker;
 
+    class HandContact
+    {
+        public Transform handTransform;
+
+        public bool inContact;
+
+        public Vector3 currentContactVector;
+
+        public Vector3 startingContactVector;
+
+        public float contactAngle;
+
+        public float menuSliderValueOnContact;
+    }
+
+    private HandContact LeftHand;
+
+    private HandContact RightHand;
+
+    private bool MovingMenuSlider;
+
+    enum UsingHand
+    {
+        noHand,
+        leftHand,
+        rightHand
+    }
+
+    private UsingHand MenuSliderHand;
+
     private void Start()
     {
+        LeftHand = new HandContact();
+
+        RightHand = new HandContact();
+
         PlayerHead = Camera.main.gameObject.transform;
 
         PlayerPositionTracker = new GameObject().transform;
 
         //gameMgr = FindTaggedObject("GameController").GetComponent<GameManager>();
 
-        RightHand = FindTaggedObject("HandR");
+        RightHand.handTransform = FindTaggedObject("HandR").transform;
 
-        LeftHand = FindTaggedObject("HandL");
+        LeftHand.handTransform = FindTaggedObject("HandL").transform;
 
         AlbumTiles = new Album[SongLibrary.Length];
 
@@ -79,19 +107,55 @@ public class RevolvingMenu : TagModularity
 
     private void Update()
     {
-        //RightHand = FindTaggedObject("HandR");
+        CheckHandSlider(LeftHand);
 
-        //LeftHand = FindTaggedObject("HandL");
+        CheckHandSlider(RightHand);
+
+        if (LeftHand.inContact && MenuSliderHand != UsingHand.rightHand)
+        {
+            MenuSliderHand = UsingHand.leftHand;
+
+        }
+        else if (RightHand.inContact && MenuSliderHand != UsingHand.leftHand)
+        {
+            MenuSliderHand = UsingHand.rightHand;
+
+        }
+        else
+        {
+            MenuSliderHand = UsingHand.noHand;
+
+        }
+
+        if (LeftHand.inContact || RightHand.inContact)
+        {
+            float ContactAngle = LeftHand.contactAngle;
+
+            if (!MovingMenuSlider)
+            {
+                MovingMenuSlider = true;
+                PreContactMenuSlider = MenuSlider;
+            }
+            else
+            {
+                MenuSlider = PreContactMenuSlider + ContactAngle/18;
+            }
 
 
 
-        CheckHandSlider();
 
+        }
+        else
+        {
+            MovingMenuSlider = false;
+
+        }
+        /*
         SliderVelocity = Input.GetAxis("Horizontal")/5;
 
         SliderVelocity = Mathf.Lerp(SliderVelocity, 0, Time.deltaTime*(10/SliderVelocity));
 
-        MenuSlider += SliderVelocity;
+        MenuSlider += SliderVelocity;*/
         
         if (MenuSlider < 0)
         {
@@ -157,26 +221,30 @@ public class RevolvingMenu : TagModularity
 
     }
 
-    void CheckHandSlider()
+    void CheckHandSlider(HandContact handContact)
     {
-        if (WithinDonut(LeftHand.transform.position, transform.position, MenuRadius, MenuRadius + 5, 5))
+        if (WithinDonut(handContact.handTransform.position, transform.position, MenuRadius, MenuRadius + 5, 5))
         {
-            //Debug.Log("within donut");
+            handContact.currentContactVector = handContact.handTransform.position - transform.position;
 
-            Vector3 dir = LeftHand.transform.position - transform.position;
-            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            handContact.currentContactVector.Normalize();
 
-            if (leftHandSliderContact)
-                MenuSlider += (angle - LeftHandStartContactAngle)/TileOffsetDegrees;
+            if(!handContact.inContact)
+            {
+                handContact.inContact = true;
+                handContact.startingContactVector = handContact.currentContactVector;
+                handContact.menuSliderValueOnContact = MenuSlider;
+            }
             else
-                leftHandSliderContact = true;
+            {
+                handContact.contactAngle = Vector3.SignedAngle(handContact.startingContactVector, handContact.currentContactVector, Vector3.up);
 
-            LeftHandStartContactAngle = angle;            
+            }
 
         }
         else
         {
-            leftHandSliderContact = false;
+            handContact.inContact = false;
 
         }
 

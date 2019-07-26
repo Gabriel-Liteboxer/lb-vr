@@ -24,9 +24,11 @@ public class ArmPositioning : TagModularity
 
     public Transform ParentController;
 
-    public GameObject ControllerModel;
+    public OVRControllerHelper ControllerModel;
 
     public GameObject MountModel;
+
+    public OVRInput.Controller defaultController;
 
     // new idea, press fists together to calibrate arm distance. use dot product to determine if the controllers are pointing at each other
 
@@ -42,6 +44,8 @@ public class ArmPositioning : TagModularity
 
         gameCont = FindTaggedObject("GameController").GetComponent<GameManager>();
 
+        //defaultController = ControllerModel.m_controller;
+
         ChangeControllerMode();
     }
 
@@ -52,7 +56,18 @@ public class ArmPositioning : TagModularity
         else
             UpdateHandHeldTransform();
 
-        armScale += OVRInput.Get(OVRInput.RawAxis2D.LThumbstick).y/10;
+        armScale += OVRInput.Get(OVRInput.RawAxis2D.LThumbstick).y/10*Time.deltaTime;
+
+        if (armScale > 1f)
+        {
+            armScale = 1f;
+
+        }
+        else if (armScale < 0.7f)
+        {
+            armScale = 0.7f;
+
+        }
 
         transform.localScale = armScaleDefault * armScale;
     }
@@ -77,6 +92,8 @@ public class ArmPositioning : TagModularity
 
         transform.rotation = ParentController.rotation * Quaternion.Euler(new Vector3(180, 0, 0));
 
+        transform.position -= transform.forward * 0.05f;
+
         //transform.localScale = armScaleDefault * armScale;
 
         //transform.localEulerAngles += new Vector3(180, 0, 0); 
@@ -86,12 +103,14 @@ public class ArmPositioning : TagModularity
     {
         if (gameCont.UsingWristStraps)
         {
-            ControllerModel.SetActive(true);
+            //ControllerModel.m_controller = OVRInput.Controller.All;
+            ControllerModel.gameObject.SetActive(true);
             MountModel.SetActive(true);
         }
         else
         {
-            ControllerModel.SetActive(false);
+            //ControllerModel.m_controller = OVRInput.Controller.None;
+            ControllerModel.gameObject.SetActive(false);
             MountModel.SetActive(false);
         }
     }
