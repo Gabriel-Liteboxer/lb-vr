@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameplayController : MonoBehaviour
+public class GameplayController : TagModularity
 {
     float StartTimeMS; //the time the game started in ms
 
@@ -111,7 +111,9 @@ public class GameplayController : MonoBehaviour
 
     private void Start()
     {
-        GenerateNoteObjectsFromJson(testjson);
+        GameManager gameMgr = FindTaggedObject("GameController").GetComponent<GameManager>();
+
+        GenerateNoteObjectsFromJson(gameMgr.SongJsonToPlay);
 
         GameVisualsObject.GetComponent<PunchPadVisuals>().SetNotes(ref noteObjects);
 

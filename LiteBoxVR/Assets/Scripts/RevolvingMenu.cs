@@ -69,6 +69,14 @@ public class RevolvingMenu : TagModularity
 
     private UsingHand MenuSliderHand;
 
+    int currentlySelected;
+
+    int difficultyLevel;
+
+    // put highscores to right of play button
+
+    // put difficulty settings to left of play button
+
     private void Start()
     {
         LeftHand = new HandContact();
@@ -168,10 +176,10 @@ public class RevolvingMenu : TagModularity
 
         }
 
-        int currentlySelected = (int)(MenuSlider + 0.5f);
+        currentlySelected = (int)(MenuSlider + 0.5f);
 
-        //if(!leftHandSliderContact)
-            //MenuSlider = Mathf.Lerp(MenuSlider, currentlySelected, Time.deltaTime*5);
+        if(!LeftHand.inContact && !RightHand.inContact)
+            MenuSlider = Mathf.Lerp(MenuSlider, currentlySelected, Time.deltaTime*5);
 
         float selectedAngle = startangle * (Mathf.PI / 180f);
 
@@ -185,14 +193,14 @@ public class RevolvingMenu : TagModularity
 
             float transparency = 1 - Mathf.Abs(MenuSlider - i)/4f;
 
-            float ScaleValue = 1;
+            float ScaleValue = MenuRadius;
 
             if (transparency < 0)
                 transparency = 0;
 
             if(i == currentlySelected)
             {
-                ScaleValue = 1.5f;
+                ScaleValue = 1.5f * MenuRadius;
                 transparency = 1;
                 angleRad = selectedAngle;
             }
@@ -217,7 +225,7 @@ public class RevolvingMenu : TagModularity
             }
         }
 
-        AlbumTiles[currentlySelected].AlbumObject.transform.localPosition += AlbumTiles[currentlySelected].AlbumObject.transform.forward * 0.08f;
+        AlbumTiles[currentlySelected].AlbumObject.transform.localPosition += AlbumTiles[currentlySelected].AlbumObject.transform.forward * 0.08f * MenuRadius;
 
     }
 
@@ -266,8 +274,11 @@ public class RevolvingMenu : TagModularity
 
     private void LateUpdate()
     {
-        if (Vector3.Distance(transform.position, PlayerHead.position) > UpdatePositionDistance * UpdatePositionDistance)
-            PlayerPositionTracker.position = PlayerHead.position;
+        if (PlayerHead != null)
+        {
+            if (Vector3.Distance(transform.position, PlayerHead.position) > UpdatePositionDistance * UpdatePositionDistance)
+                PlayerPositionTracker.position = PlayerHead.position;
+        }
 
         transform.position = Vector3.Lerp(transform.position, PlayerPositionTracker.position, Time.deltaTime*2);
 
@@ -275,7 +286,7 @@ public class RevolvingMenu : TagModularity
 
     public void PlaySong ()
     {
-        //gameMgr.
+        gameMgr.StartGameplay(SongLibrary[currentlySelected].DifficultyLevels[difficultyLevel].TrackJson, SongLibrary[currentlySelected].DifficultyLevels[difficultyLevel].audioClip);
 
     }
 

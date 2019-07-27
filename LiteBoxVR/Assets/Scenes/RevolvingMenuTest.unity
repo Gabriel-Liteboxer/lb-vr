@@ -166,7 +166,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!20 &1130796819
 Camera:
   m_ObjectHideFlags: 0
@@ -280,10 +280,8 @@ MonoBehaviour:
   TileOffsetDegrees: 20
   MenuSlider: 0
   SliderVelocity: 0
-  MenuRadius: 1
+  MenuRadius: 0.6
   startangle: 0
-  LeftHand: {fileID: 642858721}
-  RightHand: {fileID: 0}
   UpdatePositionDistance: 1
 --- !u!4 &1803457750
 Transform:
@@ -315,7 +313,7 @@ PrefabInstance:
     - target: {fileID: 5402947055310411211, guid: c275d9425c62bb74ebaa3c9dd2946981,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.875
+      value: 0.525
       objectReference: {fileID: 0}
     - target: {fileID: 5402947055310411211, guid: c275d9425c62bb74ebaa3c9dd2946981,
         type: 3}

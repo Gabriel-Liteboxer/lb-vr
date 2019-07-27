@@ -74,6 +74,10 @@ public class GameManager : TagModularity
     public class MyEvent : UnityEvent<bool> { }
     public MyEvent myEvent;
 
+    public AudioClip SongAudioToPlay;
+
+    public TextAsset SongJsonToPlay;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -349,6 +353,16 @@ public class GameManager : TagModularity
             isArmCalibrated = true;
             NextState();
         }
+
+    }
+
+    public void StartGameplay(TextAsset aSongJson, AudioClip aSongAudio)
+    {
+        SongJsonToPlay = aSongJson;
+
+        SongAudioToPlay = aSongAudio;
+
+        GoToState(GameState.gamePlay);
 
     }
 }
