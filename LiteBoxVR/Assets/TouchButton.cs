@@ -42,6 +42,8 @@ public class TouchButton : TagModularity
 
     public UnityEvent FunctionToCall;
 
+    private AudioSource buttonAudio;
+
     private void Start()
     {
         circleSprites = Resources.LoadAll<Sprite>("CircleLoading");
@@ -49,6 +51,8 @@ public class TouchButton : TagModularity
         RightHand = FindTaggedObject("HandR").transform;
 
         LeftHand = FindTaggedObject("HandL").transform;
+
+        buttonAudio = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -87,11 +91,18 @@ public class TouchButton : TagModularity
 
                 FunctionToCall.Invoke();
             }
+
+            if (!buttonAudio.isPlaying)
+            {
+                buttonAudio.Play();
+
+            }
         }
         else
         {
             CallFunctionTimer = 0;
 
+            buttonAudio.Stop();
         }
 
         RenderLoadingCircle(CallFunctionTimer, loadingCircleRenderer);

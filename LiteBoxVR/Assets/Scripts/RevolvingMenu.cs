@@ -22,6 +22,8 @@ public class RevolvingMenu : TagModularity
 
     public float MenuRadius;
 
+    public float MenuHeight;
+
     public float startangle;
 
     class Album
@@ -71,14 +73,27 @@ public class RevolvingMenu : TagModularity
 
     int currentlySelected;
 
+    int lastSelected = -1; // default value -1 so it updates text right away 
+
     int difficultyLevel;
 
     // put highscores to right of play button
 
     // put difficulty settings to left of play button
 
+    public TMPro.TextMeshPro SongName;
+
+    public TMPro.TextMeshPro ArtistName;
+
+    public AudioClip MenuRatchetSound;
+
+    private AudioSource menuAudio;
+
+
     private void Start()
     {
+        menuAudio = GetComponent<AudioSource>();
+
         LeftHand = new HandContact();
 
         RightHand = new HandContact();
@@ -231,7 +246,7 @@ public class RevolvingMenu : TagModularity
 
     void CheckHandSlider(HandContact handContact)
     {
-        if (WithinDonut(handContact.handTransform.position, transform.position, MenuRadius, MenuRadius + 5, 5))
+        if (WithinDonut(handContact.handTransform.position, transform.position, MenuRadius, MenuRadius + 5, MenuHeight))
         {
             handContact.currentContactVector = handContact.handTransform.position - transform.position;
 
@@ -266,8 +281,13 @@ public class RevolvingMenu : TagModularity
 
         float SqrDistance = Vector3.SqrMagnitude(TargetPos-OriginPos);
 
-        if (SqrDistance > innerRadius * innerRadius && SqrDistance < outerRadius * outerRadius && TargetPos.y > OriginPos.y - height / 2 && TargetPos.y < OriginPos.y + height / 2)
+        float yDistance = Mathf.Abs(TargetPos.y - OriginPos.y);
+
+        if (SqrDistance > innerRadius * innerRadius && SqrDistance < outerRadius * outerRadius && yDistance < height / 2)
             return true;
+        /*
+        if (SqrDistance > innerRadius * innerRadius && SqrDistance < outerRadius * outerRadius && TargetPos.y > OriginPos.y - height / 2 && TargetPos.y < OriginPos.y + height / 2)
+            return true;*/
 
         return false;
     }
@@ -281,6 +301,25 @@ public class RevolvingMenu : TagModularity
         }
 
         transform.position = Vector3.Lerp(transform.position, PlayerPositionTracker.position, Time.deltaTime*2);
+
+        if (lastSelected != currentlySelected)
+        {
+            lastSelected = currentlySelected;
+
+            SongSelectionChanged();
+        }
+
+    }
+
+    void SongSelectionChanged()
+    {
+        SongName.text = SongLibrary[currentlySelected].SongName;
+
+        ArtistName.text = SongLibrary[currentlySelected].ArtistName;
+
+        menuAudio.clip = MenuRatchetSound;
+
+        menuAudio.Play();
 
     }
 
