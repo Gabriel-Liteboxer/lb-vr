@@ -44,6 +44,8 @@ public class TouchButton : TagModularity
 
     private AudioSource buttonAudio;
 
+    private bool functionCalled;
+
     private void Start()
     {
         circleSprites = Resources.LoadAll<Sprite>("CircleLoading");
@@ -53,6 +55,8 @@ public class TouchButton : TagModularity
         LeftHand = FindTaggedObject("HandL").transform;
 
         buttonAudio = GetComponent<AudioSource>();
+
+        HoverDistance *= transform.localScale.x;
     }
 
     void Update()
@@ -85,11 +89,13 @@ public class TouchButton : TagModularity
         {
             CallFunctionTimer += Time.deltaTime * CallFunctionTimerSpeed;
 
-            if(CallFunctionTimer >= 1)
+            if(CallFunctionTimer >= 1 && !functionCalled)
             {
                 Debug.Log("called function " + FunctionToCall);
 
                 FunctionToCall.Invoke();
+
+                functionCalled = true;
             }
 
             if (!buttonAudio.isPlaying)
@@ -101,6 +107,8 @@ public class TouchButton : TagModularity
         else
         {
             CallFunctionTimer = 0;
+
+            functionCalled = false;
 
             buttonAudio.Stop();
         }

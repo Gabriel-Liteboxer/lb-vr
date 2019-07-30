@@ -333,4 +333,16 @@ public class RevolvingMenu : TagModularity
 
     }
 
+    public void ChangeDifficulty(int aDifficulty)
+    {
+        difficultyLevel = aDifficulty;
+
+        if (difficultyLevel > 2)
+            difficultyLevel = 2;
+        else if (difficultyLevel < 0)
+            difficultyLevel = 0;
+
+        SongSelectionChanged();
+    }
+
 }
