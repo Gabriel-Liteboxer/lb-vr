@@ -118,7 +118,13 @@ public class TouchButton : TagModularity
         }
 
         RenderLoadingCircle(CallFunctionTimer, loadingCircleRenderer);
-        
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            ToggleButtonTest = true;
+
+        }
+
     }
 
     void RenderLoadingCircle(float value, SpriteRenderer SprRend)

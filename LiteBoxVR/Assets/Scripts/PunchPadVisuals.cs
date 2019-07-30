@@ -62,11 +62,15 @@ public class PunchPadVisuals : TagModularity
 
     public bool EnableDebugLines = true;
 
+    public IEnumerator[] TurnOffPadLEDs;
+
     public void Start()
     {
         LeftController = FindTaggedObject("HandL").transform;
 
         RightController = FindTaggedObject("HandR").transform;
+
+        
     }
 
     public void SetGameplayController(GameplayController newGameCont)
@@ -112,6 +116,13 @@ public class PunchPadVisuals : TagModularity
 
         RingLEDColors = new Material[RingLEDCount];
 
+        TurnOffPadLEDs = new IEnumerator[NumberOfPads];
+
+        for (int i = 0; i < NumberOfPads; i++)
+        {
+            TurnOffPadLEDs[i] = TurnOffRing(i);
+
+        }
 
         for (int i = 0; i < NoteStartpoint.Length; i++)
         {
@@ -192,7 +203,11 @@ public class PunchPadVisuals : TagModularity
                 RingLEDs[i].LEDs[c].GetComponentInChildren<Renderer>().material = RingLEDColors[c];
             }
 
-            StartCoroutine(TurnOffRing(i));
+            StartCoroutine(TurnOffPadLEDs[i]);
+
+            //StartCoroutine(TurnOffRing(i));
+
+
         }
 
 
@@ -405,13 +420,19 @@ public class PunchPadVisuals : TagModularity
 
     void TurnOnRing(float lightValue, int padIndex)
     {
-        StopCoroutine(TurnOffRing(padIndex));
+        StopCoroutine(TurnOffPadLEDs[padIndex]);
+
+        //StopCoroutine(TurnOffRing(padIndex));
 
         for (int i = 0; i < RingLEDCount * lightValue; i++)
         {
             RingLEDs[padIndex].LEDs[i].SetActive(true);
         }
-        StartCoroutine(TurnOffRing(padIndex));
+        //StartCoroutine(TurnOffRing(padIndex));
+
+        TurnOffPadLEDs[padIndex] = TurnOffRing(padIndex);
+
+        StartCoroutine(TurnOffPadLEDs[padIndex]);
 
         GameObject hitMarker = GameObject.Instantiate(HitMarkerPrefab, NoteEndpoint[padIndex].transform.position + transform.forward * -0.05f, transform.rotation);
 
@@ -425,6 +446,8 @@ public class PunchPadVisuals : TagModularity
         for (int i = RingLEDCount-1; i >= 0; i--)
         {
             RingLEDs[padIndex].LEDs[i].SetActive(false);
+
+            Debug.Log("turning off ring");
 
             yield return new WaitForSeconds(.03f);
         }

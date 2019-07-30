@@ -30,6 +30,8 @@ public class ArmPositioning : TagModularity
 
     public OVRInput.Controller defaultController;
 
+    public bool TestingInEditor;
+
     // new idea, press fists together to calibrate arm distance. use dot product to determine if the controllers are pointing at each other
 
     private void Start()
@@ -51,10 +53,13 @@ public class ArmPositioning : TagModularity
 
     private void LateUpdate()
     {
-        if (gameCont.UsingWristStraps)
-            UpdateArmTransform();
-        else
-            UpdateHandHeldTransform();
+        if (!TestingInEditor)
+        {
+            if (gameCont.UsingWristStraps)
+                UpdateArmTransform();
+            else
+                UpdateHandHeldTransform();
+        }
 
         armScale += OVRInput.Get(OVRInput.RawAxis2D.LThumbstick).y/10*Time.deltaTime;
 

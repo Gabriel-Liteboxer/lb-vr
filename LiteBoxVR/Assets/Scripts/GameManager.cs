@@ -213,7 +213,7 @@ public class GameManager : TagModularity
 
         if (OVRInput.GetDown(OVRInput.RawButton.A) || Input.GetKeyDown(KeyCode.A))
         {
-            if (StateOfGame < GameState.songSelect)
+            if (StateOfGame < GameState.environmentLoad)
             {
                 if (StateOfGame == GameState.controllerModeSelect)
                 {
