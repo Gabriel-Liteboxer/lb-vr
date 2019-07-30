@@ -89,6 +89,8 @@ public class RevolvingMenu : TagModularity
 
     private AudioSource menuAudio;
 
+    public HighscoreManager highscoreMgr;
+
 
     private void Start()
     {
@@ -320,6 +322,8 @@ public class RevolvingMenu : TagModularity
         menuAudio.clip = MenuRatchetSound;
 
         menuAudio.Play();
+
+        highscoreMgr.SetHighscorePage(SongLibrary[currentlySelected], difficultyLevel);
 
     }
 

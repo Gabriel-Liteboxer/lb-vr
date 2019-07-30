@@ -67,6 +67,8 @@
     <Compile Include="Assets\BoardPlacement.cs" />
     <Compile Include="Assets\controllerModeSelect.cs" />
     <Compile Include="Assets\GuideWindow.cs" />
+    <Compile Include="Assets\HighscoreDisplayer.cs" />
+    <Compile Include="Assets\HighscoreManager.cs" />
     <Compile Include="Assets\Oculus\AudioManager\Scenes\Scripts\TestScript.cs" />
     <Compile Include="Assets\Oculus\AudioManager\Scripts\Audio\AmbienceEmitter.cs" />
     <Compile Include="Assets\Oculus\AudioManager\Scripts\Audio\AudioManager.cs" />
