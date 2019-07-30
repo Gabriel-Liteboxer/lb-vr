@@ -32,8 +32,9 @@ public class GameManager : TagModularity
     [System.Serializable]
     public class GameStateScene
     {
-        public GameState AssociatedState;
         public string SceneName;
+        public GameState AssociatedState;
+        
 
         public bool Loading;
         public bool Loaded;
@@ -358,11 +359,12 @@ public class GameManager : TagModularity
 
     public void StartGameplay(TextAsset aSongJson, AudioClip aSongAudio)
     {
+
         SongJsonToPlay = aSongJson;
 
         SongAudioToPlay = aSongAudio;
 
         GoToState(GameState.gamePlay);
-
+        
     }
 }

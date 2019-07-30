@@ -46,6 +46,8 @@ public class TouchButton : TagModularity
 
     private bool functionCalled;
 
+    public bool ToggleButtonTest;
+
     private void Start()
     {
         circleSprites = Resources.LoadAll<Sprite>("CircleLoading");
@@ -85,7 +87,7 @@ public class TouchButton : TagModularity
 
         }
 
-        if(isHovering)
+        if(isHovering || ToggleButtonTest)
         {
             CallFunctionTimer += Time.deltaTime * CallFunctionTimerSpeed;
 
@@ -96,6 +98,8 @@ public class TouchButton : TagModularity
                 FunctionToCall.Invoke();
 
                 functionCalled = true;
+
+                ToggleButtonTest = false;
             }
 
             if (!buttonAudio.isPlaying)

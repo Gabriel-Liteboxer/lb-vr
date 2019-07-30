@@ -1321,8 +1321,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StateOfGame: 0
   gameStateScene:
-  - AssociatedState: 3
-    SceneName: ArmCalibration
+  - SceneName: ArmCalibration
+    AssociatedState: 3
     Loading: 0
     Loaded: 0
     CallOnLoaded: CheckWristStraps
@@ -1330,8 +1330,8 @@ MonoBehaviour:
     UnloadOnStateChange: 1
     NextGameState: 4
     LastGameState: 2
-  - AssociatedState: 4
-    SceneName: BoardCalibration
+  - SceneName: BoardCalibration
+    AssociatedState: 4
     Loading: 0
     Loaded: 0
     CallOnLoaded: 
@@ -1339,8 +1339,8 @@ MonoBehaviour:
     UnloadOnStateChange: 1
     NextGameState: 6
     LastGameState: 3
-  - AssociatedState: 6
-    SceneName: EnvStudio
+  - SceneName: EnvStudio
+    AssociatedState: 6
     Loading: 0
     Loaded: 0
     CallOnLoaded: NextState
@@ -1348,8 +1348,8 @@ MonoBehaviour:
     UnloadOnStateChange: 0
     NextGameState: 7
     LastGameState: 5
-  - AssociatedState: 7
-    SceneName: RevolvingMenuTest
+  - SceneName: RevolvingMenuTest
+    AssociatedState: 7
     Loading: 0
     Loaded: 0
     CallOnLoaded: 
@@ -1357,8 +1357,8 @@ MonoBehaviour:
     UnloadOnStateChange: 1
     NextGameState: 8
     LastGameState: 0
-  - AssociatedState: 8
-    SceneName: ModularGameplayTest
+  - SceneName: ModularGameplayTest
+    AssociatedState: 9
     Loading: 0
     Loaded: 0
     CallOnLoaded: ApplyBoardPosition
@@ -1366,8 +1366,8 @@ MonoBehaviour:
     UnloadOnStateChange: 0
     NextGameState: 0
     LastGameState: 0
-  - AssociatedState: 1
-    SceneName: Env_Setup
+  - SceneName: Env_Setup
+    AssociatedState: 1
     Loading: 0
     Loaded: 0
     CallOnLoaded: NextState
@@ -1375,8 +1375,8 @@ MonoBehaviour:
     UnloadOnStateChange: 0
     NextGameState: 0
     LastGameState: 0
-  - AssociatedState: 2
-    SceneName: ControllerSelection
+  - SceneName: ControllerSelection
+    AssociatedState: 2
     Loading: 0
     Loaded: 0
     CallOnLoaded: 
@@ -1384,8 +1384,8 @@ MonoBehaviour:
     UnloadOnStateChange: 1
     NextGameState: 3
     LastGameState: 0
-  - AssociatedState: 5
-    SceneName: BoardPlacement
+  - SceneName: BoardPlacement
+    AssociatedState: 5
     Loading: 0
     Loaded: 0
     CallOnLoaded: 
@@ -1393,8 +1393,8 @@ MonoBehaviour:
     UnloadOnStateChange: 1
     NextGameState: 6
     LastGameState: 2
-  - AssociatedState: 10
-    SceneName: OldDemo
+  - SceneName: OldDemo
+    AssociatedState: 10
     Loading: 0
     Loaded: 0
     CallOnLoaded: 
@@ -1423,6 +1423,8 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameManager+MyEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  SongAudioToPlay: {fileID: 0}
+  SongJsonToPlay: {fileID: 0}
 --- !u!114 &596490327 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 11479374, guid: d9809c5e8418bb047bf2c8ba1d1a2cec,

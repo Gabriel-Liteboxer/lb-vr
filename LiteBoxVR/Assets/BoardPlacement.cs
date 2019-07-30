@@ -26,7 +26,7 @@ public class BoardPlacement : TagModularity
 
     private void Start()
     {
-        //GameMgr.
+        GameMgr = FindTaggedObject("GameController").GetComponent<GameManager>();
     }
 
     void Update()

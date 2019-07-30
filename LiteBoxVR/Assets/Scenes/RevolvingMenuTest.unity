@@ -237,6 +237,12 @@ PrefabInstance:
       propertyPath: FunctionToCall.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5402947056670894455, guid: c275d9425c62bb74ebaa3c9dd2946981,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d5130aea76bd3a84eb5673cba0e23dc5,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c275d9425c62bb74ebaa3c9dd2946981, type: 3}
 --- !u!4 &608310010 stripped
@@ -362,6 +368,12 @@ PrefabInstance:
       propertyPath: FunctionToCall.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5402947056670894455, guid: c275d9425c62bb74ebaa3c9dd2946981,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ba1e9a4b9abe22f47b6bfa00b34a04ec,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c275d9425c62bb74ebaa3c9dd2946981, type: 3}
 --- !u!4 &620049920 stripped
@@ -980,6 +992,12 @@ PrefabInstance:
       propertyPath: FunctionToCall.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 5402947056670894455, guid: c275d9425c62bb74ebaa3c9dd2946981,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d2e9379bbb3680140a9bb3f6b3ccae72,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c275d9425c62bb74ebaa3c9dd2946981, type: 3}
 --- !u!4 &1402454870 stripped
@@ -2326,6 +2344,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 102.94601, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.491, y: -0.385}
+  m_AnchoredPosition: {x: 0.491, y: -0.4064}
   m_SizeDelta: {x: 1.5, y: 1.5}
   m_Pivot: {x: 0.5, y: 0.5}

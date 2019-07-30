@@ -104,7 +104,7 @@ public class RevolvingMenu : TagModularity
 
         PlayerPositionTracker = new GameObject().transform;
 
-        //gameMgr = FindTaggedObject("GameController").GetComponent<GameManager>();
+        gameMgr = FindTaggedObject("GameController").GetComponent<GameManager>();
 
         RightHand.handTransform = FindTaggedObject("HandR").transform;
 
