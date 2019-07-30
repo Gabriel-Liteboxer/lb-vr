@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PunchPadVisuals : TagModularity
 {
+    public GameObject HitMarkerPrefab;
+
     public GameObject NotePrefab;
 
     public GameplayController.NoteObject[] Notes;
@@ -410,6 +412,10 @@ public class PunchPadVisuals : TagModularity
             RingLEDs[padIndex].LEDs[i].SetActive(true);
         }
         StartCoroutine(TurnOffRing(padIndex));
+
+        GameObject hitMarker = GameObject.Instantiate(HitMarkerPrefab, NoteEndpoint[padIndex].transform.position + transform.forward * -0.05f, transform.rotation);
+
+        hitMarker.GetComponent<HitMarkerInfo>().SetHitMarker((int)(lightValue*100), RingLEDColors[(int)(RingLEDCount * lightValue)].color, 1f);
     }
 
     IEnumerator TurnOffRing(int padIndex)

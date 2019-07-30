@@ -232,6 +232,18 @@ PrefabInstance:
       propertyPath: PadSurfaceHeight
       value: 0.03
       objectReference: {fileID: 0}
+    - target: {fileID: 8906812565328028002, guid: 9d5b81360ea6e95429bca4ec04f37a62,
+        type: 3}
+      propertyPath: MarkerPrefab
+      value: 
+      objectReference: {fileID: 766037593523081176, guid: 7623f945a047f90479b6305cf778f789,
+        type: 3}
+    - target: {fileID: 8906812565328028002, guid: 9d5b81360ea6e95429bca4ec04f37a62,
+        type: 3}
+      propertyPath: HitMarkerPrefab
+      value: 
+      objectReference: {fileID: 766037593523081176, guid: 7623f945a047f90479b6305cf778f789,
+        type: 3}
     - target: {fileID: 9052200186177750414, guid: 9d5b81360ea6e95429bca4ec04f37a62,
         type: 3}
       propertyPath: m_Enabled
