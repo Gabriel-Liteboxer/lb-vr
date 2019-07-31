@@ -16,9 +16,17 @@ public class GameplayController : TagModularity
 
     public float TimeScale = 1;
 
-    public TextAsset testjson;
+    //public TextAsset testjson;
 
     public GameObject NotePrefab;
+
+    public int GameScore;
+
+    public int GameStreak;
+
+    public TMPro.TextMeshProUGUI ScoreText;
+
+    public TMPro.TextMeshProUGUI StreakText;
 
     [System.Serializable]
     public class NoteObject
@@ -43,7 +51,6 @@ public class GameplayController : TagModularity
 
         public float LerpProgress;
 
-
         public float StartTime;
 
         public float CanHitTime;
@@ -51,9 +58,7 @@ public class GameplayController : TagModularity
         public float TargetTime;
 
         public float ExpireTime;
-
-
-
+        
     }
 
     public UnityEngine.UI.Text DataText;
@@ -113,11 +118,37 @@ public class GameplayController : TagModularity
     {
         GameManager gameMgr = FindTaggedObject("GameController").GetComponent<GameManager>();
 
-        GenerateNoteObjectsFromJson(gameMgr.SongJsonToPlay);
+        StartGame(gameMgr.SongJsonToPlay, gameMgr.SongAudioToPlay);
 
-        GameVisualsObject.GetComponent<PunchPadVisuals>().SetNotes(ref noteObjects);
+        GameVisualsObject.transform.position = gameMgr.BoardPosition;
 
-        GameVisualsObject.GetComponent<PunchPadVisuals>().SetGameplayController(this);
+        GameVisualsObject.transform.forward = gameMgr.BoardForward;
+    }
+
+    public void StartGame(TextAsset aJson, AudioClip aClip)
+    {
+        StartCoroutine(StartGameDelayed(aJson, aClip));
+    }
+
+    IEnumerator StartGameDelayed(TextAsset aJson, AudioClip aClip)
+    {
+        yield return new WaitForSeconds(1.5f);
+
+        GenerateNoteObjectsFromJson(aJson);
+
+        PunchPadVisuals ppv = GameVisualsObject.GetComponent<PunchPadVisuals>();
+
+        ppv.SetNotes(ref noteObjects);
+
+        ppv.SetGameplayController(this);
+
+        
+
+        AudioSource au = GameVisualsObject.GetComponent<AudioSource>();
+
+        au.clip = aClip;
+
+        au.Play();
     }
 
     private void Update()
@@ -146,6 +177,8 @@ public class GameplayController : TagModularity
             {
                 noteObjects[i].expired = true;
                 ActiveNoteObjects.Remove(noteObjects[i]);
+                GameStreak = 0;
+                StreakText.text = "STREAK: " + GameStreak.ToString() + "x";
             }
 
         }
@@ -243,6 +276,14 @@ public class GameplayController : TagModularity
         Debug.Log("time passed: " + TimePassedMS);
 
         Debug.Log("Hit Accuracy: " + oldestNote.hitAccuracy);
+
+        GameScore += (int)(oldestNote.hitAccuracy*100);
+
+        GameStreak++;
+
+        ScoreText.text = "SCORE: " + GameScore.ToString();
+
+        StreakText.text = "STREAK: " + GameStreak.ToString() + "x";
 
         return oldestNote.hitAccuracy;
 

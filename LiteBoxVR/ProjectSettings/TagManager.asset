@@ -12,6 +12,7 @@ TagManager:
   - HandL
   - HandR
   - BoardObj
+  - GameplayCont
   layers:
   - Default
   - TransparentFX

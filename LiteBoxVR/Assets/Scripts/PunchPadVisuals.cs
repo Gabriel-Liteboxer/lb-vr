@@ -14,7 +14,7 @@ public class PunchPadVisuals : TagModularity
 
     private GameObject[] NoteStartpoint;
 
-    private GameObject[] NoteEndpoint;
+    public GameObject[] NoteEndpoint;
 
     private GameObject[] NoteExpirepoint;
 

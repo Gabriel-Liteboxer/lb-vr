@@ -67,9 +67,9 @@ public class GameManager : TagModularity
 
     public bool UsingWristStraps;
 
-    Vector3 BoardPosition;
+    public Vector3 BoardPosition;
 
-    Vector3 BoardForward;
+    public Vector3 BoardForward;
 
     [System.Serializable]
     public class MyEvent : UnityEvent<bool> { }
@@ -102,9 +102,15 @@ public class GameManager : TagModularity
 
     public void ApplyBoardPosition()
     {
-        FindTaggedObject("BoardObj").transform.position = BoardPosition /*+ BoardForward*0.016f*/;
+        GameObject gameBoard = FindTaggedObject("BoardObj");
 
-        FindTaggedObject("BoardObj").transform.forward = BoardForward;
+        //GameplayController gameplayCont = FindTaggedObject("GameplayCont").GetComponent<GameplayController>();
+        
+        //gameBoard.transform.position = BoardPosition /*+ BoardForward*0.016f*/;
+
+        //gameBoard.transform.forward = BoardForward;
+
+        //gameplayCont.StartGame(SongJsonToPlay, SongAudioToPlay, BoardPosition, BoardForward);
 
         Debug.Log("Applied Board Position");
     }
@@ -205,9 +211,16 @@ public class GameManager : TagModularity
 
     private void Update()
     {
+        /*
         if (OVRInput.GetDown(OVRInput.RawButton.Start) || Input.GetKeyDown(KeyCode.M))
         {
             StartCoroutine(LoadGameStateScene(GameStateDict[GameState.oldDemo]));
+
+        }
+        */
+        if (OVRInput.GetDown(OVRInput.RawButton.Start) || Input.GetKeyDown(KeyCode.M))
+        {
+            GoToState(GameState.environmentLoad);
 
         }
 

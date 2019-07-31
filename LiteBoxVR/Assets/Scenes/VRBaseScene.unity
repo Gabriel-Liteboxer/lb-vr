@@ -1363,7 +1363,7 @@ MonoBehaviour:
     Loaded: 0
     CallOnLoaded: ApplyBoardPosition
     SetActiveOnLoaded: 0
-    UnloadOnStateChange: 0
+    UnloadOnStateChange: 1
     NextGameState: 0
     LastGameState: 0
   - SceneName: Env_Setup
