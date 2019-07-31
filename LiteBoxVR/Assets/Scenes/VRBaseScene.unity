@@ -1328,6 +1328,22 @@ MonoBehaviour:
     CallOnLoaded: CheckWristStraps
     SetActiveOnLoaded: 0
     UnloadOnStateChange: 1
+    callfunction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 564472580}
+          m_MethodName: ApplyBoardPosition
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
     NextGameState: 4
     LastGameState: 2
   - SceneName: BoardCalibration
@@ -1337,6 +1353,11 @@ MonoBehaviour:
     CallOnLoaded: 
     SetActiveOnLoaded: 0
     UnloadOnStateChange: 1
+    callfunction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
     NextGameState: 6
     LastGameState: 3
   - SceneName: EnvStudio
@@ -1346,6 +1367,11 @@ MonoBehaviour:
     CallOnLoaded: NextState
     SetActiveOnLoaded: 1
     UnloadOnStateChange: 0
+    callfunction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
     NextGameState: 7
     LastGameState: 5
   - SceneName: RevolvingMenuTest
@@ -1355,6 +1381,11 @@ MonoBehaviour:
     CallOnLoaded: 
     SetActiveOnLoaded: 0
     UnloadOnStateChange: 1
+    callfunction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
     NextGameState: 8
     LastGameState: 0
   - SceneName: ModularGameplayTest
@@ -1364,6 +1395,11 @@ MonoBehaviour:
     CallOnLoaded: ApplyBoardPosition
     SetActiveOnLoaded: 0
     UnloadOnStateChange: 1
+    callfunction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
     NextGameState: 0
     LastGameState: 0
   - SceneName: Env_Setup
@@ -1373,6 +1409,11 @@ MonoBehaviour:
     CallOnLoaded: NextState
     SetActiveOnLoaded: 1
     UnloadOnStateChange: 0
+    callfunction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
     NextGameState: 0
     LastGameState: 0
   - SceneName: ControllerSelection
@@ -1382,6 +1423,11 @@ MonoBehaviour:
     CallOnLoaded: 
     SetActiveOnLoaded: 0
     UnloadOnStateChange: 1
+    callfunction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
     NextGameState: 3
     LastGameState: 0
   - SceneName: BoardPlacement
@@ -1391,6 +1437,11 @@ MonoBehaviour:
     CallOnLoaded: 
     SetActiveOnLoaded: 0
     UnloadOnStateChange: 1
+    callfunction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
     NextGameState: 6
     LastGameState: 2
   - SceneName: OldDemo
@@ -1400,6 +1451,11 @@ MonoBehaviour:
     CallOnLoaded: 
     SetActiveOnLoaded: 0
     UnloadOnStateChange: 0
+    callfunction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
     NextGameState: 6
     LastGameState: 2
   GameStateText: {fileID: 889914377}
@@ -1407,6 +1463,8 @@ MonoBehaviour:
   isBoardPlaced: 1
   isArmCalibrated: 0
   UsingWristStraps: 0
+  BoardPosition: {x: 0, y: 0, z: 0}
+  BoardForward: {x: 0, y: 0, z: 0}
   myEvent:
     m_PersistentCalls:
       m_Calls:

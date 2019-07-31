@@ -43,6 +43,8 @@ public class GameManager : TagModularity
         public bool SetActiveOnLoaded;
         public bool UnloadOnStateChange;
 
+        public UnityEvent callfunction;
+
         [Header("States before and after")]
         public GameState NextGameState;
         public GameState LastGameState;
@@ -88,6 +90,25 @@ public class GameManager : TagModularity
 
         }
         NextState();
+        /*
+        gameStateScene[1].callfunction.AddListener(() => Debug.Log("Called this"));//give function, not return value
+
+        gameStateScene[1].callfunction?.Invoke();//check if null
+
+        int.MaxValue = 2^32;
+        System.Int32;
+
+        long num;
+        System.Int64;
+
+        if (thing != null & thing.property1 == whatever)
+        {
+            thing.property2()
+        }
+
+        pointerA->property
+
+            int i = (int)GameState.boardPlacement;*/
     }
 
     public void SetBoardPosition(Vector3 bPos, Vector3 bFwd)
