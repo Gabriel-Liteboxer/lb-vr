@@ -151,7 +151,37 @@ public class RevolvingMenu : TagModularity
             MenuSliderHand = UsingHand.noHand;
 
         }
+        
 
+        if (MenuSliderHand != UsingHand.noHand)
+        {
+            HandContact HandTouch = new HandContact();
+
+            if (MenuSliderHand == UsingHand.leftHand)
+                HandTouch = LeftHand;
+            else if (MenuSliderHand == UsingHand.rightHand)
+                HandTouch = RightHand;
+
+            float ContactAngle = HandTouch.contactAngle;
+
+            if (!MovingMenuSlider)
+            {
+                MovingMenuSlider = true;
+                PreContactMenuSlider = MenuSlider;
+            }
+            else
+            {
+                MenuSlider = PreContactMenuSlider + ContactAngle / 18;
+            }
+            
+        }
+        else
+        {
+            MovingMenuSlider = false;
+
+        }
+
+        /*
         if (LeftHand.inContact || RightHand.inContact)
         {
             float ContactAngle = LeftHand.contactAngle;
@@ -174,14 +204,14 @@ public class RevolvingMenu : TagModularity
         {
             MovingMenuSlider = false;
 
-        }
+        }*/
         /*
         SliderVelocity = Input.GetAxis("Horizontal")/5;
 
         SliderVelocity = Mathf.Lerp(SliderVelocity, 0, Time.deltaTime*(10/SliderVelocity));
 
         MenuSlider += SliderVelocity;*/
-        
+
         if (MenuSlider < 0)
         {
             MenuSlider = 0;

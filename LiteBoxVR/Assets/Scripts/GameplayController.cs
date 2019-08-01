@@ -177,8 +177,12 @@ public class GameplayController : TagModularity
             {
                 noteObjects[i].expired = true;
                 ActiveNoteObjects.Remove(noteObjects[i]);
-                GameStreak = 0;
-                StreakText.text = "STREAK: " + GameStreak.ToString() + "x";
+
+                if (!noteObjects[i].beenHit)
+                {
+                    GameStreak = 0;
+                    StreakText.text = "STREAK: " + GameStreak.ToString() + "x";
+                }
             }
 
         }

@@ -591,7 +591,7 @@ PrefabInstance:
     - target: {fileID: 8906812565328028002, guid: 9d5b81360ea6e95429bca4ec04f37a62,
         type: 3}
       propertyPath: PadSurfaceHeight
-      value: 0.03
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 8906812565328028002, guid: 9d5b81360ea6e95429bca4ec04f37a62,
         type: 3}
@@ -609,6 +609,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385116186, guid: 9d5b81360ea6e95429bca4ec04f37a62, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d5b81360ea6e95429bca4ec04f37a62, type: 3}
