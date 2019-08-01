@@ -317,6 +317,12 @@ public class PunchPadVisuals : TagModularity
             }
 
             PadContact[padIndex, controllerIndex] = true;
+
+            bool useLeftCont = false;
+            if (controllerIndex == 0)
+                useLeftCont = true;
+
+            FindTaggedObject("GameController").GetComponent<ControllerVibrationManager>().AddVibration(useLeftCont, 1f, 1f);
         }
         else
         {

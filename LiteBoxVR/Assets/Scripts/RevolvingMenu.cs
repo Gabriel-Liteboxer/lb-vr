@@ -94,6 +94,8 @@ public class RevolvingMenu : TagModularity
 
     private void Start()
     {
+        
+
         menuAudio = GetComponent<AudioSource>();
 
         LeftHand = new HandContact();
@@ -105,6 +107,8 @@ public class RevolvingMenu : TagModularity
         PlayerPositionTracker = new GameObject().transform;
 
         gameMgr = FindTaggedObject("GameController").GetComponent<GameManager>();
+
+        transform.right = gameMgr.BoardForward; // remove this and it works fine
 
         RightHand.handTransform = FindTaggedObject("HandR").transform;
 
@@ -228,15 +232,28 @@ public class RevolvingMenu : TagModularity
         if(!LeftHand.inContact && !RightHand.inContact)
             MenuSlider = Mathf.Lerp(MenuSlider, currentlySelected, Time.deltaTime*5);
 
-        float selectedAngle = startangle * (Mathf.PI / 180f);
+        float ConvertToRadians = (Mathf.PI / 180f);
+
+        float selectedAngle = (startangle -transform.eulerAngles.y) * ConvertToRadians;
 
         for (int i = 0; i < AlbumTiles.Length; i++)
         {
-            float TileOffsetRad = TileOffsetDegrees * (Mathf.PI/180f);
+            float TileOffsetRad = TileOffsetDegrees * ConvertToRadians;
+
+            float radRotationY = transform.eulerAngles.y * ConvertToRadians;
 
             //Debug.Log("rad" + TileOffsetRad);
 
             float angleRad = TileOffsetRad * i - MenuSlider * TileOffsetRad;
+
+            angleRad -= radRotationY;
+
+            /*
+            angleRad *= 180f / Mathf.PI;
+
+            angleRad -= transform.eulerAngles.y;
+
+            angleRad *= (Mathf.PI / 180f);*/
 
             float transparency = 1 - Mathf.Abs(MenuSlider - i)/4f;
 
@@ -272,7 +289,11 @@ public class RevolvingMenu : TagModularity
             }
         }
 
-        AlbumTiles[currentlySelected].AlbumObject.transform.localPosition += AlbumTiles[currentlySelected].AlbumObject.transform.forward * 0.08f * MenuRadius;
+        //AlbumTiles[currentlySelected].AlbumObject.transform.localPosition += AlbumTiles[currentlySelected].AlbumObject.transform.forward * 0.08f * MenuRadius;
+
+        AlbumTiles[currentlySelected].AlbumObject.transform.position += AlbumTiles[currentlySelected].AlbumObject.transform.forward * 0.08f * MenuRadius;
+
+        //AlbumTiles[currentlySelected].AlbumObject.transform.localPosition += -transform.right * 0.08f * MenuRadius;
 
     }
 

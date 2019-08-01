@@ -1286,6 +1286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 564472579}
   - component: {fileID: 564472580}
+  - component: {fileID: 564472581}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameController
@@ -1483,6 +1484,18 @@ MonoBehaviour:
       PublicKeyToken=null
   SongAudioToPlay: {fileID: 0}
   SongJsonToPlay: {fileID: 0}
+--- !u!114 &564472581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564472578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2ae5770b19b2d74b98d50e9709f23c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &596490327 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 11479374, guid: d9809c5e8418bb047bf2c8ba1d1a2cec,
