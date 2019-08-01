@@ -1545,7 +1545,7 @@ MonoBehaviour:
   MenuRadius: 0.6
   MenuHeight: 0.01
   startangle: 0
-  UpdatePositionDistance: 1
+  UpdatePositionDistance: 0.5
   SongName: {fileID: 1934060046}
   ArtistName: {fileID: 975219703}
   MenuRatchetSound: {fileID: 8300000, guid: c7345f6f854400847baa312734981ee5, type: 3}

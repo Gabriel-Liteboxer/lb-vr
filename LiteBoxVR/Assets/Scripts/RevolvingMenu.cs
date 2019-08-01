@@ -349,7 +349,7 @@ public class RevolvingMenu : TagModularity
     {
         if (PlayerHead != null)
         {
-            if (Vector3.Distance(transform.position, PlayerHead.position) > UpdatePositionDistance * UpdatePositionDistance)
+            if (Vector3.Distance(PlayerPositionTracker.position, PlayerHead.position) > UpdatePositionDistance * UpdatePositionDistance)
                 PlayerPositionTracker.position = PlayerHead.position;
         }
 

@@ -81,6 +81,8 @@ public class GameManager : TagModularity
 
     public TextAsset SongJsonToPlay;
 
+    public GameObject OptionsMenuObj;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -241,15 +243,12 @@ public class GameManager : TagModularity
         */
         if (OVRInput.GetDown(OVRInput.RawButton.Start) || Input.GetKeyDown(KeyCode.M))
         {
-            GoToState(GameState.environmentLoad);
-
+            if (!OptionsMenuObj.activeInHierarchy)
+                ToggleOptionsMenu(true);
+            else
+                ToggleOptionsMenu(false);
         }
 
-        if (OVRInput.GetDown(OVRInput.RawButton.B) || Input.GetKeyDown(KeyCode.J))
-        {
-            SceneManager.LoadScene("VRBaseScene");
-
-        }
 
         if (OVRInput.GetDown(OVRInput.RawButton.A) || Input.GetKeyDown(KeyCode.A))
         {
@@ -406,5 +405,26 @@ public class GameManager : TagModularity
 
         GoToState(GameState.gamePlay);
         
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("VRBaseScene");
+
+    }
+
+    public void ReturnToSongMenu()
+    {
+        GoToState(GameState.environmentLoad);
+        ToggleOptionsMenu(false);
+    }
+
+    public void ToggleOptionsMenu(bool isOpen)
+    {
+        if (!isOpen)
+            OptionsMenuObj.transform.localScale = Vector3.zero;
+
+        OptionsMenuObj.SetActive(isOpen);
+
     }
 }
