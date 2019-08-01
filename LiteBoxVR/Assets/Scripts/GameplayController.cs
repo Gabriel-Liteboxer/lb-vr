@@ -8,7 +8,7 @@ public class GameplayController : TagModularity
 
     float TimePassedMS; // the time passed in ms
 
-    float HitThresholdMS = 250; // the amount of time in ms a user is allowed to hit the note prior or after the target time. This time can not be larger than the time between notes
+    float HitThresholdMS = 180; // old val 250; the amount of time in ms a user is allowed to hit the note prior or after the target time. This time can not be larger than the time between notes
 
     float HitTargetTimeOffsetMS = 0; // the amount of time in ms to add to the notedata time value to get the target hit time
 

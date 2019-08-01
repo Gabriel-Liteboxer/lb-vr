@@ -28,7 +28,7 @@ public class PunchPadVisuals : TagModularity
 
     public float StartRadius;
 
-    public float EndRadius; // old value 0.158
+    public float EndRadius = 0.16f; // old value 0.158
 
     public float ExpireRadius;
 
@@ -85,11 +85,13 @@ public class PunchPadVisuals : TagModularity
 
         float travelDistance = ExpireRadius - StartRadius;
 
-        float timingDifference = GameCont.noteObjects[0].TargetTime / GameCont.noteObjects[0].ExpireTime;
+        float timingDifference = GameCont.noteObjects[0].TargetTime - GameCont.noteObjects[0].ExpireTime;
 
+        float diff = Mathf.InverseLerp(GameCont.noteObjects[0].StartTime, GameCont.noteObjects[0].ExpireTime, GameCont.noteObjects[0].TargetTime);
 
+        EndRadius = ExpireRadius * diff;
 
-        EndRadius = (travelDistance * timingDifference);
+        //EndRadius = (travelDistance * timingDifference);
     }
 
     public void SetNotes(ref GameplayController.NoteObject[] newNotes)
@@ -221,6 +223,9 @@ public class PunchPadVisuals : TagModularity
 
     private void Update()
     {
+        if (Notes == null)
+            return;
+
         if (Notes.Length > 0)
         {
             for (int i = 0; i < Notes.Length; i++)
@@ -228,19 +233,20 @@ public class PunchPadVisuals : TagModularity
 
                 if (Notes[i].expired || Notes[i].beenHit)
                 {
-                    NoteVisuals[i].SetActive(false);
+                    NoteVisuals?[i]?.SetActive(false);
 
                 }
                 else if (Notes[i].born)
                 {
-                    NoteVisuals[i].SetActive(true);
+                    NoteVisuals?[i]?.SetActive(true);
 
                 }
                  
 
                 //NoteVisuals[i].transform.position = Vector3.Lerp(NoteStartpoint[Notes[i].pad].transform.position, NoteEndpoint[Notes[i].pad].transform.position, Notes[i].LerpProgress);
 
-                NoteVisuals[i].transform.position = Vector3.Lerp(NoteStartpoint[Notes[i].pad].transform.position, NoteExpirepoint[Notes[i].pad].transform.position, Notes[i].LerpProgress);
+                if (NoteVisuals != null && NoteVisuals[i] != null)
+                    NoteVisuals[i].transform.position = Vector3.Lerp(NoteStartpoint[Notes[i].pad].transform.position, NoteExpirepoint[Notes[i].pad].transform.position, Notes[i].LerpProgress);
 
 
             }
