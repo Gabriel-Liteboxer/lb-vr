@@ -397,7 +397,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &642858722
 Transform:
   m_ObjectHideFlags: 0
@@ -1543,7 +1543,7 @@ MonoBehaviour:
   MenuSlider: 0
   SliderVelocity: 0
   MenuRadius: 0.6
-  MenuHeight: 0.01
+  MenuHeight: 0.3
   startangle: 0
   UpdatePositionDistance: 0.5
   SongName: {fileID: 1934060046}
@@ -1989,7 +1989,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2146865016
 Transform:
   m_ObjectHideFlags: 0

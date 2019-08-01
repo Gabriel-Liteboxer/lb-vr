@@ -328,13 +328,13 @@ public class RevolvingMenu : TagModularity
 
     bool WithinDonut(Vector3 TargetPos, Vector3 OriginPos, float innerRadius, float outerRadius, float height)
     {
+        float yDistance = Mathf.Abs(TargetPos.y - OriginPos.y);
+
         TargetPos = new Vector3(TargetPos.x, 0, TargetPos.z);
 
         OriginPos = new Vector3(OriginPos.x, 0, OriginPos.z);
 
         float SqrDistance = Vector3.SqrMagnitude(TargetPos-OriginPos);
-
-        float yDistance = Mathf.Abs(TargetPos.y - OriginPos.y);
 
         if (SqrDistance > innerRadius * innerRadius && SqrDistance < outerRadius * outerRadius && yDistance < height / 2)
             return true;
