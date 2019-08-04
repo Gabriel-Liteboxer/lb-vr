@@ -18,6 +18,9 @@ public class OptionsMenu : MonoBehaviour
 
     private void OnEnable()
     {
+        if (playerhead == null)
+            return;
+
         transform.rotation = playerhead.rotation;
 
         transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0);

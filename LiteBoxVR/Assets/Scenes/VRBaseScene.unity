@@ -1334,6 +1334,7 @@ GameObject:
   - component: {fileID: 564472579}
   - component: {fileID: 564472580}
   - component: {fileID: 564472581}
+  - component: {fileID: 564472582}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameController
@@ -1367,145 +1368,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c70294d13ac49de428eed95ea6810b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boardType: 0
   StateOfGame: 0
-  gameStateScene:
-  - SceneName: ArmCalibration
-    AssociatedState: 3
-    Loading: 0
-    Loaded: 0
-    CallOnLoaded: CheckWristStraps
-    SetActiveOnLoaded: 0
-    UnloadOnStateChange: 1
-    callfunction:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 564472580}
-          m_MethodName: ApplyBoardPosition
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    NextGameState: 4
-    LastGameState: 2
-  - SceneName: BoardCalibration
-    AssociatedState: 4
-    Loading: 0
-    Loaded: 0
-    CallOnLoaded: 
-    SetActiveOnLoaded: 0
-    UnloadOnStateChange: 1
-    callfunction:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    NextGameState: 6
-    LastGameState: 3
-  - SceneName: EnvStudio
-    AssociatedState: 6
-    Loading: 0
-    Loaded: 0
-    CallOnLoaded: NextState
-    SetActiveOnLoaded: 1
-    UnloadOnStateChange: 0
-    callfunction:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    NextGameState: 7
-    LastGameState: 5
-  - SceneName: RevolvingMenuTest
-    AssociatedState: 7
-    Loading: 0
-    Loaded: 0
-    CallOnLoaded: 
-    SetActiveOnLoaded: 0
-    UnloadOnStateChange: 1
-    callfunction:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    NextGameState: 8
-    LastGameState: 0
-  - SceneName: ModularGameplayTest
-    AssociatedState: 9
-    Loading: 0
-    Loaded: 0
-    CallOnLoaded: ApplyBoardPosition
-    SetActiveOnLoaded: 0
-    UnloadOnStateChange: 1
-    callfunction:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    NextGameState: 0
-    LastGameState: 0
+  gameStateScenes:
   - SceneName: Env_Setup
     AssociatedState: 1
     Loading: 0
     Loaded: 0
-    CallOnLoaded: NextState
+    CallOnLoaded: 
     SetActiveOnLoaded: 1
     UnloadOnStateChange: 0
-    callfunction:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    NextGameState: 0
-    LastGameState: 0
   - SceneName: ControllerSelection
+    AssociatedState: 1
+    Loading: 0
+    Loaded: 0
+    CallOnLoaded: 
+    SetActiveOnLoaded: 0
+    UnloadOnStateChange: 0
+  - SceneName: ArmCalibration
     AssociatedState: 2
     Loading: 0
     Loaded: 0
     CallOnLoaded: 
     SetActiveOnLoaded: 0
-    UnloadOnStateChange: 1
-    callfunction:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    NextGameState: 3
-    LastGameState: 0
-  - SceneName: BoardPlacement
-    AssociatedState: 5
-    Loading: 0
-    Loaded: 0
-    CallOnLoaded: 
-    SetActiveOnLoaded: 0
-    UnloadOnStateChange: 1
-    callfunction:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    NextGameState: 6
-    LastGameState: 2
-  - SceneName: OldDemo
-    AssociatedState: 10
+    UnloadOnStateChange: 0
+  - SceneName: BoardCalibration
+    AssociatedState: 3
     Loading: 0
     Loaded: 0
     CallOnLoaded: 
     SetActiveOnLoaded: 0
     UnloadOnStateChange: 0
-    callfunction:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    NextGameState: 6
-    LastGameState: 2
   GameStateText: {fileID: 889914377}
   isBoardTracked: 0
   isBoardPlaced: 1
@@ -1513,22 +1406,6 @@ MonoBehaviour:
   UsingWristStraps: 0
   BoardPosition: {x: 0, y: 0, z: 0}
   BoardForward: {x: 0, y: 0, z: 0}
-  myEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 564472578}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: GameManager+MyEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   SongAudioToPlay: {fileID: 0}
   SongJsonToPlay: {fileID: 0}
   OptionsMenuObj: {fileID: 428193460}
@@ -1544,6 +1421,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2ae5770b19b2d74b98d50e9709f23c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &564472582
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564472578}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 02684a0dc92a3054c8ae027296fe93f2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &596490327 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 11479374, guid: d9809c5e8418bb047bf2c8ba1d1a2cec,
