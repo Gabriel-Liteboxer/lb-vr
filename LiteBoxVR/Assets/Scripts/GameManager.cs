@@ -6,11 +6,46 @@ using UnityEngine.Events;
 
 public class GameManager : TagModularity
 {
+    //started at 1:30
+
     private Animator GameStateAnim;
 
-    [SerializeField]
-    public AnimatorStateInfo[] animatorStateInfos;
+    public static GameManager Instance { get; private set; }
 
+    //[SerializeField]
+    //public AnimatorStateInfo[] animatorStateInfos;
+
+    public enum LoadableScenes
+    {
+        //set each of these to the index of the scenes in the build settings
+        ControllerSelection = 7,
+        ArmCalibration = 4,
+        BoardPlacement = 8,
+        Env_Studio = 1,
+        Env_Setup = 6,
+        RevolvingMenuTest = 2,
+        ModularGameplayTest = 3,
+        BoardCalibration = 5
+    }
+
+    [System.Serializable]
+    public class SceneState
+    {
+        public LoadableScenes SceneIndex;
+
+        [HideInInspector]
+        public bool Loading;
+
+        [HideInInspector]
+        public bool Loaded;
+
+        public bool SetActiveOnLoaded;
+        public bool UnloadOnStateChange;
+
+        public UnityEvent CallOnLoaded;
+
+    }
+    /*
     public enum GameState
     {
         defaultState,
@@ -23,7 +58,7 @@ public class GameManager : TagModularity
         gamePlay,
         oldDemo,
         gameOver
-    }
+    }*/
 
     public enum BoardType
     {
@@ -35,38 +70,28 @@ public class GameManager : TagModularity
     public BoardType boardType;
 
 
-    [Header("Current State of Game")]
-    public GameState StateOfGame;
-
+    //[Header("Current State of Game")]
+    //public GameState StateOfGame;
+    /*
     [System.Serializable]
     public class GameStateScene
     {
-        public string SceneName;
-        public GameState AssociatedState;
-        
+        //AnimGameStateController.LoadableScenes Scene;
 
         public bool Loading;
         public bool Loaded;
-
-        public string CallOnLoaded;
+        
         public bool SetActiveOnLoaded;
         public bool UnloadOnStateChange;
 
-        //public UnityEvent FunctionToCall;
+        public UnityEvent CallOnLoaded;
 
-
-        /*
-        [Header("States before and after")]
-        public GameState NextGameState;
-        public GameState LastGameState;
-        */
-
-    }
+    }*/
 
     [Header("Game State Scenes To Load")]
-    public GameStateScene[] gameStateScenes;
+    public List<SceneState> gameStateScenes;
 
-    Dictionary<GameState, GameStateScene> GameStateDict = new Dictionary<GameState, GameStateScene>();
+    Dictionary<LoadableScenes, SceneState> SceneStateDict = new Dictionary<LoadableScenes, SceneState>();
 
     public TextMesh GameStateText;
 
@@ -84,20 +109,31 @@ public class GameManager : TagModularity
 
     public Vector3 BoardForward;
 
-    /*
-    [System.Serializable]
-    public class MyEvent : UnityEvent<bool> { }
-    public MyEvent myEvent;*/
-
     public AudioClip SongAudioToPlay;
 
     public TextAsset SongJsonToPlay;
 
     public GameObject OptionsMenuObj;
 
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+
+        }
+
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+
         GameStateAnim = GetComponent<Animator>();
         /*
         foreach (GameStateScene gss in gameStateScenes)
@@ -106,6 +142,10 @@ public class GameManager : TagModularity
 
         }
         NextState();*/
+
+        //animGame = new AnimGameStateManager();
+
+        //animGame.
         
     }
 
@@ -125,13 +165,13 @@ public class GameManager : TagModularity
 
         Debug.Log("Applied Board Position");
     }
-
+    /*
     public void NextState()
     {
         GoToState(StateOfGame + 1);
-
-    }
-
+        
+    }*/
+    /*
     public void GoToState(GameState newState)
     {
         if (newState > StateOfGame)
@@ -185,7 +225,7 @@ public class GameManager : TagModularity
 
         }
     }
-
+    */
     private void Update()
     {
         
@@ -200,6 +240,7 @@ public class GameManager : TagModularity
 
         if (OVRInput.GetDown(OVRInput.RawButton.A) || Input.GetKeyDown(KeyCode.A))
         {
+            
             GameStateAnim.SetTrigger("AdvanceState");
 
             /*
@@ -229,12 +270,13 @@ public class GameManager : TagModularity
         }
         else if (OVRInput.GetDown(OVRInput.RawButton.B) || Input.GetKeyDown(KeyCode.B))
         {
-           
-            //GoToState(GameStateDict[StateOfGame].LastGameState);
             
+            GameStateAnim.SetTrigger("PreviousState");
+            //GoToState(GameStateDict[StateOfGame].LastGameState);
+
         }
         
-        GameStateText.text = StateOfGame.ToString();
+        //GameStateText.text = StateOfGame.ToString();
 
         UpdateAnimParameters();
 
@@ -260,9 +302,11 @@ public class GameManager : TagModularity
 
         }
         */
-        StartCoroutine(ChangeGameState());
+        //StartCoroutine(ChangeGameState());
     }
 
+    
+    /*
     public IEnumerator ChangeGameState ()
     {
         yield return new WaitForSeconds(1);
@@ -284,7 +328,7 @@ public class GameManager : TagModularity
             }
 
         }
-    }
+    }*/
 
     void UpdateAnimParameters()
     {
@@ -297,7 +341,7 @@ public class GameManager : TagModularity
         GameStateAnim.SetBool("isBoardPlaced", isBoardPlaced);
 
     }
-
+    /*
     public bool LoadSceneFromGameState(GameState aState)
     {
         if (GameStateDict.ContainsKey(aState))
@@ -314,14 +358,17 @@ public class GameManager : TagModularity
         }
 
         return false;
-    }
+    }*/
 
-
+/*
     IEnumerator LoadGameStateScene(GameStateScene aScene)
     {
+        if (SceneManager.GetSceneByBuildIndex(aScene.BuildIndex) != null)
+            yield break;
+
         aScene.Loading = true;
 
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(aScene.SceneName, LoadSceneMode.Additive);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(aScene.BuildIndex, LoadSceneMode.Additive);
 
         // Wait until the asynchronous scene fully loads
         while (!asyncLoad.isDone)
@@ -356,6 +403,44 @@ public class GameManager : TagModularity
             SendMessage(aScene.CallOnLoaded);
 
         Debug.Log("loaded " + aScene.SceneName);
+    }*/
+
+    IEnumerator LoadSceneState(SceneState aScene)
+    {
+        aScene.Loading = true;
+
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync((int)aScene.SceneIndex, LoadSceneMode.Additive);
+
+        // Wait until the asynchronous scene fully loads
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+
+        if (aScene.SetActiveOnLoaded)
+        {
+            //remove the old active scene
+            if (SceneStateDict.ContainsKey((LoadableScenes)SceneManager.GetActiveScene().buildIndex))
+            {
+                SceneStateDict.Remove((LoadableScenes)SceneManager.GetActiveScene().buildIndex);
+
+                SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+            }
+            
+            // set the new active scene
+            SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex((int)aScene.SceneIndex));
+
+            
+        }
+
+        aScene.Loading = false;
+        aScene.Loaded = true;
+
+        //call a function when the scene has loaded
+        if (aScene.CallOnLoaded != null)
+            aScene.CallOnLoaded.Invoke();
+
+        Debug.Log("loaded " + aScene.SceneIndex.ToString());
     }
 
     public void SetControllerMode(bool wristStraps)
@@ -369,7 +454,7 @@ public class GameManager : TagModularity
         if (!UsingWristStraps)
         {
             isArmCalibrated = true;
-            NextState();
+            //NextState();
         }
 
     }
@@ -381,8 +466,10 @@ public class GameManager : TagModularity
 
         SongAudioToPlay = aSongAudio;
 
-        GoToState(GameState.gamePlay);
-        
+        //GoToState(GameState.gamePlay);
+
+        GameStateAnim.SetTrigger("AdvanceState");
+
     }
 
     public void RestartGame()
@@ -405,4 +492,34 @@ public class GameManager : TagModularity
         OptionsMenuObj.SetActive(isOpen);
 
     }
+
+    public void AddSceneState(SceneState aSceneState)
+    {
+        Debug.Log("called AddSceneState");
+
+        if (SceneStateDict.ContainsKey(aSceneState.SceneIndex))
+            return;
+
+        SceneStateDict.Add(aSceneState.SceneIndex, aSceneState);
+
+        StartCoroutine(LoadSceneState(aSceneState));
+
+    }
+
+    public void RemoveSceneState(SceneState aSceneState)
+    {
+        Debug.Log("called RemoveSceneState");
+
+        if (SceneStateDict.ContainsKey(aSceneState.SceneIndex))
+        {
+            SceneManager.UnloadSceneAsync((int)aSceneState.SceneIndex);
+
+            SceneStateDict.Remove(aSceneState.SceneIndex);
+
+        }
+
+    }
+
+
 }
+

@@ -361,6 +361,7 @@
     <Compile Include="Assets\Oculus\VoiceMod\Scripts\OVRVoiceModContext.cs" />
     <Compile Include="Assets\OldScripts\GameplayController1.cs" />
     <Compile Include="Assets\OptionsMenu.cs" />
+    <Compile Include="Assets\Scripts\AnimGameStateController.cs" />
     <Compile Include="Assets\Scripts\ArmCalibration.cs" />
     <Compile Include="Assets\Scripts\BoardCalibration.cs" />
     <Compile Include="Assets\Scripts\BoardTracking.cs" />
