@@ -12,9 +12,6 @@ public class GameManager : TagModularity
 
     public static GameManager Instance { get; private set; }
 
-    //[SerializeField]
-    //public AnimatorStateInfo[] animatorStateInfos;
-
     public enum LoadableScenes
     {
         //set each of these to the index of the scenes in the build settings
@@ -45,20 +42,6 @@ public class GameManager : TagModularity
         public UnityEvent CallOnLoaded;
 
     }
-    /*
-    public enum GameState
-    {
-        defaultState,
-        controlSelect,
-        armCalibration,
-        boardCalibration,
-        boardPlacement,
-        gamemodeSelect,
-        songSelect,
-        gamePlay,
-        oldDemo,
-        gameOver
-    }*/
 
     public enum BoardType
     {
@@ -68,25 +51,6 @@ public class GameManager : TagModularity
     }
 
     public BoardType boardType;
-
-
-    //[Header("Current State of Game")]
-    //public GameState StateOfGame;
-    /*
-    [System.Serializable]
-    public class GameStateScene
-    {
-        //AnimGameStateController.LoadableScenes Scene;
-
-        public bool Loading;
-        public bool Loaded;
-        
-        public bool SetActiveOnLoaded;
-        public bool UnloadOnStateChange;
-
-        public UnityEvent CallOnLoaded;
-
-    }*/
 
     [Header("Game State Scenes To Load")]
     public List<SceneState> gameStateScenes;
@@ -115,6 +79,13 @@ public class GameManager : TagModularity
 
     public GameObject OptionsMenuObj;
 
+    // animator hashes
+    private readonly int NextState = Animator.StringToHash("NextState");
+    private readonly int LastState = Animator.StringToHash("LastState");
+    private readonly int ArmCalibrated = Animator.StringToHash("isArmCalibrated");
+    private readonly int BoardCalibrated = Animator.StringToHash("isBoardCalibrated");
+    private readonly int BoardPlaced = Animator.StringToHash("isBoardPlaced");
+
     private void Awake()
     {
         if (Instance == null)
@@ -128,25 +99,7 @@ public class GameManager : TagModularity
 
         }
 
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
         GameStateAnim = GetComponent<Animator>();
-        /*
-        foreach (GameStateScene gss in gameStateScenes)
-        {
-            GameStateDict.Add(gss.AssociatedState, gss);
-
-        }
-        NextState();*/
-
-        //animGame = new AnimGameStateManager();
-
-        //animGame.
-        
     }
 
     public void SetBoardPosition(Vector3 bPos, Vector3 bFwd)
@@ -165,67 +118,7 @@ public class GameManager : TagModularity
 
         Debug.Log("Applied Board Position");
     }
-    /*
-    public void NextState()
-    {
-        GoToState(StateOfGame + 1);
-        
-    }*/
-    /*
-    public void GoToState(GameState newState)
-    {
-        if (newState > StateOfGame)
-        {
-            do
-            {
-                if (StateOfGame == GameState.armCalibration && !isArmCalibrated) { Debug.Log("Must Calibrate Arm"); break; }
-
-                if (StateOfGame == GameState.boardCalibration && !isBoardTracked) { Debug.Log("Must Calibrate Board"); break; }
-
-                if (StateOfGame == GameState.boardPlacement && !isBoardPlaced) { Debug.Log("Must Place Board"); break; }
-
-                if (StateOfGame == GameState.controlSelect && !controllerModeSelected) { Debug.Log("Must SelectControllerMode"); break; }
-
-                StateOfGame = newState;
-
-            } while (false);
-
-        }
-        else if (newState < StateOfGame)
-        {
-
-            StateOfGame = newState;
-        }
-
-        LoadSceneFromGameState(StateOfGame);
-
-        UnloadOldStates();
-    }
-
-    public void LastState()
-    {
-        GoToState(StateOfGame - 1);
-
-    }
-
-    void UnloadOldStates()
-    {
-        foreach (GameStateScene gss in gameStateScenes)
-        {
-            if (StateOfGame == gss.AssociatedState)
-                continue;
-
-            if (gss.UnloadOnStateChange && gss.SceneName != "" && gss.Loaded)
-            {
-                Debug.Log("Unloading scene " + gss.SceneName);
-
-                SceneManager.UnloadSceneAsync(gss.SceneName);
-                gss.Loaded = false;
-            }
-
-        }
-    }
-    */
+    
     private void Update()
     {
         
@@ -237,173 +130,30 @@ public class GameManager : TagModularity
                 ToggleOptionsMenu(false);
         }
 
-
         if (OVRInput.GetDown(OVRInput.RawButton.A) || Input.GetKeyDown(KeyCode.A))
         {
-            
-            GameStateAnim.SetTrigger("AdvanceState");
-
-            /*
-            if (StateOfGame < GameState.environmentLoad)
-            {
-                if (StateOfGame == GameState.controllerModeSelect)
-                {
-                    if (UsingWristStraps)
-                    {
-                        GoToState(GameState.armCalibration);
-
-                    }
-                    else
-                    {
-                        GoToState(GameState.boardPlacement);
-
-                    }
-
-                }
-                else
-                {
-                    GoToState(GameStateDict[StateOfGame].NextGameState);
-
-                }
-            }
-            */
+            GameStateAnim.SetTrigger(NextState);
         }
         else if (OVRInput.GetDown(OVRInput.RawButton.B) || Input.GetKeyDown(KeyCode.B))
         {
-            
-            GameStateAnim.SetTrigger("PreviousState");
-            //GoToState(GameStateDict[StateOfGame].LastGameState);
-
+            GameStateAnim.SetTrigger(LastState);
         }
-        
-        //GameStateText.text = StateOfGame.ToString();
 
         UpdateAnimParameters();
-
-
+        
     }
-
-    public void OnAnimatorStateChange()
-    {
-        /*
-        Debug.Log("called from animator " + gameStateScenes.Length);
-
-        foreach (GameStateScene gss in gameStateScenes)
-        {
-
-            if (GameStateAnim.GetCurrentAnimatorStateInfo(0).IsName(System.Enum.GetName(typeof(GameState), gss.AssociatedState)))
-            {
-                Debug.Log("name: " + gss.AssociatedState.ToString());
-
-                StateOfGame = gss.AssociatedState;
-
-                StartCoroutine(LoadGameStateScene(gss));
-            }
-
-        }
-        */
-        //StartCoroutine(ChangeGameState());
-    }
-
-    
-    /*
-    public IEnumerator ChangeGameState ()
-    {
-        yield return new WaitForSeconds(1);
-
-        Debug.Log("called from animator " + gameStateScenes.Length);
-
-        foreach (GameStateScene gss in gameStateScenes)
-        {
-
-            if (GameStateAnim.GetCurrentAnimatorStateInfo(0).IsName(System.Enum.GetName(typeof(GameState), gss.AssociatedState)))
-            {
-                Debug.Log("name: " + gss.AssociatedState.ToString());
-
-                StateOfGame = gss.AssociatedState;
-
-                StartCoroutine(LoadGameStateScene(gss));
-
-                UnloadOldStates();
-            }
-
-        }
-    }*/
 
     void UpdateAnimParameters()
     {
-        GameStateAnim.SetBool("isArmCalibrated", isArmCalibrated);
+        GameStateAnim.SetBool(ArmCalibrated, isArmCalibrated);
 
-        GameStateAnim.SetBool("isBoardCalibrated", isBoardTracked);
+        GameStateAnim.SetBool(BoardCalibrated, isBoardTracked);
 
         GameStateAnim.SetBool("UsingWristStraps", UsingWristStraps);
 
-        GameStateAnim.SetBool("isBoardPlaced", isBoardPlaced);
+        GameStateAnim.SetBool(BoardPlaced, isBoardPlaced);
 
     }
-    /*
-    public bool LoadSceneFromGameState(GameState aState)
-    {
-        if (GameStateDict.ContainsKey(aState))
-        {
-            if (!GameStateDict[aState].Loading && !GameStateDict[aState].Loaded)
-            {
-                StartCoroutine(LoadGameStateScene(GameStateDict[aState]));
-
-            }
-            
-
-            return true;
-
-        }
-
-        return false;
-    }*/
-
-/*
-    IEnumerator LoadGameStateScene(GameStateScene aScene)
-    {
-        if (SceneManager.GetSceneByBuildIndex(aScene.BuildIndex) != null)
-            yield break;
-
-        aScene.Loading = true;
-
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(aScene.BuildIndex, LoadSceneMode.Additive);
-
-        // Wait until the asynchronous scene fully loads
-        while (!asyncLoad.isDone)
-        {
-            yield return null;
-        }
-
-        if (aScene.SetActiveOnLoaded)
-        {
-            SceneManager.SetActiveScene(SceneManager.GetSceneByName(aScene.SceneName));
-
-            foreach (GameStateScene gss in gameStateScenes)
-            {
-                if (StateOfGame == gss.AssociatedState)
-                    continue;
-
-                if (gss.SetActiveOnLoaded && gss.SceneName != "" && gss.Loaded)
-                {
-                    Debug.Log("Unloading scene " + gss.SceneName);
-
-                    SceneManager.UnloadSceneAsync(gss.SceneName);
-                    gss.Loaded = false;
-                }
-
-            }
-        }
-
-        aScene.Loading = false;
-        aScene.Loaded = true;
-
-        if (aScene.CallOnLoaded != "")
-            SendMessage(aScene.CallOnLoaded);
-
-        Debug.Log("loaded " + aScene.SceneName);
-    }*/
 
     IEnumerator LoadSceneState(SceneState aScene)
     {
@@ -449,16 +199,6 @@ public class GameManager : TagModularity
         controllerModeSelected = true;
     }
 
-    void CheckWristStraps()
-    {
-        if (!UsingWristStraps)
-        {
-            isArmCalibrated = true;
-            //NextState();
-        }
-
-    }
-
     public void StartGameplay(TextAsset aSongJson, AudioClip aSongAudio)
     {
 
@@ -466,9 +206,7 @@ public class GameManager : TagModularity
 
         SongAudioToPlay = aSongAudio;
 
-        //GoToState(GameState.gamePlay);
-
-        GameStateAnim.SetTrigger("AdvanceState");
+        GameStateAnim.SetTrigger(NextState);
 
     }
 
@@ -480,7 +218,6 @@ public class GameManager : TagModularity
 
     public void ReturnToSongMenu()
     {
-        //GoToState(GameState.environmentLoad);
         ToggleOptionsMenu(false);
     }
 
