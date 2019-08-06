@@ -70,6 +70,7 @@
     <Compile Include="Assets\HighscoreDisplayer.cs" />
     <Compile Include="Assets\HighscoreManager.cs" />
     <Compile Include="Assets\HitMarkerInfo.cs" />
+    <Compile Include="Assets\LoadingO.cs" />
     <Compile Include="Assets\Oculus\AudioManager\Scenes\Scripts\TestScript.cs" />
     <Compile Include="Assets\Oculus\AudioManager\Scripts\Audio\AmbienceEmitter.cs" />
     <Compile Include="Assets\Oculus\AudioManager\Scripts\Audio\AudioManager.cs" />

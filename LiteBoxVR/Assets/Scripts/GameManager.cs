@@ -222,7 +222,7 @@ public class GameManager : TagModularity
 
     public void RestartGame()
     {
-        SceneManager.LoadScene("VRBaseScene");
+        SceneManager.LoadScene(0);
 
     }
 

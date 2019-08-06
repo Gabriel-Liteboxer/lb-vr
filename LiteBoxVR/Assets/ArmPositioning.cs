@@ -48,6 +48,15 @@ public class ArmPositioning : TagModularity
 
         //defaultController = ControllerModel.m_controller;
 
+        StartCoroutine(LateStart());
+    }
+
+    // changing the control mode the first time caused the game to freeze as the controller model was loaded. 
+    //LateStart ensures that the model is loaded before it is disabled
+    IEnumerator LateStart()
+    {
+        yield return new WaitForEndOfFrame();
+
         ChangeControllerMode();
     }
 

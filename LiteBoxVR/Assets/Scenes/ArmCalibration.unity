@@ -684,6 +684,14 @@ PrefabInstance:
       propertyPath: InfoScreens.Array.data[2].body
       value: Calibration in progress...
       objectReference: {fileID: 0}
+    - target: {fileID: 1274958184062176790, guid: f4ca71c66e53a77418c3b970bdbab297,
+        type: 3}
+      propertyPath: InfoScreens.Array.data[3].body
+      value: 'Press Y to restart calibration
+
+
+        Press A to Continue'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4ca71c66e53a77418c3b970bdbab297, type: 3}
 --- !u!1 &1030028582
