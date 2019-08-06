@@ -1055,7 +1055,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &428193461
 Transform:
   m_ObjectHideFlags: 0
@@ -1341,7 +1341,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &564472579
 Transform:
   m_ObjectHideFlags: 0
@@ -1374,6 +1374,7 @@ MonoBehaviour:
   isBoardTracked: 0
   isBoardPlaced: 1
   isArmCalibrated: 0
+  controllerModeSelected: 0
   UsingWristStraps: 0
   BoardPosition: {x: 0, y: 0, z: 0}
   BoardForward: {x: 0, y: 0, z: 0}

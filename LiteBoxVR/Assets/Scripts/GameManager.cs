@@ -15,14 +15,15 @@ public class GameManager : TagModularity
     public enum LoadableScenes
     {
         //set each of these to the index of the scenes in the build settings
-        ControllerSelection = 7,
-        ArmCalibration = 4,
-        BoardPlacement = 8,
-        Env_Studio = 1,
-        Env_Setup = 6,
-        RevolvingMenuTest = 2,
-        ModularGameplayTest = 3,
-        BoardCalibration = 5
+        ControllerSelection = 8,
+        ArmCalibration = 5,
+        BoardPlacement = 9,
+        Env_Studio = 2,
+        Env_Setup = 7,
+        RevolvingMenuTest = 3,
+        ModularGameplayTest = 4,
+        BoardCalibration = 6,
+        VrBaseScene = 1
     }
 
     [System.Serializable]
@@ -65,7 +66,7 @@ public class GameManager : TagModularity
 
     public bool isArmCalibrated;
 
-    private bool controllerModeSelected;
+    public bool controllerModeSelected;
 
     public bool UsingWristStraps;
 
@@ -80,11 +81,14 @@ public class GameManager : TagModularity
     public GameObject OptionsMenuObj;
 
     // animator hashes
-    private readonly int NextState = Animator.StringToHash("NextState");
-    private readonly int LastState = Animator.StringToHash("LastState");
-    private readonly int ArmCalibrated = Animator.StringToHash("isArmCalibrated");
-    private readonly int BoardCalibrated = Animator.StringToHash("isBoardCalibrated");
-    private readonly int BoardPlaced = Animator.StringToHash("isBoardPlaced");
+    private readonly int NextStateParam = Animator.StringToHash("NextState");
+    private readonly int LastStateParam = Animator.StringToHash("LastState");
+    private readonly int StartGameParam = Animator.StringToHash("StartGame");
+    private readonly int ArmCalibratedParam = Animator.StringToHash("isArmCalibrated");
+    private readonly int BoardCalibratedParam = Animator.StringToHash("isBoardCalibrated");
+    private readonly int BoardPlacedParam = Animator.StringToHash("isBoardPlaced");
+    private readonly int ControlModeSelectedParam = Animator.StringToHash("controlModeSelected");
+    private readonly int UsingWristStrapsParam = Animator.StringToHash("UsingWristStraps");
 
     private void Awake()
     {
@@ -132,11 +136,11 @@ public class GameManager : TagModularity
 
         if (OVRInput.GetDown(OVRInput.RawButton.A) || Input.GetKeyDown(KeyCode.A))
         {
-            GameStateAnim.SetTrigger(NextState);
+            GameStateAnim.SetTrigger(NextStateParam);
         }
         else if (OVRInput.GetDown(OVRInput.RawButton.B) || Input.GetKeyDown(KeyCode.B))
         {
-            GameStateAnim.SetTrigger(LastState);
+            GameStateAnim.SetTrigger(LastStateParam);
         }
 
         UpdateAnimParameters();
@@ -145,13 +149,15 @@ public class GameManager : TagModularity
 
     void UpdateAnimParameters()
     {
-        GameStateAnim.SetBool(ArmCalibrated, isArmCalibrated);
+        GameStateAnim.SetBool(ArmCalibratedParam, isArmCalibrated);
 
-        GameStateAnim.SetBool(BoardCalibrated, isBoardTracked);
+        GameStateAnim.SetBool(BoardCalibratedParam, isBoardTracked);
 
-        GameStateAnim.SetBool("UsingWristStraps", UsingWristStraps);
+        GameStateAnim.SetBool(UsingWristStrapsParam, UsingWristStraps);
 
-        GameStateAnim.SetBool(BoardPlaced, isBoardPlaced);
+        GameStateAnim.SetBool(BoardPlacedParam, isBoardPlaced);
+
+        GameStateAnim.SetBool(ControlModeSelectedParam, controllerModeSelected);
 
     }
 
@@ -169,6 +175,9 @@ public class GameManager : TagModularity
 
         if (aScene.SetActiveOnLoaded)
         {
+            SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+            
+            /* this works well, but we want it to unload the start scene
             //remove the old active scene
             if (SceneStateDict.ContainsKey((LoadableScenes)SceneManager.GetActiveScene().buildIndex))
             {
@@ -176,7 +185,8 @@ public class GameManager : TagModularity
 
                 SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
             }
-            
+            */
+
             // set the new active scene
             SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex((int)aScene.SceneIndex));
 
@@ -206,7 +216,7 @@ public class GameManager : TagModularity
 
         SongAudioToPlay = aSongAudio;
 
-        GameStateAnim.SetTrigger(NextState);
+        GameStateAnim.SetTrigger(StartGameParam);
 
     }
 

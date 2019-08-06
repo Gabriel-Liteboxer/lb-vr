@@ -9,15 +9,19 @@ public class OptionsMenu : MonoBehaviour
     public bool FollowCamera;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        playerhead = Camera.main.gameObject.transform;
+        //playerhead = Camera.main.gameObject.transform;
 
         gameObject.SetActive(false);
+
+        DontDestroyOnLoad(gameObject);
     }
 
     private void OnEnable()
     {
+        if (playerhead == null)
+            playerhead = Camera.main.gameObject.transform;
         if (playerhead == null)
             return;
 

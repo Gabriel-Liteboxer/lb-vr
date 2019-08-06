@@ -10,8 +10,8 @@ public class controllerModeSelect : TagModularity
 
     private void Start()
     {
-        gameMgr = FindTaggedObject("GameController").GetComponent<GameManager>();
-
+        //gameMgr = FindTaggedObject("GameController").GetComponent<GameManager>();
+        GameManager.Instance.controllerModeSelected = false;
     }
 
 
@@ -19,7 +19,7 @@ public class controllerModeSelect : TagModularity
     {
         if (OVRInput.GetDown(OVRInput.RawButton.Y) || Input.GetKeyDown(KeyCode.Y))
         {
-            gameMgr.SetControllerMode(true);
+            GameManager.Instance.SetControllerMode(true);
             guide.SetInfoScreen(2);
 
             FindTaggedObject("HandR").GetComponent<ArmPositioning>().ChangeControllerMode();
@@ -27,7 +27,7 @@ public class controllerModeSelect : TagModularity
         }
         else if(OVRInput.GetDown(OVRInput.RawButton.X) || Input.GetKeyDown(KeyCode.X))
         {
-            gameMgr.SetControllerMode(false);
+            GameManager.Instance.SetControllerMode(false);
             guide.SetInfoScreen(1);
 
             FindTaggedObject("HandR").GetComponent<ArmPositioning>().ChangeControllerMode();
