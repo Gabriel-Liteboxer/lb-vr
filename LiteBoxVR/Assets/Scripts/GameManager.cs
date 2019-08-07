@@ -23,7 +23,8 @@ public class GameManager : TagModularity
         RevolvingMenuTest = 3,
         ModularGameplayTest = 4,
         BoardCalibration = 6,
-        VrBaseScene = 1
+        VrBaseScene = 1,
+        PunchingBagCalibration = 10
     }
 
     [System.Serializable]
