@@ -18,7 +18,7 @@ public class ArmPositioning : TagModularity
 
     //static float startingDistance;
 
-    static float armScale = 1;
+    static float armScale = 0.8f;
 
     static GameManager gameCont;
 

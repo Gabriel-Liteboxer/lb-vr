@@ -23,6 +23,8 @@ public class PunchingBagCalibration : TagModularity
         FistEndpoint = FindTaggedObject("HandL").transform;
 
         //guide.SetInfoScreen(0);
+
+        GameManager.Instance.isBoardTracked = false;
     }
 
     // Update is called once per frame
@@ -39,6 +41,8 @@ public class PunchingBagCalibration : TagModularity
                 GameObject NewAnchorpoint = GameObject.Instantiate(AnchorPointPrefab, FistEndpoint.position, FistEndpoint.rotation);
 
                 AnchorPoints.Add(NewAnchorpoint);
+
+                GameManager.Instance.isBoardTracked = false;
 
             }
 
@@ -57,6 +61,8 @@ public class PunchingBagCalibration : TagModularity
             AnchorPoints.Clear();
 
             //guide.SetInfoScreen(0);
+
+            GameManager.Instance.isBoardTracked = false;
         }
 
         if (AnchorPoints.Count >= 3)
@@ -82,6 +88,8 @@ public class PunchingBagCalibration : TagModularity
             float distFromCenter = Vector2.Distance(anchorPoints2D[0], center);
 
             PunchingBagObj.transform.localScale = Vector3.one * distFromCenter*2;
+
+            GameManager.Instance.isBoardTracked = true;
 
             foreach (GameObject an in AnchorPoints)
             {

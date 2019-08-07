@@ -24,7 +24,8 @@ public class GameManager : TagModularity
         ModularGameplayTest = 4,
         BoardCalibration = 6,
         VrBaseScene = 1,
-        PunchingBagCalibration = 10
+        PunchingBagCalibration = 10,
+        BoardTypeSelection = 11
     }
 
     [System.Serializable]
@@ -65,6 +66,8 @@ public class GameManager : TagModularity
 
     public bool isBoardPlaced;
 
+    public bool isBoardTypeSelected;
+
     public bool isArmCalibrated;
 
     public bool controllerModeSelected;
@@ -88,6 +91,8 @@ public class GameManager : TagModularity
     private readonly int ArmCalibratedParam = Animator.StringToHash("isArmCalibrated");
     private readonly int BoardCalibratedParam = Animator.StringToHash("isBoardCalibrated");
     private readonly int BoardPlacedParam = Animator.StringToHash("isBoardPlaced");
+    private readonly int BoardTypeSelectedParam = Animator.StringToHash("isBoardTypeSelected");
+    private readonly int BoardTypeParam = Animator.StringToHash("BoardType");
     private readonly int ControlModeSelectedParam = Animator.StringToHash("controlModeSelected");
     private readonly int UsingWristStrapsParam = Animator.StringToHash("UsingWristStraps");
 
@@ -109,8 +114,6 @@ public class GameManager : TagModularity
 
     public void SetBoardPosition(Vector3 bPos, Vector3 bFwd)
     {
-        isBoardTracked = true;
-
         BoardPosition = bPos;
 
         BoardForward = bFwd;
@@ -148,11 +151,27 @@ public class GameManager : TagModularity
         
     }
 
+    public void NextState()
+    {
+        GameStateAnim.SetTrigger(NextStateParam);
+
+    }
+
+    public void LastState()
+    {
+        GameStateAnim.SetTrigger(LastStateParam);
+
+    }
+
     void UpdateAnimParameters()
     {
         GameStateAnim.SetBool(ArmCalibratedParam, isArmCalibrated);
 
         GameStateAnim.SetBool(BoardCalibratedParam, isBoardTracked);
+
+        GameStateAnim.SetBool(BoardTypeSelectedParam, isBoardTypeSelected);
+
+        GameStateAnim.SetInteger(BoardTypeParam, (int)boardType);
 
         GameStateAnim.SetBool(UsingWristStrapsParam, UsingWristStraps);
 
@@ -223,6 +242,8 @@ public class GameManager : TagModularity
 
     public void RestartGame()
     {
+        OptionsMenuObj.SetActive(false);
+
         SceneManager.LoadScene(0);
 
     }
