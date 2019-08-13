@@ -611,6 +611,7 @@ MonoBehaviour:
   GameStateText: {fileID: 0}
   isBoardTracked: 0
   isBoardPlaced: 1
+  isBoardTypeSelected: 0
   isArmCalibrated: 0
   controllerModeSelected: 0
   UsingWristStraps: 0
