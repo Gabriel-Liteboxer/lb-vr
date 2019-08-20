@@ -32,6 +32,33 @@ public class ArmPositioning : TagModularity
 
     public bool TestingInEditor;
 
+    [HideInInspector]
+    public static GameObject RightHandInstance;
+
+    [HideInInspector]
+    public static GameObject LeftHandInstance;
+
+    public bool IsRightHand;
+    public bool IsLeftHand;
+
+    private void Awake()
+    {
+        if (IsRightHand)
+        {
+            if (RightHandInstance != null)
+                Destroy(gameObject);
+            else
+                RightHandInstance = gameObject;
+        }
+        else if (IsLeftHand)
+        {
+            if (LeftHandInstance != null)
+                Destroy(gameObject);
+            else
+                LeftHandInstance = gameObject;
+        }
+    }
+
     // new idea, press fists together to calibrate arm distance. use dot product to determine if the controllers are pointing at each other
 
     private void Start()

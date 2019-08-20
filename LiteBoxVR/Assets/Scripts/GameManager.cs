@@ -25,7 +25,8 @@ public class GameManager : TagModularity
         BoardCalibration = 6,
         VrBaseScene = 1,
         PunchingBagCalibration = 10,
-        BoardTypeSelection = 11
+        BoardTypeSelection = 11,
+        GamemodeSelect = 12
     }
 
     [System.Serializable]

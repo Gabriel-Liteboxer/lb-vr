@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BoardSelection.unity
     guid: e8fa59a32bbcd914793f12cc2e8e3ec1
+  - enabled: 1
+    path: Assets/Scenes/GamemodeSelect.unity
+    guid: 7ab7194a03a25b7498b6a643f2796ec6
   m_configObjects: {}

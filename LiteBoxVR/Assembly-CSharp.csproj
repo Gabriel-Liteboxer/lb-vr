@@ -364,6 +364,7 @@
     <Compile Include="Assets\OldScripts\GameplayController1.cs" />
     <Compile Include="Assets\OptionsMenu.cs" />
     <Compile Include="Assets\PunchingBagCalibration.cs" />
+    <Compile Include="Assets\RevolvingMenuParent.cs" />
     <Compile Include="Assets\Scripts\AnimGameStateController.cs" />
     <Compile Include="Assets\Scripts\ArmCalibration.cs" />
     <Compile Include="Assets\Scripts\BoardCalibration.cs" />

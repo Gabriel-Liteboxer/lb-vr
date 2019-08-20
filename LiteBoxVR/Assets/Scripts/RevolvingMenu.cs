@@ -35,7 +35,7 @@ public class RevolvingMenu : TagModularity
 
     private Transform PlayerHead;
 
-    private GameManager gameMgr;
+    //private GameManager gameMgr;
 
     public float UpdatePositionDistance = 1;
 
@@ -106,9 +106,9 @@ public class RevolvingMenu : TagModularity
 
         PlayerPositionTracker = new GameObject().transform;
 
-        gameMgr = FindTaggedObject("GameController").GetComponent<GameManager>();
+        //gameMgr = FindTaggedObject("GameController").GetComponent<GameManager>();
 
-        transform.right = gameMgr.BoardForward; // remove this and it works fine
+        transform.right = GameManager.Instance.BoardForward; // remove this and it works fine
 
         RightHand.handTransform = FindTaggedObject("HandR").transform;
 
@@ -380,7 +380,7 @@ public class RevolvingMenu : TagModularity
 
     public void PlaySong ()
     {
-        gameMgr.StartGameplay(SongLibrary[currentlySelected].DifficultyLevels[difficultyLevel].TrackJson, SongLibrary[currentlySelected].DifficultyLevels[difficultyLevel].audioClip);
+        GameManager.Instance.StartGameplay(SongLibrary[currentlySelected].DifficultyLevels[difficultyLevel].TrackJson, SongLibrary[currentlySelected].DifficultyLevels[difficultyLevel].audioClip);
 
     }
 
