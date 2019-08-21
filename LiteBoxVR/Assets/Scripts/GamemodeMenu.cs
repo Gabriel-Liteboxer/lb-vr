@@ -52,6 +52,8 @@ public class GamemodeMenu : RevolvingMenuParent
     {
         GameManager.Instance.gamemode = GamemodeLibrary[currentlySelected].gamemode;
 
+        GameManager.Instance.boardType = GamemodeLibrary[currentlySelected].boardType;
+
         GameManager.Instance.isGamemodeSelected = true;
 
         GameManager.Instance.NextState();

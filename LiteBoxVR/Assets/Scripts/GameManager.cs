@@ -26,7 +26,9 @@ public class GameManager : TagModularity
         VrBaseScene = 1,
         PunchingBagCalibration = 10,
         BoardTypeSelection = 11,
-        GamemodeSelect = 12
+        GamemodeSelect = 12,
+        RobotGameplay = 13,
+        Env_Robot = 14
     }
 
     [System.Serializable]

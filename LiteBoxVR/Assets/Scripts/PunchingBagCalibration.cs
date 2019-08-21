@@ -106,6 +106,21 @@ public class PunchingBagCalibration : TagModularity
 
         }
 
+        if (OVRInput.Get(OVRInput.RawButton.LIndexTrigger))
+        {
+            Vector3 handpos = ArmPositioning.LeftHandInstance.transform.position;
+
+            handpos = new Vector3(handpos.x, 0, handpos.z);
+
+            Vector3 bagpos = PunchingBagObj.transform.position;
+
+            bagpos = new Vector3(bagpos.x, 0, bagpos.y);
+
+            float distFromCenter = Vector3.Distance(handpos, bagpos);
+
+            PunchingBagObj.transform.localScale = Vector3.one * distFromCenter * 2;
+
+        }
 
     }
 }
