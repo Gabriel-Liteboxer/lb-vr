@@ -232,6 +232,11 @@ PrefabInstance:
       propertyPath: defaultController
       value: 16777216
       objectReference: {fileID: 0}
+    - target: {fileID: 1388734035458006747, guid: 1706114a4ad8b954c98efb13d4b395ad,
+        type: 3}
+      propertyPath: IsLeftHand
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1706114a4ad8b954c98efb13d4b395ad, type: 3}
 --- !u!4 &24758692 stripped
@@ -3277,6 +3282,11 @@ PrefabInstance:
         type: 3}
       propertyPath: defaultController
       value: 33554432
+      objectReference: {fileID: 0}
+    - target: {fileID: 1388734035458006747, guid: 1706114a4ad8b954c98efb13d4b395ad,
+        type: 3}
+      propertyPath: IsRightHand
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1706114a4ad8b954c98efb13d4b395ad, type: 3}

@@ -185,30 +185,7 @@ public class RevolvingMenu : TagModularity
 
         }
 
-        /*
-        if (LeftHand.inContact || RightHand.inContact)
-        {
-            float ContactAngle = LeftHand.contactAngle;
-
-            if (!MovingMenuSlider)
-            {
-                MovingMenuSlider = true;
-                PreContactMenuSlider = MenuSlider;
-            }
-            else
-            {
-                MenuSlider = PreContactMenuSlider + ContactAngle/18;
-            }
-
-
-
-
-        }
-        else
-        {
-            MovingMenuSlider = false;
-
-        }*/
+        
         /*
         SliderVelocity = Input.GetAxis("Horizontal")/5;
 

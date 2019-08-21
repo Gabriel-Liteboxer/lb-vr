@@ -56,6 +56,29 @@ public class GameManager : TagModularity
 
     public BoardType boardType;
 
+    public enum Gamemode
+    {
+        LiteboxerDevice,
+        RobotBoxing
+    }
+
+    /*
+    public class Gamemode
+    {
+        public enum Type
+        {
+            LiteboxerDevice,
+            RobotBoxing
+        }
+
+        public string GamemodeName;
+
+        public BoardType boardType;
+    }*/
+
+    public Gamemode gamemode;
+    
+
     [Header("Game State Scenes To Load")]
     public List<SceneState> gameStateScenes;
 
@@ -68,6 +91,8 @@ public class GameManager : TagModularity
     public bool isBoardPlaced;
 
     public bool isBoardTypeSelected;
+
+    public bool isGamemodeSelected;
 
     public bool isArmCalibrated;
 
@@ -92,8 +117,9 @@ public class GameManager : TagModularity
     private readonly int ArmCalibratedParam = Animator.StringToHash("isArmCalibrated");
     private readonly int BoardCalibratedParam = Animator.StringToHash("isBoardCalibrated");
     private readonly int BoardPlacedParam = Animator.StringToHash("isBoardPlaced");
-    private readonly int BoardTypeSelectedParam = Animator.StringToHash("isBoardTypeSelected");
+    private readonly int GamemodeSelectedParam = Animator.StringToHash("gamemodeSelected");
     private readonly int BoardTypeParam = Animator.StringToHash("BoardType");
+    private readonly int GamemodeParam = Animator.StringToHash("Gamemode");
     private readonly int ControlModeSelectedParam = Animator.StringToHash("controlModeSelected");
     private readonly int UsingWristStrapsParam = Animator.StringToHash("UsingWristStraps");
 
@@ -154,12 +180,16 @@ public class GameManager : TagModularity
 
     public void NextState()
     {
+        UpdateAnimParameters();
+
         GameStateAnim.SetTrigger(NextStateParam);
 
     }
 
     public void LastState()
     {
+        UpdateAnimParameters();
+
         GameStateAnim.SetTrigger(LastStateParam);
 
     }
@@ -170,9 +200,11 @@ public class GameManager : TagModularity
 
         GameStateAnim.SetBool(BoardCalibratedParam, isBoardTracked);
 
-        GameStateAnim.SetBool(BoardTypeSelectedParam, isBoardTypeSelected);
+        GameStateAnim.SetBool(GamemodeSelectedParam, isGamemodeSelected);
 
         GameStateAnim.SetInteger(BoardTypeParam, (int)boardType);
+
+        GameStateAnim.SetInteger(GamemodeParam, (int)gamemode);
 
         GameStateAnim.SetBool(UsingWristStrapsParam, UsingWristStraps);
 
