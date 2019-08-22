@@ -33,9 +33,9 @@ public class GameplayController : TagModularity
     {
         //public JsonDecoder.NoteData noteData;
 
-        public float time;
+        public uint time;
 
-        public int pad;
+        public uint pad;
 
         public bool expired;
 
@@ -75,31 +75,21 @@ public class GameplayController : TagModularity
 
     //public JsonDecoder.NoteData[] noteDatas;
 
-    public void GenerateNoteObjectsFromJson (TextAsset songJson)
+    public void GenerateNoteObjects ()
     {
-        JsonDecoder.NoteData[] noteDatas;
+        NotesForDifficulty midiNotes = GameManager.Instance.songLoader.songLibrary.songs[GameManager.Instance.SelectedSong].difficulties[GameManager.Instance.SongDifficulty];
 
-        JsonDecoder jDecoder = GetComponent<JsonDecoder>();
-
-        if(jDecoder == null)
-        {
-            jDecoder = gameObject.AddComponent<JsonDecoder>();
-
-        }
-
-        noteDatas = jDecoder.GetNoteDataFromJson(songJson);
-
-        noteObjects = new NoteObject[noteDatas.Length];
+        noteObjects = new NoteObject[midiNotes.notes.Count];
 
         ActiveNoteObjects = new List<NoteObject>();
 
-        for (int i = 0; i < noteDatas.Length; i++)
+        for (int i = 0; i < midiNotes.notes.Count; i++)
         {
             noteObjects[i] = new NoteObject();
-            
-            noteObjects[i].time = noteDatas[i].time;
 
-            noteObjects[i].pad = noteDatas[i].pad;
+            noteObjects[i].time = midiNotes.notes[i].time;
+
+            noteObjects[i].pad = midiNotes.notes[i].pad;
 
             noteObjects[i].StartTime = noteObjects[i].time + HitTargetTimeOffsetMS - NoteAppearTimeMS;
 
@@ -116,25 +106,19 @@ public class GameplayController : TagModularity
 
     private void Start()
     {
-        GameManager gameMgr = FindTaggedObject("GameController").GetComponent<GameManager>();
 
-        StartGame(gameMgr.SongJsonToPlay, gameMgr.SongAudioToPlay);
+        StartCoroutine(StartGameDelayed());
 
-        GameVisualsObject.transform.position = gameMgr.BoardPosition;
+        GameVisualsObject.transform.position = GameManager.Instance.BoardPosition;
 
-        GameVisualsObject.transform.forward = gameMgr.BoardForward;
+        GameVisualsObject.transform.forward = GameManager.Instance.BoardForward;
     }
 
-    public void StartGame(TextAsset aJson, AudioClip aClip)
-    {
-        StartCoroutine(StartGameDelayed(aJson, aClip));
-    }
-
-    IEnumerator StartGameDelayed(TextAsset aJson, AudioClip aClip)
+    IEnumerator StartGameDelayed()
     {
         yield return new WaitForSeconds(1.5f);
 
-        GenerateNoteObjectsFromJson(aJson);
+        GenerateNoteObjects();
 
         PunchPadVisuals ppv = GameVisualsObject.GetComponent<PunchPadVisuals>();
 
@@ -146,7 +130,9 @@ public class GameplayController : TagModularity
 
         AudioSource au = GameVisualsObject.GetComponent<AudioSource>();
 
-        au.clip = aClip;
+        //au.clip = GameManager.Instance.songLoader.songLibrary.songs[GameManager.Instance.SelectedSong].Audio(0);
+
+        au.clip = GameManager.Instance.SongAudioToPlay;
 
         au.Play();
     }

@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class GameManager : TagModularity
 {
     //started at 1:30
+    public SongLoader songLoader;
 
     private Animator GameStateAnim;
 
@@ -110,6 +111,10 @@ public class GameManager : TagModularity
 
     public TextAsset SongJsonToPlay;
 
+    public int SelectedSong;
+
+    public int SongDifficulty;
+
     public GameObject OptionsMenuObj;
 
     // animator hashes
@@ -139,6 +144,13 @@ public class GameManager : TagModularity
         }
 
         GameStateAnim = GetComponent<Animator>();
+    }
+
+    private void Start()
+    {
+        //Song Loading
+        songLoader.Load();
+
     }
 
     public void SetBoardPosition(Vector3 bPos, Vector3 bFwd)
@@ -264,12 +276,11 @@ public class GameManager : TagModularity
         controllerModeSelected = true;
     }
 
-    public void StartGameplay(TextAsset aSongJson, AudioClip aSongAudio)
+    public void StartGameplay(Song song, int difficulty)
     {
+        SongDifficulty = difficulty;
 
-        SongJsonToPlay = aSongJson;
-
-        SongAudioToPlay = aSongAudio;
+        SongAudioToPlay = song.Audio(difficulty);
 
         GameStateAnim.SetTrigger(StartGameParam);
 

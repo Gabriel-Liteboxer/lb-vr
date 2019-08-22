@@ -24,7 +24,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_2019_1_5;UNITY_2019_1;UNITY_2019;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_INCLUDE_TESTS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_TEXTURE_STREAMING;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_VIDEO;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_LOCALIZATION;PLATFORM_ANDROID;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_EVENT_QUEUE;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_AR;UNITY_HAS_GOOGLEVR;UNITY_HAS_TANGO;ENABLE_SPATIALTRACKING;ENABLE_RUNTIME_PERMISSIONS;ENABLE_ENGINE_CODE_STRIPPING;UNITY_ASTC_ONLY_DECOMPRESS;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_STANDARD_2_0;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_VSTU;VRTK_DEFINE_OCULUS_UTILITIES_1_12_0_OR_NEWER;VRTK_DEFINE_SDK_OCULUS;VRTK_VERSION_3_3_0;VRTK_VERSION_3_3_0_OR_NEWER;VRTK_VERSION_3_1_0_OR_NEWER;VRTK_VERSION_3_2_0_OR_NEWER;VRTK_VERSION_3_2_1_OR_NEWER;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_2019_1_5;UNITY_2019_1;UNITY_2019;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2019_1_OR_NEWER;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_TEXTURE_STREAMING;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_VIDEO;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_LOCALIZATION;PLATFORM_STANDALONE_WIN;PLATFORM_STANDALONE;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_SCRIPTING_GC_WBARRIERS;ENABLE_EVENT_QUEUE;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;ENABLE_VR;ENABLE_AR;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_STANDARD_2_0;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_VSTU;VRTK_DEFINE_OCULUS_UTILITIES_1_12_0_OR_NEWER;VRTK_DEFINE_SDK_OCULUS;VRTK_VERSION_3_3_0;VRTK_VERSION_3_3_0_OR_NEWER;VRTK_VERSION_3_1_0_OR_NEWER;VRTK_VERSION_3_2_0_OR_NEWER;VRTK_VERSION_3_2_1_OR_NEWER;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -50,7 +50,7 @@
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <UnityProjectGenerator>Unity/VSTU</UnityProjectGenerator>
     <UnityProjectType>Game:1</UnityProjectType>
-    <UnityBuildTarget>Android:13</UnityBuildTarget>
+    <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2019.1.5f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
@@ -62,6 +62,72 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKGameObject\MidiFileLoader.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKGameObject\MidiFilePlayer.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKGameObject\MidiPlayer.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKGameObject\MidiPlayerGlobal.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKGameObject\MidiStreamPlayer.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKGameObject\MidiSynth.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKGameObject\MPTKEvent.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKGameObject\MPTKListItem.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKGameObject\ToolsUnityEvent.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKMidi\MidiLoad.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKMidi\MidiScan.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKMidi\MidiSet.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKMidi\SoundFontInfo.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKMidi\TrackMidiEvent.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKSoundFont\fluid_channel.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKSoundFont\fluid_conv.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKSoundFont\fluid_env_data.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKSoundFont\fluid_gen_info.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKSoundFont\fluid_global.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKSoundFont\fluid_midi.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKSoundFont\fluid_tuning.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKSoundFont\fluid_voice.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKSoundFont\HiGen.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKSoundFont\HiInstrument.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKSoundFont\HiMod.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKSoundFont\HiPreset.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKSoundFont\HiSample.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKSoundFont\HiZone.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKSoundFont\ImBank.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKSoundFont\ImSoundFont.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKSoundFont\SFFile.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKSoundFont\SFLoad.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKUtil\BuilderInfo.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKUtil\CustomStyle.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKUtil\DicAudioClip.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKUtil\HelperNote.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\MPTKUtil\PopupListItem.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\ChannelAfterTouchEvent.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\ControlChangeEvent.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\KeySignatureEvent.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\MergeSort.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\MetaEvent.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\MetaEventType.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\MidiCommandCode.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\MidiController.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\MidiEvent.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\MidiEventCollection.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\MidiEventComparer.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\MidiFile.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\MidiInMessageEventArgs.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\MidiMessage.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\NoteEvent.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\NoteOnEvent.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\PatchChangeEvent.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\PitchWheelChangeEvent.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\RawMetaEvent.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\SequencerSpecificEvent.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\SmpteOffsetEvent.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\SysexEvent.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\TempoEvent.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\TextEvent.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\TimeSignatureEvent.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\TrackSequenceNumberEvent.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\NAudio Utils\ByteEncoding.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\Trinary Software\Timing.cs" />
+    <Compile Include="Assets\noteMovementTest.cs" />
     <Compile Include="Assets\Oculus\AudioManager\Scenes\Scripts\TestScript.cs" />
     <Compile Include="Assets\Oculus\AudioManager\Scripts\Audio\AmbienceEmitter.cs" />
     <Compile Include="Assets\Oculus\AudioManager\Scripts\Audio\AudioManager.cs" />
@@ -354,6 +420,19 @@
     <Compile Include="Assets\OldScripts\GameplayController1.cs" />
     <Compile Include="Assets\OldScripts\testchildinher.cs" />
     <Compile Include="Assets\OldScripts\testinher.cs" />
+    <Compile Include="Assets\RuntimeAudioClipLoader\AudioLoader.cs" />
+    <Compile Include="Assets\RuntimeAudioClipLoader\AudioLoaderConfig.cs" />
+    <Compile Include="Assets\RuntimeAudioClipLoader\Demonstrations\Load from StreamingAssets or internet\AudioGraph.cs" />
+    <Compile Include="Assets\RuntimeAudioClipLoader\Demonstrations\Load from StreamingAssets or internet\EnumSelectionGrid.cs" />
+    <Compile Include="Assets\RuntimeAudioClipLoader\Demonstrations\Load from StreamingAssets or internet\LoadFromStreamingAssetsOrInternet.cs" />
+    <Compile Include="Assets\RuntimeAudioClipLoader\Demonstrations\Simplest load from internet\SimplestLoadFromInternet.cs" />
+    <Compile Include="Assets\RuntimeAudioClipLoader\Enums.cs" />
+    <Compile Include="Assets\RuntimeAudioClipLoader\Internal\AudioDataReader.cs" />
+    <Compile Include="Assets\RuntimeAudioClipLoader\Internal\BackgroundThreadRunner.cs" />
+    <Compile Include="Assets\RuntimeAudioClipLoader\Internal\FloatArrayPool.cs" />
+    <Compile Include="Assets\RuntimeAudioClipLoader\Internal\ReadFullyStream.cs" />
+    <Compile Include="Assets\RuntimeAudioClipLoader\Internal\UnityMainThreadRunner.cs" />
+    <Compile Include="Assets\RuntimeAudioClipLoader\Manager.cs" />
     <Compile Include="Assets\Scripts\AnimGameStateController.cs" />
     <Compile Include="Assets\Scripts\ArmCalibration.cs" />
     <Compile Include="Assets\Scripts\ArmCalibrator.cs" />
@@ -379,6 +458,7 @@
     <Compile Include="Assets\Scripts\HighscoreManager.cs" />
     <Compile Include="Assets\Scripts\HitMarkerInfo.cs" />
     <Compile Include="Assets\Scripts\JsonDecoder.cs" />
+    <Compile Include="Assets\Scripts\LAVA.cs" />
     <Compile Include="Assets\Scripts\LiteboxerDeviceVisuals.cs" />
     <Compile Include="Assets\Scripts\LoadingO.cs" />
     <Compile Include="Assets\Scripts\NoteManager.cs" />
@@ -392,8 +472,11 @@
     <Compile Include="Assets\Scripts\RevolvingMenuParent.cs" />
     <Compile Include="Assets\Scripts\RobotArmEndpoint.cs" />
     <Compile Include="Assets\Scripts\RobotArmsManager.cs" />
+    <Compile Include="Assets\Scripts\RyansMIDILibrary.cs" />
     <Compile Include="Assets\Scripts\SimpleJSON.cs" />
+    <Compile Include="Assets\Scripts\SongClass.cs" />
     <Compile Include="Assets\Scripts\SongConfig.cs" />
+    <Compile Include="Assets\Scripts\SongLoader.cs" />
     <Compile Include="Assets\Scripts\SongSelection.cs" />
     <Compile Include="Assets\Scripts\TagModularity.cs" />
     <Compile Include="Assets\Scripts\TestArmScr.cs" />
@@ -404,16 +487,19 @@
     <None Include="Assets\Oculus\Avatar\Samples\CrossPlatform\Readme.txt" />
     <None Include="Assets\Art\Sprite_Overlay.shader" />
     <None Include="Assets\Oculus\SampleFramework\Core\CustomHands\Materials\Hands_DiffBump.shader" />
+    <None Include="Assets\RuntimeAudioClipLoader\Plugins\NLayer_license.txt" />
     <None Include="Assets\Oculus\SampleFramework\Usage\Stereo180Video\Resources\Multiview Stereo.shader" />
     <None Include="Assets\Oculus\SampleFramework\Usage\Locomotion\Shaders\TriPlanarWorld.shader" />
     <None Include="Assets\Oculus\SampleFramework\Core\CustomHands\Materials\Hands_Transparent.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\Oculus\Avatar\Resources\Materials\Version1.5\Avatar_Mobile_Loader.shader" />
+    <None Include="Assets\MidiPlayer\Scripts\MPTKSoundFont\fluisynth_AUTHORS.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\Oculus\SampleFramework\Core\CustomHands\Shaders\Hands_02.shader" />
     <None Include="Assets\Oculus\SampleFramework\Usage\Stereo180Video\Plugins\Android\Audio360\ThirdPartyNotices.txt" />
     <None Include="Assets\Art\Misc\UnlitTranparency.shader" />
     <None Include="Assets\Oculus\Avatar\Resources\Materials\AvatarSurfaceShaderSelfOccluding.shader" />
+    <None Include="Assets\MidiPlayer\Scripts\MPTKSoundFont\fluidsynth_LICENSE.txt" />
     <None Include="Assets\Oculus\Avatar\Resources\Materials\AvatarSurfaceShaderPBS.shader" />
     <None Include="Assets\Oculus\Avatar\Samples\SocialStarter\README.txt" />
     <None Include="Assets\Oculus\SampleFramework\license.txt" />
@@ -427,6 +513,8 @@
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\Oculus\SampleFramework\Core\CustomHands\Shaders\Hands_01.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\MidiPlayer\Scripts\NAudio License.txt" />
+    <None Include="Assets\RuntimeAudioClipLoader\Plugins\NLayer.xml" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\Oculus\Avatar\Resources\Materials\Expressive\Avatar_Mobile_SingleComponentExpressive.shader" />
@@ -437,6 +525,7 @@
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\Oculus\Avatar\Resources\Materials\Version1.5\Avatar_Mobile_SingleComponent.shader" />
     <None Include="Assets\Oculus\SampleFramework\Core\Locomotion\Materials\ColumnGlow.shader" />
+    <None Include="Assets\MidiPlayer\Scripts\NAudio Midi\NAudio License.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
     <None Include="Assets\Oculus\Avatar\Resources\Materials\AvatarMaterialStateShader.cginc" />
     <None Include="Assets\Oculus\Avatar\Resources\Materials\Expressive\AvatarEyeLens.shader" />
@@ -487,6 +576,12 @@
     </Reference>
     <Reference Include="UnityEngine.ClothModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClothModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterInputModule">
+      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterInputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterRendererModule">
+      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterRendererModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll</HintPath>
@@ -652,6 +747,15 @@
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
       <HintPath>C:/Users/spych/Documents/Liteboxer/Repo/lb-vr/LiteBoxVR/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio">
+      <HintPath>C:/Users/spych/Documents/Liteboxer/Repo/lb-vr/LiteBoxVR/Assets/RuntimeAudioClipLoader/Plugins/NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="NLayer">
+      <HintPath>C:/Users/spych/Documents/Liteboxer/Repo/lb-vr/LiteBoxVR/Assets/RuntimeAudioClipLoader/Plugins/NLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="NVorbis">
+      <HintPath>C:/Users/spych/Documents/Liteboxer/Repo/lb-vr/LiteBoxVR/Assets/RuntimeAudioClipLoader/Plugins/NVorbis.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.5f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

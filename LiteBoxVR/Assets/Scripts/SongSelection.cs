@@ -72,7 +72,7 @@ public class SongSelection : TagModularity
 
             Material NewAlbumCover = new Material(AlbumCoverMat);
 
-            NewAlbumCover.SetTexture("_MainTex", SongLibrary[i].AlbumCover);
+            NewAlbumCover.SetTexture("_MainTex", SongLibrary[i].song.albumArt);
 
             AlbumTiles[i].GetComponent<Renderer>().material = NewAlbumCover;
 
@@ -151,9 +151,9 @@ public class SongSelection : TagModularity
 
     public void Play ()
     {
-        NoteMgr.SongClip = SongLibrary[SelectedSong].DifficultyLevels[SongDifficultyLevel].audioClip;
+        NoteMgr.SongClip = SongLibrary[SelectedSong].song.Audio(SongDifficultyLevel);
 
-        NoteMgr.SongKeyframes = SongLibrary[SelectedSong].DifficultyLevels[SongDifficultyLevel].TrackJson;
+        //NoteMgr.SongKeyframes = SongLibrary[SelectedSong].DifficultyLevels[SongDifficultyLevel].TrackJson;
 
         NoteMgr.StartGame();
 
@@ -163,11 +163,11 @@ public class SongSelection : TagModularity
     {
         SelectedSong = SongIndex;
 
-        SelectedAlbumCover.material.SetTexture("_MainTex", SongLibrary[SelectedSong].AlbumCover);
+        SelectedAlbumCover.material.SetTexture("_MainTex", SongLibrary[SelectedSong].song.albumArt);
 
-        SongName.text = SongLibrary[SelectedSong].SongName;
+        SongName.text = SongLibrary[SelectedSong].song.name;
 
-        ArtistName.text = SongLibrary[SelectedSong].ArtistName;
+        ArtistName.text = SongLibrary[SelectedSong].song.artist;
     }
 
     public void PageChange(bool isLeft)

@@ -500,6 +500,12 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5402947056670894455, guid: c275d9425c62bb74ebaa3c9dd2946981,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 11045d32b41c6ac43b8eabcaa484a2b3,
+        type: 3}
     - target: {fileID: 5402947055310411210, guid: c275d9425c62bb74ebaa3c9dd2946981,
         type: 3}
       propertyPath: FunctionToCall.m_PersistentCalls.m_Calls.Array.size
@@ -530,12 +536,6 @@ PrefabInstance:
       propertyPath: FunctionToCall.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 5402947056670894455, guid: c275d9425c62bb74ebaa3c9dd2946981,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 11045d32b41c6ac43b8eabcaa484a2b3,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c275d9425c62bb74ebaa3c9dd2946981, type: 3}
 --- !u!4 &1104307010 stripped
@@ -556,6 +556,7 @@ GameObject:
   - component: {fileID: 1260311007}
   - component: {fileID: 1260311006}
   - component: {fileID: 1260311005}
+  - component: {fileID: 1260311009}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameController
@@ -606,13 +607,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c70294d13ac49de428eed95ea6810b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  songLoader: {fileID: 1260311009}
   boardType: 0
-  SelectedGamemode: 0
+  gamemode: 0
   gameStateScenes: []
   GameStateText: {fileID: 0}
   isBoardTracked: 0
   isBoardPlaced: 1
   isBoardTypeSelected: 0
+  isGamemodeSelected: 0
   isArmCalibrated: 0
   controllerModeSelected: 0
   UsingWristStraps: 0
@@ -635,6 +638,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1260311009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260311004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bca7aa67cb3267349838f73b7d03698f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baked: 1
+  bakedTracks:
+  - {fileID: 11400000, guid: d649d4c4005a667459067880ef5fed7c, type: 2}
+  - {fileID: 11400000, guid: 9dd01d5cbbd6fa242b2646f919cefc7b, type: 2}
+  songLibrary:
+    songs: []
 --- !u!1 &1305819006
 GameObject:
   m_ObjectHideFlags: 0
@@ -893,6 +914,12 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5402947056670894455, guid: c275d9425c62bb74ebaa3c9dd2946981,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b5f3ad41fca3ec44eaf865c061b5fc65,
+        type: 3}
     - target: {fileID: 5402947055310411210, guid: c275d9425c62bb74ebaa3c9dd2946981,
         type: 3}
       propertyPath: FunctionToCall.m_PersistentCalls.m_Calls.Array.size
@@ -928,12 +955,6 @@ PrefabInstance:
       propertyPath: FunctionToCall.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5402947056670894455, guid: c275d9425c62bb74ebaa3c9dd2946981,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: b5f3ad41fca3ec44eaf865c061b5fc65,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c275d9425c62bb74ebaa3c9dd2946981, type: 3}
 --- !u!4 &2071876034 stripped
@@ -1024,6 +1045,12 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5402947056670894455, guid: c275d9425c62bb74ebaa3c9dd2946981,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f42fa2d83c9fc8448954f836db848e2b,
+        type: 3}
     - target: {fileID: 5402947055310411210, guid: c275d9425c62bb74ebaa3c9dd2946981,
         type: 3}
       propertyPath: FunctionToCall.m_PersistentCalls.m_Calls.Array.size
@@ -1054,12 +1081,6 @@ PrefabInstance:
       propertyPath: FunctionToCall.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 5402947056670894455, guid: c275d9425c62bb74ebaa3c9dd2946981,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: f42fa2d83c9fc8448954f836db848e2b,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c275d9425c62bb74ebaa3c9dd2946981, type: 3}
 --- !u!4 &2104996950 stripped

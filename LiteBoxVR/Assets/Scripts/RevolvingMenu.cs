@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class RevolvingMenu : TagModularity
 {
-    public SongConfig[] SongLibrary;
 
     public GameObject AlbumPrefab;
 
@@ -114,7 +113,9 @@ public class RevolvingMenu : TagModularity
 
         LeftHand.handTransform = FindTaggedObject("HandL").transform;
 
-        AlbumTiles = new Album[SongLibrary.Length];
+        //AlbumTiles = new Album[SongLibrary.Length];
+
+        AlbumTiles = new Album[GameManager.Instance.songLoader.songLibrary.songs.Count];
 
         for (int i = 0; i < AlbumTiles.Length; i++)
         {
@@ -124,7 +125,7 @@ public class RevolvingMenu : TagModularity
 
             Material NewAlbumCover = new Material(AlbumCoverMat);
 
-            NewAlbumCover.SetTexture("_MainTex", SongLibrary[i].AlbumCover);
+            NewAlbumCover.SetTexture("_MainTex", GameManager.Instance.songLoader.songLibrary.songs[i].albumArt);
 
             AlbumTiles[i].AlbumMat = AlbumTiles[i].AlbumObject.GetComponentInChildren<Renderer>();
 
@@ -326,6 +327,9 @@ public class RevolvingMenu : TagModularity
     {
         if (PlayerHead != null)
         {
+            if (PlayerPositionTracker == null)
+                PlayerPositionTracker = new GameObject().transform;
+
             if (Vector3.Distance(PlayerPositionTracker.position, PlayerHead.position) > UpdatePositionDistance * UpdatePositionDistance)
                 PlayerPositionTracker.position = PlayerHead.position;
         }
@@ -343,21 +347,23 @@ public class RevolvingMenu : TagModularity
 
     void SongSelectionChanged()
     {
-        SongName.text = SongLibrary[currentlySelected].SongName;
+        SongName.text = GameManager.Instance.songLoader.songLibrary.songs[currentlySelected].name;
 
-        ArtistName.text = SongLibrary[currentlySelected].ArtistName;
+        ArtistName.text = GameManager.Instance.songLoader.songLibrary.songs[currentlySelected].artist;
+
+        GameManager.Instance.SelectedSong = currentlySelected;
 
         menuAudio.clip = MenuRatchetSound;
 
         menuAudio.Play();
 
-        highscoreMgr.SetHighscorePage(SongLibrary[currentlySelected], difficultyLevel);
+        highscoreMgr.SetHighscorePage(GameManager.Instance.songLoader.songLibrary.songs[currentlySelected], difficultyLevel);
 
     }
 
     public void PlaySong ()
     {
-        GameManager.Instance.StartGameplay(SongLibrary[currentlySelected].DifficultyLevels[difficultyLevel].TrackJson, SongLibrary[currentlySelected].DifficultyLevels[difficultyLevel].audioClip);
+        GameManager.Instance.StartGameplay(GameManager.Instance.songLoader.songLibrary.songs[currentlySelected], difficultyLevel);
 
     }
 
