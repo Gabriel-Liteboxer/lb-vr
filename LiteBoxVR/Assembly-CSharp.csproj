@@ -739,15 +739,6 @@
     <Reference Include="nunit.framework">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.5f1/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Analytics.Editor">
-      <HintPath>C:/Users/spych/Documents/Liteboxer/Repo/lb-vr/LiteBoxVR/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/Users/spych/Documents/Liteboxer/Repo/lb-vr/LiteBoxVR/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>C:/Users/spych/Documents/Liteboxer/Repo/lb-vr/LiteBoxVR/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
-    </Reference>
     <Reference Include="NAudio">
       <HintPath>C:/Users/spych/Documents/Liteboxer/Repo/lb-vr/LiteBoxVR/Assets/RuntimeAudioClipLoader/Plugins/NAudio.dll</HintPath>
     </Reference>
@@ -756,6 +747,15 @@
     </Reference>
     <Reference Include="NVorbis">
       <HintPath>C:/Users/spych/Documents/Liteboxer/Repo/lb-vr/LiteBoxVR/Assets/RuntimeAudioClipLoader/Plugins/NVorbis.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.Editor">
+      <HintPath>C:/Users/spych/Documents/Liteboxer/Repo/lb-vr/LiteBoxVR/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.StandardEvents">
+      <HintPath>C:/Users/spych/Documents/Liteboxer/Repo/lb-vr/LiteBoxVR/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.Tracker">
+      <HintPath>C:/Users/spych/Documents/Liteboxer/Repo/lb-vr/LiteBoxVR/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.5f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
