@@ -232,12 +232,14 @@ MonoBehaviour:
   velocity: 0
   PadPrefab: {fileID: 4063096686442059290, guid: 27df71d936cc5ff428dbb5ee541d3893,
     type: 3}
-  TrackPrefab: {fileID: 3500531982139472855, guid: 19cdbeb889a9e014587a937d30c993b7,
+  TrackEndPrefab: {fileID: 3500531982139472855, guid: 19cdbeb889a9e014587a937d30c993b7,
+    type: 3}
+  TrackMiddlePrefab: {fileID: 3500531982139472855, guid: 25369933d76d582408de675b1cf94884,
     type: 3}
   StartRadius: 0.05
   TargetRadius: 0.4
   EndRadius: 0.5
-  TrackSegments: 30
+  TrackSegments: 10
   Pads: []
   BagPixels: []
 --- !u!1 &953069151

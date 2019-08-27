@@ -22,7 +22,9 @@ public class noteMovementTest : MonoBehaviour
 
     public GameObject PadPrefab;
 
-    public GameObject TrackPrefab;
+    public GameObject TrackEndPrefab;
+
+    public GameObject TrackMiddlePrefab;
 
     public float StartRadius;
 
@@ -63,7 +65,7 @@ public class noteMovementTest : MonoBehaviour
 
         }
 
-        public Pad(Vector2 startPosition, Vector2 targetPosition, Vector2 endPosition, GameObject padPrefab, GameObject trackPrefab, int trackSegments, noteMovementTest aNoteMovement)
+        public Pad(Vector2 startPosition, Vector2 targetPosition, Vector2 endPosition, GameObject padPrefab, GameObject trackEndPrefab, GameObject trackMiddlePrefab, int trackSegments, noteMovementTest aNoteMovement, float angle)
         {
             if (noteMovement == null)
                 noteMovement = aNoteMovement;
@@ -78,19 +80,43 @@ public class noteMovementTest : MonoBehaviour
 
             PadObject.transform.position = noteMovement.GetPositionOnBag(TargetPosition);
 
-            PadObject.transform.eulerAngles = noteMovement.GetRotationOnbag(TargetPosition);
+            PadObject.transform.eulerAngles = noteMovement.GetRotationOnBag(TargetPosition);
 
-            LightTrack = new GameObject[trackSegments];
+            //generate light track
 
-            for (int i = 0; i < trackSegments; i++)
+            LightTrack = new GameObject[trackSegments + 1];
+
+            //track start cap
+            LightTrack[0] = Instantiate(trackEndPrefab);
+            LightTrack[0].transform.position = noteMovement.GetPositionOnBag(startPosition);
+            LightTrack[0].transform.eulerAngles = noteMovement.GetRotationOnBag(StartPosition);
+
+            //track end cap
+            LightTrack[trackSegments] = Instantiate(trackEndPrefab);
+            LightTrack[trackSegments].transform.position = noteMovement.GetPositionOnBag(EndPosition);
+            LightTrack[trackSegments].transform.eulerAngles = noteMovement.GetRotationOnBag(EndPosition);
+
+            float trackLength = Vector2.Distance(StartPosition, EndPosition);
+
+            for (int i = 1; i < trackSegments; i++)
             {
-                LightTrack[i] = Instantiate(trackPrefab);
+                LightTrack[i] = Instantiate(trackMiddlePrefab);
 
                 Vector2 pos = Vector2.Lerp(StartPosition, EndPosition, (float)i / trackSegments);
 
+                Debug.Log("lerp: " + (float)i / trackSegments);
+
                 LightTrack[i].transform.position = noteMovement.GetPositionOnBag(pos);
 
-                LightTrack[i].transform.eulerAngles = noteMovement.GetRotationOnbag(pos);
+                LightTrack[i].transform.eulerAngles = noteMovement.GetRotationOnBag(pos);
+
+                LightTrack[i].transform.localScale = new Vector3(trackLength / trackSegments, 1, 1);
+
+                //LightTrack[i].transform.localEulerAngles = new Vector3(LightTrack[i].transform.localEulerAngles.x, LightTrack[i].transform.localEulerAngles.y, angle*180/Mathf.PI);
+
+                LightTrack[i].transform.right = Vector3.Normalize(LightTrack[i].transform.position - LightTrack[i-1].transform.position);
+
+                LightTrack[i].transform.eulerAngles = noteMovement.GetPreservedRotationOnBag(pos, LightTrack[i].transform.eulerAngles);
 
             }
 
@@ -141,13 +167,7 @@ public class noteMovementTest : MonoBehaviour
 
     public void UpdateBagObject (ref BagObject bagObject)
     {
-        bagObject.UpdateTransform(GetPositionOnBag(bagObject.position), GetRotationOnbag(bagObject.position));
-
-    }
-
-    private void Awake()
-    {
-        
+        bagObject.UpdateTransform(GetPositionOnBag(bagObject.position), GetRotationOnBag(bagObject.position));
 
     }
 
@@ -157,7 +177,7 @@ public class noteMovementTest : MonoBehaviour
 
         BagSizeChanged();
 
-        StartCoroutine(GeneratePads(StartRadius, TargetRadius, EndRadius));
+        GeneratePads(StartRadius, TargetRadius, EndRadius);
 
         //GenerateBagPixels(0.05f);
     }
@@ -205,7 +225,7 @@ public class noteMovementTest : MonoBehaviour
 
     }
 
-    IEnumerator GeneratePads (float startRadius, float targetRadius, float endRadius)
+    void GeneratePads (float startRadius, float targetRadius, float endRadius)
     {
         Pads = new List<Pad>();
 
@@ -223,27 +243,10 @@ public class noteMovementTest : MonoBehaviour
 
             Vector2 endPosition = PointOnCircle(endRadius, origin, angle);
 
-            Pad newPad = new Pad(startPosition, targetPosition, endPosition, PadPrefab, TrackPrefab, TrackSegments, this);
+            Pad newPad = new Pad(startPosition, targetPosition, endPosition, PadPrefab, TrackEndPrefab, TrackMiddlePrefab, TrackSegments, this, angle);
 
             Pads.Add(newPad);
         }
-
-        int k = 0;
-
-        while (k < 2)
-        {
-            yield return null;
-            k++;
-        }
-        
-
-        Debug.Log("waited 2 frames");
-        /*
-        foreach (Pad p in Pads)
-        {
-            p.SetPadObject(GetPositionOnBag(p.TargetPosition), GetRotationOnbag(p.TargetPosition));
-
-        }*/
 
     }
 
@@ -261,7 +264,7 @@ public class noteMovementTest : MonoBehaviour
 
         transform.position = GetPositionOnBag(TestPosition2D);
 
-        transform.eulerAngles = GetRotationOnbag(TestPosition2D);
+        transform.eulerAngles = GetRotationOnBag(TestPosition2D);
 
     }
 
@@ -280,10 +283,17 @@ public class noteMovementTest : MonoBehaviour
         return new Vector3(bagOrigin.position.x + bagRadius * Mathf.Cos(angle), bagOrigin.position.y + position2D.y, bagOrigin.position.z + bagRadius * Mathf.Sin(angle));
     }
 
-    public Vector3 GetRotationOnbag (Vector2 position2D)
+    public Vector3 GetRotationOnBag (Vector2 position2D)
     {
         float angle = position2D.x * unitsToRadians * (180/pi);
 
         return new Vector3(0, -angle + 90, 0);
+    }
+
+    public Vector3 GetPreservedRotationOnBag(Vector2 position2D, Vector3 OrigionalRotation)
+    {
+        float angle = position2D.x * unitsToRadians * (180 / pi);
+
+        return new Vector3(OrigionalRotation.x, -angle + 90, OrigionalRotation.z);
     }
 }
