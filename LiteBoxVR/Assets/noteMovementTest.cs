@@ -65,7 +65,7 @@ public class noteMovementTest : MonoBehaviour
 
         }
 
-        public Pad(Vector2 startPosition, Vector2 targetPosition, Vector2 endPosition, GameObject padPrefab, GameObject trackEndPrefab, GameObject trackMiddlePrefab, int trackSegments, noteMovementTest aNoteMovement, float angle)
+        public Pad(Vector2 startPosition, Vector2 targetPosition, Vector2 endPosition, GameObject padPrefab, GameObject trackEndPrefab, GameObject trackMiddlePrefab, int trackSegments, noteMovementTest aNoteMovement, float angle, int padIndex)
         {
             if (noteMovement == null)
                 noteMovement = aNoteMovement;
@@ -77,6 +77,8 @@ public class noteMovementTest : MonoBehaviour
             EndPosition = endPosition;
 
             PadObject = GameObject.Instantiate(padPrefab);
+
+            PadObject.name = "Pad " + padIndex;
 
             PadObject.transform.position = noteMovement.GetPositionOnBag(TargetPosition);
 
@@ -90,11 +92,13 @@ public class noteMovementTest : MonoBehaviour
             LightTrack[0] = Instantiate(trackEndPrefab);
             LightTrack[0].transform.position = noteMovement.GetPositionOnBag(startPosition);
             LightTrack[0].transform.eulerAngles = noteMovement.GetRotationOnBag(StartPosition);
+            LightTrack[0].transform.parent = PadObject.transform;
 
             //track end cap
             LightTrack[trackSegments] = Instantiate(trackEndPrefab);
             LightTrack[trackSegments].transform.position = noteMovement.GetPositionOnBag(EndPosition);
             LightTrack[trackSegments].transform.eulerAngles = noteMovement.GetRotationOnBag(EndPosition);
+            LightTrack[trackSegments].transform.parent = PadObject.transform;
 
             float trackLength = Vector2.Distance(StartPosition, EndPosition);
 
@@ -110,13 +114,19 @@ public class noteMovementTest : MonoBehaviour
 
                 LightTrack[i].transform.eulerAngles = noteMovement.GetRotationOnBag(pos);
 
-                LightTrack[i].transform.localScale = new Vector3(trackLength / trackSegments, 1, 1);
+                //LightTrack[i].transform.localScale = new Vector3(1, trackLength / trackSegments, 1);
 
-                //LightTrack[i].transform.localEulerAngles = new Vector3(LightTrack[i].transform.localEulerAngles.x, LightTrack[i].transform.localEulerAngles.y, angle*180/Mathf.PI);
 
-                LightTrack[i].transform.right = Vector3.Normalize(LightTrack[i].transform.position - LightTrack[i-1].transform.position);
 
-                LightTrack[i].transform.eulerAngles = noteMovement.GetPreservedRotationOnBag(pos, LightTrack[i].transform.eulerAngles);
+                LightTrack[i].transform.localEulerAngles = new Vector3(LightTrack[i].transform.localEulerAngles.x, LightTrack[i].transform.localEulerAngles.y, (angle*180/Mathf.PI +90)/2);
+
+
+
+                //LightTrack[i].transform.right = Vector3.Normalize(LightTrack[i].transform.position - LightTrack[i-1].transform.position);
+
+                //LightTrack[i].transform.eulerAngles = noteMovement.GetPreservedRotationOnBag(pos, LightTrack[i].transform.eulerAngles);
+
+                LightTrack[i].transform.parent = PadObject.transform;
 
             }
 
@@ -171,9 +181,13 @@ public class noteMovementTest : MonoBehaviour
 
     }
 
+    
+
     private void Start()
     {
         pi = Mathf.PI;
+
+        //GameManager.Instance
 
         BagSizeChanged();
 
@@ -243,7 +257,7 @@ public class noteMovementTest : MonoBehaviour
 
             Vector2 endPosition = PointOnCircle(endRadius, origin, angle);
 
-            Pad newPad = new Pad(startPosition, targetPosition, endPosition, PadPrefab, TrackEndPrefab, TrackMiddlePrefab, TrackSegments, this, angle);
+            Pad newPad = new Pad(startPosition, targetPosition, endPosition, PadPrefab, TrackEndPrefab, TrackMiddlePrefab, TrackSegments, this, angle, i);
 
             Pads.Add(newPad);
         }

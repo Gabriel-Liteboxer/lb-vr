@@ -80,6 +80,12 @@ public class GameManager : TagModularity
     }*/
 
     public Gamemode gamemode;
+
+    public class CalibratedDevice
+    {
+
+
+    }
     
 
     [Header("Game State Scenes To Load")]

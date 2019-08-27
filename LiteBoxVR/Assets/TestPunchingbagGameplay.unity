@@ -239,7 +239,7 @@ MonoBehaviour:
   StartRadius: 0.05
   TargetRadius: 0.4
   EndRadius: 0.5
-  TrackSegments: 10
+  TrackSegments: 20
   Pads: []
   BagPixels: []
 --- !u!1 &953069151
