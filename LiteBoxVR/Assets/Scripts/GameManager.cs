@@ -29,7 +29,8 @@ public class GameManager : TagModularity
         BoardTypeSelection = 11,
         GamemodeSelect = 12,
         RobotGameplay = 13,
-        Env_Robot = 14
+        Env_Robot = 14,
+        PunchingBagGameplayTest = 15
     }
 
     [System.Serializable]
@@ -81,11 +82,70 @@ public class GameManager : TagModularity
 
     public Gamemode gamemode;
 
-    public class CalibratedDevice
+    public class CalibratedObject
     {
+        public bool calibrated;
 
+        public Vector3 position;
+
+        public Vector3 eulerAngles;
+
+        public Vector3 localScale;
+
+        public void SetCalibration(Transform sourceTransfrom)
+        {
+            calibrated = true;
+
+            position = sourceTransfrom.position;
+
+            eulerAngles = sourceTransfrom.eulerAngles;
+
+            localScale = sourceTransfrom.localScale;
+        }
+
+        public void GetCalibration(ref GameObject targetGameObject)
+        {
+            targetGameObject.transform.position = position;
+
+            targetGameObject.transform.eulerAngles = eulerAngles;
+
+            targetGameObject.transform.localScale = localScale;
+
+        }
+
+        public void ResetCalibration ()
+        {
+            calibrated = false;
+
+        }
 
     }
+
+    public CalibratedObject calibratedObject;
+
+    /*
+    public class CalibratedBag : CalibratedDevice
+    {
+        public float radius;
+
+        public float height;
+
+        CalibratedBag()
+        {
+
+
+        }
+        
+        void SetCalibration(float radius, float height, Vector3 position)
+        {
+            calibrated = true;
+            this.radius = radius;
+            this.height = height;
+            this.position = position;
+
+        }
+        
+    }*/
     
 
     [Header("Game State Scenes To Load")]
@@ -95,9 +155,9 @@ public class GameManager : TagModularity
 
     public TextMesh GameStateText;
 
-    public bool isBoardTracked;
+    //public bool isBoardTracked;
 
-    public bool isBoardPlaced;
+    //public bool isBoardPlaced;
 
     public bool isBoardTypeSelected;
 
@@ -109,9 +169,9 @@ public class GameManager : TagModularity
 
     public bool UsingWristStraps;
 
-    public Vector3 BoardPosition;
+    //public Vector3 BoardPosition;
 
-    public Vector3 BoardForward;
+    //public Vector3 BoardForward;
 
     public AudioClip SongAudioToPlay;
 
@@ -150,6 +210,8 @@ public class GameManager : TagModularity
         }
 
         GameStateAnim = GetComponent<Animator>();
+
+        calibratedObject = new CalibratedObject();
     }
 
     private void Start()
@@ -158,7 +220,7 @@ public class GameManager : TagModularity
         songLoader.Load();
 
     }
-
+    /*
     public void SetBoardPosition(Vector3 bPos, Vector3 bFwd)
     {
         BoardPosition = bPos;
@@ -166,7 +228,7 @@ public class GameManager : TagModularity
         BoardForward = bFwd;
 
     }
-
+    */
     public void ApplyBoardPosition()
     {
         GameObject gameBoard = FindTaggedObject("BoardObj");
@@ -218,7 +280,11 @@ public class GameManager : TagModularity
     {
         GameStateAnim.SetBool(ArmCalibratedParam, isArmCalibrated);
 
-        GameStateAnim.SetBool(BoardCalibratedParam, isBoardTracked);
+        //GameStateAnim.SetBool(BoardCalibratedParam, isBoardTracked);
+
+        GameStateAnim.SetBool(BoardCalibratedParam, calibratedObject.calibrated);
+
+        GameStateAnim.SetBool(BoardPlacedParam, calibratedObject.calibrated);
 
         GameStateAnim.SetBool(GamemodeSelectedParam, isGamemodeSelected);
 
@@ -228,7 +294,7 @@ public class GameManager : TagModularity
 
         GameStateAnim.SetBool(UsingWristStrapsParam, UsingWristStraps);
 
-        GameStateAnim.SetBool(BoardPlacedParam, isBoardPlaced);
+        //GameStateAnim.SetBool(BoardPlacedParam, isBoardPlaced);
 
         GameStateAnim.SetBool(ControlModeSelectedParam, controllerModeSelected);
 

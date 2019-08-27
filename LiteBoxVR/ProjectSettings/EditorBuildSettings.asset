@@ -50,4 +50,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Env_Robot.unity
     guid: b3a120466814a7c4aa8a6cff3875d45e
+  - enabled: 1
+    path: Assets/TestPunchingbagGameplay.unity
+    guid: 510d71dc801849e4d981378678e8b650
   m_configObjects: {}

@@ -33,7 +33,8 @@ public class BoardCalibration : TagModularity
 
         guide.SetInfoScreen(0);
 
-        GameManager.Instance.isBoardTracked = false;
+        //GameManager.Instance.isBoardTracked = false;
+        GameManager.Instance.calibratedObject.ResetCalibration();
     }
 
     // Update is called once per frame
@@ -61,8 +62,8 @@ public class BoardCalibration : TagModularity
 
                 AnchorPoints.Add(NewAnchorpoint);
 
-                GameManager.Instance.isBoardTracked = false;
-
+                //GameManager.Instance.isBoardTracked = false;
+                GameManager.Instance.calibratedObject.ResetCalibration();
             }
 
             guide.SetInfoScreen(AnchorPoints.Count);
@@ -81,7 +82,8 @@ public class BoardCalibration : TagModularity
 
             guide.SetInfoScreen(0);
 
-            GameManager.Instance.isBoardTracked = false;
+            //GameManager.Instance.isBoardTracked = false;
+            GameManager.Instance.calibratedObject.ResetCalibration();
         }
 
         if (AnchorPoints.Count >= 3)
@@ -104,9 +106,11 @@ public class BoardCalibration : TagModularity
 
             }
 
-            GameManager.Instance.isBoardTracked = true;
+            //GameManager.Instance.isBoardTracked = true;
 
-            GameManager.Instance.SetBoardPosition(transform.position, transform.forward);
+            GameManager.Instance.calibratedObject.SetCalibration(transform);
+
+            //GameManager.Instance.SetBoardPosition(transform.position, transform.forward);
 
             foreach (GameObject an in AnchorPoints)
             {

@@ -107,7 +107,9 @@ public class RevolvingMenu : TagModularity
 
         //gameMgr = FindTaggedObject("GameController").GetComponent<GameManager>();
 
-        transform.right = GameManager.Instance.BoardForward; // remove this and it works fine
+        //transform.right = GameManager.Instance.BoardForward; // remove this and it works fine
+
+        transform.eulerAngles = new Vector3(0, GameManager.Instance.calibratedObject.eulerAngles.y - 90, 0);
 
         RightHand.handTransform = FindTaggedObject("HandR").transform;
 

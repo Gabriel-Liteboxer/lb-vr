@@ -109,9 +109,11 @@ public class GameplayController : TagModularity
 
         StartCoroutine(StartGameDelayed());
 
-        GameVisualsObject.transform.position = GameManager.Instance.BoardPosition;
+        //GameVisualsObject.transform.position = GameManager.Instance.BoardPosition;
 
-        GameVisualsObject.transform.forward = GameManager.Instance.BoardForward;
+        //GameVisualsObject.transform.forward = GameManager.Instance.BoardForward;
+
+        GameManager.Instance.calibratedObject.GetCalibration(ref GameVisualsObject);
     }
 
     IEnumerator StartGameDelayed()

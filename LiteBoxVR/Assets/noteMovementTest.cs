@@ -53,18 +53,6 @@ public class noteMovementTest : MonoBehaviour
 
         public GameObject[] LightTrack;
 
-        public Pad(Vector2 startPosition, Vector2 targetPosition, Vector2 endPosition, GameObject padPrefab)
-        {
-            StartPosition = startPosition;
-
-            TargetPosition = targetPosition;
-
-            EndPosition = endPosition;
-
-            PadObject = GameObject.Instantiate(padPrefab);
-
-        }
-
         public Pad(Vector2 startPosition, Vector2 targetPosition, Vector2 endPosition, GameObject padPrefab, GameObject trackEndPrefab, GameObject trackMiddlePrefab, int trackSegments, noteMovementTest aNoteMovement, float angle, int padIndex)
         {
             if (noteMovement == null)
@@ -152,8 +140,13 @@ public class noteMovementTest : MonoBehaviour
 
         public GameObject gameObj;
 
-        public BagObject(Vector2 position, GameObject prefab)
+        static noteMovementTest noteMovement;
+
+        public BagObject(Vector2 position, GameObject prefab, noteMovementTest aNoteMovement)
         {
+            if (noteMovement == null)
+                noteMovement = aNoteMovement;
+
             this.position = position;
 
             gameObj = Instantiate(prefab);
@@ -162,25 +155,20 @@ public class noteMovementTest : MonoBehaviour
 
         }
 
-        public void UpdateTransform (Vector3 position, Vector3 eulerAngles)
+        public void SetPosition (Vector2 position)
         {
-            gameObj.transform.position = position;
+            this.position = position;
 
-            gameObj.transform.eulerAngles = eulerAngles;
+            gameObj.transform.position = noteMovement.GetPositionOnBag(position);
 
-            gameObj.transform.localScale = Vector3.one*10;
+            gameObj.transform.eulerAngles = noteMovement.GetRotationOnBag(position);
+
         }
+
     }
 
     [SerializeField]
     public List<BagObject> BagPixels;
-
-    public void UpdateBagObject (ref BagObject bagObject)
-    {
-        bagObject.UpdateTransform(GetPositionOnBag(bagObject.position), GetRotationOnBag(bagObject.position));
-
-    }
-
     
 
     private void Start()
@@ -228,9 +216,9 @@ public class noteMovementTest : MonoBehaviour
             {
                 Vector2 position = new Vector2(x * padding, y*padding - bagHeight/2);
 
-                BagObject bi = new BagObject(position, PadPrefab);
+                BagObject b = new BagObject(position, PadPrefab, this);
 
-                BagPixels.Add(bi);
+                BagPixels.Add(b);
 
             }
             

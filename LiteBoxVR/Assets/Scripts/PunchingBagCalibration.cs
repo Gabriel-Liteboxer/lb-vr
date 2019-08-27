@@ -24,7 +24,8 @@ public class PunchingBagCalibration : TagModularity
 
         //guide.SetInfoScreen(0);
 
-        GameManager.Instance.isBoardTracked = false;
+        //GameManager.Instance.isBoardTracked = false;
+        GameManager.Instance.calibratedObject.ResetCalibration();
     }
 
     // Update is called once per frame
@@ -42,8 +43,8 @@ public class PunchingBagCalibration : TagModularity
 
                 AnchorPoints.Add(NewAnchorpoint);
 
-                GameManager.Instance.isBoardTracked = false;
-
+                //GameManager.Instance.isBoardTracked = false;
+                GameManager.Instance.calibratedObject.ResetCalibration();
             }
 
             //guide.SetInfoScreen(AnchorPoints.Count);
@@ -62,7 +63,8 @@ public class PunchingBagCalibration : TagModularity
 
             //guide.SetInfoScreen(0);
 
-            GameManager.Instance.isBoardTracked = false;
+            //GameManager.Instance.isBoardTracked = false;
+            GameManager.Instance.calibratedObject.ResetCalibration();
         }
 
         if (AnchorPoints.Count >= 3)
@@ -89,7 +91,9 @@ public class PunchingBagCalibration : TagModularity
 
             PunchingBagObj.transform.localScale = Vector3.one * distFromCenter*2;
 
-            GameManager.Instance.isBoardTracked = true;
+            //GameManager.Instance.isBoardTracked = true;
+
+            GameManager.Instance.calibratedObject.SetCalibration(PunchingBagObj);
 
             foreach (GameObject an in AnchorPoints)
             {
