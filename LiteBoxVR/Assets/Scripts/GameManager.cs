@@ -30,7 +30,8 @@ public class GameManager : TagModularity
         GamemodeSelect = 12,
         RobotGameplay = 13,
         Env_Robot = 14,
-        PunchingBagGameplayTest = 15
+        PunchingBagGameplayTest = 15,
+        PunchingBagRenderTexture = 16
     }
 
     [System.Serializable]

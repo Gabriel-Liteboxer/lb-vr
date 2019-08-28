@@ -1446,6 +1446,16 @@ MonoBehaviour:
         m_Calls: []
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
+  - SceneIndex: 16
+    Loading: 0
+    Loaded: 0
+    SetActiveOnLoaded: 0
+    UnloadOnStateChange: 1
+    CallOnLoaded:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
 --- !u!1101 &7922518323142987663
 AnimatorStateTransition:
   m_ObjectHideFlags: 1

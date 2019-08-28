@@ -612,17 +612,15 @@ MonoBehaviour:
   gamemode: 0
   gameStateScenes: []
   GameStateText: {fileID: 0}
-  isBoardTracked: 0
-  isBoardPlaced: 1
   isBoardTypeSelected: 0
   isGamemodeSelected: 0
   isArmCalibrated: 0
   controllerModeSelected: 0
   UsingWristStraps: 0
-  BoardPosition: {x: 0, y: 0, z: 0}
-  BoardForward: {x: 0, y: 0, z: 0}
   SongAudioToPlay: {fileID: 0}
   SongJsonToPlay: {fileID: 0}
+  SelectedSong: 0
+  SongDifficulty: 0
   OptionsMenuObj: {fileID: 394893155}
 --- !u!4 &1260311008
 Transform:
@@ -785,7 +783,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.17030083, g: 0.7365483, b: 0.8396226, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

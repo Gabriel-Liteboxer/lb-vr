@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 4067de1a02072244798361060c5e7325, type: 2}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5428217, g: 0.50587404, b: 0.5237529, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -922,7 +922,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 311
   m_RenderingPath: 1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1113,33 +1113,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SongLibrary:
-  - {fileID: 11400000, guid: 3fc89de5d71a36c42822d6c30484f677, type: 2}
-  - {fileID: 11400000, guid: 1fa687b143ca7aa44904455022ffa484, type: 2}
-  - {fileID: 11400000, guid: a2eaef88a309e5a4bb1e2ea6c65ee868, type: 2}
-  - {fileID: 11400000, guid: 4864885031d24bc498263fb001861a4d, type: 2}
-  - {fileID: 11400000, guid: 3fc89de5d71a36c42822d6c30484f677, type: 2}
-  - {fileID: 11400000, guid: a2eaef88a309e5a4bb1e2ea6c65ee868, type: 2}
-  - {fileID: 11400000, guid: 3fc89de5d71a36c42822d6c30484f677, type: 2}
-  - {fileID: 11400000, guid: 1fa687b143ca7aa44904455022ffa484, type: 2}
-  - {fileID: 11400000, guid: 3fc89de5d71a36c42822d6c30484f677, type: 2}
-  - {fileID: 11400000, guid: 3fc89de5d71a36c42822d6c30484f677, type: 2}
-  - {fileID: 11400000, guid: 1fa687b143ca7aa44904455022ffa484, type: 2}
-  - {fileID: 11400000, guid: 4864885031d24bc498263fb001861a4d, type: 2}
-  - {fileID: 11400000, guid: 3fc89de5d71a36c42822d6c30484f677, type: 2}
-  - {fileID: 11400000, guid: 3fc89de5d71a36c42822d6c30484f677, type: 2}
-  - {fileID: 11400000, guid: a2eaef88a309e5a4bb1e2ea6c65ee868, type: 2}
-  - {fileID: 11400000, guid: 3fc89de5d71a36c42822d6c30484f677, type: 2}
-  - {fileID: 11400000, guid: 4864885031d24bc498263fb001861a4d, type: 2}
-  - {fileID: 11400000, guid: 4864885031d24bc498263fb001861a4d, type: 2}
-  - {fileID: 11400000, guid: 3fc89de5d71a36c42822d6c30484f677, type: 2}
-  - {fileID: 11400000, guid: 3fc89de5d71a36c42822d6c30484f677, type: 2}
-  - {fileID: 11400000, guid: 1fa687b143ca7aa44904455022ffa484, type: 2}
-  - {fileID: 11400000, guid: a2eaef88a309e5a4bb1e2ea6c65ee868, type: 2}
-  - {fileID: 11400000, guid: 3fc89de5d71a36c42822d6c30484f677, type: 2}
-  - {fileID: 11400000, guid: a2eaef88a309e5a4bb1e2ea6c65ee868, type: 2}
-  - {fileID: 11400000, guid: 3fc89de5d71a36c42822d6c30484f677, type: 2}
-  - {fileID: 11400000, guid: a2eaef88a309e5a4bb1e2ea6c65ee868, type: 2}
-  - {fileID: 11400000, guid: 3fc89de5d71a36c42822d6c30484f677, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   AlbumPrefab: {fileID: 4284711900920348548, guid: 2a245887069289e48849d3e57066da06,
     type: 3}
   AlbumCoverMat: {fileID: 2100000, guid: 51ee35cfce09b844fb237d6077bb8be8, type: 2}
@@ -2420,7 +2420,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 311
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -2640,7 +2640,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 311
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0

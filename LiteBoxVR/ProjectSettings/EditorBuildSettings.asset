@@ -53,4 +53,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/TestPunchingbagGameplay.unity
     guid: 510d71dc801849e4d981378678e8b650
+  - enabled: 1
+    path: Assets/Scenes/BagRenderTextureScene.unity
+    guid: 38c30dbc035e71c4599caa773da817c9
   m_configObjects: {}
