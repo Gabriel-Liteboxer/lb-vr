@@ -61,6 +61,11 @@ public class TouchButton : TagModularity
         HoverDistance *= transform.localScale.x;
     }
 
+    private void OnEnable()
+    {
+        ToggleButtonTest = false;
+    }
+
     void Update()
     {
         if ((RightHand.position - transform.position).sqrMagnitude < HoverDistance * HoverDistance

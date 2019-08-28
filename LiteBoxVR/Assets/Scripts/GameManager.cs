@@ -196,6 +196,8 @@ public class GameManager : TagModularity
     private readonly int GamemodeParam = Animator.StringToHash("Gamemode");
     private readonly int ControlModeSelectedParam = Animator.StringToHash("controlModeSelected");
     private readonly int UsingWristStrapsParam = Animator.StringToHash("UsingWristStraps");
+    private readonly int RestartCalibrationParam = Animator.StringToHash("RestartCalibration");
+    private readonly int ReturnToSongMenuParam = Animator.StringToHash("ReturnToSongMenu");
 
     private void Awake()
     {
@@ -359,17 +361,33 @@ public class GameManager : TagModularity
 
     }
 
-    public void RestartGame()
+    public void RestartCalibration()
     {
+        for (int i = 0; i < SceneManager.sceneCount; i++)
+        {
+            Scene scene = SceneManager.GetSceneAt(i);
+            if (scene.buildIndex == (int)LoadableScenes.ControllerSelection)
+                return;
+        }
+
         OptionsMenuObj.SetActive(false);
 
-        SceneManager.LoadScene(0);
+        GameStateAnim.SetTrigger(RestartCalibrationParam);
 
     }
 
     public void ReturnToSongMenu()
     {
+        for (int i = 0; i < SceneManager.sceneCount; i++)
+        {
+            Scene scene = SceneManager.GetSceneAt(i);
+            if (scene.buildIndex == (int)LoadableScenes.RevolvingMenuTest)
+                return;
+        }
+
         ToggleOptionsMenu(false);
+
+        GameStateAnim.SetTrigger(ReturnToSongMenuParam);
     }
 
     public void ToggleOptionsMenu(bool isOpen)

@@ -420,6 +420,7 @@
     <Compile Include="Assets\OldScripts\GameplayController1.cs" />
     <Compile Include="Assets\OldScripts\testchildinher.cs" />
     <Compile Include="Assets\OldScripts\testinher.cs" />
+    <Compile Include="Assets\PunchingBagGameplay.cs" />
     <Compile Include="Assets\RuntimeAudioClipLoader\AudioLoader.cs" />
     <Compile Include="Assets\RuntimeAudioClipLoader\AudioLoaderConfig.cs" />
     <Compile Include="Assets\RuntimeAudioClipLoader\Demonstrations\Load from StreamingAssets or internet\AudioGraph.cs" />

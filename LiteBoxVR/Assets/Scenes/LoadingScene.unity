@@ -941,7 +941,7 @@ PrefabInstance:
     - target: {fileID: 5402947055310411210, guid: c275d9425c62bb74ebaa3c9dd2946981,
         type: 3}
       propertyPath: FunctionToCall.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RestartGame
+      value: RestartCalibration
       objectReference: {fileID: 0}
     - target: {fileID: 5402947055310411210, guid: c275d9425c62bb74ebaa3c9dd2946981,
         type: 3}
