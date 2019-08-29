@@ -64,7 +64,8 @@ public class GameManager : TagModularity
     public enum Gamemode
     {
         LiteboxerDevice,
-        RobotBoxing
+        RobotBoxing,
+        LightUpBag
     }
 
     /*
@@ -80,6 +81,62 @@ public class GameManager : TagModularity
 
         public BoardType boardType;
     }*/
+
+        /*
+         
+        data to be inherited from parent gameplay class
+
+        + lerp progress of note
+
+        virtual functions that call when note is created/destroyed
+
+        child class should store the start and end points of each pad
+
+        child
+        + list of gameobjects the same length as the parent's list of notes
+        + note gameobject position should be determined completely by the child
+
+        or
+
+        + dictionary of NoteObjects
+        key = int (id)
+        value = NoteObject
+
+        class NoteObject
+        {
+            public int id;
+            public float lerpProgress;
+            GameObject gameObject;
+
+            NoteObject(GameObject Prefab, int id)
+            {
+                this.id = id;
+                gameObject = Instantiate(Prefab);
+            
+            }
+
+            SetPosition(Vector3 position)
+            {
+                gameObject.transform.position = position;
+            }
+
+
+        }
+
+        override functions that call when note is created/destroyed
+
+        creation function
+
+        void override CreateNoteObject(ref float LerpProgress)
+        {
+
+
+
+        }
+
+         
+         
+         */
 
     public Gamemode gamemode;
 

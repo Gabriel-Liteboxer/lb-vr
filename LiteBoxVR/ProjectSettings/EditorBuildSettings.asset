@@ -6,54 +6,54 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/LoadingScene.unity
+    path: Assets/Scenes/Base/LoadingScene.unity
     guid: 58e44e44f06cbf24199e943fd5b1c44d
   - enabled: 1
-    path: Assets/Scenes/VRBaseScene.unity
+    path: Assets/Scenes/Base/VRBaseScene.unity
     guid: 0d21d870954d8d246a606543b36cf910
   - enabled: 1
-    path: Assets/Scenes/EnvStudio.unity
+    path: Assets/Scenes/Environments/EnvStudio.unity
     guid: 5156c0d98a4d8754d88f7f0906bb62cf
   - enabled: 1
-    path: Assets/Scenes/RevolvingMenuTest.unity
+    path: Assets/Scenes/Calibration/RevolvingMenuTest.unity
     guid: cf49474b491f239418deca3b06d45ed6
   - enabled: 1
-    path: Assets/Scenes/ModularGameplayTest.unity
+    path: Assets/Scenes/Gameplay/ModularGameplayTest.unity
     guid: 51a27df093ef1c8429105479842a0d4a
   - enabled: 1
-    path: Assets/Scenes/ArmCalibration.unity
+    path: Assets/Scenes/Calibration/ArmCalibration.unity
     guid: f4bf15bbc9f865047aabc86e3ffd500d
   - enabled: 1
-    path: Assets/Scenes/BoardCalibration.unity
+    path: Assets/Scenes/Calibration/BoardCalibration.unity
     guid: 49c2c5224111c7043afdecb1b7d49a6e
   - enabled: 1
-    path: Assets/Scenes/Env_Setup.unity
+    path: Assets/Scenes/Environments/Env_Setup.unity
     guid: 6087d608a9c1ee645b7b6755a27294db
   - enabled: 1
-    path: Assets/Scenes/ControllerSelection.unity
+    path: Assets/Scenes/Calibration/ControllerSelection.unity
     guid: 1f32a8e17bf5caa4d97460635192d710
   - enabled: 1
-    path: Assets/Scenes/BoardPlacement.unity
+    path: Assets/Scenes/Calibration/BoardPlacement.unity
     guid: 0f823670b9e1a18459c42acdf9705252
   - enabled: 1
-    path: Assets/Scenes/PunchingBagCalibration.unity
+    path: Assets/Scenes/Calibration/PunchingBagCalibration.unity
     guid: 1e0d20ee7a53c834f9c8825ce8cb2344
   - enabled: 1
-    path: Assets/Scenes/BoardSelection.unity
+    path: Assets/Scenes/Calibration/BoardSelection.unity
     guid: e8fa59a32bbcd914793f12cc2e8e3ec1
   - enabled: 1
-    path: Assets/Scenes/GamemodeSelect.unity
+    path: Assets/Scenes/Calibration/GamemodeSelect.unity
     guid: 7ab7194a03a25b7498b6a643f2796ec6
   - enabled: 1
-    path: Assets/Scenes/RobotGameplay.unity
+    path: Assets/Scenes/Gameplay/RobotGameplay.unity
     guid: 4fd9006e3939d674eb911c63fbca5671
   - enabled: 1
-    path: Assets/Scenes/Env_Robot.unity
+    path: Assets/Scenes/Environments/Env_Robot.unity
     guid: b3a120466814a7c4aa8a6cff3875d45e
   - enabled: 1
-    path: Assets/TestPunchingbagGameplay.unity
+    path: Assets/Scenes/Gameplay/TestPunchingbagGameplay.unity
     guid: 510d71dc801849e4d981378678e8b650
   - enabled: 1
-    path: Assets/Scenes/BagRenderTextureScene.unity
+    path: Assets/Scenes/Misc/BagRenderTextureScene.unity
     guid: 38c30dbc035e71c4599caa773da817c9
   m_configObjects: {}

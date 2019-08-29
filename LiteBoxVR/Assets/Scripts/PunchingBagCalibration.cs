@@ -93,6 +93,18 @@ public class PunchingBagCalibration : TagModularity
 
             //GameManager.Instance.isBoardTracked = true;
 
+            Vector3 averarageAnchor = Vector3.zero;
+
+            for (int i = 0; i < 3; i++)
+            {
+                averarageAnchor += new Vector3(anchorPoints2D[i].x, 1, anchorPoints2D[i].y);
+
+            }
+
+            averarageAnchor /= 3;
+
+            PunchingBagObj.forward = (Centerpoint - averarageAnchor).normalized;
+
             GameManager.Instance.calibratedObject.SetCalibration(PunchingBagObj);
 
             foreach (GameObject an in AnchorPoints)
