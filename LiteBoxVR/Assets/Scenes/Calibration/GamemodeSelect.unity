@@ -582,9 +582,8 @@ MonoBehaviour:
   UpdatePositionDistance: 0.5
   currentlySelected: 0
   GamemodeLibrary:
-  - {fileID: 11400000, guid: 5cb067dbde3d4524ca0e0a0d78533b5c, type: 2}
-  - {fileID: 11400000, guid: 0da3fec5fa2d08245bccd5730a154d0d, type: 2}
   - {fileID: 11400000, guid: 3e66f91459e6fd040a178b77b1e8fd87, type: 2}
+  - {fileID: 11400000, guid: 5cb067dbde3d4524ca0e0a0d78533b5c, type: 2}
   MenuItemPrefab: {fileID: 1649835740012468850, guid: 80205623e8fd74d45928b3cf645920a4,
     type: 3}
   GamemodeName: {fileID: 550415577}

@@ -138,5 +138,8 @@ public class PunchingBagCalibration : TagModularity
 
         }
 
+        if (Input.GetKeyDown(KeyCode.N))
+            GameManager.Instance.calibratedObject.SetCalibration(PunchingBagObj);
+
     }
 }

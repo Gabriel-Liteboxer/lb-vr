@@ -62,8 +62,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\ExampleGameplayChild.cs" />
-    <Compile Include="Assets\GameplayParent.cs" />
     <Compile Include="Assets\MidiPlayer\Scripts\MPTKGameObject\MidiFileLoader.cs" />
     <Compile Include="Assets\MidiPlayer\Scripts\MPTKGameObject\MidiFilePlayer.cs" />
     <Compile Include="Assets\MidiPlayer\Scripts\MPTKGameObject\MidiPlayer.cs" />
@@ -129,7 +127,6 @@
     <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\TrackSequenceNumberEvent.cs" />
     <Compile Include="Assets\MidiPlayer\Scripts\NAudio Utils\ByteEncoding.cs" />
     <Compile Include="Assets\MidiPlayer\Scripts\Trinary Software\Timing.cs" />
-    <Compile Include="Assets\noteMovementTest.cs" />
     <Compile Include="Assets\Oculus\AudioManager\Scenes\Scripts\TestScript.cs" />
     <Compile Include="Assets\Oculus\AudioManager\Scripts\Audio\AmbienceEmitter.cs" />
     <Compile Include="Assets\Oculus\AudioManager\Scripts\Audio\AudioManager.cs" />
@@ -422,7 +419,6 @@
     <Compile Include="Assets\OldScripts\GameplayController1.cs" />
     <Compile Include="Assets\OldScripts\testchildinher.cs" />
     <Compile Include="Assets\OldScripts\testinher.cs" />
-    <Compile Include="Assets\PunchingBagGameplay.cs" />
     <Compile Include="Assets\RuntimeAudioClipLoader\AudioLoader.cs" />
     <Compile Include="Assets\RuntimeAudioClipLoader\AudioLoaderConfig.cs" />
     <Compile Include="Assets\RuntimeAudioClipLoader\Demonstrations\Load from StreamingAssets or internet\AudioGraph.cs" />
@@ -447,6 +443,7 @@
     <Compile Include="Assets\Scripts\ButtonEvent.cs" />
     <Compile Include="Assets\Scripts\controllerModeSelect.cs" />
     <Compile Include="Assets\Scripts\ControllerVibrationManager.cs" />
+    <Compile Include="Assets\Scripts\ExampleGameplayChild.cs" />
     <Compile Include="Assets\Scripts\FacePlayerPromptUI.cs" />
     <Compile Include="Assets\Scripts\FindCircumcenter.cs" />
     <Compile Include="Assets\Scripts\FistContactListener.cs" />
@@ -455,6 +452,7 @@
     <Compile Include="Assets\Scripts\GamemodeMenu.cs" />
     <Compile Include="Assets\Scripts\GamemodeTile.cs" />
     <Compile Include="Assets\Scripts\GameplayController.cs" />
+    <Compile Include="Assets\Scripts\GameplayParent.cs" />
     <Compile Include="Assets\Scripts\GuideWindow.cs" />
     <Compile Include="Assets\Scripts\HexGamePlay.cs" />
     <Compile Include="Assets\Scripts\HighscoreDisplayer.cs" />
@@ -467,8 +465,11 @@
     <Compile Include="Assets\Scripts\NoteManager.cs" />
     <Compile Include="Assets\Scripts\NoteManager1.cs" />
     <Compile Include="Assets\Scripts\NoteMeshScr.cs" />
+    <Compile Include="Assets\Scripts\noteMovementTest.cs" />
     <Compile Include="Assets\Scripts\OptionsMenu.cs" />
+    <Compile Include="Assets\Scripts\PadHitbox.cs" />
     <Compile Include="Assets\Scripts\PunchingBagCalibration.cs" />
+    <Compile Include="Assets\Scripts\PunchingBagGameplay.cs" />
     <Compile Include="Assets\Scripts\PunchPadHitDetection.cs" />
     <Compile Include="Assets\Scripts\PunchPadVisuals.cs" />
     <Compile Include="Assets\Scripts\RevolvingMenu.cs" />
