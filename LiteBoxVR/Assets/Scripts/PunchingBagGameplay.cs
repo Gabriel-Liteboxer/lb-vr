@@ -355,6 +355,12 @@ public class PunchingBagGameplay : ExampleGameplayChild
  
     }
 
+    public override void NoteObjectHit(uint id)
+    {
+        // do particle here 
+        //NoteObjectDict[id].
+    }
+
     void GeneratePads(float startRadius, float targetRadius, float endRadius)
     {
         Debug.Log("Generate Pads");
@@ -398,7 +404,7 @@ public class PunchingBagGameplay : ExampleGameplayChild
 
     public Vector3 GetPositionOnBag(Vector2 position2D)
     {
-        float angle = position2D.x * unitsToRadians;
+        float angle = (position2D.x * unitsToRadians) - ((180 / pi)*transform.eulerAngles.y);
 
         return new Vector3(transform.position.x + bagRadius * Mathf.Cos(angle), transform.position.y + position2D.y, transform.position.z + bagRadius * Mathf.Sin(angle));
     }
@@ -407,7 +413,7 @@ public class PunchingBagGameplay : ExampleGameplayChild
     {
         float angle = position2D.x * unitsToRadians * (180 / pi);
 
-        return new Vector3(0, -angle + 90, 0);
+        return new Vector3(0, -angle + 90 + transform.eulerAngles.y, 0);
     }
 
     public Vector3 GetPreservedRotationOnBag(Vector2 position2D, Vector3 OrigionalRotation)

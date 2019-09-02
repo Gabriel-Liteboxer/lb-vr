@@ -357,12 +357,12 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 7415d5f832b7df54fbd8b9220bbe0d56,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 7415d5f832b7df54fbd8b9220bbe0d56,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.47750056
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 7415d5f832b7df54fbd8b9220bbe0d56,
         type: 3}
@@ -372,7 +372,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 7415d5f832b7df54fbd8b9220bbe0d56,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.8786315
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 7415d5f832b7df54fbd8b9220bbe0d56,
         type: 3}
@@ -387,7 +387,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 7415d5f832b7df54fbd8b9220bbe0d56,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 57.045002
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 7415d5f832b7df54fbd8b9220bbe0d56,
         type: 3}
@@ -426,7 +426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HitThresholdMS: 180
-  HitTargetTimeOffsetMS: -500
+  HitTargetTimeOffsetMS: 500
   NoteAppearTimeMS: 800
   TimeScale: 1
   GameScore: 0
@@ -445,10 +445,10 @@ MonoBehaviour:
     type: 3}
   TrackMiddlePrefab: {fileID: 3500531982139472855, guid: 25369933d76d582408de675b1cf94884,
     type: 3}
-  StartRadius: 0.03
+  StartRadius: 0.06
   TargetRadius: 0
-  EndRadius: 0.2
-  TrackSegments: 10
+  EndRadius: 0.35
+  TrackSegments: 20
   TrackAngleOffsets: []
   HitboxRadiusMultiplier: 1.1
   PadRadius: 0.07

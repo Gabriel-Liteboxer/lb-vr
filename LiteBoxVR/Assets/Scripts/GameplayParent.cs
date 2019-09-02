@@ -8,6 +8,7 @@ public class GameplayParent : MonoBehaviour
     public virtual void CreateNoteObject(uint id, uint pad) { }
     public virtual void UpdateNoteLerp(uint id, float lerpProgress) { }
     public virtual void DestroyNoteObject(uint id) { }
+    public virtual void NoteObjectHit(uint id) { }
 
     float TimePassedMS; // the time passed in ms
 
@@ -247,6 +248,8 @@ public class GameplayParent : MonoBehaviour
         GameScore += (int)(oldestNote.hitAccuracy * 100);
 
         GameStreak++;
+
+        NoteObjectHit(oldestNote.id);
 
         if (ScoreText != null)
             ScoreText.text = "SCORE: " + GameScore.ToString();

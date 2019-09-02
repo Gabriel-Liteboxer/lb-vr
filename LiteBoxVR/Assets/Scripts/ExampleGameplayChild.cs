@@ -22,6 +22,12 @@ public class NoteObject
         gameObject.transform.position = position;
     }
 
+    public Vector3 GetPosition()
+    {
+
+        return gameObject.transform.position;
+    }
+
     public void DestroyNoteObject()
     {
         GameObject.Destroy(gameObject);
@@ -68,6 +74,7 @@ public class ExampleGameplayChild : GameplayParent
     //override
     public override void DestroyNoteObject(uint id)
     {
+
         if (NoteObjectDict.ContainsKey(id))
         {
             NoteObjectDict[id].DestroyNoteObject();
