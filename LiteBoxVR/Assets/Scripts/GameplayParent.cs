@@ -95,6 +95,8 @@ public class GameplayParent : MonoBehaviour
             noteObjects[i].ExpireTime = noteObjects[i].time + HitTargetTimeOffsetMS + HitThresholdMS;
 
             noteObjects[i].CanHitTime = noteObjects[i].time + HitTargetTimeOffsetMS - HitThresholdMS;
+
+            //CreateNoteObject((uint)i, midiNotes.notes[i].pad);
         }
 
     }
@@ -146,6 +148,7 @@ public class GameplayParent : MonoBehaviour
             {
                 noteObjects[i].born = true;
                 ActiveNoteObjects.Add(noteObjects[i]);
+                CreateNoteObject((uint)i, noteObjects[i].pad);
             }
             else if (TimePassedMS > noteObjects[i].ExpireTime)
             {
@@ -171,7 +174,7 @@ public class GameplayParent : MonoBehaviour
     {
         foreach (NoteData n in ActiveNoteObjects)
         {
-            
+            //Debug.LogError("updated notes");
             n.LerpProgress = Mathf.InverseLerp(n.StartTime, n.ExpireTime, TimePassedMS);
 
             UpdateNoteLerp(n.id, n.LerpProgress);

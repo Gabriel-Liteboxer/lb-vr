@@ -5,14 +5,16 @@ using UnityEngine;
 public class NoteObject
 {
     public uint id;
+    public uint pad;
     public float lerpProgress;
     GameObject gameObject;
 
     public NoteObject(uint id, uint pad, GameObject prefab)
     {
         this.id = id;
+        this.pad = pad;
         gameObject = GameObject.Instantiate(prefab);
-
+        Debug.LogWarning("Instantiated Note");
     }
 
     public void SetPosition(Vector3 position)
@@ -38,7 +40,7 @@ public class ExampleGameplayChild : GameplayParent
     public GameObject NotePrefab;
 
 
-    Dictionary<uint, NoteObject> NoteObjectDict;
+    public Dictionary<uint, NoteObject> NoteObjectDict;
 
     private void Awake()
     {

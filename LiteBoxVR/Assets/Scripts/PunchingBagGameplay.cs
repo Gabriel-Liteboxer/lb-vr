@@ -302,6 +302,21 @@ public class PunchingBagGameplay : ExampleGameplayChild
 
         BagSizeChanged();
 
+        UpdateNoteObjects();
+    }
+
+    private void UpdateNoteObjects()
+    {
+        foreach (KeyValuePair<uint, NoteObject> pair in NoteObjectDict)
+        {
+            //Vector3 position = Vector3.Lerp(Vector3.zero, Vector3.one, pair.Value.lerpProgress);
+
+            // pair.Value.SetPosition(position);
+
+            Vector2 notePos2D = Vector2.Lerp(Pads[(int)pair.Value.pad].StartPosition, Pads[(int)pair.Value.pad].EndPosition, pair.Value.lerpProgress);
+
+            pair.Value.SetPosition(GetPositionOnBag(notePos2D));
+        }
         
     }
 
