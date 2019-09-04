@@ -457,6 +457,10 @@ public class PunchingBagGameplay : ExampleGameplayChild
 
         GameObject part = Instantiate(NotePopPrefab, position, Quaternion.Euler(rotation));
 
+        
+
+        part.GetComponent<ParticleSystemRenderer>().material = NoteObjectDict[id].noteVisuals.MyMat;
+
         Destroy(part, 0.5f);
 
         // do particle here 

@@ -6,6 +6,8 @@ public class NoteVisuals : MonoBehaviour
 {
     public GameObject spriteRing;
 
+    public Material MyMat;
+
     private void Awake()
     {
         spriteRing.SetActive(false);
@@ -25,9 +27,13 @@ public class NoteVisuals : MonoBehaviour
 
     public void SetColor(Color color)
     {
+        
+
         Renderer rend = GetComponent<Renderer>();
 
         rend.material = new Material(rend.material);
+
+        MyMat = rend.material;
 
         rend.material.color = color;
 
@@ -41,6 +47,7 @@ public class NoteVisuals : MonoBehaviour
 
     public void UpdateColor(Color color)
     {
+
         GetComponent<Renderer>().material.color = color;
 
         GetComponent<Renderer>().material.SetColor("_EmissionColor", color);
