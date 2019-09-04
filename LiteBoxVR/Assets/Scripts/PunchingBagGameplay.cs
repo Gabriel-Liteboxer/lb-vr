@@ -94,6 +94,8 @@ public class PunchingBagGameplay : ExampleGameplayChild
 
     public float PadRadius = 0.07f;
 
+    Transform PadParent;
+
     // punching pad should illuminate with each hit
     // could illuminate with the color of the hit note and brightness relative to the hit velocity
 
@@ -116,7 +118,7 @@ public class PunchingBagGameplay : ExampleGameplayChild
 
         public GameObject[] LightTrack;
 
-        public Pad(Vector2 startPosition, Vector2 targetPosition, Vector2 endPosition, GameObject padPrefab, GameObject trackEndPrefab, GameObject trackMiddlePrefab, int trackSegments, PunchingBagGameplay aPunchingBagGameplay, float angle, int padIndex)
+        public Pad(Vector2 startPosition, Vector2 targetPosition, Vector2 endPosition, GameObject padPrefab, GameObject trackEndPrefab, GameObject trackMiddlePrefab, int trackSegments, PunchingBagGameplay aPunchingBagGameplay, float angle, int padIndex, Transform parentTansform)
         {
             if (punchingbagGameplay == null)
                 punchingbagGameplay = aPunchingBagGameplay;
@@ -127,7 +129,7 @@ public class PunchingBagGameplay : ExampleGameplayChild
 
             EndPosition = endPosition;
 
-            gameObject = GameObject.Instantiate(padPrefab);
+            gameObject = GameObject.Instantiate(padPrefab, parentTansform);
 
             gameObject.name = "Pad " + padIndex;
 
@@ -182,7 +184,13 @@ public class PunchingBagGameplay : ExampleGameplayChild
         public void UpdateLightTrack(int padIndex, float offset, int trackSegments)
         {
 
-            float trackAngle = offset;
+            gameObject.transform.position = punchingbagGameplay.GetPositionOnBag(TargetPosition);
+
+            gameObject.transform.eulerAngles = punchingbagGameplay.GetRotationOnBag(TargetPosition);
+
+            //float trackAngle = offset;
+
+            float trackAngle = 240 - (padIndex * 60);
 
             //track start cap
             LightTrack[0].transform.parent = null;
@@ -217,6 +225,8 @@ public class PunchingBagGameplay : ExampleGameplayChild
                 LightTrack[i].transform.parent = gameObject.transform;
 
             }
+
+            
 
         }
 
@@ -271,6 +281,8 @@ public class PunchingBagGameplay : ExampleGameplayChild
 
         BagSizeChanged();
 
+        PadParent = new GameObject().transform;
+
         StartCoroutine(GeneratePadsDelayed());
 
         //GenerateBagPixels(0.05f);
@@ -306,6 +318,12 @@ public class PunchingBagGameplay : ExampleGameplayChild
         BagSizeChanged();
 
         UpdateNoteObjects();
+        
+        for (int i = 0; i < 6; i++)
+        {
+            Pads[i].UpdateLightTrack(i, 0, 20);
+
+        }
     }
 
     private void LateUpdate()
@@ -331,7 +349,11 @@ public class PunchingBagGameplay : ExampleGameplayChild
     private void FixedUpdate()
     {
 
+        
+
         CheckHandContact();
+
+        
 
     }
 
@@ -398,11 +420,12 @@ public class PunchingBagGameplay : ExampleGameplayChild
 
             Vector2 endPosition = PointOnCircle(endRadius, origin, angle);
 
-            Pad newPad = new Pad(startPosition, targetPosition, endPosition, PadPrefab, TrackEndPrefab, TrackMiddlePrefab, TrackSegments, this, angle, i);
+            Pad newPad = new Pad(startPosition, targetPosition, endPosition, PadPrefab, TrackEndPrefab, TrackMiddlePrefab, TrackSegments, this, angle, i, PadParent);
 
             Pads.Add(newPad);
         }
 
+        //PadParent.transform.eulerAngles = transform.eulerAngles;
     }
 
     Vector2 PointOnCircle(float radius, Vector2 origin, float angle)
@@ -421,7 +444,7 @@ public class PunchingBagGameplay : ExampleGameplayChild
 
     public Vector3 GetPositionOnBag(Vector2 position2D)
     {
-        float angle = (position2D.x * unitsToRadians) - ((180 / pi)*transform.eulerAngles.y);
+        float angle = (position2D.x * unitsToRadians) + (pi/180*-transform.eulerAngles.y);
 
         return new Vector3(transform.position.x + bagRadius * Mathf.Cos(angle), transform.position.y + position2D.y, transform.position.z + bagRadius * Mathf.Sin(angle));
     }
@@ -431,6 +454,9 @@ public class PunchingBagGameplay : ExampleGameplayChild
         float angle = position2D.x * unitsToRadians * (180 / pi);
 
         return new Vector3(0, -angle + 90 + transform.eulerAngles.y, 0);
+
+        //return new Vector3(0, -angle + 90, 0);
+
     }
 
     public Vector3 GetPreservedRotationOnBag(Vector2 position2D, Vector3 OrigionalRotation)
