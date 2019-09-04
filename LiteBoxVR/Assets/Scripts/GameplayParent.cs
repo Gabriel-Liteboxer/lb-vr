@@ -24,9 +24,9 @@ public class GameplayParent : MonoBehaviour
 
     public int GameStreak;
 
-    public TMPro.TextMeshProUGUI ScoreText;
+    //public TMPro.TextMeshProUGUI ScoreText;
 
-    public TMPro.TextMeshProUGUI StreakText;
+    //public TMPro.TextMeshProUGUI StreakText;
 
     [System.Serializable]
     public class NoteData
@@ -156,6 +156,8 @@ public class GameplayParent : MonoBehaviour
                 noteObjects[i].expired = true;
                 ActiveNoteObjects.Remove(noteObjects[i]);
 
+                DestroyNoteObject(noteObjects[i].id);
+
                 if (!noteObjects[i].beenHit)
                 {
                     GameStreak = 0;
@@ -215,6 +217,8 @@ public class GameplayParent : MonoBehaviour
 
         oldestNote.beenHit = true;
 
+        DestroyNoteObject(oldestNote.id);
+
         //ActiveNoteObjects.Remove(oldestNote);
 
         float missTime;
@@ -250,13 +254,13 @@ public class GameplayParent : MonoBehaviour
         GameStreak++;
 
         NoteObjectHit(oldestNote.id);
-
+        /*
         if (ScoreText != null)
             ScoreText.text = "SCORE: " + GameScore.ToString();
 
         if (StreakText != null)
             StreakText.text = "STREAK: " + GameStreak.ToString() + "x";
-
+            */
         return oldestNote.hitAccuracy;
 
 

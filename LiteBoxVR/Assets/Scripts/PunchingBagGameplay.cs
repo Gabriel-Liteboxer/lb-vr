@@ -100,6 +100,16 @@ public class PunchingBagGameplay : ExampleGameplayChild
 
     Transform PadParent;
 
+    public TMPro.TextMeshPro ScoreText;
+
+    public Renderer BackroundRenderer;
+
+    public float BackroundColorLerp;
+
+    public float BackroundColorVelocity;
+
+    public GameObject NotePopPrefab;
+
     // punching pad should illuminate with each hit
     // could illuminate with the color of the hit note and brightness relative to the hit velocity
 
@@ -308,9 +318,11 @@ public class PunchingBagGameplay : ExampleGameplayChild
 
     public void SetTargetRadius()
     {
-        float travelDistance = EndRadius - StartRadius;
+        //float travelDistance = EndRadius - StartRadius;
 
-        float diff = Mathf.InverseLerp(NoteAppearTimeMS, HitThresholdMS, 0);
+        float diff = Mathf.InverseLerp(-NoteAppearTimeMS, HitThresholdMS, 0);
+
+        //Debug.Log("note appear " + NoteAppearTimeMS + "hit thresh " + HitThresholdMS + "diff " + diff);
 
         TargetRadius = EndRadius * diff;
     }
@@ -322,12 +334,27 @@ public class PunchingBagGameplay : ExampleGameplayChild
         BagSizeChanged();
 
         UpdateNoteObjects();
-        
+        /*
         for (int i = 0; i < 6; i++)
         {
             Pads[i].UpdateLightTrack(i, 0, 20);
 
-        }
+        }*/
+
+        RenderBag();
+    }
+
+    void RenderBag()
+    {
+        ScoreText.text = GameScore.ToString();
+
+        BackroundRenderer.material.color = Color.Lerp(Color.black, Color.blue, BackroundColorLerp);
+
+        BackroundColorLerp = Mathf.Lerp(BackroundColorLerp, 0, Time.deltaTime*10);
+
+        
+
+        BackroundColorVelocity = Mathf.Lerp(BackroundColorLerp, 1, Time.deltaTime);
     }
 
     private void LateUpdate()
@@ -367,10 +394,16 @@ public class PunchingBagGameplay : ExampleGameplayChild
         if (LeftHandContact.BagContactStart(transform, bagRadius*HitboxRadiusMultiplier))
         {
             CheckPadContact(LeftHandContact.handTransform.position);
+
+            //BackroundColorVelocity = -1;
+            BackroundColorLerp = OVRInput.GetLocalControllerVelocity(OVRInput.Controller.LTouch).magnitude/5;
         }
         if (RightHandContact.BagContactStart(transform, bagRadius * HitboxRadiusMultiplier))
         {
             CheckPadContact(RightHandContact.handTransform.position);
+
+            //BackroundColorVelocity = -1;
+            BackroundColorLerp = OVRInput.GetLocalControllerVelocity(OVRInput.Controller.RTouch).magnitude/5;
         }
 
         //AddDebugLine("Right Hand Contact " + RightHandContact.BagContact(transform, bagRadius * HitboxRadiusMultiplier).ToString());
@@ -408,7 +441,15 @@ public class PunchingBagGameplay : ExampleGameplayChild
 
     public override void NoteObjectHit(uint id)
     {
-        
+        Vector2 pos2D = Vector2.Lerp(Pads[(int)NoteObjectDict[id].pad].StartPosition, Pads[(int)NoteObjectDict[id].pad].EndPosition, NoteObjectDict[id].lerpProgress);
+
+        Vector3 position = GetPositionOnBag(pos2D);
+
+        Vector3 rotation = GetRotationOnBag(pos2D);
+
+        GameObject part = Instantiate(NotePopPrefab, position, Quaternion.Euler(rotation));
+
+        Destroy(part, 0.5f);
 
         // do particle here 
         //NoteObjectDict[id].

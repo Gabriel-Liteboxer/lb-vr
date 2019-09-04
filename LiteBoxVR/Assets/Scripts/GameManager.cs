@@ -6,6 +6,10 @@ using UnityEngine.Events;
 
 public class GameManager : TagModularity
 {
+    // use controller pitch axis to determine if the controller is being pointed at the bag
+    // then when the controller is horizontal, check is the controller velocities are below the threshold
+
+
     //started at 1:30
     public SongLoader songLoader;
 
