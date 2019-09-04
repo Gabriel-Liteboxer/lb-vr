@@ -15,7 +15,7 @@ public class GameplayParent : MonoBehaviour
 
     public float HitThresholdMS = 180; // old val 250; the amount of time in ms a user is allowed to hit the note prior or after the target time. This time can not be larger than the time between notes
 
-    public float HitTargetTimeOffsetMS = -500; // the amount of time in ms to add to the notedata time value to get the target hit time
+    //public float HitTargetTimeOffsetMS = -500; // the amount of time in ms to add to the notedata time value to get the target hit time
 
     public float NoteAppearTimeMS = 800; // the amount of time in ms prior to the target hit time that a warning visual should appear (i.e. a dot starting its lerp from a start position to a target position)
 
@@ -90,13 +90,13 @@ public class GameplayParent : MonoBehaviour
 
             noteObjects[i].id = (uint)i;
 
-            noteObjects[i].StartTime = noteObjects[i].time + HitTargetTimeOffsetMS - NoteAppearTimeMS;
+            noteObjects[i].StartTime = noteObjects[i].time - NoteAppearTimeMS;
 
-            noteObjects[i].TargetTime = noteObjects[i].time + HitTargetTimeOffsetMS;
+            noteObjects[i].TargetTime = noteObjects[i].time;
 
-            noteObjects[i].ExpireTime = noteObjects[i].time + HitTargetTimeOffsetMS + HitThresholdMS;
+            noteObjects[i].ExpireTime = noteObjects[i].time + HitThresholdMS;
 
-            noteObjects[i].CanHitTime = noteObjects[i].time + HitTargetTimeOffsetMS - (HitThresholdMS*2);
+            noteObjects[i].CanHitTime = noteObjects[i].time - (HitThresholdMS*2);
 
             //CreateNoteObject((uint)i, midiNotes.notes[i].pad);
         }
@@ -217,7 +217,7 @@ public class GameplayParent : MonoBehaviour
 
         }
 
-        if (TimePassedMS < oldestNote.time + HitTargetTimeOffsetMS - HitThresholdMS)
+        if (TimePassedMS < oldestNote.CanHitTime)
             return -1;
 
         oldestNote.beenHit = true;
@@ -275,18 +275,18 @@ public class GameplayParent : MonoBehaviour
     {
         noteObjects[noteIndex].beenHit = true;
 
-        float missTime = noteObjects[noteIndex].time + HitTargetTimeOffsetMS;
+        float missTime = noteObjects[noteIndex].time;
 
-        float thisNoteTargetTime = noteObjects[noteIndex].time + HitTargetTimeOffsetMS;
+        float thisNoteTargetTime = noteObjects[noteIndex].time;
 
-        if (TimePassedMS < noteObjects[noteIndex].time + HitTargetTimeOffsetMS)
+        if (TimePassedMS < noteObjects[noteIndex].time)
         {
-            missTime += HitThresholdMS;
+            missTime = noteObjects[noteIndex].CanHitTime;
 
         }
         else
         {
-            missTime -= HitThresholdMS;
+            missTime = noteObjects[noteIndex].ExpireTime;
 
         }
 
