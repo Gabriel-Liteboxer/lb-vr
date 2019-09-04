@@ -28,18 +28,62 @@ public class AnimGameStateController : StateMachineBehaviour
 
     }*/
 
+    public uint Id;
+
+    //bool IdSet;
+
     public GameManager.SceneState[] ScenesToLoad;
+
+    /*
+    IEnumerator GetIDFromGameManager()
+    {
+        bool GameManagerNull = true;
+
+        while(GameManagerNull)
+        {
+            if (GameManager.Instance != null)
+            {
+                GameManagerNull = false;
+                Id = GameManager.Instance.GetUniqueAnimStateID();
+            }
+
+            yield return null;
+        }
+
+    }*/
+
+    public void SetId(uint Id)
+    {
+        this.Id = Id;
+
+        Debug.Log("Set Id" + Id.ToString());
+
+    }
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo animatorStateInfo, int layerIndex)
     {
         foreach (GameManager.SceneState ss in ScenesToLoad)
         {
+            ss.AnimStateID = Id;
+
             GameManager.Instance.AddSceneState(ss);
         }
     }
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo animatorStateInfo, int layerIndex)
     {
+        /*Debug.Log(Time.deltaTime);
+
+
+        if (!IdSet)
+        {
+            if (GameManager.Instance != null)
+            {
+                Id = GameManager.Instance.GetUniqueAnimStateID();
+                IdSet = true;
+            }
+        }*/
+
         foreach (AnimatorControllerParameter param in animator.parameters)
         {
             if (param.type == AnimatorControllerParameterType.Trigger)
@@ -50,7 +94,7 @@ public class AnimGameStateController : StateMachineBehaviour
 
         }
     }
-
+    /*
     public override void OnStateExit(Animator animator, AnimatorStateInfo animatorStateInfo, int layerIndex)
     {
         foreach (GameManager.SceneState ss in ScenesToLoad)
@@ -59,5 +103,5 @@ public class AnimGameStateController : StateMachineBehaviour
                 GameManager.Instance.RemoveSceneState(ss);
         }
     }
-
+    */
 }

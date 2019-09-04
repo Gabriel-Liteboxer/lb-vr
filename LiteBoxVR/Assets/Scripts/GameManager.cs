@@ -39,6 +39,10 @@ public class GameManager : TagModularity
     {
         public LoadableScenes SceneIndex;
 
+        // animStateID is used to prevent this scene from being unloaded when a scene from the same anim state is loaded
+        //may not need it stored here, can pass from AddSceneState() instead
+        public uint AnimStateID;
+
         [HideInInspector]
         public bool Loading;
 
@@ -256,6 +260,9 @@ public class GameManager : TagModularity
     private readonly int RestartCalibrationParam = Animator.StringToHash("RestartCalibration");
     private readonly int ReturnToSongMenuParam = Animator.StringToHash("ReturnToSongMenu");
 
+    //animator IDs
+    //private uint AnimIDCounter;
+
     private void Awake()
     {
         if (Instance == null)
@@ -272,6 +279,8 @@ public class GameManager : TagModularity
         GameStateAnim = GetComponent<Animator>();
 
         calibratedObject = new CalibratedObject();
+
+        SetUniqueAnimStateIDs();
     }
 
     private void Start()
@@ -360,8 +369,51 @@ public class GameManager : TagModularity
 
     }
 
+    //unload old scenes that are marked to unload on scene change
+    void UnloadOldScenes(uint AnimStateID)
+    {
+        List<LoadableScenes> KeyList = new List<LoadableScenes>(SceneStateDict.Keys);
+
+        for (int i = 0; i < KeyList.Count; i++)
+        {
+            if (SceneStateDict[KeyList[i]].AnimStateID != AnimStateID)
+            {
+                if (SceneStateDict[KeyList[i]].UnloadOnStateChange)
+                {
+                    SceneManager.UnloadSceneAsync((int)KeyList[i]);
+
+                    SceneStateDict.Remove(KeyList[i]);
+
+                }
+            }
+        }
+
+        /*
+        foreach (var value in SceneStateDict.Values)
+        {
+            if (value.AnimStateID == AnimStateID)
+                continue;
+
+            if(value.UnloadOnStateChange)
+            {
+                SceneManager.UnloadSceneAsync((int)value.SceneIndex);
+
+                SceneStateDict.Remove(value.SceneIndex);
+            }
+
+        }
+        */
+    }
+
+
     IEnumerator LoadSceneState(SceneState aScene)
     {
+        // this unloads scenes just loaded on the same anim state
+        // add an int param unique to each state
+        // when loading new scenes the unloader can ignore the scenes with the same int param
+        //pass ignore int to unloadOldScenes
+        UnloadOldScenes(aScene.AnimStateID);
+
         aScene.Loading = true;
 
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync((int)aScene.SceneIndex, LoadSceneMode.Additive);
@@ -482,7 +534,28 @@ public class GameManager : TagModularity
         }
 
     }
+    /*
+    public uint GetUniqueAnimStateID()
+    {
+        AnimIDCounter++;
+        Debug.Log(AnimIDCounter);
+        AnimGameStateController[] animStates = GameStateAnim.GetBehaviours<AnimGameStateController>();
+        return AnimIDCounter;
+    }
+    */
+    public void SetUniqueAnimStateIDs()
+    {
+        
+        AnimGameStateController[] animStates = GameStateAnim.GetBehaviours<AnimGameStateController>();
 
+        for (uint i = 0; i < animStates.Length; i++)
+        {
+            //Debug.Log(i);
 
+            animStates[i].SetId(i);
+        }
+
+        
+    }
 }
 

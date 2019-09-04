@@ -97,6 +97,9 @@ public class PunchingBagGameplay : ExampleGameplayChild
     // punching pad should illuminate with each hit
     // could illuminate with the color of the hit note and brightness relative to the hit velocity
 
+    // Debug Stuff
+    string DebugInfo;
+    public TMPro.TextMeshPro DebugText;
 
     [System.Serializable]
     public class Pad
@@ -305,6 +308,11 @@ public class PunchingBagGameplay : ExampleGameplayChild
         UpdateNoteObjects();
     }
 
+    private void LateUpdate()
+    {
+        DebugInfo = "";
+    }
+
     private void UpdateNoteObjects()
     {
         foreach (KeyValuePair<uint, NoteObject> pair in NoteObjectDict)
@@ -332,23 +340,23 @@ public class PunchingBagGameplay : ExampleGameplayChild
 
         if (LeftHandContact.BagContactStart(transform, bagRadius*HitboxRadiusMultiplier))
         {
-            CheckPadHit(LeftHandContact.handTransform.position);
+            CheckPadContact(LeftHandContact.handTransform.position);
         }
         if (RightHandContact.BagContactStart(transform, bagRadius * HitboxRadiusMultiplier))
         {
-            CheckPadHit(RightHandContact.handTransform.position);
+            CheckPadContact(RightHandContact.handTransform.position);
         }
 
     }
 
-    void CheckPadHit(Vector3 handPosition)
+    void CheckPadContact(Vector3 handPosition)
     {
         for (int i = 0; i < Pads.Count; i++)
         {
             if ((Pads[i].gameObject.transform.position - handPosition).sqrMagnitude < PadRadius * PadRadius)
             {
                 PadHit(i);
-
+                AddDebugLine("Pad " + i + "Contact");
             }
 
         }
@@ -357,8 +365,17 @@ public class PunchingBagGameplay : ExampleGameplayChild
 
     public override void NoteObjectHit(uint id)
     {
+        
+
         // do particle here 
         //NoteObjectDict[id].
+    }
+
+    void AddDebugLine(string entry)
+    {
+        DebugInfo += entry + "\n";
+        DebugText.text = DebugInfo;
+
     }
 
     void GeneratePads(float startRadius, float targetRadius, float endRadius)
