@@ -8,12 +8,14 @@ public class HandBagContact
 
     public Transform handTransform;
 
+    public int counter;
+
     public HandBagContact(Transform handTransform)
     {
         this.handTransform = handTransform;
 
     }
-    /*
+    
     public bool BagContact(Transform bagOrigin, float bagRadius)
     {
         if (handTransform == null)
@@ -27,19 +29,14 @@ public class HandBagContact
             return true;
 
         return false;
-    }*/
+    }
     
         // this will return true if bag contact has just started
     public bool BagContactStart(Transform bagOrigin, float hitboxRadius)
     {
         if (handTransform == null)
             return false;
-
-        if (inContact)
-        {
-            return false;
-
-        }
+        
 
         Vector2 hand = new Vector2(handTransform.position.x, handTransform.position.z);
 
@@ -47,6 +44,13 @@ public class HandBagContact
 
         if ((hand - bag).sqrMagnitude < hitboxRadius * hitboxRadius)
         {
+            if (inContact)
+            {
+                return false;
+
+            }
+
+            counter++;
             inContact = true;
             return true;
         }
@@ -369,16 +373,33 @@ public class PunchingBagGameplay : ExampleGameplayChild
             CheckPadContact(RightHandContact.handTransform.position);
         }
 
+        //AddDebugLine("Right Hand Contact " + RightHandContact.BagContact(transform, bagRadius * HitboxRadiusMultiplier).ToString());
+
+        //AddDebugLine("Left Hand Contact " + LeftHandContact.BagContact(transform, bagRadius * HitboxRadiusMultiplier).ToString());
+
+        //AddDebugLine("Left Hand count " + LeftHandContact.counter.ToString());
+
+        //AddDebugLine("Right Hand count " + RightHandContact.counter.ToString());
+
     }
 
     void CheckPadContact(Vector3 handPosition)
     {
         for (int i = 0; i < Pads.Count; i++)
         {
+            float accuracy;
+
             if ((Pads[i].gameObject.transform.position - handPosition).sqrMagnitude < PadRadius * PadRadius)
             {
-                PadHit(i);
-                AddDebugLine("Pad " + i + "Contact");
+                accuracy = PadHit(i);
+                //AddDebugLine("Pad " + i + "Contact");
+                //Application.Quit();
+
+                if (accuracy != -1)
+                {
+
+
+                }
             }
 
         }
@@ -444,7 +465,7 @@ public class PunchingBagGameplay : ExampleGameplayChild
 
     public Vector3 GetPositionOnBag(Vector2 position2D)
     {
-        float angle = (position2D.x * unitsToRadians) + (pi/180*-transform.eulerAngles.y);
+        float angle = (position2D.x * unitsToRadians) + (pi/180*(-transform.eulerAngles.y-90));
 
         return new Vector3(transform.position.x + bagRadius * Mathf.Cos(angle), transform.position.y + position2D.y, transform.position.z + bagRadius * Mathf.Sin(angle));
     }
@@ -453,9 +474,9 @@ public class PunchingBagGameplay : ExampleGameplayChild
     {
         float angle = position2D.x * unitsToRadians * (180 / pi);
 
-        return new Vector3(0, -angle + 90 + transform.eulerAngles.y, 0);
+        return new Vector3(0, -angle + 180 + transform.eulerAngles.y, 0);
 
-        //return new Vector3(0, -angle + 90, 0);
+       // return new Vector3(0, -angle + 90 + transform.eulerAngles.y, 0);
 
     }
 
