@@ -96,7 +96,7 @@ public class GameplayParent : MonoBehaviour
 
             noteObjects[i].ExpireTime = noteObjects[i].time + HitTargetTimeOffsetMS + HitThresholdMS;
 
-            noteObjects[i].CanHitTime = noteObjects[i].time + HitTargetTimeOffsetMS - HitThresholdMS;
+            noteObjects[i].CanHitTime = noteObjects[i].time + HitTargetTimeOffsetMS - (HitThresholdMS*2);
 
             //CreateNoteObject((uint)i, midiNotes.notes[i].pad);
         }

@@ -35364,7 +35364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HitThresholdMS: 180
-  HitTargetTimeOffsetMS: 500
+  HitTargetTimeOffsetMS: 0
   NoteAppearTimeMS: 800
   TimeScale: 1
   GameScore: 0

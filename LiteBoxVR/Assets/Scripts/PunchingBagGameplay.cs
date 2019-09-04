@@ -422,6 +422,29 @@ public class PunchingBagGameplay : ExampleGameplayChild
 
     void CheckPadContact(Vector3 handPosition)
     {
+        int closestPadIndex = 0;
+
+        for (int i = 1; i < Pads.Count; i++) // change this to find closest pad
+        {
+            
+            if ((Pads[i].gameObject.transform.position - handPosition).sqrMagnitude < (Pads[closestPadIndex].gameObject.transform.position - handPosition).sqrMagnitude)
+            {
+                closestPadIndex = i;
+            }
+
+        }
+
+        float accuracy = PadHit(closestPadIndex);
+
+        if (accuracy != -1)
+        {
+            // do the thing
+
+        }
+    }
+    /*
+    void CheckPadContact(Vector3 handPosition)
+    {
         for (int i = 0; i < Pads.Count; i++) // change this to find closest pad
         {
             float accuracy;
@@ -440,9 +463,9 @@ public class PunchingBagGameplay : ExampleGameplayChild
             }
 
         }
- 
-    }
 
+    }
+    */
     public override void NoteObjectHit(uint id)
     {
         //Application.Quit();
@@ -456,9 +479,7 @@ public class PunchingBagGameplay : ExampleGameplayChild
         Vector3 rotation = GetRotationOnBag(pos2D);
 
         GameObject part = Instantiate(NotePopPrefab, position, Quaternion.Euler(rotation));
-
         
-
         part.GetComponent<ParticleSystemRenderer>().material = NoteObjectDict[id].noteVisuals.MyMat;
 
         Destroy(part, 0.5f);
