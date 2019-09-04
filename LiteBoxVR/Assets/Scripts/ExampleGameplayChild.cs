@@ -72,7 +72,10 @@ public class ExampleGameplayChild : GameplayParent
     {
         NoteObjectDict.Add(id, new NoteObject(id, pad, NotePrefab));
 
-        NoteObjectDict[id].noteVisuals.SetColor(Color.Lerp(Color.red, Color.green, Random.Range(0, 1)));
+        
+        //Color.HSVToRGB(Random.Range(0f, 1f), 1, 1);
+
+        NoteObjectDict[id].noteVisuals.SetColor(Color.HSVToRGB(Random.Range(0f, 1f), 1, 1));
     }
 
     //override

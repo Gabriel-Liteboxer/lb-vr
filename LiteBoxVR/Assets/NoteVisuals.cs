@@ -9,6 +9,10 @@ public class NoteVisuals : MonoBehaviour
     private void Awake()
     {
         spriteRing.SetActive(false);
+
+        //SetColor(Color.Lerp(Color.red, Color.green, Random.Range(0f, 1f)));
+
+        //Debug.Log(Random.Range(0f, 1f));
     }
 
     public void CanBeHit(bool value)
@@ -16,6 +20,8 @@ public class NoteVisuals : MonoBehaviour
         spriteRing.SetActive(value);
 
     }
+
+    
 
     public void SetColor(Color color)
     {
@@ -27,7 +33,19 @@ public class NoteVisuals : MonoBehaviour
 
         rend.material.SetColor("_EmissionColor", color);
 
-        SpriteRenderer sprite = GetComponentInChildren<SpriteRenderer>();
+        SpriteRenderer sprite = spriteRing.GetComponent<SpriteRenderer>();
+
+        sprite.color = color;
+
+    }
+
+    public void UpdateColor(Color color)
+    {
+        GetComponent<Renderer>().material.color = color;
+
+        GetComponent<Renderer>().material.SetColor("_EmissionColor", color);
+
+        SpriteRenderer sprite = spriteRing.GetComponent<SpriteRenderer>();
 
         sprite.color = color;
 
