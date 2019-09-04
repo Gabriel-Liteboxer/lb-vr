@@ -9,11 +9,14 @@ public class NoteObject
     public float lerpProgress;
     GameObject gameObject;
 
+    public NoteVisuals noteVisuals;
+
     public NoteObject(uint id, uint pad, GameObject prefab)
     {
         this.id = id;
         this.pad = pad;
         gameObject = GameObject.Instantiate(prefab);
+        noteVisuals = gameObject.GetComponent<NoteVisuals>();
         Debug.LogWarning("Instantiated Note");
     }
 
@@ -26,6 +29,17 @@ public class NoteObject
     {
 
         return gameObject.transform.position;
+    }
+
+    public void SetEulerAngles(Vector3 euler)
+    {
+        gameObject.transform.eulerAngles = euler;
+    }
+
+    public Vector3 GetEulerAngles()
+    {
+
+        return gameObject.transform.eulerAngles;
     }
 
     public void DestroyNoteObject()
@@ -58,6 +72,7 @@ public class ExampleGameplayChild : GameplayParent
     {
         NoteObjectDict.Add(id, new NoteObject(id, pad, NotePrefab));
 
+        NoteObjectDict[id].noteVisuals.SetColor(Color.Lerp(Color.red, Color.green, Random.Range(0, 1)));
     }
 
     //override

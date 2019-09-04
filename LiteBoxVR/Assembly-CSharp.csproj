@@ -127,6 +127,7 @@
     <Compile Include="Assets\MidiPlayer\Scripts\NAudio Midi\TrackSequenceNumberEvent.cs" />
     <Compile Include="Assets\MidiPlayer\Scripts\NAudio Utils\ByteEncoding.cs" />
     <Compile Include="Assets\MidiPlayer\Scripts\Trinary Software\Timing.cs" />
+    <Compile Include="Assets\NoteVisuals.cs" />
     <Compile Include="Assets\Oculus\AudioManager\Scenes\Scripts\TestScript.cs" />
     <Compile Include="Assets\Oculus\AudioManager\Scripts\Audio\AmbienceEmitter.cs" />
     <Compile Include="Assets\Oculus\AudioManager\Scripts\Audio\AudioManager.cs" />

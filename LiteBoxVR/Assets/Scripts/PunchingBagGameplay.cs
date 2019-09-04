@@ -94,11 +94,11 @@ public class PunchingBagGameplay : ExampleGameplayChild
 
     HandBagContact LeftHandContact;
 
-    public float HitboxRadiusMultiplier = 1.1f;
+    public float HitboxRadiusAddition = 0.02f;
 
     public float PadRadius = 0.07f;
 
-    Transform PadParent;
+    public Transform PadParent;
 
     public TMPro.TextMeshPro ScoreText;
 
@@ -295,7 +295,7 @@ public class PunchingBagGameplay : ExampleGameplayChild
 
         BagSizeChanged();
 
-        PadParent = new GameObject().transform;
+        
 
         StartCoroutine(GeneratePadsDelayed());
 
@@ -373,6 +373,10 @@ public class PunchingBagGameplay : ExampleGameplayChild
             Vector2 notePos2D = Vector2.Lerp(Pads[(int)pair.Value.pad].StartPosition, Pads[(int)pair.Value.pad].EndPosition, pair.Value.lerpProgress);
 
             pair.Value.SetPosition(GetPositionOnBag(notePos2D));
+
+            pair.Value.SetEulerAngles(GetRotationOnBag(notePos2D));
+
+            pair.Value.noteVisuals.CanBeHit(noteObjects[pair.Value.id].canHit);
         }
         
     }
@@ -391,14 +395,14 @@ public class PunchingBagGameplay : ExampleGameplayChild
     void CheckHandContact()
     {
 
-        if (LeftHandContact.BagContactStart(transform, bagRadius*HitboxRadiusMultiplier))
+        if (LeftHandContact.BagContactStart(transform, bagRadius + HitboxRadiusAddition))
         {
             CheckPadContact(LeftHandContact.handTransform.position);
 
             //BackroundColorVelocity = -1;
             BackroundColorLerp = OVRInput.GetLocalControllerVelocity(OVRInput.Controller.LTouch).magnitude/5;
         }
-        if (RightHandContact.BagContactStart(transform, bagRadius * HitboxRadiusMultiplier))
+        if (RightHandContact.BagContactStart(transform, bagRadius + HitboxRadiusAddition))
         {
             CheckPadContact(RightHandContact.handTransform.position);
 
@@ -418,7 +422,7 @@ public class PunchingBagGameplay : ExampleGameplayChild
 
     void CheckPadContact(Vector3 handPosition)
     {
-        for (int i = 0; i < Pads.Count; i++)
+        for (int i = 0; i < Pads.Count; i++) // change this to find closest pad
         {
             float accuracy;
 
@@ -441,9 +445,13 @@ public class PunchingBagGameplay : ExampleGameplayChild
 
     public override void NoteObjectHit(uint id)
     {
+        //Application.Quit();
+
         Vector2 pos2D = Vector2.Lerp(Pads[(int)NoteObjectDict[id].pad].StartPosition, Pads[(int)NoteObjectDict[id].pad].EndPosition, NoteObjectDict[id].lerpProgress);
 
         Vector3 position = GetPositionOnBag(pos2D);
+
+        //Vector3 position = NoteObjectDict[id].GetPosition();
 
         Vector3 rotation = GetRotationOnBag(pos2D);
 
@@ -453,6 +461,14 @@ public class PunchingBagGameplay : ExampleGameplayChild
 
         // do particle here 
         //NoteObjectDict[id].
+
+        DestroyNoteObject(id);
+    }
+
+    public override void NoteObjectCanBeHit(uint id)
+    {
+        //NoteObjectDict[id].noteVisuals.CanBeHit();
+
     }
 
     void AddDebugLine(string entry)

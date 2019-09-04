@@ -9,6 +9,7 @@ public class GameplayParent : MonoBehaviour
     public virtual void UpdateNoteLerp(uint id, float lerpProgress) { }
     public virtual void DestroyNoteObject(uint id) { }
     public virtual void NoteObjectHit(uint id) { }
+    public virtual void NoteObjectCanBeHit(uint id) { }
 
     float TimePassedMS; // the time passed in ms
 
@@ -164,7 +165,11 @@ public class GameplayParent : MonoBehaviour
                     //StreakText.text = "STREAK: " + GameStreak.ToString() + "x";
                 }
             }
+            
 
+            noteObjects[i].canHit = TimePassedMS > noteObjects[i].CanHitTime && TimePassedMS < noteObjects[i].ExpireTime;
+
+            //NoteObjectCanBeHit(noteObjects[i].id, noteObjects[i].canHit);
         }
 
         TimePassedMS += Time.deltaTime * 1000 * TimeScale;
@@ -217,7 +222,7 @@ public class GameplayParent : MonoBehaviour
 
         oldestNote.beenHit = true;
 
-        DestroyNoteObject(oldestNote.id);
+        //DestroyNoteObject(oldestNote.id);
 
         //ActiveNoteObjects.Remove(oldestNote);
 
