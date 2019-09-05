@@ -105,6 +105,18 @@ public class PunchingBagCalibration : TagModularity
 
             PunchingBagObj.forward = (Centerpoint - averarageAnchor).normalized;
 
+            averarageAnchor = Vector3.zero;
+
+            for (int i = 0; i < 3; i++)
+            {
+                averarageAnchor += AnchorPoints[i].transform.position;
+
+            }
+
+            averarageAnchor /= 3;
+
+            PunchingBagObj.transform.position = new Vector3(PunchingBagObj.position.x, averarageAnchor.y, PunchingBagObj.position.z);
+
             GameManager.Instance.calibratedObject.SetCalibration(PunchingBagObj);
 
             foreach (GameObject an in AnchorPoints)

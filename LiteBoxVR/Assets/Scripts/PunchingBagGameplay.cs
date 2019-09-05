@@ -383,13 +383,9 @@ public class PunchingBagGameplay : ExampleGameplayChild
 
     private void FixedUpdate()
     {
-
         
-
         CheckHandContact();
-
         
-
     }
 
     void CheckHandContact()
@@ -435,6 +431,8 @@ public class PunchingBagGameplay : ExampleGameplayChild
         }
 
         float accuracy = PadHit(closestPadIndex);
+
+        Pads[closestPadIndex].gameObject.GetComponent<PadVisuals>().PadHit(accuracy);
 
         if (accuracy != -1)
         {
