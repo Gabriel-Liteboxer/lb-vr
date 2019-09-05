@@ -18,6 +18,10 @@ public class PunchingBagCalibration : TagModularity
 
     public Transform PunchingBagObj;
 
+    public float MinPointDistance = 0.05f;
+
+    public float AddPointTimer;
+
     private void Start()
     {
         FistEndpoint = FindTaggedObject("HandL").transform;
@@ -27,25 +31,71 @@ public class PunchingBagCalibration : TagModularity
         //GameManager.Instance.isBoardTracked = false;
         GameManager.Instance.calibratedObject.ResetCalibration();
     }
-
-    // Update is called once per frame
-    void Update()
+    /*
+    void AddAnchorpoint()
     {
-        if (OVRInput.GetDown(OVRInput.RawButton.X) && calibrationActive)
+        if (AnchorPoints.Count >= 3)
         {
-            if (AnchorPoints.Count >= 3)
-            {
-                
-            }
-            else
+
+        }
+        else
+        {
+            
+            if ((FistEndpoint.position - AnchorPoints[AnchorPoints.Count-1].transform.position).sqrMagnitude < MinPointDistance * MinPointDistance)
             {
                 GameObject NewAnchorpoint = GameObject.Instantiate(AnchorPointPrefab, FistEndpoint.position, FistEndpoint.rotation);
 
                 AnchorPoints.Add(NewAnchorpoint);
 
-                //GameManager.Instance.isBoardTracked = false;
                 GameManager.Instance.calibratedObject.ResetCalibration();
+
             }
+
+            
+        }
+
+    }*/
+
+    void AddAnchorpoint()
+    {
+        if (AnchorPoints.Count >= 3)
+        {
+
+        }
+        else
+        {
+            GameObject NewAnchorpoint = GameObject.Instantiate(AnchorPointPrefab, FistEndpoint.position, FistEndpoint.rotation);
+
+            AnchorPoints.Add(NewAnchorpoint);
+
+            GameManager.Instance.calibratedObject.ResetCalibration();
+        }
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        /*
+        if (OVRInput.GetLocalControllerVelocity(OVRInput.Controller.LTouch).sqrMagnitude < 0.1f*0.1f)
+        {
+            AddPointTimer += Time.deltaTime;
+
+            if (AddPointTimer > 2)
+                AddAnchorpoint();
+
+        }
+        else
+        {
+            AddPointTimer = 0;
+
+        }
+        */
+
+
+        if (OVRInput.GetDown(OVRInput.RawButton.X) && calibrationActive)
+        {
+            AddAnchorpoint();
 
             //guide.SetInfoScreen(AnchorPoints.Count);
 
