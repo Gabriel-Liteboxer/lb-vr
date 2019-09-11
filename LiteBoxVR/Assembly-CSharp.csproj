@@ -62,6 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\BagDragCalibration.cs" />
     <Compile Include="Assets\MidiPlayer\Scripts\MPTKGameObject\MidiFileLoader.cs" />
     <Compile Include="Assets\MidiPlayer\Scripts\MPTKGameObject\MidiFilePlayer.cs" />
     <Compile Include="Assets\MidiPlayer\Scripts\MPTKGameObject\MidiPlayer.cs" />
