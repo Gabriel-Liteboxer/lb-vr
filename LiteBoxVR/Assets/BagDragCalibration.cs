@@ -49,6 +49,8 @@ public class BagDragCalibration : MonoBehaviour
 
         public float bagRadius;
 
+        public Vector2 circumcenter;
+
         public AnchorSet(Vector3 first, Vector3 second, Vector3 third)
         {
             this.first = first;
@@ -153,15 +155,74 @@ public class BagDragCalibration : MonoBehaviour
             for (int i = 0; i < AnchorSetNumber; i++)
             {
                 // instead, divide anchors into thirds, group of anchor 1s, anchor 2s, and anchor 3s
-                AnchorSets.Add(new AnchorSet(firstAnchors[i], secondAnchors[i], thirdAnchors[i]));
+                AnchorSet newAnchorSet = new AnchorSet(firstAnchors[i], secondAnchors[i], thirdAnchors[i]);
+
+                newAnchorSet.circumcenter = GetAnchorSetCircumcenter(newAnchorSet);
+
+                AnchorSets.Add(newAnchorSet);
 
             }
+
+            // reduce down anchor sets to half to remove anomalies
+            // each loop the "least average" anchor set is removed, which creates a newer, refined average
+
+            RefineAnchorSets();
 
             SurfaceDrawn = true;
 
             Debug.Log("anchors count \n" + "first: " + firstAnchors.Count + "\n" + "second: " + secondAnchors.Count + "\n" + "third: " + thirdAnchors.Count);
 
         }
+
+    }
+
+    Vector2 GetAnchorSetCircumcenter(AnchorSet anchorSet)
+    {
+        FindCircumcenter findC = GetComponent<FindCircumcenter>();
+
+        Vector2 first = new Vector2(anchorSet.first.x, anchorSet.first.z);
+
+        Vector2 second = new Vector2(anchorSet.second.x, anchorSet.second.z);
+
+        Vector2 third = new Vector2(anchorSet.third.x, anchorSet.third.z);
+
+        return findC.FindCircumCenter(first, second, third);
+    }
+
+    void RefineAnchorSets()
+    {
+        Vector2 averageCircumcenter = Vector2.zero;
+
+        foreach(AnchorSet a in AnchorSets)
+        {
+            averageCircumcenter += a.circumcenter;
+
+        }
+
+        averageCircumcenter /= AnchorSets.Count;
+
+        AnchorSet outlierAnchorSet = AnchorSets[0];
+
+        for (int i = 1; i < AnchorSets.Count; i++)
+        {
+            float sqrMag = (AnchorSets[i].circumcenter - averageCircumcenter).sqrMagnitude;
+
+            float sqrMagOutlier = (outlierAnchorSet.circumcenter - averageCircumcenter).sqrMagnitude;
+
+            if (sqrMag > sqrMagOutlier)
+            {
+                outlierAnchorSet = AnchorSets[i];
+
+            }
+
+        }
+
+        AnchorSets.Remove(outlierAnchorSet);
+
+        if (AnchorSets.Count <= AnchorSetNumber / 2)
+            return;
+
+        RefineAnchorSets();
 
     }
 
