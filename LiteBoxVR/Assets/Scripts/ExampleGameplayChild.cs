@@ -11,11 +11,11 @@ public class NoteObject
 
     public NoteVisuals noteVisuals;
 
-    public NoteObject(uint id, uint pad, GameObject prefab)
+    public NoteObject(uint id, uint pad, GameObject prefab, Transform parentTransform)
     {
         this.id = id;
         this.pad = pad;
-        gameObject = GameObject.Instantiate(prefab);
+        gameObject = GameObject.Instantiate(prefab, parentTransform);
         noteVisuals = gameObject.GetComponent<NoteVisuals>();
         Debug.LogWarning("Instantiated Note");
     }
@@ -59,6 +59,7 @@ public class ExampleGameplayChild : GameplayParent
 {
     public GameObject NotePrefab;
 
+    public Transform NoteParent;
 
     public Dictionary<uint, NoteObject> NoteObjectDict;
 
@@ -70,7 +71,7 @@ public class ExampleGameplayChild : GameplayParent
     //override
     public override void CreateNoteObject(uint id, uint pad)
     {
-        NoteObjectDict.Add(id, new NoteObject(id, pad, NotePrefab));
+        NoteObjectDict.Add(id, new NoteObject(id, pad, NotePrefab, NoteParent));
 
         
         //Color.HSVToRGB(Random.Range(0f, 1f), 1, 1);

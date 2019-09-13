@@ -35373,6 +35373,7 @@ MonoBehaviour:
   ActiveNoteObjects: []
   NotePrefab: {fileID: 3190820084234453593, guid: a153c03290263e14a909244b3c920404,
     type: 3}
+  NoteParent: {fileID: 1344843396}
   bagRadius: 0.5
   PadPrefab: {fileID: 3190820084234453593, guid: 05fb0d05dceadec41b40f412545ca1eb,
     type: 3}
