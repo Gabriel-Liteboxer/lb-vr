@@ -246,8 +246,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e827846f9fbd7e42ae8288fa477e22d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Id: 0
   ScenesToLoad:
   - SceneIndex: 9
+    AnimStateID: 0
     Loading: 0
     Loaded: 0
     SetActiveOnLoaded: 0
@@ -548,8 +550,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e827846f9fbd7e42ae8288fa477e22d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Id: 0
   ScenesToLoad:
   - SceneIndex: 3
+    AnimStateID: 0
     Loading: 0
     Loaded: 0
     SetActiveOnLoaded: 0
@@ -599,8 +603,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e827846f9fbd7e42ae8288fa477e22d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Id: 0
   ScenesToLoad:
   - SceneIndex: 1
+    AnimStateID: 0
     Loading: 0
     Loaded: 0
     SetActiveOnLoaded: 0
@@ -611,6 +617,7 @@ MonoBehaviour:
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
   - SceneIndex: 7
+    AnimStateID: 0
     Loading: 0
     Loaded: 0
     SetActiveOnLoaded: 1
@@ -660,8 +667,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e827846f9fbd7e42ae8288fa477e22d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Id: 0
   ScenesToLoad:
   - SceneIndex: 15
+    AnimStateID: 0
     Loading: 0
     Loaded: 0
     SetActiveOnLoaded: 0
@@ -672,6 +681,7 @@ MonoBehaviour:
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
   - SceneIndex: 2
+    AnimStateID: 0
     Loading: 0
     Loaded: 0
     SetActiveOnLoaded: 1
@@ -1260,8 +1270,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e827846f9fbd7e42ae8288fa477e22d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Id: 0
   ScenesToLoad:
   - SceneIndex: 9
+    AnimStateID: 0
     Loading: 0
     Loaded: 0
     SetActiveOnLoaded: 0
@@ -1404,8 +1416,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e827846f9fbd7e42ae8288fa477e22d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Id: 0
   ScenesToLoad:
   - SceneIndex: 6
+    AnimStateID: 0
     Loading: 0
     Loaded: 0
     SetActiveOnLoaded: 0
@@ -1495,8 +1509,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e827846f9fbd7e42ae8288fa477e22d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Id: 0
   ScenesToLoad:
   - SceneIndex: 12
+    AnimStateID: 0
     Loading: 0
     Loaded: 0
     SetActiveOnLoaded: 0
@@ -1583,8 +1599,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e827846f9fbd7e42ae8288fa477e22d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Id: 0
   ScenesToLoad:
   - SceneIndex: 4
+    AnimStateID: 0
     Loading: 0
     Loaded: 0
     SetActiveOnLoaded: 0
@@ -1606,8 +1624,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e827846f9fbd7e42ae8288fa477e22d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Id: 0
   ScenesToLoad:
   - SceneIndex: 5
+    AnimStateID: 0
     Loading: 0
     Loaded: 0
     SetActiveOnLoaded: 0
@@ -1629,8 +1649,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e827846f9fbd7e42ae8288fa477e22d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Id: 0
   ScenesToLoad:
   - SceneIndex: 4
+    AnimStateID: 0
     Loading: 0
     Loaded: 0
     SetActiveOnLoaded: 0
@@ -1641,6 +1663,7 @@ MonoBehaviour:
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
   - SceneIndex: 2
+    AnimStateID: 0
     Loading: 0
     Loaded: 0
     SetActiveOnLoaded: 1
@@ -1662,8 +1685,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e827846f9fbd7e42ae8288fa477e22d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Id: 0
   ScenesToLoad:
-  - SceneIndex: 10
+  - SceneIndex: 17
+    AnimStateID: 0
     Loading: 0
     Loaded: 0
     SetActiveOnLoaded: 0
@@ -1674,6 +1699,7 @@ MonoBehaviour:
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
   - SceneIndex: 16
+    AnimStateID: 0
     Loading: 0
     Loaded: 0
     SetActiveOnLoaded: 0
@@ -1726,8 +1752,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e827846f9fbd7e42ae8288fa477e22d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Id: 0
   ScenesToLoad:
   - SceneIndex: 8
+    AnimStateID: 0
     Loading: 0
     Loaded: 0
     SetActiveOnLoaded: 0
@@ -1830,8 +1858,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e827846f9fbd7e42ae8288fa477e22d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Id: 0
   ScenesToLoad:
   - SceneIndex: 15
+    AnimStateID: 0
     Loading: 0
     Loaded: 0
     SetActiveOnLoaded: 0
@@ -1842,6 +1872,7 @@ MonoBehaviour:
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
   - SceneIndex: 2
+    AnimStateID: 0
     Loading: 0
     Loaded: 0
     SetActiveOnLoaded: 1

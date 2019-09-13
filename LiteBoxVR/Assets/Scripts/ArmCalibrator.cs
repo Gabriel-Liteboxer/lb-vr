@@ -127,6 +127,8 @@ public class ArmCalibrator : TagModularity
                 FacingCircle.sprite = null;
 
                 guideWindow.SetInfoScreen(3);
+
+                GameManager.Instance.NextState();
             }
 
             RenderLoadingCircle(CalibrationTimer, CalibratingCircle);

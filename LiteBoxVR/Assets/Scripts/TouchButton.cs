@@ -59,6 +59,8 @@ public class TouchButton : TagModularity
         buttonAudio = GetComponent<AudioSource>();
 
         HoverDistance *= transform.localScale.x;
+
+        //HoverDistance *= transform.lossyScale.x;
     }
 
     private void OnEnable()

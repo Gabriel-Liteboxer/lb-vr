@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class BagDragCalibration : MonoBehaviour
 {
-    public LineRenderer lineRenderer;
+    //public LineRenderer lineRenderer;
 
     public float TimerCurrent;
 
     public float TimerMax;
 
-    private Transform HandTargetTransform;
+    private Transform HandLTarget;
 
-    public Transform testOne;
+    private Transform HandL;
 
-    public Transform testTwo;
+    //public Transform testOne;
+
+    //public Transform testTwo;
 
     //public Transform testThree;
 
@@ -37,6 +39,8 @@ public class BagDragCalibration : MonoBehaviour
     public float AnchorOffset;
 
     public int AnchorSetNumber;
+
+    public Transform PunchingBagTransform;
 
     [System.Serializable]
     public class AnchorSet
@@ -74,14 +78,20 @@ public class BagDragCalibration : MonoBehaviour
     {
         circleSprites = Resources.LoadAll<Sprite>("CircleLoading");
 
-        HandTargetTransform = new GameObject().transform;
+        HandLTarget = new GameObject().transform;
+
+        HandL = ArmPositioning.LeftHandInstance.transform;
     }
 
     void Update()
     {
-        UpdateTestObjects();
+        //UpdateTestObjects();
 
-        UpdateHandTranform();
+        transform.position = HandL.position;
+
+        transform.forward = Camera.main.transform.forward;
+
+        UpdateHandTarget();
 
         if(!DrawingSurface)
         {
@@ -90,7 +100,7 @@ public class BagDragCalibration : MonoBehaviour
         }
         else
         {
-            DrawSurface(testOne.position);
+            DrawSurface(HandL.position);
 
         }
         
@@ -166,13 +176,68 @@ public class BagDragCalibration : MonoBehaviour
             // reduce down anchor sets to half to remove anomalies
             // each loop the "least average" anchor set is removed, which creates a newer, refined average
 
-            RefineAnchorSets();
+            //RefineAnchorSets();
+
+            SetBagPosition();
 
             SurfaceDrawn = true;
+
+            // play confirmation sound
 
             Debug.Log("anchors count \n" + "first: " + firstAnchors.Count + "\n" + "second: " + secondAnchors.Count + "\n" + "third: " + thirdAnchors.Count);
 
         }
+
+    }
+
+    void SetBagPosition()
+    {
+        Vector3 averagePosition = Vector3.zero;
+
+        foreach (AnchorSet a in AnchorSets)
+        {
+            averagePosition += new Vector3(a.circumcenter.x, a.second.y, a.circumcenter.y);
+
+        }
+
+        averagePosition /= AnchorSets.Count;
+
+        PunchingBagTransform.position = averagePosition;
+
+        //float distFromCenter = Vector2.Distance(new Vector2(AnchorSets[0].first.x, AnchorSets[0].first.z), AnchorSets[0].circumcenter);
+
+        float distFromCenter = 0;
+
+        foreach (AnchorSet a in AnchorSets)
+        {
+            distFromCenter += Vector2.Distance(new Vector2(a.first.x, a.first.z), a.circumcenter);
+
+        }
+
+        distFromCenter /= AnchorSets.Count;
+
+        PunchingBagTransform.transform.localScale = Vector3.one * distFromCenter * 2;
+
+        Vector3 averageAnchorPosition = Vector3.zero;
+
+        foreach (Vector3 v in Anchors)
+        {
+            averageAnchorPosition += v;
+
+        }
+
+        averageAnchorPosition /= Anchors.Count;
+
+        PunchingBagTransform.forward = (new Vector3(PunchingBagTransform.position.x, 0, PunchingBagTransform.position.z) 
+            - new Vector3(averageAnchorPosition.x, 0, averageAnchorPosition.z)).normalized;
+
+        GameManager.Instance.calibratedObject.SetCalibration(PunchingBagTransform);
+
+    }
+
+    public void Continue()
+    {
+        GameManager.Instance.NextState();
 
     }
 
@@ -229,7 +294,7 @@ public class BagDragCalibration : MonoBehaviour
     void StartSurfaceDraw()
     {
         //if (CheckHandAngle(ArmPositioning.LeftHandInstance.transform.forward, HandTargetTransform.forward))
-        if (CheckHandAngle(testOne.forward, testTwo.forward))
+        if (CheckHandAngle(HandL.forward, HandLTarget.forward))
         {
             if (TimerCurrent >= TimerMax)
             {
@@ -251,10 +316,10 @@ public class BagDragCalibration : MonoBehaviour
 
         TimerCircle.sprite = circleSprites[currentFrame];
 
-        Debug.Log("Within Angle " + CheckHandAngle(testOne.forward, testTwo.forward));
+        Debug.Log("Within Angle " + CheckHandAngle(HandL.forward, HandLTarget.forward));
     }
 
-    void UpdateHandTranform()
+    void UpdateHandTarget()
     {
         if (ArmPositioning.LeftHandInstance == null)
         {
@@ -263,11 +328,11 @@ public class BagDragCalibration : MonoBehaviour
 
         Transform leftHandInstance = ArmPositioning.LeftHandInstance.transform;
 
-        HandTargetTransform.position = leftHandInstance.position;
+        HandLTarget.position = leftHandInstance.position;
 
-        HandTargetTransform.eulerAngles = new Vector3(0, leftHandInstance.eulerAngles.y, 0);
+        HandLTarget.eulerAngles = new Vector3(0, leftHandInstance.eulerAngles.y, 0);
     }
-
+    /*
     void UpdateTestObjects()
     {
         //testOne.eulerAngles += new Vector3(1, 0, 0);
@@ -279,7 +344,7 @@ public class BagDragCalibration : MonoBehaviour
         
 
     }
-
+    */
     bool CheckHandAngle(Vector3 handForward, Vector3 targetForward)
     {
         float angleDiff = Vector3.Angle(handForward, targetForward);

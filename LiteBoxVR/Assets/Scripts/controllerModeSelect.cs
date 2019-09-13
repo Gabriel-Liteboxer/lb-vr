@@ -22,6 +22,9 @@ public class controllerModeSelect : TagModularity
             GameManager.Instance.SetControllerMode(true);
             guide.SetInfoScreen(2);
 
+            GameManager.Instance.NextState();
+
+
             FindTaggedObject("HandR").GetComponent<ArmPositioning>().ChangeControllerMode();
             FindTaggedObject("HandL").GetComponent<ArmPositioning>().ChangeControllerMode();
         }
@@ -29,6 +32,8 @@ public class controllerModeSelect : TagModularity
         {
             GameManager.Instance.SetControllerMode(false);
             guide.SetInfoScreen(1);
+
+            GameManager.Instance.NextState();
 
             FindTaggedObject("HandR").GetComponent<ArmPositioning>().ChangeControllerMode();
             FindTaggedObject("HandL").GetComponent<ArmPositioning>().ChangeControllerMode();
