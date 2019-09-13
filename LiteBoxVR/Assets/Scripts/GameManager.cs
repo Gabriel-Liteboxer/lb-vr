@@ -36,7 +36,8 @@ public class GameManager : TagModularity
         Env_Robot = 14,
         PunchingBagGameplay = 15,
         PunchingBagRenderTexture = 16,
-        DragBagCalibration = 17
+        DragBagCalibration = 17,
+        Env_Scifi = 18
     }
 
     [System.Serializable]

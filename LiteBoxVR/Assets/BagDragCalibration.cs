@@ -111,7 +111,11 @@ public class BagDragCalibration : MonoBehaviour
         if (SurfaceDrawn)
             return;
 
-        if(Anchors.Count < 1)
+        AlignmentCircle.sprite = null;
+
+        TimerCircle.sprite = null;
+
+        if (Anchors.Count < 1)
         {
             Anchors.Add(handPosition);
 
@@ -177,6 +181,7 @@ public class BagDragCalibration : MonoBehaviour
             // each loop the "least average" anchor set is removed, which creates a newer, refined average
 
             //RefineAnchorSets();
+            
 
             SetBagPosition();
 

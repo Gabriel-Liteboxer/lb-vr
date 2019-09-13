@@ -680,7 +680,7 @@ MonoBehaviour:
         m_Calls: []
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-  - SceneIndex: 2
+  - SceneIndex: 18
     AnimStateID: 0
     Loading: 0
     Loaded: 0
