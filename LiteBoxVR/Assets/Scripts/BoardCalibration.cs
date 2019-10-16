@@ -62,7 +62,7 @@ public class BoardCalibration : TagModularity
             }
 
             guide.SetInfoScreen(AnchorPoints.Count);
-            
+
         }
 
         if (OVRInput.GetDown(OVRInput.RawButton.Y))
@@ -128,12 +128,12 @@ public class BoardCalibration : TagModularity
 
     float GetFacing(Vector3 targetpos)
     {
-        
+
         Vector3 toOther = targetpos - transform.position;
 
         return Vector3.Dot(transform.forward, toOther);
     }
 
 
-    
+
 }

@@ -31,14 +31,14 @@ public class ButtonEvent : MonoBehaviour
     private void Start()
     {
         StartingScale = transform.localScale;
-         
+
     }
 
-    public void ButtonAction ()
+    public void ButtonAction()
     {
-        if(ParameterToUse == "")
+        if (ParameterToUse == "")
             TargetObject.SendMessage(MethodName);
-        else if(ParameterToUse == "int")
+        else if (ParameterToUse == "int")
             TargetObject.SendMessage(MethodName, IntParameter);
         else if (ParameterToUse == "string")
             TargetObject.SendMessage(MethodName, StringParameter);
@@ -50,12 +50,12 @@ public class ButtonEvent : MonoBehaviour
     {
         if (isHovering)
             TargetHoverScale = 1.2f;
-        
+
     }
 
     private void Update()
     {
-        HoverScale = Mathf.Lerp(HoverScale, TargetHoverScale, Time.deltaTime*10f);
+        HoverScale = Mathf.Lerp(HoverScale, TargetHoverScale, Time.deltaTime * 10f);
 
         transform.localScale = StartingScale * HoverScale;
 

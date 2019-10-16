@@ -61,7 +61,7 @@ public class ArmPositioning : TagModularity
                 UpdateHandHeldTransform();
         }
 
-        armScale += OVRInput.Get(OVRInput.RawAxis2D.LThumbstick).y/10*Time.deltaTime;
+        armScale += OVRInput.Get(OVRInput.RawAxis2D.LThumbstick).y / 10 * Time.deltaTime;
 
         if (armScale > 1f)
         {

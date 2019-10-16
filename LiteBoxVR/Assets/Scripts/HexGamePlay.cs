@@ -72,13 +72,13 @@ public class HexGameplay : TagModularity
 
     //public JsonDecoder.NoteData[] noteDatas;
 
-    public void GenerateNoteObjectsFromJson (TextAsset songJson)
+    public void GenerateNoteObjectsFromJson(TextAsset songJson)
     {
         JsonDecoder.NoteData[] noteDatas;
 
         JsonDecoder jDecoder = GetComponent<JsonDecoder>();
 
-        if(jDecoder == null)
+        if (jDecoder == null)
         {
             jDecoder = gameObject.AddComponent<JsonDecoder>();
 
@@ -93,7 +93,7 @@ public class HexGameplay : TagModularity
         for (int i = 0; i < noteDatas.Length; i++)
         {
             noteObjects[i] = new NoteObject();
-            
+
             noteObjects[i].time = noteDatas[i].time;
 
             noteObjects[i].pad = noteDatas[i].pad;
@@ -114,7 +114,7 @@ public class HexGameplay : TagModularity
     {
         GenerateNoteObjectsFromJson(testjson);
 
-        
+
     }
 
     private void Update()
@@ -155,7 +155,7 @@ public class HexGameplay : TagModularity
 
     void UpdateVisualsOld()
     {
-        foreach(NoteObject n in ActiveNoteObjects)
+        foreach (NoteObject n in ActiveNoteObjects)
         {
             /*float thisNoteStartTime = n.time + HitTargetTimeOffsetMS - NoteAppearTimeMS;
 
@@ -171,7 +171,7 @@ public class HexGameplay : TagModularity
 
             //n.NoteVisual.transform.position = Vector3.Lerp(new Vector3(n.pad*2, 0, 0), new Vector3(n.pad*2, 5, 0), NoteLerpProgress);
             */
-            
+
 
             n.LerpProgress = Mathf.InverseLerp(n.StartTime, n.ExpireTime, TimePassedMS);
 
@@ -187,7 +187,7 @@ public class HexGameplay : TagModularity
 
         foreach (NoteObject n in ActiveNoteObjects)
         {
-            if(n.pad == padIndex && !n.beenHit)
+            if (n.pad == padIndex && !n.beenHit)
                 notesOnPad.Add(n);
         }
 
@@ -198,12 +198,12 @@ public class HexGameplay : TagModularity
 
         foreach (NoteObject n in notesOnPad)
         {
-            if(n.time < oldestNote.time)
+            if (n.time < oldestNote.time)
             {
                 oldestNote = n;
 
             }
-            
+
         }
 
         if (TimePassedMS < oldestNote.time + HitTargetTimeOffsetMS - HitThresholdMS)

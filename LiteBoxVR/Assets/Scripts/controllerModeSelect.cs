@@ -11,7 +11,6 @@ public class controllerModeSelect : TagModularity
     private void Start()
     {
         gameMgr = FindTaggedObject("GameController").GetComponent<GameManager>();
-
     }
 
 

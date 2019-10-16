@@ -95,7 +95,7 @@ public class ArmCalibration : TagModularity
                 
             }*/
 
-            if (dist > armDistance + startingDistance/3)
+            if (dist > armDistance + startingDistance / 3)
             {
                 //Application.Quit();
                 armCalibrationActive = false;
@@ -104,7 +104,7 @@ public class ArmCalibration : TagModularity
 
             ArmOffsetText.text = "dist: " + dist;
         }
-        
+
     }
 
     private void LateUpdate()
@@ -122,7 +122,7 @@ public class ArmCalibration : TagModularity
 
         Arm.transform.position += Arm.transform.forward * -armDistance;
 
-        Arm.transform.localScale = armScaleDefault * armScale*0.8f;
+        Arm.transform.localScale = armScaleDefault * armScale * 0.8f;
 
     }
 

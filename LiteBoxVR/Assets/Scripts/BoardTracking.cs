@@ -69,7 +69,7 @@ public class BoardTracking : TagModularity
 
             transform.forward = -GetNormal(AnchorPoints[0].transform.position, AnchorPoints[1].transform.position, AnchorPoints[2].transform.position);
 
-            if(GetFacing(PlayerHead.position) > 0)
+            if (GetFacing(PlayerHead.position) > 0)
             {
                 transform.forward = -transform.forward;
 
@@ -95,12 +95,12 @@ public class BoardTracking : TagModularity
 
     float GetFacing(Vector3 targetpos)
     {
-        
+
         Vector3 toOther = targetpos - transform.position;
 
         return Vector3.Dot(transform.forward, toOther);
     }
 
 
-    
+
 }

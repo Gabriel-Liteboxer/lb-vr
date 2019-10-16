@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5428217, g: 0.50587404, b: 0.5237529, a: 1}
+  m_IndirectSpecularColor: {r: 0.54439366, g: 0.5069915, b: 0.5242561, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1638,6 +1638,12 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5402947056670894455, guid: c275d9425c62bb74ebaa3c9dd2946981,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b5f3ad41fca3ec44eaf865c061b5fc65,
+        type: 3}
     - target: {fileID: 5402947055310411210, guid: c275d9425c62bb74ebaa3c9dd2946981,
         type: 3}
       propertyPath: FunctionToCall.m_PersistentCalls.m_Calls.Array.size
@@ -1673,12 +1679,6 @@ PrefabInstance:
       propertyPath: FunctionToCall.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5402947056670894455, guid: c275d9425c62bb74ebaa3c9dd2946981,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: b5f3ad41fca3ec44eaf865c061b5fc65,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c275d9425c62bb74ebaa3c9dd2946981, type: 3}
 --- !u!4 &650382884 stripped
@@ -1715,10 +1715,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 11479374, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 3}
-      propertyPath: m_controller
-      value: 16777216
-      objectReference: {fileID: 0}
     - target: {fileID: 488160, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1750,6 +1746,10 @@ PrefabInstance:
     - target: {fileID: 488160, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11479374, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 3}
+      propertyPath: m_controller
+      value: 16777216
       objectReference: {fileID: 0}
     - target: {fileID: 1000010178323718, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 3}
       propertyPath: m_IsActive
@@ -1861,6 +1861,12 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5402947056670894455, guid: c275d9425c62bb74ebaa3c9dd2946981,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f42fa2d83c9fc8448954f836db848e2b,
+        type: 3}
     - target: {fileID: 5402947055310411210, guid: c275d9425c62bb74ebaa3c9dd2946981,
         type: 3}
       propertyPath: FunctionToCall.m_PersistentCalls.m_Calls.Array.size
@@ -1891,12 +1897,6 @@ PrefabInstance:
       propertyPath: FunctionToCall.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 5402947056670894455, guid: c275d9425c62bb74ebaa3c9dd2946981,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: f42fa2d83c9fc8448954f836db848e2b,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c275d9425c62bb74ebaa3c9dd2946981, type: 3}
 --- !u!4 &742083263 stripped
@@ -1950,10 +1950,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1594308569}
     m_Modifications:
-    - target: {fileID: 11479374, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 3}
-      propertyPath: m_controller
-      value: 33554432
-      objectReference: {fileID: 0}
     - target: {fileID: 488160, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1985,6 +1981,10 @@ PrefabInstance:
     - target: {fileID: 488160, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11479374, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 3}
+      propertyPath: m_controller
+      value: 33554432
       objectReference: {fileID: 0}
     - target: {fileID: 1000010178323718, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 3}
       propertyPath: m_IsActive
@@ -2272,6 +2272,12 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5402947056670894455, guid: c275d9425c62bb74ebaa3c9dd2946981,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 11045d32b41c6ac43b8eabcaa484a2b3,
+        type: 3}
     - target: {fileID: 5402947055310411210, guid: c275d9425c62bb74ebaa3c9dd2946981,
         type: 3}
       propertyPath: FunctionToCall.m_PersistentCalls.m_Calls.Array.size
@@ -2302,12 +2308,6 @@ PrefabInstance:
       propertyPath: FunctionToCall.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 5402947056670894455, guid: c275d9425c62bb74ebaa3c9dd2946981,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 11045d32b41c6ac43b8eabcaa484a2b3,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c275d9425c62bb74ebaa3c9dd2946981, type: 3}
 --- !u!4 &911517131 stripped

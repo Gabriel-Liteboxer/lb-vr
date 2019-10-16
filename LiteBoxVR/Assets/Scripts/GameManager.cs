@@ -34,7 +34,7 @@ public class GameManager : TagModularity
     {
         public string SceneName;
         public GameState AssociatedState;
-        
+
 
         public bool Loading;
         public bool Loaded;
@@ -128,7 +128,7 @@ public class GameManager : TagModularity
         GameObject gameBoard = FindTaggedObject("BoardObj");
 
         //GameplayController gameplayCont = FindTaggedObject("GameplayCont").GetComponent<GameplayController>();
-        
+
         //gameBoard.transform.position = BoardPosition /*+ BoardForward*0.016f*/;
 
         //gameBoard.transform.forward = BoardForward;
@@ -276,7 +276,7 @@ public class GameManager : TagModularity
             }
 
 
-            
+
 
 
 
@@ -337,7 +337,6 @@ public class GameManager : TagModularity
 
         return false;
     }
-
 
     IEnumerator LoadGameStateScene(GameStateScene aScene)
     {
@@ -404,7 +403,7 @@ public class GameManager : TagModularity
         SongAudioToPlay = aSongAudio;
 
         GoToState(GameState.gamePlay);
-        
+
     }
 
     public void RestartGame()
