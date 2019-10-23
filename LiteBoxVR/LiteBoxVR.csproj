@@ -5,9 +5,9 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{07A21C90-D344-AE1A-8456-9910C203B41A}</ProjectGuid>
+    <ProjectGuid>{99D50AE8-3318-59B2-B5C9-5ED22B431233}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <AssemblyName>Unity.TextMeshPro</AssemblyName>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
@@ -47,6 +47,12 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Unity.Timeline.Editor">
+      <HintPath>Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline">
+      <HintPath>Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+    </Reference>
     <Reference Include="Managed/UnityEngine/UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2019.1.10f1\Editor\Data\Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -224,27 +230,6 @@
     <Reference Include="UnityEngine.UI">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.10f1/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.10f1/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.VR">
-      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.10f1/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.Graphs">
-      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.10f1/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.WindowsStandalone.Extensions">
-      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.10f1/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.Android.Extensions">
-      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.10f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
-      <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.Advertisements">
-      <HintPath>C:/Users/herma/Documents/GitHub/lb-vr/LiteBoxVR/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Analytics.Editor">
       <HintPath>C:/Users/herma/Documents/GitHub/lb-vr/LiteBoxVR/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
@@ -253,9 +238,6 @@
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
       <HintPath>C:/Users/herma/Documents/GitHub/lb-vr/LiteBoxVR/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.Purchasing">
-      <HintPath>C:/Users/herma/Documents/GitHub/lb-vr/LiteBoxVR/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="ChannelPurchase">
       <HintPath>C:/Users/herma/Documents/GitHub/lb-vr/LiteBoxVR/Library/PackageCache/com.unity.xiaomi@1.0.3/ChannelPurchase.dll</HintPath>
@@ -610,62 +592,369 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\AssemblyInfo.cs.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\FastAction.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\MaterialReferenceManager.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TextContainer.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TextMeshPro.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TextMeshProUGUI.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_Asset.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_Character.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_CharacterInfo.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_ColorGradient.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_CoroutineTween.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_DefaultControls.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_Dropdown.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_EditorResourceManager.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_FontAsset.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_FontAssetCommon.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_FontAssetUtilities.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_FontFeaturesCommon.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_FontFeatureTable.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_InputField.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_InputValidator.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_LineInfo.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_ListPool.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_MaterialManager.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_MeshInfo.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_ObjectPool.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_PackageResourceImporter.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_RichTextTagsCommon.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_RichTextTagStack.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_ScrollbarEventHandler.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_SelectionCaret.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_Settings.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_ShaderUtilities.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_Sprite.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_SpriteAnimator.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_SpriteAsset.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_SpriteAssetImportFormats.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_SpriteCharacter.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_SpriteGlyph.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_Style.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_StyleSheet.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_SubMesh.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_SubMeshUI.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_Text.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_TextElement.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_TextElement_Legacy.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_TextInfo.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_TextParsingUtilities.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_TextUtilities.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_UpdateManager.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_UpdateRegistery.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMPro_EventManager.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMPro_ExtensionMethods.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMPro_MeshUtilities.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMPro_Private.cs" />
-    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMPro_UGUI_Private.cs" />
+    <ProjectReference Include="Unity.TextMeshPro.Editor.csproj">
+      <Project>{3A848AB7-9891-EDDA-D555-BF184C2F81F4}</Project>
+      <Name>Unity.TextMeshPro.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.CollabProxy.Editor.csproj">
+      <Project>{C12CEEC6-100C-58A2-DE36-314E4DE5E40B}</Project>
+      <Name>Unity.CollabProxy.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Oculus.VR.Editor.csproj">
+      <Project>{9118B019-1FEF-914B-7CA9-E544A3C6DF5C}</Project>
+      <Name>Oculus.VR.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Oculus.VR.Scripts.Editor.csproj">
+      <Project>{8DEDC9B6-1468-C3FB-4525-23AE84A2B54C}</Project>
+      <Name>Oculus.VR.Scripts.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Oculus.VR.csproj">
+      <Project>{ABAA9E89-904E-F248-9658-14F9444302C5}</Project>
+      <Name>Oculus.VR</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.TextMeshPro.csproj">
+      <Project>{07A21C90-D344-AE1A-8456-9910C203B41A}</Project>
+      <Name>Unity.TextMeshPro</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Analytics.DataPrivacy.csproj">
+      <Project>{D6E266C6-3D1F-28C8-9FEB-2A01E44DBF77}</Project>
+      <Name>Unity.Analytics.DataPrivacy</Name>
+    </ProjectReference>
+    <ProjectReference Include="Editor.csproj">
+      <Project>{B2E402A9-DAB0-44FA-0EB3-EAC8D63ADBEE}</Project>
+      <Name>Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="XiaomiSupport.csproj">
+      <Project>{A2A6A8B2-DDE1-D596-6008-90CE9610175C}</Project>
+      <Name>XiaomiSupport</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\Oculus\AudioManager\Scenes\Scripts\TestScript.cs" />
+    <Compile Include="Assets\Oculus\AudioManager\Scripts\Audio\AmbienceEmitter.cs" />
+    <Compile Include="Assets\Oculus\AudioManager\Scripts\Audio\AudioManager.cs" />
+    <Compile Include="Assets\Oculus\AudioManager\Scripts\Audio\AudioManager_Sound.cs" />
+    <Compile Include="Assets\Oculus\AudioManager\Scripts\Audio\MinMaxAttribute.cs" />
+    <Compile Include="Assets\Oculus\AudioManager\Scripts\Audio\SoundEmitter.cs" />
+    <Compile Include="Assets\Oculus\AudioManager\Scripts\Audio\SoundFX.cs" />
+    <Compile Include="Assets\Oculus\AudioManager\Scripts\Audio\SoundFXRef.cs" />
+    <Compile Include="Assets\Oculus\AudioManager\Scripts\Utils\FastList.cs" />
+    <Compile Include="Assets\Oculus\AudioManager\Scripts\Utils\InspectorNoteAttribute.cs" />
+    <Compile Include="Assets\Oculus\Avatar\Samples\AvatarGallery\Scripts\OvrAvatarTestDriver.cs" />
+    <Compile Include="Assets\Oculus\Avatar\Samples\GripPoses\Scripts\PoseEditHelper.cs" />
+    <Compile Include="Assets\Oculus\Avatar\Samples\LocalAvatar\Scripts\GazeTargetSpawner.cs" />
+    <Compile Include="Assets\Oculus\Avatar\Samples\RemoteLoopback\Scripts\RemoteLoopbackManager.cs" />
+    <Compile Include="Assets\Oculus\Avatar\Samples\SocialStarter\Assets\Scripts\P2PManager.cs" />
+    <Compile Include="Assets\Oculus\Avatar\Samples\SocialStarter\Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Oculus\Avatar\Samples\SocialStarter\Assets\Scripts\RemotePlayer.cs" />
+    <Compile Include="Assets\Oculus\Avatar\Samples\SocialStarter\Assets\Scripts\RoomManager.cs" />
+    <Compile Include="Assets\Oculus\Avatar\Samples\SocialStarter\Assets\Scripts\SocialPlatformManager.cs" />
+    <Compile Include="Assets\Oculus\Avatar\Samples\SocialStarter\Assets\Scripts\VoipManager.cs" />
+    <Compile Include="Assets\Oculus\Avatar\Scripts\GazeTarget.cs" />
+    <Compile Include="Assets\Oculus\Avatar\Scripts\OvrAvatar.cs" />
+    <Compile Include="Assets\Oculus\Avatar\Scripts\OvrAvatarAsset.cs" />
+    <Compile Include="Assets\Oculus\Avatar\Scripts\OvrAvatarAssetMesh.cs" />
+    <Compile Include="Assets\Oculus\Avatar\Scripts\OvrAvatarAssetTexture.cs" />
+    <Compile Include="Assets\Oculus\Avatar\Scripts\OvrAvatarBase.cs" />
+    <Compile Include="Assets\Oculus\Avatar\Scripts\OvrAvatarBody.cs" />
+    <Compile Include="Assets\Oculus\Avatar\Scripts\OvrAvatarComponent.cs" />
+    <Compile Include="Assets\Oculus\Avatar\Scripts\OvrAvatarDriver.cs" />
+    <Compile Include="Assets\Oculus\Avatar\Scripts\OvrAvatarHand.cs" />
+    <Compile Include="Assets\Oculus\Avatar\Scripts\OvrAvatarLocalDriver.cs" />
+    <Compile Include="Assets\Oculus\Avatar\Scripts\OvrAvatarLogger.cs" />
+    <Compile Include="Assets\Oculus\Avatar\Scripts\OvrAvatarMaterialManager.cs" />
+    <Compile Include="Assets\Oculus\Avatar\Scripts\OvrAvatarMeshInstance.cs" />
+    <Compile Include="Assets\Oculus\Avatar\Scripts\OvrAvatarPacket.cs" />
+    <Compile Include="Assets\Oculus\Avatar\Scripts\OvrAvatarProjectorRenderComponent.cs" />
+    <Compile Include="Assets\Oculus\Avatar\Scripts\OvrAvatarRemoteDriver.cs" />
+    <Compile Include="Assets\Oculus\Avatar\Scripts\OvrAvatarRenderComponent.cs" />
+    <Compile Include="Assets\Oculus\Avatar\Scripts\OvrAvatarSDKCAPI.cs" />
+    <Compile Include="Assets\Oculus\Avatar\Scripts\OvrAvatarSDKManager.cs" />
+    <Compile Include="Assets\Oculus\Avatar\Scripts\OvrAvatarSettings.cs" />
+    <Compile Include="Assets\Oculus\Avatar\Scripts\OvrAvatarSettingsEditor.cs" />
+    <Compile Include="Assets\Oculus\Avatar\Scripts\OvrAvatarSkinnedMeshRenderComponent.cs" />
+    <Compile Include="Assets\Oculus\Avatar\Scripts\OvrAvatarSkinnedMeshRenderPBSComponent.cs" />
+    <Compile Include="Assets\Oculus\Avatar\Scripts\OvrAvatarSkinnedMeshRenderPBSV2Component.cs" />
+    <Compile Include="Assets\Oculus\Avatar\Scripts\OvrAvatarTextureCopyManager.cs" />
+    <Compile Include="Assets\Oculus\Avatar\Scripts\OvrAvatarTouchController.cs" />
+    <Compile Include="Assets\Oculus\LipSync\Scenes\Scripts\EnableSwitch.cs" />
+    <Compile Include="Assets\Oculus\LipSync\Scenes\Scripts\LipSyncDemo_Control.cs" />
+    <Compile Include="Assets\Oculus\LipSync\Scenes\Scripts\LipSyncDemo_SetCurrentTarget.cs" />
+    <Compile Include="Assets\Oculus\LipSync\Scripts\Helpers\OVRLipSyncDebugConsole.cs" />
+    <Compile Include="Assets\Oculus\LipSync\Scripts\Helpers\OVRNamedArrayAttribute.cs" />
+    <Compile Include="Assets\Oculus\LipSync\Scripts\Helpers\OVRTouchpad.cs" />
+    <Compile Include="Assets\Oculus\LipSync\Scripts\OVRLipSync.cs" />
+    <Compile Include="Assets\Oculus\LipSync\Scripts\OVRLipSyncContext.cs" />
+    <Compile Include="Assets\Oculus\LipSync\Scripts\OVRLipSyncContextBase.cs" />
+    <Compile Include="Assets\Oculus\LipSync\Scripts\OVRLipSyncContextCanned.cs" />
+    <Compile Include="Assets\Oculus\LipSync\Scripts\OVRLipSyncContextMorphTarget.cs" />
+    <Compile Include="Assets\Oculus\LipSync\Scripts\OVRLipSyncContextTextureFlip.cs" />
+    <Compile Include="Assets\Oculus\LipSync\Scripts\OVRLipSyncMicInput.cs" />
+    <Compile Include="Assets\Oculus\LipSync\Scripts\OVRLipSyncSequence.cs" />
+    <Compile Include="Assets\Oculus\Platform\Samples\EntitlementCheck\EntitlementCheck.cs" />
+    <Compile Include="Assets\Oculus\Platform\Samples\NetChat\DataEntry.cs" />
+    <Compile Include="Assets\Oculus\Platform\Samples\SimplePlatformSample\DataEntry.cs" />
+    <Compile Include="Assets\Oculus\Platform\Samples\VrBoardGame\Scripts\BoardPosition.cs" />
+    <Compile Include="Assets\Oculus\Platform\Samples\VrBoardGame\Scripts\EyeCamera.cs" />
+    <Compile Include="Assets\Oculus\Platform\Samples\VrBoardGame\Scripts\GameBoard.cs" />
+    <Compile Include="Assets\Oculus\Platform\Samples\VrBoardGame\Scripts\GameController.cs" />
+    <Compile Include="Assets\Oculus\Platform\Samples\VrBoardGame\Scripts\GamePiece.cs" />
+    <Compile Include="Assets\Oculus\Platform\Samples\VrBoardGame\Scripts\IAPManager.cs" />
+    <Compile Include="Assets\Oculus\Platform\Samples\VrBoardGame\Scripts\MatchmakingManager.cs" />
+    <Compile Include="Assets\Oculus\Platform\Samples\VrBoardGame\Scripts\PlatformManager.cs" />
+    <Compile Include="Assets\Oculus\Platform\Samples\VrHoops\Scripts\AchievementsManager.cs" />
+    <Compile Include="Assets\Oculus\Platform\Samples\VrHoops\Scripts\AIPlayer.cs" />
+    <Compile Include="Assets\Oculus\Platform\Samples\VrHoops\Scripts\BallEjector.cs" />
+    <Compile Include="Assets\Oculus\Platform\Samples\VrHoops\Scripts\Camera2DController.cs" />
+    <Compile Include="Assets\Oculus\Platform\Samples\VrHoops\Scripts\DetectBasket.cs" />
+    <Compile Include="Assets\Oculus\Platform\Samples\VrHoops\Scripts\FlyText.cs" />
+    <Compile Include="Assets\Oculus\Platform\Samples\VrHoops\Scripts\GoalMover.cs" />
+    <Compile Include="Assets\Oculus\Platform\Samples\VrHoops\Scripts\LeaderboardManager.cs" />
+    <Compile Include="Assets\Oculus\Platform\Samples\VrHoops\Scripts\LocalPlayer.cs" />
+    <Compile Include="Assets\Oculus\Platform\Samples\VrHoops\Scripts\MatchController.cs" />
+    <Compile Include="Assets\Oculus\Platform\Samples\VrHoops\Scripts\MatchmakingManager.cs" />
+    <Compile Include="Assets\Oculus\Platform\Samples\VrHoops\Scripts\P2PManager.cs" />
+    <Compile Include="Assets\Oculus\Platform\Samples\VrHoops\Scripts\P2PNetworkBall.cs" />
+    <Compile Include="Assets\Oculus\Platform\Samples\VrHoops\Scripts\P2PNetworkGoal.cs" />
+    <Compile Include="Assets\Oculus\Platform\Samples\VrHoops\Scripts\PlatformManager.cs" />
+    <Compile Include="Assets\Oculus\Platform\Samples\VrHoops\Scripts\Player.cs" />
+    <Compile Include="Assets\Oculus\Platform\Samples\VrHoops\Scripts\PlayerArea.cs" />
+    <Compile Include="Assets\Oculus\Platform\Samples\VrHoops\Scripts\RemotePlayer.cs" />
+    <Compile Include="Assets\Oculus\Platform\Samples\VrHoops\Scripts\VREyeRaycaster.cs" />
+    <Compile Include="Assets\Oculus\Platform\Samples\VrVoiceChat\Scripts\P2PManager.cs" />
+    <Compile Include="Assets\Oculus\Platform\Samples\VrVoiceChat\Scripts\PlatformManager.cs" />
+    <Compile Include="Assets\Oculus\Platform\Samples\VrVoiceChat\Scripts\RoomManager.cs" />
+    <Compile Include="Assets\Oculus\Platform\Samples\VrVoiceChat\Scripts\VoipManager.cs" />
+    <Compile Include="Assets\Oculus\Platform\Samples\VrVoiceChat\Scripts\VREyeRaycaster.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\AbuseReportOptions.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\AbuseReportType.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\AchievementType.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\AndroidPlatform.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\ApplicationOptions.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\BufferedAudioStream.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Callback.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\CallbackRunner.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\CAPI.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\CloudStorageDataStatus.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\CloudStorageUpdateStatus.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Decoder.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Encoder.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\IMicrophone.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\IVoipPCMSource.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\KeyValuePairType.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\LaunchType.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\LeaderboardFilterType.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\LeaderboardStartAt.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\LivestreamingAudience.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\LivestreamingMicrophoneStatus.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\LivestreamingStartStatus.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\MatchmakingCriterionImportance.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\MatchmakingOptions.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\MatchmakingStatApproach.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\MediaContentType.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Message.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\MicrophoneInput.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\MicrophoneInputNative.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\AbuseReportRecording.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\AchievementDefinition.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\AchievementProgress.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\AchievementUpdate.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\ApplicationVersion.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\AssetDetails.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\AssetFileDeleteResult.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\AssetFileDownloadCancelResult.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\AssetFileDownloadResult.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\AssetFileDownloadUpdate.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\CalApplicationFinalized.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\CalApplicationProposed.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\CalApplicationSuggestion.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\CloudStorageConflictMetadata.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\CloudStorageData.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\CloudStorageMetadata.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\CloudStorageUpdateResponse.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\DeserializeableList.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\Error.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\HttpTransferUpdate.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\InstalledApplication.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\LanguagePackInfo.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\LaunchBlockFlowResult.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\LaunchDetails.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\LaunchFriendRequestFlowResult.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\LaunchReportFlowResult.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\LaunchUnblockFlowResult.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\LeaderboardEntry.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\LinkedAccount.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\LivestreamingApplicationStatus.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\LivestreamingStartResult.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\LivestreamingStatus.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\LivestreamingVideoStats.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\MatchmakingAdminSnapshot.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\MatchmakingAdminSnapshotCandidate.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\MatchmakingBrowseResult.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\MatchmakingEnqueuedUser.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\MatchmakingEnqueueResult.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\MatchmakingEnqueueResultAndRoom.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\MatchmakingStats.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\NetworkingPeer.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\OrgScopedID.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\Party.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\PartyID.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\PartyUpdateNotification.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\Pid.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\PingResult.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\PlatformInitialize.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\Product.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\Purchase.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\Room.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\RoomInviteNotification.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\SdkAccount.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\ShareMediaResult.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\SystemPermission.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\SystemVoipState.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\User.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\UserAndRoom.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\UserProof.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Models\UserReportID.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Packet.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\PartyUpdateAction.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\PeerConnectionState.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\PermissionGrantStatus.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\PermissionType.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Platform.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\PlatformInitializeResult.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\PlatformInternal.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\PlatformSettings.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\Request.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\RoomJoinability.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\RoomJoinPolicy.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\RoomMembershipLockStatus.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\RoomOptions.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\RoomType.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\SdkAccountType.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\SendPolicy.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\ServiceProvider.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\ShareMediaStatus.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\StandalonePlatform.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\StandalonePlatformSettings.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\SystemVoipStatus.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\TimeWindow.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\UserOptions.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\UserOrdering.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\UserPresenceStatus.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\VoipAudioSource.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\VoipAudioSourceHiLevel.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\VoipBitrate.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\VoipDtxState.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\VoipInput.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\VoipMuteState.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\VoipOptions.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\VoipPCMSourceNative.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\VoipSampleRate.cs" />
+    <Compile Include="Assets\Oculus\Platform\Scripts\WindowsPlatform.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Core\CustomHands\Scripts\Hand.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Core\CustomHands\Scripts\HandPose.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Core\DebugUI\Scripts\DebugUIBuilder.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Core\DebugUI\Scripts\HandedInputSelector.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Core\DebugUI\Scripts\LaserPointer.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Core\DistanceGrab\Scripts\ColorGrabbable.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Core\DistanceGrab\Scripts\DistanceGrabbable.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Core\DistanceGrab\Scripts\DistanceGrabber.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Core\DistanceGrab\Scripts\GrabbableCrosshair.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Core\DistanceGrab\Scripts\GrabManager.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Core\DistanceGrab\Scripts\PauseOnInputLoss.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Core\GuardianBoundarySystem\BoundsLockedObject.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Core\GuardianBoundarySystem\GuardianBoundaryDisplay.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Core\GuardianBoundarySystem\GuardianBoundaryEnforcer.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\CharacterCameraConstraint.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\LocomotionController.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\LocomotionTeleport.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportAimHandler.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportAimHandlerLaser.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportAimHandlerParabolic.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportAimVisualLaser.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportDestination.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportInputHandler.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportInputHandlerAvatarTouch.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportInputHandlerHMD.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportOrientationHandler.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportOrientationHandler360.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportOrientationHandlerHMD.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportOrientationHandlerThumbstick.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportPoint.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportSupport.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportTargetHandler.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportTargetHandlerNavMesh.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportTargetHandlerNode.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportTargetHandlerPhysical.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportTransition.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportTransitionBlink.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportTransitionInstant.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Core\Locomotion\Scripts\TeleportTransitionWarp.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Core\TouchControllers\TouchController.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Usage\DebugUI\DebugUISample.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Usage\DistanceGrab\Scripts\DistanceGrabberSample.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Usage\Locomotion\Scripts\CharacterCapsule.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Usage\Locomotion\Scripts\LocomotionSampleSupport.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Usage\OVROverlay\Scripts\OVROverlaySample.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Usage\StartScene\Scripts\StartMenu.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Usage\Stereo180Video\Plugins\Android\NativeVideoPlayer.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Usage\Stereo180Video\Scripts\MoviePlayerSample.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Usage\Stereo180Video\Scripts\OVROverlayMeshGenerator.cs" />
+    <Compile Include="Assets\Oculus\SampleFramework\Usage\Stereo180Video\Scripts\VectorUtil.cs" />
+    <Compile Include="Assets\Oculus\Spatializer\scenes\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
+    <Compile Include="Assets\Oculus\Spatializer\scripts\helpers\ONSPReflectionZone.cs" />
+    <Compile Include="Assets\Oculus\Spatializer\scripts\OculusSpatializerUnity.cs" />
+    <Compile Include="Assets\Oculus\Spatializer\scripts\ONSPAmbisonicsNative.cs" />
+    <Compile Include="Assets\Oculus\Spatializer\scripts\ONSPAudioSource.cs" />
+    <Compile Include="Assets\Oculus\Spatializer\scripts\ONSPProfiler.cs" />
+    <Compile Include="Assets\Oculus\Spatializer\scripts\ONSPPropagationGeometry.cs" />
+    <Compile Include="Assets\Oculus\Spatializer\scripts\ONSPPropagationInterface.cs" />
+    <Compile Include="Assets\Oculus\Spatializer\scripts\ONSPPropagationMaterial.cs" />
+    <Compile Include="Assets\Oculus\Spatializer\scripts\ONSPPropagationSettings.cs" />
+    <Compile Include="Assets\Oculus\Spatializer\scripts\ONSPVersion.cs" />
+    <Compile Include="Assets\Oculus\VoiceMod\Scenes\Scripts\VoiceModDemo_Logic.cs" />
+    <Compile Include="Assets\Oculus\VoiceMod\Scenes\Scripts\VoiceModEnableSwitch.cs" />
+    <Compile Include="Assets\Oculus\VoiceMod\Scripts\Helpers\OVRDebugConsole.cs" />
+    <Compile Include="Assets\Oculus\VoiceMod\Scripts\Helpers\OVRMessenger.cs" />
+    <Compile Include="Assets\Oculus\VoiceMod\Scripts\Helpers\OVRMicInput.cs" />
+    <Compile Include="Assets\Oculus\VoiceMod\Scripts\OVRVoiceMod.cs" />
+    <Compile Include="Assets\Oculus\VoiceMod\Scripts\OVRVoiceModContext.cs" />
+    <Compile Include="Assets\OldScripts\GameplayController1.cs" />
+    <Compile Include="Assets\Scripts\ArmCalibration.cs" />
+    <Compile Include="Assets\Scripts\ArmCalibrator.cs" />
+    <Compile Include="Assets\Scripts\ArmPositioning.cs" />
+    <Compile Include="Assets\Scripts\BoardCalibration.cs" />
+    <Compile Include="Assets\Scripts\BoardPlacement.cs" />
+    <Compile Include="Assets\Scripts\BoardTracking.cs" />
+    <Compile Include="Assets\Scripts\ButtonEvent.cs" />
+    <Compile Include="Assets\Scripts\controllerModeSelect.cs" />
+    <Compile Include="Assets\Scripts\ControllerVibrationManager.cs" />
+    <Compile Include="Assets\Scripts\FacePlayerPromptUI.cs" />
+    <Compile Include="Assets\Scripts\FistContactListener.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\GameplayController.cs" />
+    <Compile Include="Assets\Scripts\GuideWindow.cs" />
+    <Compile Include="Assets\Scripts\HexGamePlay.cs" />
+    <Compile Include="Assets\Scripts\HighscoreDisplayer.cs" />
+    <Compile Include="Assets\Scripts\HighscoreManager.cs" />
+    <Compile Include="Assets\Scripts\HitMarkerInfo.cs" />
+    <Compile Include="Assets\Scripts\JsonDecoder.cs" />
+    <Compile Include="Assets\Scripts\LiteboxerDeviceVisuals.cs" />
+    <Compile Include="Assets\Scripts\NoteManager.cs" />
+    <Compile Include="Assets\Scripts\NoteManager1.cs" />
+    <Compile Include="Assets\Scripts\NoteMeshScr.cs" />
+    <Compile Include="Assets\Scripts\OptionsMenu.cs" />
+    <Compile Include="Assets\Scripts\PunchPadHitDetection.cs" />
+    <Compile Include="Assets\Scripts\PunchPadVisuals.cs" />
+    <Compile Include="Assets\Scripts\RevolvingMenu.cs" />
+    <Compile Include="Assets\Scripts\RobotArmEndpoint.cs" />
+    <Compile Include="Assets\Scripts\RobotArmsManager.cs" />
+    <Compile Include="Assets\Scripts\SimpleJSON.cs" />
+    <Compile Include="Assets\Scripts\SongConfig.cs" />
+    <Compile Include="Assets\Scripts\SongSelection.cs" />
+    <Compile Include="Assets\Scripts\TagModularity.cs" />
+    <Compile Include="Assets\Scripts\TestArmScr.cs" />
+    <Compile Include="Assets\Scripts\TouchButton.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Art\Misc\UnlitTranparency.shader" />
