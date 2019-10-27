@@ -106,7 +106,7 @@ public class ArmCalibrator : TagModularity
 
         float FacingValue = -Vector3.Dot(RightHand.forward.normalized, LeftHand.forward.normalized);
 
-        Debug.Log(FacingValue);
+        //Debug.Log(FacingValue);
 
         //CircleLerp = -FacingValue;
 
@@ -127,6 +127,8 @@ public class ArmCalibrator : TagModularity
                 FacingCircle.sprite = null;
 
                 guideWindow.SetInfoScreen(3);
+
+                GameManager.Instance.NextState();
             }
 
             RenderLoadingCircle(CalibrationTimer, CalibratingCircle);

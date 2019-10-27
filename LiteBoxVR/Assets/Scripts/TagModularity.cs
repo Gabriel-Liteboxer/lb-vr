@@ -10,7 +10,7 @@ public class TagModularity : MonoBehaviour
     {
         if(TaggedObjects.ContainsKey(aTag))
         {
-            Debug.Log("located GameObject with tag " + aTag + " in dictionary");
+            //Debug.Log("located GameObject with tag " + aTag + " in dictionary");
 
             return TaggedObjects[aTag];
 

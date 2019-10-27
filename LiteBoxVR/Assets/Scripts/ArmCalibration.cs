@@ -45,14 +45,14 @@ public class ArmCalibration : TagModularity
         if (!gameCont.UsingWristStraps)
         {
             gameCont.isArmCalibrated = true;
-            gameCont.NextState();
+            //gameCont.NextState();
         }
     }
 
     private void Update()
     {
-        if (gameCont.StateOfGame != GameManager.GameState.armCalibration)
-            return;
+        /*if (gameCont.StateOfGame != GameManager.GameState.armCalibration)
+            return;*/
 
         if (OVRInput.GetDown(OVRInput.RawButton.Y))
         {

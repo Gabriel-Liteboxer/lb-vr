@@ -707,7 +707,7 @@ MonoBehaviour:
   testScreen: 
   playerHead: {fileID: 0}
   RadiusFromPlayer: 2
-  LerpSpeed: 5
+  LerpSpeed: 8
   RotationDeadzone: 60
   PositionDeadzone: 0.2
 --- !u!1 &7976152767373516879

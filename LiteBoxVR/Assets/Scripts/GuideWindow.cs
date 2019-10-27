@@ -40,8 +40,7 @@ public class GuideWindow : MonoBehaviour
     public float PositionDeadzone;
 
     private Transform targetTransform;
-
-
+    
 
     private void Start()
     {
@@ -54,6 +53,13 @@ public class GuideWindow : MonoBehaviour
         SetInfoScreen(0);
     }
 
+    private void OnEnable()
+    {
+        transform.localScale = Vector3.zero;
+
+        StartCoroutine(ExpandWindow(1));
+    }
+
     private void Update()
     {
         for (int i = 0; i < testScreen.Length; i++)
@@ -64,14 +70,18 @@ public class GuideWindow : MonoBehaviour
 
             }
 
-
         }
-
 
     }
 
     private void LateUpdate()
     {
+        if (playerHead == null)
+        {
+            playerHead = Camera.main.transform;
+
+        }
+
         if (Vector3.SqrMagnitude(targetTransform.position - playerHead.position) > PositionDeadzone * PositionDeadzone)
             targetTransform.position = playerHead.position - new Vector3(0, playerHead.position.y * 0.2f, 0);
 
@@ -84,6 +94,17 @@ public class GuideWindow : MonoBehaviour
         
         transform.forward = Vector3.Lerp(transform.forward, targetTransform.forward, Time.deltaTime*LerpSpeed);
         
+    }
+
+    IEnumerator ExpandWindow(float delaySeconds)
+    {
+        yield return new WaitForSeconds(delaySeconds);
+
+        while (transform.localScale.y < 1)
+        {
+            transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one, Time.deltaTime * 10);
+            yield return null;
+        }
     }
 
     public void SetInfoScreen(int screenIndex)

@@ -18,7 +18,7 @@ public class ArmPositioning : TagModularity
 
     //static float startingDistance;
 
-    static float armScale = 1;
+    static float armScale = 0.8f;
 
     static GameManager gameCont;
 
@@ -31,6 +31,33 @@ public class ArmPositioning : TagModularity
     public OVRInput.Controller defaultController;
 
     public bool TestingInEditor;
+
+    [HideInInspector]
+    public static GameObject RightHandInstance;
+
+    [HideInInspector]
+    public static GameObject LeftHandInstance;
+
+    public bool IsRightHand;
+    public bool IsLeftHand;
+
+    private void Awake()
+    {
+        if (IsRightHand)
+        {
+            if (RightHandInstance != null)
+                Destroy(gameObject);
+            else
+                RightHandInstance = gameObject;
+        }
+        else if (IsLeftHand)
+        {
+            if (LeftHandInstance != null)
+                Destroy(gameObject);
+            else
+                LeftHandInstance = gameObject;
+        }
+    }
 
     // new idea, press fists together to calibrate arm distance. use dot product to determine if the controllers are pointing at each other
 
@@ -47,6 +74,15 @@ public class ArmPositioning : TagModularity
         gameCont = FindTaggedObject("GameController").GetComponent<GameManager>();
 
         //defaultController = ControllerModel.m_controller;
+
+        StartCoroutine(LateStart());
+    }
+
+    // changing the control mode the first time caused the game to freeze as the controller model was loaded. 
+    //LateStart ensures that the model is loaded before it is disabled
+    IEnumerator LateStart()
+    {
+        yield return new WaitForEndOfFrame();
 
         ChangeControllerMode();
     }

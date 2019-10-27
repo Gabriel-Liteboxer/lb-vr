@@ -102,7 +102,9 @@ public class BoardPlacement : TagModularity
             InnerRing.SetActive(false);
         }
 
-        GameMgr.SetBoardPosition(transform.position, transform.forward);
+        //GameMgr.SetBoardPosition(transform.position, transform.forward);
+
+        GameManager.Instance.calibratedObject.SetCalibration(transform);
 
     }
 

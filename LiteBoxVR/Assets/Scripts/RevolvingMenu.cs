@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class RevolvingMenu : TagModularity
 {
-    public SongConfig[] SongLibrary;
 
     public GameObject AlbumPrefab;
 
@@ -35,7 +34,7 @@ public class RevolvingMenu : TagModularity
 
     private Transform PlayerHead;
 
-    private GameManager gameMgr;
+    //private GameManager gameMgr;
 
     public float UpdatePositionDistance = 1;
 
@@ -106,15 +105,19 @@ public class RevolvingMenu : TagModularity
 
         PlayerPositionTracker = new GameObject().transform;
 
-        gameMgr = FindTaggedObject("GameController").GetComponent<GameManager>();
+        //gameMgr = FindTaggedObject("GameController").GetComponent<GameManager>();
 
-        transform.right = gameMgr.BoardForward; // remove this and it works fine
+        //transform.right = GameManager.Instance.BoardForward; // remove this and it works fine
+
+        transform.eulerAngles = new Vector3(0, GameManager.Instance.calibratedObject.eulerAngles.y - 90, 0);
 
         RightHand.handTransform = FindTaggedObject("HandR").transform;
 
         LeftHand.handTransform = FindTaggedObject("HandL").transform;
 
-        AlbumTiles = new Album[SongLibrary.Length];
+        //AlbumTiles = new Album[SongLibrary.Length];
+
+        AlbumTiles = new Album[GameManager.Instance.songLoader.songLibrary.songs.Count];
 
         for (int i = 0; i < AlbumTiles.Length; i++)
         {
@@ -124,7 +127,7 @@ public class RevolvingMenu : TagModularity
 
             Material NewAlbumCover = new Material(AlbumCoverMat);
 
-            NewAlbumCover.SetTexture("_MainTex", SongLibrary[i].AlbumCover);
+            NewAlbumCover.SetTexture("_MainTex", GameManager.Instance.songLoader.songLibrary.songs[i].albumArt);
 
             AlbumTiles[i].AlbumMat = AlbumTiles[i].AlbumObject.GetComponentInChildren<Renderer>();
 
@@ -185,30 +188,7 @@ public class RevolvingMenu : TagModularity
 
         }
 
-        /*
-        if (LeftHand.inContact || RightHand.inContact)
-        {
-            float ContactAngle = LeftHand.contactAngle;
-
-            if (!MovingMenuSlider)
-            {
-                MovingMenuSlider = true;
-                PreContactMenuSlider = MenuSlider;
-            }
-            else
-            {
-                MenuSlider = PreContactMenuSlider + ContactAngle/18;
-            }
-
-
-
-
-        }
-        else
-        {
-            MovingMenuSlider = false;
-
-        }*/
+        
         /*
         SliderVelocity = Input.GetAxis("Horizontal")/5;
 
@@ -349,6 +329,9 @@ public class RevolvingMenu : TagModularity
     {
         if (PlayerHead != null)
         {
+            if (PlayerPositionTracker == null)
+                PlayerPositionTracker = new GameObject().transform;
+
             if (Vector3.Distance(PlayerPositionTracker.position, PlayerHead.position) > UpdatePositionDistance * UpdatePositionDistance)
                 PlayerPositionTracker.position = PlayerHead.position;
         }
@@ -366,21 +349,23 @@ public class RevolvingMenu : TagModularity
 
     void SongSelectionChanged()
     {
-        SongName.text = SongLibrary[currentlySelected].SongName;
+        SongName.text = GameManager.Instance.songLoader.songLibrary.songs[currentlySelected].name;
 
-        ArtistName.text = SongLibrary[currentlySelected].ArtistName;
+        ArtistName.text = GameManager.Instance.songLoader.songLibrary.songs[currentlySelected].artist;
+
+        GameManager.Instance.SelectedSong = currentlySelected;
 
         menuAudio.clip = MenuRatchetSound;
 
         menuAudio.Play();
 
-        highscoreMgr.SetHighscorePage(SongLibrary[currentlySelected], difficultyLevel);
+        highscoreMgr.SetHighscorePage(GameManager.Instance.songLoader.songLibrary.songs[currentlySelected], difficultyLevel);
 
     }
 
     public void PlaySong ()
     {
-        gameMgr.StartGameplay(SongLibrary[currentlySelected].DifficultyLevels[difficultyLevel].TrackJson, SongLibrary[currentlySelected].DifficultyLevels[difficultyLevel].audioClip);
+        GameManager.Instance.StartGameplay(GameManager.Instance.songLoader.songLibrary.songs[currentlySelected], difficultyLevel);
 
     }
 

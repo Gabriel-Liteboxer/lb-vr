@@ -40,7 +40,7 @@ public class HighscoreManager : MonoBehaviour
         [HideInInspector]
         public string SongName;
 
-        public SongConfig associatedSong;
+        public Song associatedSong;
         
         public ScoreDifficultyLevel[] scoreDifficultyLevels;
 
@@ -95,7 +95,7 @@ public class HighscoreManager : MonoBehaviour
 
         foreach (SongHighScores shs in songHighScores)
         {
-            shs.SongName = shs.associatedSong.SongName;
+            shs.SongName = shs.associatedSong.name;
             
             shs.scoreDifficultyLevels = new ScoreDifficultyLevel[3];
 
@@ -133,7 +133,7 @@ public class HighscoreManager : MonoBehaviour
 
     }
 
-    public void SetHighscorePage(SongConfig aSong, int aDifficultyLevel)
+    public void SetHighscorePage(Song aSong, int aDifficultyLevel)
     {
         header.text = "Highscores (" + difficultyNames[aDifficultyLevel] + ")";
 

@@ -1,0 +1,2051 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e43374831d4bff4099f67c8af33ac2a, type: 3}
+  m_Name: Calling All Stars
+  m_EditorClassIdentifier: 
+  song:
+    id: 0
+    artist: 
+    genre: 
+    name: Calling All Stars
+    albumArt: {fileID: 2800000, guid: 5378744e114c4cb4ba55450189d49f19, type: 3}
+    purchased: 0
+    price: 
+    storeId: 
+    difficulties:
+    - notes:
+      - time: 3333
+        pad: 1
+        style: 0
+      - time: 3749
+        pad: 2
+        style: 0
+      - time: 4166
+        pad: 1
+        style: 0
+      - time: 4583
+        pad: 2
+        style: 0
+      - time: 4999
+        pad: 1
+        style: 0
+      - time: 5416
+        pad: 0
+        style: 0
+      - time: 5833
+        pad: 1
+        style: 0
+      - time: 6249
+        pad: 0
+        style: 0
+      - time: 6666
+        pad: 1
+        style: 0
+      - time: 7083
+        pad: 2
+        style: 0
+      - time: 7499
+        pad: 1
+        style: 0
+      - time: 7916
+        pad: 2
+        style: 0
+      - time: 8333
+        pad: 1
+        style: 0
+      - time: 8749
+        pad: 4
+        style: 0
+      - time: 9166
+        pad: 1
+        style: 0
+      - time: 9583
+        pad: 4
+        style: 0
+      - time: 9999
+        pad: 1
+        style: 0
+      - time: 10416
+        pad: 2
+        style: 0
+      - time: 10833
+        pad: 1
+        style: 0
+      - time: 11249
+        pad: 2
+        style: 0
+      - time: 11666
+        pad: 1
+        style: 0
+      - time: 12083
+        pad: 0
+        style: 0
+      - time: 12499
+        pad: 1
+        style: 0
+      - time: 12916
+        pad: 0
+        style: 0
+      - time: 13333
+        pad: 1
+        style: 0
+      - time: 13749
+        pad: 2
+        style: 0
+      - time: 14166
+        pad: 1
+        style: 0
+      - time: 14583
+        pad: 2
+        style: 0
+      - time: 14999
+        pad: 1
+        style: 0
+      - time: 15416
+        pad: 4
+        style: 0
+      - time: 15833
+        pad: 1
+        style: 0
+      - time: 16249
+        pad: 4
+        style: 0
+      - time: 16666
+        pad: 1
+        style: 0
+      - time: 17499
+        pad: 1
+        style: 0
+      - time: 18333
+        pad: 2
+        style: 0
+      - time: 19166
+        pad: 2
+        style: 0
+      - time: 19999
+        pad: 3
+        style: 0
+      - time: 20833
+        pad: 3
+        style: 0
+      - time: 21666
+        pad: 4
+        style: 0
+      - time: 22499
+        pad: 4
+        style: 0
+      - time: 23333
+        pad: 1
+        style: 0
+      - time: 24166
+        pad: 1
+        style: 0
+      - time: 24999
+        pad: 2
+        style: 0
+      - time: 25833
+        pad: 2
+        style: 0
+      - time: 26666
+        pad: 3
+        style: 0
+      - time: 27499
+        pad: 4
+        style: 0
+      - time: 28333
+        pad: 3
+        style: 0
+      - time: 28749
+        pad: 4
+        style: 0
+      - time: 29166
+        pad: 3
+        style: 0
+      - time: 29583
+        pad: 4
+        style: 0
+      - time: 29999
+        pad: 3
+        style: 0
+      - time: 30416
+        pad: 2
+        style: 0
+      - time: 30833
+        pad: 3
+        style: 0
+      - time: 31249
+        pad: 2
+        style: 0
+      - time: 31666
+        pad: 3
+        style: 0
+      - time: 32083
+        pad: 2
+        style: 0
+      - time: 32499
+        pad: 3
+        style: 0
+      - time: 32916
+        pad: 2
+        style: 0
+      - time: 33333
+        pad: 1
+        style: 0
+      - time: 33749
+        pad: 2
+        style: 0
+      - time: 34166
+        pad: 1
+        style: 0
+      - time: 34583
+        pad: 2
+        style: 0
+      - time: 34999
+        pad: 1
+        style: 0
+      - time: 35416
+        pad: 2
+        style: 0
+      - time: 35833
+        pad: 1
+        style: 0
+      - time: 36249
+        pad: 2
+        style: 0
+      - time: 36666
+        pad: 3
+        style: 0
+      - time: 37083
+        pad: 2
+        style: 0
+      - time: 37499
+        pad: 3
+        style: 0
+      - time: 37916
+        pad: 2
+        style: 0
+      - time: 38333
+        pad: 3
+        style: 0
+      - time: 38749
+        pad: 2
+        style: 0
+      - time: 39166
+        pad: 3
+        style: 0
+      - time: 39583
+        pad: 2
+        style: 0
+      - time: 39999
+        pad: 1
+        style: 0
+      - time: 40416
+        pad: 2
+        style: 0
+      - time: 40833
+        pad: 1
+        style: 0
+      - time: 41249
+        pad: 2
+        style: 0
+      - time: 41666
+        pad: 1
+        style: 0
+      - time: 42083
+        pad: 2
+        style: 0
+      - time: 42499
+        pad: 1
+        style: 0
+      - time: 42916
+        pad: 2
+        style: 0
+      - time: 43333
+        pad: 3
+        style: 0
+      - time: 44166
+        pad: 3
+        style: 0
+      - time: 44999
+        pad: 4
+        style: 0
+      - time: 45833
+        pad: 4
+        style: 0
+      - time: 46666
+        pad: 1
+        style: 0
+      - time: 47499
+        pad: 1
+        style: 0
+      - time: 48333
+        pad: 2
+        style: 0
+      - time: 49166
+        pad: 2
+        style: 0
+      - time: 49999
+        pad: 1
+        style: 0
+      - time: 50833
+        pad: 1
+        style: 0
+      - time: 51666
+        pad: 0
+        style: 0
+      - time: 52499
+        pad: 0
+        style: 0
+      - time: 53333
+        pad: 1
+        style: 0
+      - time: 54166
+        pad: 1
+        style: 0
+      - time: 54999
+        pad: 4
+        style: 0
+      - time: 55833
+        pad: 1
+        style: 0
+      - time: 56666
+        pad: 2
+        style: 0
+      - time: 57083
+        pad: 1
+        style: 0
+      - time: 57499
+        pad: 2
+        style: 0
+      - time: 57916
+        pad: 1
+        style: 0
+      - time: 58333
+        pad: 2
+        style: 0
+      - time: 58749
+        pad: 0
+        style: 0
+      - time: 59166
+        pad: 2
+        style: 0
+      - time: 59583
+        pad: 0
+        style: 0
+      - time: 59999
+        pad: 2
+        style: 0
+      - time: 60416
+        pad: 1
+        style: 0
+      - time: 60833
+        pad: 2
+        style: 0
+      - time: 61249
+        pad: 1
+        style: 0
+      - time: 61666
+        pad: 2
+        style: 0
+      - time: 62083
+        pad: 3
+        style: 0
+      - time: 62499
+        pad: 2
+        style: 0
+      - time: 62916
+        pad: 3
+        style: 0
+      - time: 63333
+        pad: 2
+        style: 0
+      - time: 63749
+        pad: 1
+        style: 0
+      - time: 64166
+        pad: 2
+        style: 0
+      - time: 64583
+        pad: 1
+        style: 0
+      - time: 64999
+        pad: 2
+        style: 0
+      - time: 65416
+        pad: 0
+        style: 0
+      - time: 65833
+        pad: 2
+        style: 0
+      - time: 66249
+        pad: 0
+        style: 0
+      - time: 66666
+        pad: 2
+        style: 0
+      - time: 67083
+        pad: 1
+        style: 0
+      - time: 67499
+        pad: 2
+        style: 0
+      - time: 67916
+        pad: 1
+        style: 0
+      - time: 68333
+        pad: 2
+        style: 0
+      - time: 68749
+        pad: 3
+        style: 0
+      - time: 69166
+        pad: 2
+        style: 0
+      - time: 69583
+        pad: 3
+        style: 0
+      - time: 69999
+        pad: 4
+        style: 0
+      - time: 70833
+        pad: 4
+        style: 0
+      - time: 71666
+        pad: 3
+        style: 0
+      - time: 72499
+        pad: 3
+        style: 0
+      - time: 73333
+        pad: 2
+        style: 0
+      - time: 74166
+        pad: 2
+        style: 0
+      - time: 74999
+        pad: 1
+        style: 0
+      - time: 75833
+        pad: 1
+        style: 0
+      - time: 76666
+        pad: 2
+        style: 0
+      - time: 77499
+        pad: 2
+        style: 0
+      - time: 78333
+        pad: 0
+        style: 0
+      - time: 79166
+        pad: 0
+        style: 0
+      - time: 79999
+        pad: 2
+        style: 0
+      - time: 80833
+        pad: 2
+        style: 0
+      - time: 81666
+        pad: 3
+        style: 0
+      - time: 82083
+        pad: 4
+        style: 0
+      - time: 82499
+        pad: 3
+        style: 0
+      - time: 82916
+        pad: 4
+        style: 0
+      - time: 83333
+        pad: 3
+        style: 0
+    - notes:
+      - time: 3333
+        pad: 3
+        style: 0
+      - time: 3749
+        pad: 4
+        style: 0
+      - time: 4166
+        pad: 3
+        style: 0
+      - time: 4583
+        pad: 5
+        style: 0
+      - time: 4999
+        pad: 3
+        style: 0
+      - time: 5416
+        pad: 4
+        style: 0
+      - time: 5833
+        pad: 3
+        style: 0
+      - time: 6249
+        pad: 5
+        style: 0
+      - time: 6666
+        pad: 3
+        style: 0
+      - time: 7083
+        pad: 2
+        style: 0
+      - time: 7499
+        pad: 1
+        style: 0
+      - time: 7916
+        pad: 2
+        style: 0
+      - time: 8333
+        pad: 2
+        style: 0
+      - time: 8749
+        pad: 1
+        style: 0
+      - time: 9166
+        pad: 0
+        style: 0
+      - time: 9583
+        pad: 0
+        style: 0
+      - time: 9999
+        pad: 3
+        style: 0
+      - time: 10416
+        pad: 4
+        style: 0
+      - time: 10833
+        pad: 3
+        style: 0
+      - time: 11249
+        pad: 5
+        style: 0
+      - time: 11666
+        pad: 3
+        style: 0
+      - time: 12083
+        pad: 4
+        style: 0
+      - time: 12499
+        pad: 3
+        style: 0
+      - time: 12916
+        pad: 5
+        style: 0
+      - time: 13333
+        pad: 3
+        style: 0
+      - time: 13749
+        pad: 2
+        style: 0
+      - time: 14166
+        pad: 1
+        style: 0
+      - time: 14583
+        pad: 2
+        style: 0
+      - time: 14999
+        pad: 2
+        style: 0
+      - time: 15416
+        pad: 1
+        style: 0
+      - time: 15833
+        pad: 0
+        style: 0
+      - time: 16249
+        pad: 1
+        style: 0
+      - time: 16666
+        pad: 4
+        style: 0
+      - time: 17083
+        pad: 3
+        style: 0
+      - time: 17499
+        pad: 4
+        style: 0
+      - time: 17916
+        pad: 5
+        style: 0
+      - time: 18333
+        pad: 4
+        style: 0
+      - time: 18749
+        pad: 3
+        style: 0
+      - time: 19166
+        pad: 4
+        style: 0
+      - time: 19583
+        pad: 5
+        style: 0
+      - time: 19999
+        pad: 4
+        style: 0
+      - time: 20416
+        pad: 1
+        style: 0
+      - time: 20833
+        pad: 1
+        style: 0
+      - time: 21249
+        pad: 4
+        style: 0
+      - time: 21666
+        pad: 1
+        style: 0
+      - time: 22083
+        pad: 1
+        style: 0
+      - time: 22499
+        pad: 4
+        style: 0
+      - time: 22916
+        pad: 1
+        style: 0
+      - time: 23333
+        pad: 4
+        style: 0
+      - time: 23749
+        pad: 3
+        style: 0
+      - time: 24166
+        pad: 4
+        style: 0
+      - time: 24583
+        pad: 5
+        style: 0
+      - time: 24999
+        pad: 4
+        style: 0
+      - time: 25416
+        pad: 3
+        style: 0
+      - time: 25833
+        pad: 4
+        style: 0
+      - time: 26249
+        pad: 5
+        style: 0
+      - time: 26666
+        pad: 4
+        style: 0
+      - time: 27083
+        pad: 1
+        style: 0
+      - time: 27499
+        pad: 4
+        style: 0
+      - time: 27916
+        pad: 1
+        style: 0
+      - time: 28333
+        pad: 2
+        style: 0
+      - time: 28749
+        pad: 1
+        style: 0
+      - time: 29166
+        pad: 2
+        style: 0
+      - time: 29583
+        pad: 2
+        style: 0
+      - time: 29999
+        pad: 3
+        style: 0
+      - time: 30208
+        pad: 4
+        style: 0
+      - time: 30416
+        pad: 3
+        style: 0
+      - time: 30624
+        pad: 4
+        style: 0
+      - time: 31666
+        pad: 1
+        style: 0
+      - time: 31874
+        pad: 2
+        style: 0
+      - time: 32083
+        pad: 1
+        style: 0
+      - time: 32291
+        pad: 2
+        style: 0
+      - time: 33333
+        pad: 3
+        style: 0
+      - time: 33541
+        pad: 4
+        style: 0
+      - time: 33749
+        pad: 3
+        style: 0
+      - time: 33958
+        pad: 4
+        style: 0
+      - time: 34999
+        pad: 3
+        style: 0
+      - time: 35208
+        pad: 5
+        style: 0
+      - time: 35416
+        pad: 3
+        style: 0
+      - time: 35624
+        pad: 5
+        style: 0
+      - time: 36666
+        pad: 3
+        style: 0
+      - time: 36874
+        pad: 4
+        style: 0
+      - time: 37083
+        pad: 3
+        style: 0
+      - time: 37291
+        pad: 4
+        style: 0
+      - time: 38333
+        pad: 1
+        style: 0
+      - time: 38541
+        pad: 2
+        style: 0
+      - time: 38749
+        pad: 1
+        style: 0
+      - time: 38958
+        pad: 2
+        style: 0
+      - time: 39999
+        pad: 3
+        style: 0
+      - time: 40208
+        pad: 4
+        style: 0
+      - time: 40416
+        pad: 3
+        style: 0
+      - time: 40624
+        pad: 4
+        style: 0
+      - time: 41666
+        pad: 3
+        style: 0
+      - time: 41874
+        pad: 5
+        style: 0
+      - time: 42083
+        pad: 3
+        style: 0
+      - time: 42291
+        pad: 5
+        style: 0
+      - time: 43333
+        pad: 3
+        style: 0
+      - time: 43749
+        pad: 4
+        style: 0
+      - time: 44166
+        pad: 3
+        style: 0
+      - time: 44583
+        pad: 5
+        style: 0
+      - time: 44999
+        pad: 3
+        style: 0
+      - time: 45416
+        pad: 4
+        style: 0
+      - time: 45833
+        pad: 3
+        style: 0
+      - time: 46249
+        pad: 4
+        style: 0
+      - time: 46666
+        pad: 1
+        style: 0
+      - time: 47083
+        pad: 2
+        style: 0
+      - time: 47499
+        pad: 1
+        style: 0
+      - time: 47916
+        pad: 0
+        style: 0
+      - time: 48333
+        pad: 1
+        style: 0
+      - time: 48749
+        pad: 4
+        style: 0
+      - time: 49166
+        pad: 1
+        style: 0
+      - time: 49583
+        pad: 4
+        style: 0
+      - time: 49999
+        pad: 3
+        style: 0
+      - time: 50416
+        pad: 5
+        style: 0
+      - time: 50833
+        pad: 3
+        style: 0
+      - time: 51249
+        pad: 2
+        style: 0
+      - time: 51666
+        pad: 3
+        style: 0
+      - time: 52083
+        pad: 5
+        style: 0
+      - time: 52499
+        pad: 3
+        style: 0
+      - time: 52916
+        pad: 2
+        style: 0
+      - time: 53333
+        pad: 1
+        style: 0
+      - time: 53749
+        pad: 0
+        style: 0
+      - time: 54166
+        pad: 1
+        style: 0
+      - time: 54583
+        pad: 4
+        style: 0
+      - time: 54999
+        pad: 1
+        style: 0
+      - time: 55416
+        pad: 2
+        style: 0
+      - time: 55833
+        pad: 1
+        style: 0
+      - time: 56249
+        pad: 2
+        style: 0
+      - time: 56666
+        pad: 3
+        style: 0
+      - time: 57083
+        pad: 4
+        style: 0
+      - time: 57499
+        pad: 3
+        style: 0
+      - time: 57916
+        pad: 5
+        style: 0
+      - time: 58333
+        pad: 3
+        style: 0
+      - time: 58749
+        pad: 4
+        style: 0
+      - time: 59166
+        pad: 3
+        style: 0
+      - time: 59583
+        pad: 5
+        style: 0
+      - time: 59999
+        pad: 3
+        style: 0
+      - time: 60416
+        pad: 2
+        style: 0
+      - time: 60833
+        pad: 1
+        style: 0
+      - time: 61249
+        pad: 2
+        style: 0
+      - time: 61666
+        pad: 2
+        style: 0
+      - time: 62083
+        pad: 1
+        style: 0
+      - time: 62499
+        pad: 0
+        style: 0
+      - time: 62916
+        pad: 0
+        style: 0
+      - time: 63333
+        pad: 3
+        style: 0
+      - time: 63749
+        pad: 4
+        style: 0
+      - time: 64166
+        pad: 3
+        style: 0
+      - time: 64583
+        pad: 5
+        style: 0
+      - time: 64999
+        pad: 3
+        style: 0
+      - time: 65416
+        pad: 4
+        style: 0
+      - time: 65833
+        pad: 3
+        style: 0
+      - time: 66249
+        pad: 5
+        style: 0
+      - time: 66666
+        pad: 3
+        style: 0
+      - time: 67083
+        pad: 2
+        style: 0
+      - time: 67499
+        pad: 1
+        style: 0
+      - time: 67916
+        pad: 2
+        style: 0
+      - time: 68333
+        pad: 2
+        style: 0
+      - time: 68749
+        pad: 1
+        style: 0
+      - time: 69166
+        pad: 0
+        style: 0
+      - time: 69583
+        pad: 1
+        style: 0
+      - time: 69999
+        pad: 4
+        style: 0
+      - time: 70416
+        pad: 3
+        style: 0
+      - time: 70833
+        pad: 4
+        style: 0
+      - time: 71249
+        pad: 5
+        style: 0
+      - time: 71666
+        pad: 4
+        style: 0
+      - time: 72083
+        pad: 3
+        style: 0
+      - time: 72499
+        pad: 4
+        style: 0
+      - time: 72916
+        pad: 5
+        style: 0
+      - time: 73333
+        pad: 4
+        style: 0
+      - time: 73749
+        pad: 1
+        style: 0
+      - time: 74166
+        pad: 1
+        style: 0
+      - time: 74583
+        pad: 4
+        style: 0
+      - time: 74999
+        pad: 1
+        style: 0
+      - time: 75416
+        pad: 1
+        style: 0
+      - time: 75833
+        pad: 4
+        style: 0
+      - time: 76249
+        pad: 1
+        style: 0
+      - time: 76666
+        pad: 4
+        style: 0
+      - time: 77083
+        pad: 3
+        style: 0
+      - time: 77499
+        pad: 4
+        style: 0
+      - time: 77916
+        pad: 5
+        style: 0
+      - time: 78333
+        pad: 4
+        style: 0
+      - time: 78749
+        pad: 3
+        style: 0
+      - time: 79166
+        pad: 4
+        style: 0
+      - time: 79583
+        pad: 5
+        style: 0
+      - time: 79999
+        pad: 4
+        style: 0
+      - time: 80416
+        pad: 1
+        style: 0
+      - time: 80833
+        pad: 4
+        style: 0
+      - time: 81249
+        pad: 1
+        style: 0
+      - time: 81666
+        pad: 2
+        style: 0
+      - time: 82083
+        pad: 1
+        style: 0
+      - time: 82499
+        pad: 2
+        style: 0
+      - time: 82916
+        pad: 2
+        style: 0
+      - time: 83333
+        pad: 1
+        style: 0
+    - notes:
+      - time: 3333
+        pad: 3
+        style: 0
+      - time: 3541
+        pad: 4
+        style: 0
+      - time: 3749
+        pad: 3
+        style: 0
+      - time: 4166
+        pad: 3
+        style: 0
+      - time: 4374
+        pad: 4
+        style: 0
+      - time: 4583
+        pad: 3
+        style: 0
+      - time: 4999
+        pad: 1
+        style: 0
+      - time: 5208
+        pad: 2
+        style: 0
+      - time: 5416
+        pad: 1
+        style: 0
+      - time: 5833
+        pad: 1
+        style: 0
+      - time: 6041
+        pad: 2
+        style: 0
+      - time: 6249
+        pad: 1
+        style: 0
+      - time: 6666
+        pad: 3
+        style: 0
+      - time: 6874
+        pad: 4
+        style: 0
+      - time: 7083
+        pad: 3
+        style: 0
+      - time: 7499
+        pad: 3
+        style: 0
+      - time: 7708
+        pad: 4
+        style: 0
+      - time: 7916
+        pad: 3
+        style: 0
+      - time: 8333
+        pad: 1
+        style: 0
+      - time: 8541
+        pad: 2
+        style: 0
+      - time: 8749
+        pad: 1
+        style: 0
+      - time: 9166
+        pad: 2
+        style: 0
+      - time: 9374
+        pad: 1
+        style: 0
+      - time: 9583
+        pad: 2
+        style: 0
+      - time: 9791
+        pad: 1
+        style: 0
+      - time: 9999
+        pad: 2
+        style: 0
+      - time: 10208
+        pad: 0
+        style: 0
+      - time: 10416
+        pad: 2
+        style: 0
+      - time: 10833
+        pad: 2
+        style: 0
+      - time: 11041
+        pad: 0
+        style: 0
+      - time: 11249
+        pad: 2
+        style: 0
+      - time: 11666
+        pad: 2
+        style: 0
+      - time: 11874
+        pad: 0
+        style: 0
+      - time: 12083
+        pad: 2
+        style: 0
+      - time: 12499
+        pad: 2
+        style: 0
+      - time: 12708
+        pad: 0
+        style: 0
+      - time: 12916
+        pad: 2
+        style: 0
+      - time: 13333
+        pad: 4
+        style: 0
+      - time: 13541
+        pad: 5
+        style: 0
+      - time: 13749
+        pad: 4
+        style: 0
+      - time: 14166
+        pad: 4
+        style: 0
+      - time: 14374
+        pad: 5
+        style: 0
+      - time: 14583
+        pad: 4
+        style: 0
+      - time: 14999
+        pad: 4
+        style: 0
+      - time: 15208
+        pad: 5
+        style: 0
+      - time: 15416
+        pad: 4
+        style: 0
+      - time: 15833
+        pad: 4
+        style: 0
+      - time: 16041
+        pad: 5
+        style: 0
+      - time: 16249
+        pad: 4
+        style: 0
+      - time: 16666
+        pad: 3
+        style: 0
+      - time: 16874
+        pad: 2
+        style: 0
+      - time: 17083
+        pad: 1
+        style: 0
+      - time: 17291
+        pad: 2
+        style: 0
+      - time: 17499
+        pad: 3
+        style: 0
+      - time: 17708
+        pad: 2
+        style: 0
+      - time: 17916
+        pad: 1
+        style: 0
+      - time: 18124
+        pad: 2
+        style: 0
+      - time: 18333
+        pad: 3
+        style: 0
+      - time: 18541
+        pad: 2
+        style: 0
+      - time: 18749
+        pad: 1
+        style: 0
+      - time: 18958
+        pad: 2
+        style: 0
+      - time: 19166
+        pad: 3
+        style: 0
+      - time: 19374
+        pad: 2
+        style: 0
+      - time: 19583
+        pad: 1
+        style: 0
+      - time: 19791
+        pad: 2
+        style: 0
+      - time: 19999
+        pad: 3
+        style: 0
+      - time: 20208
+        pad: 2
+        style: 0
+      - time: 20416
+        pad: 0
+        style: 0
+      - time: 20624
+        pad: 2
+        style: 0
+      - time: 20833
+        pad: 3
+        style: 0
+      - time: 21041
+        pad: 2
+        style: 0
+      - time: 21249
+        pad: 0
+        style: 0
+      - time: 21458
+        pad: 2
+        style: 0
+      - time: 21666
+        pad: 3
+        style: 0
+      - time: 21874
+        pad: 2
+        style: 0
+      - time: 22083
+        pad: 0
+        style: 0
+      - time: 22291
+        pad: 2
+        style: 0
+      - time: 22499
+        pad: 3
+        style: 0
+      - time: 22708
+        pad: 2
+        style: 0
+      - time: 22916
+        pad: 0
+        style: 0
+      - time: 23124
+        pad: 2
+        style: 0
+      - time: 23333
+        pad: 1
+        style: 0
+      - time: 23541
+        pad: 2
+        style: 0
+      - time: 23749
+        pad: 3
+        style: 0
+      - time: 23958
+        pad: 2
+        style: 0
+      - time: 24166
+        pad: 1
+        style: 0
+      - time: 24374
+        pad: 2
+        style: 0
+      - time: 24583
+        pad: 3
+        style: 0
+      - time: 24791
+        pad: 2
+        style: 0
+      - time: 24999
+        pad: 1
+        style: 0
+      - time: 25208
+        pad: 2
+        style: 0
+      - time: 25416
+        pad: 3
+        style: 0
+      - time: 25624
+        pad: 2
+        style: 0
+      - time: 25833
+        pad: 1
+        style: 0
+      - time: 26041
+        pad: 2
+        style: 0
+      - time: 26249
+        pad: 3
+        style: 0
+      - time: 26458
+        pad: 2
+        style: 0
+      - time: 26666
+        pad: 1
+        style: 0
+      - time: 26874
+        pad: 2
+        style: 0
+      - time: 27083
+        pad: 5
+        style: 0
+      - time: 27291
+        pad: 2
+        style: 0
+      - time: 27499
+        pad: 1
+        style: 0
+      - time: 27708
+        pad: 2
+        style: 0
+      - time: 27916
+        pad: 5
+        style: 0
+      - time: 28124
+        pad: 2
+        style: 0
+      - time: 28333
+        pad: 1
+        style: 0
+      - time: 28541
+        pad: 2
+        style: 0
+      - time: 28749
+        pad: 5
+        style: 0
+      - time: 28958
+        pad: 2
+        style: 0
+      - time: 29166
+        pad: 1
+        style: 0
+      - time: 29374
+        pad: 2
+        style: 0
+      - time: 29583
+        pad: 1
+        style: 0
+      - time: 29791
+        pad: 2
+        style: 0
+      - time: 29999
+        pad: 1
+        style: 0
+      - time: 30208
+        pad: 0
+        style: 0
+      - time: 30416
+        pad: 1
+        style: 0
+      - time: 30624
+        pad: 0
+        style: 0
+      - time: 31458
+        pad: 1
+        style: 0
+      - time: 31666
+        pad: 4
+        style: 0
+      - time: 31874
+        pad: 1
+        style: 0
+      - time: 32083
+        pad: 4
+        style: 0
+      - time: 32291
+        pad: 1
+        style: 0
+      - time: 33124
+        pad: 4
+        style: 0
+      - time: 33333
+        pad: 3
+        style: 0
+      - time: 33541
+        pad: 4
+        style: 0
+      - time: 33749
+        pad: 3
+        style: 0
+      - time: 33958
+        pad: 4
+        style: 0
+      - time: 34791
+        pad: 3
+        style: 0
+      - time: 34999
+        pad: 5
+        style: 0
+      - time: 35208
+        pad: 3
+        style: 0
+      - time: 35416
+        pad: 5
+        style: 0
+      - time: 35624
+        pad: 3
+        style: 0
+      - time: 36458
+        pad: 0
+        style: 0
+      - time: 36666
+        pad: 1
+        style: 0
+      - time: 36874
+        pad: 0
+        style: 0
+      - time: 37083
+        pad: 1
+        style: 0
+      - time: 37291
+        pad: 0
+        style: 0
+      - time: 38124
+        pad: 1
+        style: 0
+      - time: 38333
+        pad: 4
+        style: 0
+      - time: 38541
+        pad: 1
+        style: 0
+      - time: 38749
+        pad: 4
+        style: 0
+      - time: 38958
+        pad: 1
+        style: 0
+      - time: 39791
+        pad: 4
+        style: 0
+      - time: 39999
+        pad: 3
+        style: 0
+      - time: 40208
+        pad: 4
+        style: 0
+      - time: 40416
+        pad: 3
+        style: 0
+      - time: 40624
+        pad: 4
+        style: 0
+      - time: 41458
+        pad: 3
+        style: 0
+      - time: 41666
+        pad: 5
+        style: 0
+      - time: 41874
+        pad: 3
+        style: 0
+      - time: 42083
+        pad: 5
+        style: 0
+      - time: 42291
+        pad: 3
+        style: 0
+      - time: 43124
+        pad: 2
+        style: 0
+      - time: 43333
+        pad: 3
+        style: 0
+      - time: 43541
+        pad: 2
+        style: 0
+      - time: 43749
+        pad: 1
+        style: 0
+      - time: 43958
+        pad: 2
+        style: 0
+      - time: 44166
+        pad: 3
+        style: 0
+      - time: 44374
+        pad: 2
+        style: 0
+      - time: 44583
+        pad: 1
+        style: 0
+      - time: 44791
+        pad: 2
+        style: 0
+      - time: 44999
+        pad: 3
+        style: 0
+      - time: 45208
+        pad: 2
+        style: 0
+      - time: 45416
+        pad: 1
+        style: 0
+      - time: 45624
+        pad: 2
+        style: 0
+      - time: 45833
+        pad: 3
+        style: 0
+      - time: 46041
+        pad: 2
+        style: 0
+      - time: 46249
+        pad: 1
+        style: 0
+      - time: 46458
+        pad: 2
+        style: 0
+      - time: 46666
+        pad: 3
+        style: 0
+      - time: 46874
+        pad: 2
+        style: 0
+      - time: 47083
+        pad: 0
+        style: 0
+      - time: 47291
+        pad: 2
+        style: 0
+      - time: 47499
+        pad: 3
+        style: 0
+      - time: 47708
+        pad: 2
+        style: 0
+      - time: 47916
+        pad: 0
+        style: 0
+      - time: 48124
+        pad: 2
+        style: 0
+      - time: 48333
+        pad: 3
+        style: 0
+      - time: 48541
+        pad: 2
+        style: 0
+      - time: 48749
+        pad: 0
+        style: 0
+      - time: 48958
+        pad: 2
+        style: 0
+      - time: 49166
+        pad: 3
+        style: 0
+      - time: 49374
+        pad: 2
+        style: 0
+      - time: 49583
+        pad: 0
+        style: 0
+      - time: 49791
+        pad: 2
+        style: 0
+      - time: 49999
+        pad: 1
+        style: 0
+      - time: 50208
+        pad: 2
+        style: 0
+      - time: 50416
+        pad: 3
+        style: 0
+      - time: 50624
+        pad: 2
+        style: 0
+      - time: 50833
+        pad: 1
+        style: 0
+      - time: 51041
+        pad: 2
+        style: 0
+      - time: 51249
+        pad: 3
+        style: 0
+      - time: 51458
+        pad: 2
+        style: 0
+      - time: 51666
+        pad: 1
+        style: 0
+      - time: 51874
+        pad: 2
+        style: 0
+      - time: 52083
+        pad: 3
+        style: 0
+      - time: 52291
+        pad: 2
+        style: 0
+      - time: 52499
+        pad: 1
+        style: 0
+      - time: 52708
+        pad: 2
+        style: 0
+      - time: 52916
+        pad: 3
+        style: 0
+      - time: 53124
+        pad: 2
+        style: 0
+      - time: 53333
+        pad: 1
+        style: 0
+      - time: 53541
+        pad: 2
+        style: 0
+      - time: 53749
+        pad: 5
+        style: 0
+      - time: 53958
+        pad: 2
+        style: 0
+      - time: 54166
+        pad: 1
+        style: 0
+      - time: 54374
+        pad: 2
+        style: 0
+      - time: 54583
+        pad: 5
+        style: 0
+      - time: 54791
+        pad: 2
+        style: 0
+      - time: 54999
+        pad: 1
+        style: 0
+      - time: 55208
+        pad: 2
+        style: 0
+      - time: 55416
+        pad: 5
+        style: 0
+      - time: 55624
+        pad: 2
+        style: 0
+      - time: 55833
+        pad: 1
+        style: 0
+      - time: 56041
+        pad: 2
+        style: 0
+      - time: 56249
+        pad: 1
+        style: 0
+      - time: 56458
+        pad: 2
+        style: 0
+      - time: 56666
+        pad: 3
+        style: 0
+      - time: 56874
+        pad: 4
+        style: 0
+      - time: 57083
+        pad: 3
+        style: 0
+      - time: 57499
+        pad: 3
+        style: 0
+      - time: 57708
+        pad: 4
+        style: 0
+      - time: 57916
+        pad: 3
+        style: 0
+      - time: 58333
+        pad: 1
+        style: 0
+      - time: 58541
+        pad: 2
+        style: 0
+      - time: 58749
+        pad: 1
+        style: 0
+      - time: 59166
+        pad: 1
+        style: 0
+      - time: 59374
+        pad: 2
+        style: 0
+      - time: 59583
+        pad: 1
+        style: 0
+      - time: 59999
+        pad: 3
+        style: 0
+      - time: 60208
+        pad: 4
+        style: 0
+      - time: 60416
+        pad: 3
+        style: 0
+      - time: 60833
+        pad: 3
+        style: 0
+      - time: 61041
+        pad: 4
+        style: 0
+      - time: 61249
+        pad: 3
+        style: 0
+      - time: 61666
+        pad: 1
+        style: 0
+      - time: 61874
+        pad: 2
+        style: 0
+      - time: 62083
+        pad: 1
+        style: 0
+      - time: 62499
+        pad: 2
+        style: 0
+      - time: 62708
+        pad: 1
+        style: 0
+      - time: 62916
+        pad: 2
+        style: 0
+      - time: 63124
+        pad: 1
+        style: 0
+      - time: 63333
+        pad: 2
+        style: 0
+      - time: 63541
+        pad: 0
+        style: 0
+      - time: 63749
+        pad: 2
+        style: 0
+      - time: 64166
+        pad: 2
+        style: 0
+      - time: 64374
+        pad: 0
+        style: 0
+      - time: 64583
+        pad: 2
+        style: 0
+      - time: 64999
+        pad: 2
+        style: 0
+      - time: 65208
+        pad: 0
+        style: 0
+      - time: 65416
+        pad: 2
+        style: 0
+      - time: 65833
+        pad: 2
+        style: 0
+      - time: 66041
+        pad: 0
+        style: 0
+      - time: 66249
+        pad: 2
+        style: 0
+      - time: 66666
+        pad: 4
+        style: 0
+      - time: 66874
+        pad: 5
+        style: 0
+      - time: 67083
+        pad: 4
+        style: 0
+      - time: 67499
+        pad: 4
+        style: 0
+      - time: 67708
+        pad: 5
+        style: 0
+      - time: 67916
+        pad: 4
+        style: 0
+      - time: 68333
+        pad: 4
+        style: 0
+      - time: 68541
+        pad: 5
+        style: 0
+      - time: 68749
+        pad: 4
+        style: 0
+      - time: 69166
+        pad: 4
+        style: 0
+      - time: 69374
+        pad: 5
+        style: 0
+      - time: 69583
+        pad: 4
+        style: 0
+      - time: 69999
+        pad: 1
+        style: 0
+      - time: 70208
+        pad: 2
+        style: 0
+      - time: 70416
+        pad: 3
+        style: 0
+      - time: 70624
+        pad: 2
+        style: 0
+      - time: 70833
+        pad: 1
+        style: 0
+      - time: 71041
+        pad: 2
+        style: 0
+      - time: 71249
+        pad: 3
+        style: 0
+      - time: 71458
+        pad: 2
+        style: 0
+      - time: 71666
+        pad: 1
+        style: 0
+      - time: 71874
+        pad: 2
+        style: 0
+      - time: 72083
+        pad: 3
+        style: 0
+      - time: 72291
+        pad: 2
+        style: 0
+      - time: 72499
+        pad: 1
+        style: 0
+      - time: 72708
+        pad: 2
+        style: 0
+      - time: 72916
+        pad: 3
+        style: 0
+      - time: 73124
+        pad: 2
+        style: 0
+      - time: 73333
+        pad: 3
+        style: 0
+      - time: 73541
+        pad: 2
+        style: 0
+      - time: 73749
+        pad: 0
+        style: 0
+      - time: 73958
+        pad: 2
+        style: 0
+      - time: 74166
+        pad: 3
+        style: 0
+      - time: 74374
+        pad: 2
+        style: 0
+      - time: 74583
+        pad: 0
+        style: 0
+      - time: 74791
+        pad: 2
+        style: 0
+      - time: 74999
+        pad: 3
+        style: 0
+      - time: 75208
+        pad: 2
+        style: 0
+      - time: 75416
+        pad: 0
+        style: 0
+      - time: 75624
+        pad: 2
+        style: 0
+      - time: 75833
+        pad: 3
+        style: 0
+      - time: 76041
+        pad: 2
+        style: 0
+      - time: 76249
+        pad: 0
+        style: 0
+      - time: 76458
+        pad: 2
+        style: 0
+      - time: 76666
+        pad: 1
+        style: 0
+      - time: 76874
+        pad: 2
+        style: 0
+      - time: 77083
+        pad: 3
+        style: 0
+      - time: 77291
+        pad: 2
+        style: 0
+      - time: 77499
+        pad: 1
+        style: 0
+      - time: 77708
+        pad: 2
+        style: 0
+      - time: 77916
+        pad: 3
+        style: 0
+      - time: 78124
+        pad: 2
+        style: 0
+      - time: 78333
+        pad: 1
+        style: 0
+      - time: 78541
+        pad: 2
+        style: 0
+      - time: 78749
+        pad: 3
+        style: 0
+      - time: 78958
+        pad: 2
+        style: 0
+      - time: 79166
+        pad: 1
+        style: 0
+      - time: 79374
+        pad: 2
+        style: 0
+      - time: 79583
+        pad: 3
+        style: 0
+      - time: 79791
+        pad: 2
+        style: 0
+      - time: 79999
+        pad: 1
+        style: 0
+      - time: 80208
+        pad: 2
+        style: 0
+      - time: 80416
+        pad: 5
+        style: 0
+      - time: 80624
+        pad: 2
+        style: 0
+      - time: 80833
+        pad: 1
+        style: 0
+      - time: 81041
+        pad: 2
+        style: 0
+      - time: 81249
+        pad: 5
+        style: 0
+      - time: 81458
+        pad: 2
+        style: 0
+      - time: 81666
+        pad: 1
+        style: 0
+      - time: 81874
+        pad: 2
+        style: 0
+      - time: 82083
+        pad: 5
+        style: 0
+      - time: 82291
+        pad: 2
+        style: 0
+      - time: 82499
+        pad: 1
+        style: 0
+      - time: 82708
+        pad: 2
+        style: 0
+      - time: 82916
+        pad: 1
+        style: 0
+      - time: 83124
+        pad: 2
+        style: 0
+      - time: 83333
+        pad: 1
+        style: 0
+    tempoEvents:
+    - absoluteMidiTickTime: 0
+      absoluteMillisecondTime: 0
+      tempo: 144.00023040036865
+  songFile: {fileID: 4900000, guid: aaec4007bc27ba94e883cffe0c2b55f6, type: 3}
