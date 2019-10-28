@@ -6,241 +6,287 @@ using UnityEngine.Events;
 
 public class GameManager : TagModularity
 {
+    // use controller pitch axis to determine if the controller is being pointed at the bag
+    // then when the controller is horizontal, check is the controller velocities are below the threshold
 
-    public enum GameState
+
+    //started at 1:30
+    public SongLoader songLoader;
+
+    private Animator GameStateAnim;
+
+    public static GameManager Instance { get; private set; }
+
+    public enum LoadableScenes
     {
-        defaultState,
-        setupEnvironmentLoad,
-        controllerModeSelect,
-        armCalibration,
-        boardCalibration,
-        boardPlacement,
-        gamemodeSelect,
-        environmentLoad,
-        songSelect,
-        gamePlay,
-        oldDemo,
-        gamePaused,
-        gameOver
-
+        //set each of these to the index of the scenes in the build settings
+        ControllerSelection = 8,
+        ArmCalibration = 5,
+        BoardPlacement = 9,
+        Env_Studio = 2,
+        Env_Setup = 7,
+        RevolvingMenuTest = 3,
+        ModularGameplayTest = 4,
+        BoardCalibration = 6,
+        VrBaseScene = 1,
+        PunchingBagCalibration = 10,
+        BoardTypeSelection = 11,
+        GamemodeSelect = 12,
+        RobotGameplay = 13,
+        Env_Robot = 14,
+        PunchingBagGameplay = 15,
+        PunchingBagRenderTexture = 16,
+        DragBagCalibration = 17,
+        Env_Scifi = 18
     }
 
-
-    [Header("Current State of Game")]
-    public GameState StateOfGame;
-
     [System.Serializable]
-    public class GameStateScene
+    public class SceneState
     {
-        public string SceneName;
-        public GameState AssociatedState;
+        public LoadableScenes SceneIndex;
 
+        // animStateID is used to prevent this scene from being unloaded when a scene from the same anim state is loaded
+        //may not need it stored here, can pass from AddSceneState() instead
+        public uint AnimStateID;
 
+        [HideInInspector]
         public bool Loading;
+
+        [HideInInspector]
         public bool Loaded;
 
-        public string CallOnLoaded;
         public bool SetActiveOnLoaded;
         public bool UnloadOnStateChange;
 
-        public UnityEvent callfunction;
-
-        [Header("States before and after")]
-        public GameState NextGameState;
-        public GameState LastGameState;
-
+        public UnityEvent CallOnLoaded;
 
     }
 
-    [Header("Game State Scenes To Load")]
-    public GameStateScene[] gameStateScene;
+    public enum BoardType
+    {
+        liteboxerShield,
+        cylinderPunchingBag,
+        rectanglePunchingBag
+    }
 
-    Dictionary<GameState, GameStateScene> GameStateDict = new Dictionary<GameState, GameStateScene>();
+    public BoardType boardType;
+
+    public enum Gamemode
+    {
+        LiteboxerDevice,
+        RobotBoxing,
+        LightUpBag
+    }
+
+    /*
+    public class Gamemode
+    {
+        public enum Type
+        {
+            LiteboxerDevice,
+            RobotBoxing
+        }
+        public string GamemodeName;
+        public BoardType boardType;
+    }*/
+
+    /*
+
+    data to be inherited from parent gameplay class
+    + lerp progress of note
+    virtual functions that call when note is created/destroyed
+    child class should store the start and end points of each pad
+    child
+    + list of gameobjects the same length as the parent's list of notes
+    + note gameobject position should be determined completely by the child
+    or
+    + dictionary of NoteObjects
+    key = int (id)
+    value = NoteObject
+    class NoteObject
+    {
+        public int id;
+        public float lerpProgress;
+        GameObject gameObject;
+        NoteObject(GameObject Prefab, int id)
+        {
+            this.id = id;
+            gameObject = Instantiate(Prefab);
+
+        }
+        SetPosition(Vector3 position)
+        {
+            gameObject.transform.position = position;
+        }
+    }
+    override functions that call when note is created/destroyed
+    creation function
+    void override CreateNoteObject(ref float LerpProgress)
+    {
+    }
+
+
+     */
+
+    public Gamemode gamemode;
+
+    public class CalibratedObject
+    {
+        public bool calibrated;
+
+        public Vector3 position;
+
+        public Vector3 eulerAngles;
+
+        public Vector3 localScale;
+
+        public void SetCalibration(Transform sourceTransfrom)
+        {
+            calibrated = true;
+
+            position = sourceTransfrom.position;
+
+            eulerAngles = sourceTransfrom.eulerAngles;
+
+            localScale = sourceTransfrom.localScale;
+        }
+
+        public void GetCalibration(ref GameObject targetGameObject)
+        {
+            targetGameObject.transform.position = position;
+
+            targetGameObject.transform.eulerAngles = eulerAngles;
+
+            targetGameObject.transform.localScale = localScale;
+
+        }
+
+        public void ResetCalibration()
+        {
+            calibrated = false;
+
+        }
+
+    }
+
+    public CalibratedObject calibratedObject;
+
+    /*
+    public class CalibratedBag : CalibratedDevice
+    {
+        public float radius;
+        public float height;
+        CalibratedBag()
+        {
+        }
+        
+        void SetCalibration(float radius, float height, Vector3 position)
+        {
+            calibrated = true;
+            this.radius = radius;
+            this.height = height;
+            this.position = position;
+        }
+        
+    }*/
+
+
+    [Header("Game State Scenes To Load")]
+    public List<SceneState> gameStateScenes;
+
+    Dictionary<LoadableScenes, SceneState> SceneStateDict = new Dictionary<LoadableScenes, SceneState>();
 
     public TextMesh GameStateText;
 
-    public bool isBoardTracked;
+    //public bool isBoardTracked;
 
-    public bool isBoardPlaced;
+    //public bool isBoardPlaced;
+
+    public bool isBoardTypeSelected;
+
+    public bool isGamemodeSelected;
 
     public bool isArmCalibrated;
 
-    private bool controllerModeSelected;
+    public bool controllerModeSelected;
 
     public bool UsingWristStraps;
 
-    public Vector3 BoardPosition;
+    //public Vector3 BoardPosition;
 
-    public Vector3 BoardForward;
-
-    [System.Serializable]
-    public class MyEvent : UnityEvent<bool> { }
-    public MyEvent myEvent;
+    //public Vector3 BoardForward;
 
     public AudioClip SongAudioToPlay;
 
     public TextAsset SongJsonToPlay;
 
+    public int SelectedSong;
+
+    public int SongDifficulty;
+
     public GameObject OptionsMenuObj;
 
-    // Start is called before the first frame update
-    void Start()
+    // animator hashes
+    private readonly int NextStateParam = Animator.StringToHash("NextState");
+    private readonly int LastStateParam = Animator.StringToHash("LastState");
+    private readonly int StartGameParam = Animator.StringToHash("StartGame");
+    private readonly int ArmCalibratedParam = Animator.StringToHash("isArmCalibrated");
+    private readonly int BoardCalibratedParam = Animator.StringToHash("isBoardCalibrated");
+    private readonly int BoardPlacedParam = Animator.StringToHash("isBoardPlaced");
+    private readonly int GamemodeSelectedParam = Animator.StringToHash("gamemodeSelected");
+    private readonly int BoardTypeParam = Animator.StringToHash("BoardType");
+    private readonly int GamemodeParam = Animator.StringToHash("Gamemode");
+    private readonly int ControlModeSelectedParam = Animator.StringToHash("controlModeSelected");
+    private readonly int UsingWristStrapsParam = Animator.StringToHash("UsingWristStraps");
+    private readonly int RestartCalibrationParam = Animator.StringToHash("RestartCalibration");
+    private readonly int ReturnToSongMenuParam = Animator.StringToHash("ReturnToSongMenu");
+
+    //animator IDs
+    //private uint AnimIDCounter;
+
+    private void Awake()
     {
-        foreach (GameStateScene gss in gameStateScene)
+        if (Instance == null)
         {
-            GameStateDict.Add(gss.AssociatedState, gss);
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
 
         }
-        NextState();
-        /*
-        gameStateScene[1].callfunction.AddListener(() => Debug.Log("Called this"));//give function, not return value
 
-        gameStateScene[1].callfunction?.Invoke();//check if null
+        GameStateAnim = GetComponent<Animator>();
 
-        int.MaxValue = 2^32;
-        System.Int32;
+        calibratedObject = new CalibratedObject();
 
-        long num;
-        System.Int64;
-
-        if (thing != null & thing.property1 == whatever)
-        {
-            thing.property2()
-        }
-
-        pointerA->property
-
-            int i = (int)GameState.boardPlacement;*/
+        SetUniqueAnimStateIDs();
     }
 
+    private void Start()
+    {
+        //Song Loading
+        songLoader.Load();
+
+    }
+    /*
     public void SetBoardPosition(Vector3 bPos, Vector3 bFwd)
     {
-        isBoardTracked = true;
-
         BoardPosition = bPos;
-
         BoardForward = bFwd;
-
     }
-
+    */
     public void ApplyBoardPosition()
     {
         GameObject gameBoard = FindTaggedObject("BoardObj");
 
-        //GameplayController gameplayCont = FindTaggedObject("GameplayCont").GetComponent<GameplayController>();
-
-        //gameBoard.transform.position = BoardPosition /*+ BoardForward*0.016f*/;
-
-        //gameBoard.transform.forward = BoardForward;
-
-        //gameplayCont.StartGame(SongJsonToPlay, SongAudioToPlay, BoardPosition, BoardForward);
-
         Debug.Log("Applied Board Position");
-    }
-
-    /*public void NextState()
-    {
-        do
-        {
-            if (StateOfGame == GameState.armCalibration && !isArmCalibrated) { Debug.Log("Must Calibrate Arm"); break; }
-
-            if (StateOfGame == GameState.boardCalibration && !isBoardTracked) { Debug.Log("Must Calibrate Board"); break; }
-
-            if (StateOfGame == GameState.controllerModeSelect && !controllerModeSelected) { Debug.Log("Must Select Controller Mode"); break; }
-
-            StateOfGame++;
-
-        } while (false);
-
-        LoadSceneFromGameState(StateOfGame);
-        
-        foreach (GameStateScene gss in gameStateScene)
-        {
-            if (StateOfGame == gss.AssociatedState)
-                continue;
-
-            if (gss.UnloadOnStateChange && gss.SceneName != "" && gss.Loaded)
-            {
-                Debug.Log("Unloading scene " + gss.SceneName);
-
-                SceneManager.UnloadSceneAsync(gss.SceneName);
-                gss.Loaded = false;
-            }
-
-        }
-
-        UnloadOldStates();
-    }*/
-
-    public void NextState()
-    {
-        GoToState(StateOfGame + 1);
-
-    }
-
-    public void GoToState(GameState newState)
-    {
-        if (newState > StateOfGame)
-        {
-            do
-            {
-                if (StateOfGame == GameState.armCalibration && !isArmCalibrated) { Debug.Log("Must Calibrate Arm"); break; }
-
-                if (StateOfGame == GameState.boardCalibration && !isBoardTracked) { Debug.Log("Must Calibrate Board"); break; }
-
-                if (StateOfGame == GameState.boardPlacement && !isBoardPlaced) { Debug.Log("Must Place Board"); break; }
-
-                if (StateOfGame == GameState.controllerModeSelect && !controllerModeSelected) { Debug.Log("Must SelectControllerMode"); break; }
-
-                StateOfGame = newState;
-
-            } while (false);
-
-        }
-        else if (newState < StateOfGame)
-        {
-
-            StateOfGame = newState;
-        }
-
-        LoadSceneFromGameState(StateOfGame);
-
-        UnloadOldStates();
-    }
-
-    public void LastState()
-    {
-        GoToState(StateOfGame - 1);
-
-    }
-
-    void UnloadOldStates()
-    {
-        foreach (GameStateScene gss in gameStateScene)
-        {
-            if (StateOfGame == gss.AssociatedState)
-                continue;
-
-            if (gss.UnloadOnStateChange && gss.SceneName != "" && gss.Loaded)
-            {
-                Debug.Log("Unloading scene " + gss.SceneName);
-
-                SceneManager.UnloadSceneAsync(gss.SceneName);
-                gss.Loaded = false;
-            }
-
-        }
     }
 
     private void Update()
     {
-        /*
-        if (OVRInput.GetDown(OVRInput.RawButton.Start) || Input.GetKeyDown(KeyCode.M))
-        {
-            StartCoroutine(LoadGameStateScene(GameStateDict[GameState.oldDemo]));
 
-        }
-        */
         if (OVRInput.GetDown(OVRInput.RawButton.Start) || Input.GetKeyDown(KeyCode.M))
         {
             if (!OptionsMenuObj.activeInHierarchy)
@@ -249,100 +295,104 @@ public class GameManager : TagModularity
                 ToggleOptionsMenu(false);
         }
 
-
         if (OVRInput.GetDown(OVRInput.RawButton.A) || Input.GetKeyDown(KeyCode.A))
         {
-            if (StateOfGame < GameState.environmentLoad)
-            {
-                if (StateOfGame == GameState.controllerModeSelect)
-                {
-                    if (UsingWristStraps)
-                    {
-                        GoToState(GameState.armCalibration);
-
-                    }
-                    else
-                    {
-                        GoToState(GameState.boardPlacement);
-
-                    }
-
-                }
-                else
-                {
-                    GoToState(GameStateDict[StateOfGame].NextGameState);
-
-                }
-            }
-
-
-
-
-
-
-            /*
-            if (StateOfGame == GameState.controllerModeSelect && !UsingWristStraps)
-            {
-                GoToState(GameState.boardCalibration);
-            }*/
-
-
-
-
-            //GoToState(StateOfGame + 1);
-
-            //NextState();
-
-            //Debug.Log("hello" + StateOfGame++);
+            GameStateAnim.SetTrigger(NextStateParam);
         }
         else if (OVRInput.GetDown(OVRInput.RawButton.B) || Input.GetKeyDown(KeyCode.B))
         {
-            //LastState();
-            //GoToState(StateOfGame-1);
-            //Debug.Log("hello backwards" + StateOfGame--);
-
-            GoToState(GameStateDict[StateOfGame].LastGameState);
-
-
-
+            GameStateAnim.SetTrigger(LastStateParam);
         }
 
+        UpdateAnimParameters();
 
-
-        //LoadSceneFromGameState(StateOfGame);
-
-
-        GameStateText.text = StateOfGame.ToString();
     }
 
-    public bool LoadSceneFromGameState(GameState aState)
+    public void NextState()
     {
-        if (GameStateDict.ContainsKey(aState))
+        UpdateAnimParameters();
+
+        GameStateAnim.SetTrigger(NextStateParam);
+
+    }
+
+    public void LastState()
+    {
+        UpdateAnimParameters();
+
+        GameStateAnim.SetTrigger(LastStateParam);
+
+    }
+
+    void UpdateAnimParameters()
+    {
+        GameStateAnim.SetBool(ArmCalibratedParam, isArmCalibrated);
+
+        //GameStateAnim.SetBool(BoardCalibratedParam, isBoardTracked);
+
+        GameStateAnim.SetBool(BoardCalibratedParam, calibratedObject.calibrated);
+
+        GameStateAnim.SetBool(BoardPlacedParam, calibratedObject.calibrated);
+
+        GameStateAnim.SetBool(GamemodeSelectedParam, isGamemodeSelected);
+
+        GameStateAnim.SetInteger(BoardTypeParam, (int)boardType);
+
+        GameStateAnim.SetInteger(GamemodeParam, (int)gamemode);
+
+        GameStateAnim.SetBool(UsingWristStrapsParam, UsingWristStraps);
+
+        //GameStateAnim.SetBool(BoardPlacedParam, isBoardPlaced);
+
+        GameStateAnim.SetBool(ControlModeSelectedParam, controllerModeSelected);
+
+    }
+
+    //unload old scenes that are marked to unload on scene change
+    void UnloadOldScenes(uint AnimStateID)
+    {
+        List<LoadableScenes> KeyList = new List<LoadableScenes>(SceneStateDict.Keys);
+
+        for (int i = 0; i < KeyList.Count; i++)
         {
-            if (!GameStateDict[aState].Loading && !GameStateDict[aState].Loaded)
+            if (SceneStateDict[KeyList[i]].AnimStateID != AnimStateID)
             {
-                StartCoroutine(LoadGameStateScene(GameStateDict[aState]));
+                if (SceneStateDict[KeyList[i]].UnloadOnStateChange)
+                {
+                    SceneManager.UnloadSceneAsync((int)KeyList[i]);
 
+                    SceneStateDict.Remove(KeyList[i]);
+
+                }
             }
-            else if (GameStateDict[aState].Loaded)
-            {
-                /*if(GameStateDict[aState].CallOnLoaded != "")
-                    SendMessage(GameStateDict[aState].CallOnLoaded);*/
-
-            }
-
-            return true;
-
         }
 
-        return false;
+        /*
+        foreach (var value in SceneStateDict.Values)
+        {
+            if (value.AnimStateID == AnimStateID)
+                continue;
+            if(value.UnloadOnStateChange)
+            {
+                SceneManager.UnloadSceneAsync((int)value.SceneIndex);
+                SceneStateDict.Remove(value.SceneIndex);
+            }
+        }
+        */
     }
 
-    IEnumerator LoadGameStateScene(GameStateScene aScene)
+
+    IEnumerator LoadSceneState(SceneState aScene)
     {
+        // this unloads scenes just loaded on the same anim state
+        // add an int param unique to each state
+        // when loading new scenes the unloader can ignore the scenes with the same int param
+        //pass ignore int to unloadOldScenes
+        UnloadOldScenes(aScene.AnimStateID);
+
         aScene.Loading = true;
 
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(aScene.SceneName, LoadSceneMode.Additive);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync((int)aScene.SceneIndex, LoadSceneMode.Additive);
 
         // Wait until the asynchronous scene fully loads
         while (!asyncLoad.isDone)
@@ -352,31 +402,31 @@ public class GameManager : TagModularity
 
         if (aScene.SetActiveOnLoaded)
         {
-            SceneManager.SetActiveScene(SceneManager.GetSceneByName(aScene.SceneName));
+            SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
 
-            foreach (GameStateScene gss in gameStateScene)
+            /* this works well, but we want it to unload the start scene
+            //remove the old active scene
+            if (SceneStateDict.ContainsKey((LoadableScenes)SceneManager.GetActiveScene().buildIndex))
             {
-                if (StateOfGame == gss.AssociatedState)
-                    continue;
-
-                if (gss.SetActiveOnLoaded && gss.SceneName != "" && gss.Loaded)
-                {
-                    Debug.Log("Unloading scene " + gss.SceneName);
-
-                    SceneManager.UnloadSceneAsync(gss.SceneName);
-                    gss.Loaded = false;
-                }
-
+                SceneStateDict.Remove((LoadableScenes)SceneManager.GetActiveScene().buildIndex);
+                SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
             }
+            */
+
+            // set the new active scene
+            SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex((int)aScene.SceneIndex));
+
+
         }
 
         aScene.Loading = false;
         aScene.Loaded = true;
 
-        if (aScene.CallOnLoaded != "")
-            SendMessage(aScene.CallOnLoaded);
+        //call a function when the scene has loaded
+        if (aScene.CallOnLoaded != null)
+            aScene.CallOnLoaded.Invoke();
 
-        Debug.Log("loaded " + aScene.SceneName);
+        Debug.Log("loaded " + aScene.SceneIndex.ToString());
     }
 
     public void SetControllerMode(bool wristStraps)
@@ -385,37 +435,43 @@ public class GameManager : TagModularity
         controllerModeSelected = true;
     }
 
-    void CheckWristStraps()
+    public void StartGameplay(Song song, int difficulty)
     {
-        if (!UsingWristStraps)
+        SongDifficulty = difficulty;
+
+        SongAudioToPlay = song.Audio(difficulty);
+
+        GameStateAnim.SetTrigger(StartGameParam);
+
+    }
+
+    public void RestartCalibration()
+    {
+        for (int i = 0; i < SceneManager.sceneCount; i++)
         {
-            isArmCalibrated = true;
-            NextState();
+            Scene scene = SceneManager.GetSceneAt(i);
+            if (scene.buildIndex == (int)LoadableScenes.ControllerSelection)
+                return;
         }
 
-    }
+        OptionsMenuObj.SetActive(false);
 
-    public void StartGameplay(TextAsset aSongJson, AudioClip aSongAudio)
-    {
-
-        SongJsonToPlay = aSongJson;
-
-        SongAudioToPlay = aSongAudio;
-
-        GoToState(GameState.gamePlay);
-
-    }
-
-    public void RestartGame()
-    {
-        SceneManager.LoadScene("VRBaseScene");
+        GameStateAnim.SetTrigger(RestartCalibrationParam);
 
     }
 
     public void ReturnToSongMenu()
     {
-        GoToState(GameState.environmentLoad);
+        for (int i = 0; i < SceneManager.sceneCount; i++)
+        {
+            Scene scene = SceneManager.GetSceneAt(i);
+            if (scene.buildIndex == (int)LoadableScenes.RevolvingMenuTest)
+                return;
+        }
+
         ToggleOptionsMenu(false);
+
+        GameStateAnim.SetTrigger(ReturnToSongMenuParam);
     }
 
     public void ToggleOptionsMenu(bool isOpen)
@@ -424,6 +480,56 @@ public class GameManager : TagModularity
             OptionsMenuObj.transform.localScale = Vector3.zero;
 
         OptionsMenuObj.SetActive(isOpen);
+
+    }
+
+    public void AddSceneState(SceneState aSceneState)
+    {
+        Debug.Log("called AddSceneState");
+
+        if (SceneStateDict.ContainsKey(aSceneState.SceneIndex))
+            return;
+
+        SceneStateDict.Add(aSceneState.SceneIndex, aSceneState);
+
+        StartCoroutine(LoadSceneState(aSceneState));
+
+    }
+
+    public void RemoveSceneState(SceneState aSceneState)
+    {
+        Debug.Log("called RemoveSceneState");
+
+        if (SceneStateDict.ContainsKey(aSceneState.SceneIndex))
+        {
+            SceneManager.UnloadSceneAsync((int)aSceneState.SceneIndex);
+
+            SceneStateDict.Remove(aSceneState.SceneIndex);
+
+        }
+
+    }
+    /*
+    public uint GetUniqueAnimStateID()
+    {
+        AnimIDCounter++;
+        Debug.Log(AnimIDCounter);
+        AnimGameStateController[] animStates = GameStateAnim.GetBehaviours<AnimGameStateController>();
+        return AnimIDCounter;
+    }
+    */
+    public void SetUniqueAnimStateIDs()
+    {
+
+        AnimGameStateController[] animStates = GameStateAnim.GetBehaviours<AnimGameStateController>();
+
+        for (uint i = 0; i < animStates.Length; i++)
+        {
+            //Debug.Log(i);
+
+            animStates[i].SetId(i);
+        }
+
 
     }
 }

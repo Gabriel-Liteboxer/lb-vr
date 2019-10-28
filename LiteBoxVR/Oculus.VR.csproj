@@ -333,13 +333,13 @@
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="NAudio">
-      <HintPath>C:/Users/spych/Documents/Liteboxer/Repo/lb-vr/LiteBoxVR/Assets/RuntimeAudioClipLoader/Plugins/NAudio.dll</HintPath>
+      <HintPath>C:/Users/herma/Documents/GitHub/lb-vr/LiteBoxVR/Assets/RuntimeAudioClipLoader/Plugins/NAudio.dll</HintPath>
     </Reference>
     <Reference Include="NLayer">
-      <HintPath>C:/Users/spych/Documents/Liteboxer/Repo/lb-vr/LiteBoxVR/Assets/RuntimeAudioClipLoader/Plugins/NLayer.dll</HintPath>
+      <HintPath>C:/Users/herma/Documents/GitHub/lb-vr/LiteBoxVR/Assets/RuntimeAudioClipLoader/Plugins/NLayer.dll</HintPath>
     </Reference>
     <Reference Include="NVorbis">
-      <HintPath>C:/Users/spych/Documents/Liteboxer/Repo/lb-vr/LiteBoxVR/Assets/RuntimeAudioClipLoader/Plugins/NVorbis.dll</HintPath>
+      <HintPath>C:/Users/herma/Documents/GitHub/lb-vr/LiteBoxVR/Assets/RuntimeAudioClipLoader/Plugins/NVorbis.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>C:/Users/herma/Documents/GitHub/lb-vr/LiteBoxVR/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>

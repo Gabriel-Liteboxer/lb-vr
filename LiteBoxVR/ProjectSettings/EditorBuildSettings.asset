@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Base/LoadingScene.unity
     guid: 58e44e44f06cbf24199e943fd5b1c44d
   - enabled: 1
-    path: Assets/Scenes/Base/VRBaseScene.unity
-    guid: 0d21d870954d8d246a606543b36cf910
-  - enabled: 1
     path: Assets/Scenes/Environments/EnvStudio.unity
     guid: 5156c0d98a4d8754d88f7f0906bb62cf
   - enabled: 1

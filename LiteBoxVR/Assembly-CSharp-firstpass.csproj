@@ -291,6 +291,15 @@
     <Reference Include="nunit.framework">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.10f1/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
+    <Reference Include="NAudio">
+      <HintPath>C:/Users/herma/Documents/GitHub/lb-vr/LiteBoxVR/Assets/RuntimeAudioClipLoader/Plugins/NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="NLayer">
+      <HintPath>C:/Users/herma/Documents/GitHub/lb-vr/LiteBoxVR/Assets/RuntimeAudioClipLoader/Plugins/NLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="NVorbis">
+      <HintPath>C:/Users/herma/Documents/GitHub/lb-vr/LiteBoxVR/Assets/RuntimeAudioClipLoader/Plugins/NVorbis.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Analytics.Editor">
       <HintPath>C:/Users/herma/Documents/GitHub/lb-vr/LiteBoxVR/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>

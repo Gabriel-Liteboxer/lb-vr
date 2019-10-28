@@ -62,6 +62,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\MidiPlayer\Scripts\Editor\AboutMPTK.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\Editor\GetFullVersion.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\Editor\MenuShortcut.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\Editor\MessagesEditor.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\Editor\MidiCommonEditor.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\Editor\MidiFileLoaderEditor.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\Editor\MidiFilePlayerEditor.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\Editor\MidiFileSetupWindow.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\Editor\MidiStreamPlayerEditor.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\Editor\PopupListPatchs.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\Editor\SelectMidiWindow.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\Editor\SoundFontSetupWindow.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\Editor\TextArea.cs" />
+    <Compile Include="Assets\MidiPlayer\Scripts\Editor\ToolsEditor.cs" />
     <Compile Include="Assets\Oculus\AudioManager\Scripts\Audio\Editor\AudioImportPostProcessor.cs" />
     <Compile Include="Assets\Oculus\AudioManager\Scripts\Audio\Editor\AudioManagerInspector.cs" />
     <Compile Include="Assets\Oculus\AudioManager\Scripts\Audio\Editor\MinMaxPropertyDrawer.cs" />
@@ -87,6 +101,8 @@
     <Compile Include="Assets\Oculus\Spatializer\editor\ONSPPropagationMaterialEditor.cs" />
     <Compile Include="Assets\Oculus\Spatializer\editor\ONSPPropagationSerializationManager.cs" />
     <Compile Include="Assets\Oculus\Spatializer\editor\ONSPReflectionCustomGUI.cs" />
+    <Compile Include="Assets\RuntimeAudioClipLoader\Demonstrations\Load from StreamingAssets or internet\Editor\DemoStreamingAssetsEditor.cs" />
+    <None Include="Assets\RuntimeAudioClipLoader\Internal\Editor\NotifyLGPL.cs.accepted.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/herma/Documents/GitHub/lb-vr/LiteBoxVR/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
@@ -320,6 +336,15 @@
     </Reference>
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio">
+      <HintPath>C:/Users/herma/Documents/GitHub/lb-vr/LiteBoxVR/Assets/RuntimeAudioClipLoader/Plugins/NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="NLayer">
+      <HintPath>C:/Users/herma/Documents/GitHub/lb-vr/LiteBoxVR/Assets/RuntimeAudioClipLoader/Plugins/NLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="NVorbis">
+      <HintPath>C:/Users/herma/Documents/GitHub/lb-vr/LiteBoxVR/Assets/RuntimeAudioClipLoader/Plugins/NVorbis.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>C:/Users/herma/Documents/GitHub/lb-vr/LiteBoxVR/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>

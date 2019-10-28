@@ -28,7 +28,6 @@ public class NoteBlockTest : MonoBehaviour
     void Update()
     {
         m_DissolveAmount = m_DissolveMaterial.GetFloat("_DissolveAmount");
-        Debug.Log(m_DissolveAmount);
         if (m_DissolveAmount > .005f)
         {
             m_DissolveMaterial.SetFloat("_DissolveAmount", Mathf.Lerp(m_DissolveAmount, 0, Time.deltaTime * m_NoteDissolveSpeed));
