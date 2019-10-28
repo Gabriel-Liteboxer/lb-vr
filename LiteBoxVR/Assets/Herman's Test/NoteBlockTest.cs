@@ -44,6 +44,7 @@ public class NoteBlockTest : MonoBehaviour
         if (m_DestroyTimer <= 0)
         {
             Instantiate(m_NoteExplosion, transform.position, Quaternion.identity);
+            FloorManager.Instance.PlayFloorAnim();
             Destroy(gameObject);
         }
 

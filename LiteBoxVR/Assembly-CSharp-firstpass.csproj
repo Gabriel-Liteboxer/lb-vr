@@ -99,14 +99,8 @@
     <Reference Include="Unity.Postprocessing.Editor">
       <HintPath>C:/Users/herma/Documents/GitHub/lb-vr/LiteBoxVR/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Editor">
-      <HintPath>C:/Users/herma/Documents/GitHub/lb-vr/LiteBoxVR/Library/ScriptAssemblies/Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
       <HintPath>C:/Users/herma/Documents/GitHub/lb-vr/LiteBoxVR/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="XiaomiSupport">
-      <HintPath>C:/Users/herma/Documents/GitHub/lb-vr/LiteBoxVR/Library/ScriptAssemblies/XiaomiSupport.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>C:/Users/herma/Documents/GitHub/lb-vr/LiteBoxVR/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
@@ -308,12 +302,6 @@
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
       <HintPath>C:/Users/herma/Documents/GitHub/lb-vr/LiteBoxVR/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
-    </Reference>
-    <Reference Include="ChannelPurchase">
-      <HintPath>C:/Users/herma/Documents/GitHub/lb-vr/LiteBoxVR/Library/PackageCache/com.unity.xiaomi@1.0.3/ChannelPurchase.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityStore">
-      <HintPath>C:/Users/herma/Documents/GitHub/lb-vr/LiteBoxVR/Library/PackageCache/com.unity.xiaomi@1.0.3/UnityStore.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.10f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
